@@ -3,6 +3,7 @@ package de.equalit.liv;
 
 import com.codename1.ui.Display;
 import com.codename1.ui.Form;
+import com.codename1.ui.Button;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.Label;
 import com.codename1.ui.plaf.UIManager;
@@ -37,6 +38,9 @@ public class liv {
         }
         Form hi = new Form("Hi World");
         hi.addComponent(new Label("Hi World"));
+        Button b = new Button("Show Dialog");
+        hi.add(b);
+        b.addActionListener((e)-> Dialog.show("Dialog Title", "Hi", "OK",null));
         hi.show();
     }
 
