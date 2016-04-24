@@ -1,3 +1,4 @@
+//codename1 ist raus
 package de.equalit.liv;
 
 import com.codename1.ui.Display;
@@ -39,7 +40,7 @@ public class liv {
 		Button b = new Button("About LIV");
 		home.add(b);
 		b.addActionListener((e) -> Dialog.show("Lebensmittelinhaltverifizierer",
-				"Eine Smartphone-App, die Menschen mit Lebensmittelunverträglichkeiten unerwünschte Inhaltsstoffe von Lebensmitteln auf einen Blick erfassen lässt.",
+				"Eine Smartphone-App, die Menschen mit LebensmittelunvertrÃ¤glichkeiten unerwÃ¼nschte Inhaltsstoffe von Lebensmitteln auf einen Blick erfassen lÃ¤sst.",
 				"OK", null));
 		Button c = new Button("Impressum");
 		home.add(c);
