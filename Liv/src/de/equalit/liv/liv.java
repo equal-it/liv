@@ -1,4 +1,4 @@
-//codename1 ist raus
+//codename1 ist jetzt raus
 package de.equalit.liv;
 
 import com.codename1.ui.Display;
