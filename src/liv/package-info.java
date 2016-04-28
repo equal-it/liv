@@ -1,8 +1,8 @@
 /**
- * 
+ * Project: Liv – Lebensmittelinhaltverifizierer
  */
 /**
- * @author felix
- *
+ * @author team equal-IT
+ * mail: team@equal-it.de
  */
 package liv;
