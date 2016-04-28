@@ -4,7 +4,7 @@
 package liv;
 
 /**
- * Project: Liv – Lebensmittelinhaltverifizierer
+ * Project: Liv ï¿½ Lebensmittelinhaltverifizierer
  * 
  * @author team equal-IT
  * mail: team@equal-it.de
@@ -16,7 +16,7 @@ public class liv {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println("Hello, i am LIV - Lebensmittelinhaltverifizierer.");
+		System.out.println("Hello, IÂ´am LIV - Lebensmittelinhaltverifizierer.");
 
 	}
 
