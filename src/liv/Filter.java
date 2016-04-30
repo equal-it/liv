@@ -14,7 +14,7 @@ package liv;
  *
  */
 
-public class filter {
+public class Filter {
 
 	int[] filter = new int[4]; // default value need
 
