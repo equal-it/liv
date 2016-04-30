@@ -1,5 +1,6 @@
 /**
  * Link Vorlage für http anfrage 
+
  * http://www.mkyong.com/java/how-to-send-http-request-getpost-in-java/
  */
 
@@ -22,12 +23,19 @@ public class HttpAbfrage {
 
 	private final String USER_AGENT = "Mozilla/5.0";
 
-	public static void main(String[] args) throws Exception {
+	public String ean = null;
 
-		HttpAbfrage http = new HttpAbfrage();
+	public void setBarCodeNr(String ean) {
+		this.ean = ean;
+	}
 
-		System.out.println("Testing 1 - Send Http GET request");
-		http.sendGet();
+	public String getBarCodeNr() {
+		return ean;
+	}
+
+	//public static void main(String[] args) throws Exception {
+
+
 
 		// laktonaut.de API per GET zu erreichen POST ertmal nicht relevant
 		/*
@@ -35,10 +43,10 @@ public class HttpAbfrage {
 		 * http.sendPost();
 		 */
 
-	}
+	//}
 
 	// HTTP GET request
-	private void sendGet() throws Exception {
+	public void sendGet() throws Exception {
 
 		/*
 		 * gtin
@@ -54,7 +62,7 @@ public class HttpAbfrage {
 		 * 
 		 * Die Angabe wird unabhängig von ihrer Länge als vollständige GTIN
 		 * interpretiert. Eine Suche nach Teil-GTINs ist derzeit nicht möglich.
-		 * 
+		 * -----------------------------------------------------------------------
 		 * key
 		 * 
 		 * Persönlicher Zugangsschlüssel des Clients; wird auf Anfrage zugeteilt
@@ -62,10 +70,13 @@ public class HttpAbfrage {
 		 * Zu Testzwecken kann der Schlüssel test verwendet werden. Dieser ist
 		 * jedoch einer Begrenzung unterworfen, was die Zahl der Anfragen pro IP
 		 * und Zeiteinheit angeht.
+		 * -----------------------------------------------------------------------
+		 * Muster   URL = http://www.laktonaut.de/api.php?action=query&gtin=gtin&key=key 
+		 * Beispiel URL = http://www.laktonaut.de/api.php?action=query&gtin=4000417025005&key=test
 		 * 
 		 */
 
-		String url = "http://www.laktonaut.de/api.php?action=query&gtin=4000417025005&key=test ";
+		String url = "http://www.laktonaut.de/api.php?action=query&gtin=" + ean + "&key=test ";
 
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -78,7 +89,7 @@ public class HttpAbfrage {
 
 		int responseCode = con.getResponseCode();
 		System.out.println("\nSending 'GET' request to URL : " + url);
-		System.out.println("Response Code : " + responseCode + " (wenn 200 ist alles OK");
+		System.out.println("\nResponse Code : " + responseCode + " (wenn 200 ist alles OK)");
 
 		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 		String inputLine;
@@ -90,7 +101,7 @@ public class HttpAbfrage {
 		in.close();
 
 		// print result
-		System.out.println(response.toString());
+		System.out.println("\n" + response.toString());
 
 	}
 	/*
