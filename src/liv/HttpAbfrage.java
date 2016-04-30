@@ -1,7 +1,12 @@
 /**
  * Link Vorlage für http anfrage 
-
+ *
  * http://www.mkyong.com/java/how-to-send-http-request-getpost-in-java/
+ * 
+ * Laktonaut API Doku
+ * 
+ * http://www.laktonaut.de/api-doku.html
+ * 
  */
 
 package liv;
@@ -27,10 +32,6 @@ public class HttpAbfrage {
 
 	public void setBarCodeNr(String ean) {
 		this.ean = ean;
-	}
-
-	public String getBarCodeNr() {
-		return ean;
 	}
 
 	//public static void main(String[] args) throws Exception {
