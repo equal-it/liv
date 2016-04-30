@@ -16,7 +16,7 @@ package liv;
 
 public class filter {
 
-	int[] filter = new int[4];
+	int[] filter = new int[4]; // default value need
 
 	public void  setFilter(int a, int b, int c, int d, int e) {
 		filter[0] = a;

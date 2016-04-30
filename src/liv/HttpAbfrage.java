@@ -1,3 +1,8 @@
+/**
+ * Link Vorlage für http anfrage 
+ * http://www.mkyong.com/java/how-to-send-http-request-getpost-in-java/
+ */
+
 package liv;
 
 import java.io.BufferedReader;
