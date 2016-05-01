@@ -23,7 +23,7 @@ public class TestHttpAbfrage {
 		// erzeugt Objekt http aus Klasse HttpAbfrage
 		HttpAbfrage datenAbfrage01 = new HttpAbfrage();
 		// setzt die Barcode Nummer in der Klasse HttpAbfrage
-		datenAbfrage01.setBarCodeNr(ean);
+		datenAbfrage01.setEan(ean);
 		// führt Testanfrage aus
 		System.out.println("Testing - Send Http GET request to www.laktonaut.de/api");
 		datenAbfrage01.sendGet();

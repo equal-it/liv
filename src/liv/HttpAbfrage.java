@@ -36,7 +36,7 @@ public class HttpAbfrage {
 
 	public String ean = null;
 
-	public void setBarCodeNr(String ean) {
+	public void setEan(String ean) {
 		this.ean = ean;
 	}
 
