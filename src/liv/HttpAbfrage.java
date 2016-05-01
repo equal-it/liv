@@ -1,17 +1,22 @@
-/**
- * Link Vorlage für http anfrage 
- *
- * http://www.mkyong.com/java/how-to-send-http-request-getpost-in-java/
- * 
- * Laktonaut API Doku
- * 
- * http://www.laktonaut.de/api-doku.html
- * 
- */
-
 package liv;
 
 import java.io.BufferedReader;
+
+/**
+ * Project: LIV - Lebensmittelinhaltverifizierer
+ * 
+ * @author team equal-IT
+ * mail: team@equal-it.de
+ * @version  00.00.02 2016/05/01 - 13:45
+ * 
+ * Link Vorlage fuer http-Anfrage:
+ * http://www.mkyong.com/java/how-to-send-http-request-getpost-in-java/
+ * 
+ * Laktonaut API Doku:
+ * http://www.laktonaut.de/api-doku.html
+ */
+
+
 //erstmal nicht erforderlich
 /*
 import java.io.DataOutputStream;
@@ -24,6 +29,7 @@ import java.net.URL;
 /*
 import javax.net.ssl.HttpsURLConnection;
 */
+
 public class HttpAbfrage {
 
 	private final String USER_AGENT = "Mozilla/5.0";
@@ -54,21 +60,21 @@ public class HttpAbfrage {
 		 * 
 		 * GTIN (EAN) des gesuchten Artikels
 		 * 
-		 * Eine gültige GTIN ist ein String aus zumeist 8 oder 13, manchmal auch
+		 * Eine gï¿½ltige GTIN ist ein String aus zumeist 8 oder 13, manchmal auch
 		 * 12 oder 14 Ziffern. Formal akzeptiert werden allerdings Strings
-		 * beliebiger Länge. Alle nichtnumerischen Zeichen (beispielsweise
-		 * Trennzeichen) werden dabei ignoriert. Führende Nullen sind jedoch von
-		 * Bedeutung – eine GTIN ist ein String und keine Zahl, 0000012345670
+		 * beliebiger Lï¿½nge. Alle nichtnumerischen Zeichen (beispielsweise
+		 * Trennzeichen) werden dabei ignoriert. Fï¿½hrende Nullen sind jedoch von
+		 * Bedeutung ï¿½ eine GTIN ist ein String und keine Zahl, 0000012345670
 		 * also etwas anderes als 12345670.
 		 * 
-		 * Die Angabe wird unabhängig von ihrer Länge als vollständige GTIN
-		 * interpretiert. Eine Suche nach Teil-GTINs ist derzeit nicht möglich.
+		 * Die Angabe wird unabhï¿½ngig von ihrer Lï¿½nge als vollstï¿½ndige GTIN
+		 * interpretiert. Eine Suche nach Teil-GTINs ist derzeit nicht mï¿½glich.
 		 * -----------------------------------------------------------------------
 		 * key
 		 * 
-		 * Persönlicher Zugangsschlüssel des Clients; wird auf Anfrage zugeteilt
+		 * Persï¿½nlicher Zugangsschlï¿½ssel des Clients; wird auf Anfrage zugeteilt
 		 * 
-		 * Zu Testzwecken kann der Schlüssel test verwendet werden. Dieser ist
+		 * Zu Testzwecken kann der Schlï¿½ssel test verwendet werden. Dieser ist
 		 * jedoch einer Begrenzung unterworfen, was die Zahl der Anfragen pro IP
 		 * und Zeiteinheit angeht.
 		 * -----------------------------------------------------------------------
