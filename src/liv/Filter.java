@@ -4,7 +4,7 @@
 package liv;
 
 /**
- * class filter
+ * class Filter
  * 
  * Project: Liv - Lebensmittelinhaltverifizierer
  * 
@@ -31,7 +31,7 @@ public class Filter {
 	}
 
 	/**
-	 * Setzt Filter auf Laktose true
+	 * Setzt Filter auf Laktose = true als Standard
 	 */
 	public void setFilterDefault(){
 		filter[0] = true; //Laktose
