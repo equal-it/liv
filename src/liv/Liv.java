@@ -18,7 +18,7 @@ public class Liv {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println("Willkommen bei LIV - Deinem Lebensmittelinhaltverifizierer.");
+		System.out.println("Willkommen bei LIV - deinem Lebensmittelinhaltverifizierer.");
 
 	}
 
