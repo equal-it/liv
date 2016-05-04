@@ -9,7 +9,7 @@ package liv;
  * Project: Liv - Lebensmittelinhaltverifizierer
  * 
  * @author team equal-IT
- * mail: team@equal-it.de
+ * @mail: team@equal-it.de
  * @version  00.00.01 2016/04/29 - 10:47
  *
  */
@@ -22,8 +22,8 @@ public class Filter {
 		filter[0] = a; //Laktose
 		filter[1] = b;
 		filter[2] = c;
-		filter[3] = d;
-		filter[4] = e;
+		filter[3] = d; 
+		filter[4] = e; 
 	}
 	
 	public boolean[] getFilter(){
