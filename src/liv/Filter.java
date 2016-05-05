@@ -8,15 +8,27 @@ package liv;
  * 
  * Project: Liv - Lebensmittelinhaltverifizierer
  * 
- * @author team equal-IT
- * @mail: team@equal-it.de
+ * @author team equal-IT, team@equal-it.de
  * @version  00.00.01 2016/04/29 - 10:47
  *
  */
 
 public class Filter {
+	/**
+	 * Filterklasse
+	 * Setzt den Filter fuer die Ampel-Ausgabe
+	 * 
+	 * @param a = Laktose
+	 * @param b =
+	 * @param c =
+	 * @param d = 
+	 * @param e =
+	 * 
+	 * @return filter - ausgewaehltes Kriterium
+	 * 
+	 */
 
-	boolean[] filter = new boolean[4]; // default value need
+	boolean[] filter = new boolean[4]; // default value
 
 	public void  setFilter(boolean a, boolean b, boolean c, boolean d, boolean e) {
 		filter[0] = a; //Laktose
@@ -25,6 +37,7 @@ public class Filter {
 		filter[3] = d; 
 		filter[4] = e; 
 	}
+	
 	
 	public boolean[] getFilter(){
 		return  filter;
