@@ -26,7 +26,7 @@ public class LivEins {	//Console
 		    String eingabe = br.readLine();
 		    int auswahl = Integer.parseInt(eingabe);
 		    if (auswahl == 1) {
-		      System.out.println("Lebensmittelfilter setzen");  // println ersetzen durch Methode nächste Klasse
+		      liv.Filter.setFilter();  // println ersetzen durch Methode nächste Klasse
 		    }
 		    else if (auswahl == 2) {
 		      System.out.println("Impressum ansehen");			// println ersetzen durch Methode nächste Klasse

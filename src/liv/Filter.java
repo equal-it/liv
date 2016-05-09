@@ -28,16 +28,22 @@ public class Filter {
 	 * 
 	 */
 
-	boolean[] filter = new boolean[4]; // default value
+	static boolean[] filter = new boolean[4]; // default value
 
 	public void  setFilter(boolean a, boolean b, boolean c, boolean d, boolean e) {
 		filter[0] = a; //Laktose
 		filter[1] = b;
 		filter[2] = c;
 		filter[3] = d; 
-		filter[4] = e; 
 	}
 	
+	public static void setFilter(){
+		System.out.println("Welchen Filter wollen sie setzen?/n");
+		System.out.println("1: Laktose  Filter ist =" + filter[0]);
+		System.out.println("2: undefine Filter ist =" + filter[1]);
+		System.out.println("3: undefine Filter ist =" + filter[2]);
+		System.out.println("4: undefine Filter ist =" + filter[3]);
+	}
 	
 	public boolean[] getFilter(){
 		return  filter;
