@@ -34,6 +34,7 @@ public class Filter {
 
 	static boolean[] filter = new boolean[3]; // default value
 
+	
 	public void setFilter(boolean a, boolean b, boolean c) {
 		filter[0] = a; // Laktose
 		filter[1] = b;
@@ -116,6 +117,12 @@ public class Filter {
 
 	}
 
+	public static void toStringFilter(){
+	System.out.println("Laktose   Filter = " + filter[0]);
+	System.out.println("undifine1 Filter = " + filter[1]);
+	System.out.println("undifine2 Filter = " + filter[2] +"\n");
+	}
+	
 	public boolean[] getFilter() {
 		return filter;
 	}
@@ -123,11 +130,10 @@ public class Filter {
 	/**
 	 * Setzt Filter auf Laktose = true als Standard
 	 */
-	public void setFilterDefault() {
+	public static void setFilterDefault() {
 		filter[0] = true; // Laktose
 		filter[1] = false;
 		filter[2] = false;
-		filter[3] = false;
-		filter[4] = false;
+
 	}
 }

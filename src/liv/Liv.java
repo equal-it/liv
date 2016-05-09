@@ -33,8 +33,9 @@ public class Liv { // Console
 		    boolean verlassen = false;
 		    do{
 		    System.out.println("Wähle  1  um über einen Filter Deiner Wahl ein Produkt auf diesen Inhaltsstoff zu überprüfen!");
-			System.out.println("Wähle  2  um Dir das Impressum anzusehen!");				
-			System.out.println("Wähle  3  zum Beenden!");		
+		    System.out.println("Wähle  2  aktuel gesetzte Filter anzeigen!");
+		    System.out.println("Wähle  3  um Dir das Impressum anzusehen!");
+			System.out.println("Wähle  4  zum Beenden!");		
 			String eingabe = br.readLine();
 			int auswahl = Integer.parseInt(eingabe);
 		    switch (auswahl){
@@ -42,10 +43,13 @@ public class Liv { // Console
 		    		liv.Filter.setFilter();  
 		    		break;
 		    	case 2:
+		    		liv.Filter.toStringFilter();
+		    		break;
+		    	case 3:
 		    		System.out.println("Impressum ansehen");			
 		    		// println ersetzen durch Methode nächste Klasse
 		    		break;
-		    	case 3:
+		    	case 4:
 		    		verlassen=true;
 		    		break;
 		    	default:
