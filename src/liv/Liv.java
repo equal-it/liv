@@ -62,6 +62,6 @@ public class Liv { // Console
 		      System.out.println( ex.getMessage() );
 		    } // catch
 
-	} // Ende public static void main..
+	}	// public static void main(String[] args) { 
 
-}// Ende class
+}	// public class Liv {

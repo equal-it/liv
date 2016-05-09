@@ -17,5 +17,4 @@ public class Impressum {
 		System.out.println ("LIV by equal-IT");
 
 	}
-	
 }
