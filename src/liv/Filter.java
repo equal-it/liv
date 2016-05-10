@@ -81,10 +81,10 @@ public class Filter {
 					eingabeSetFilter = br.readLine();
 					switch (eingabeSetFilter) {
 					case "s":
-						filter[0] = true;
+						filter[1] = true;
 						break;
 					case "l":
-						filter[0] = false;
+						filter[1] = false;
 						break;
 					default:
 						System.out.println("Falsche Eingabe, bitte Filter Auswählen.");
@@ -96,10 +96,10 @@ public class Filter {
 					eingabeSetFilter = br.readLine();
 					switch (eingabeSetFilter) {
 					case "s":
-						filter[0] = true;
+						filter[2] = true;
 						break;
 					case "l":
-						filter[0] = false;
+						filter[2] = false;
 						break;
 					default:
 						System.out.println("Falsche Eingabe, bitte Filter Auswählen.");
