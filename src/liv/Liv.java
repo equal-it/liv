@@ -12,56 +12,47 @@ import java.io.*;
 
 public class Liv { // Console
 
-	// public int filter;
-	// public int impressum;
-
-	// public void Anzeige (int filter, int impressum) {
-	// this.filter = 1;
-	// this.impressum = 2;
-	// }
 
 	public static void main(String[] args) { 
 		
 		System.out.println("Herzlich Willkommen bei LIV - deinem Lebensmittelinhaltverifizierer.\n");
-		System.out.println("Was möchtest Du als nächstes tun? \n\n");
-				//+ "Wähle  1  um über einen Filter Deiner Wahl ein Produkt auf diesen Inhaltsstoff zu überprüfen!\n"
-				//+ "Wähle  2  um Dir das Impressum anzusehen!");
+		System.out.println("Was moechtest Du als naechstes tun?\n");
+				//+ "WÃ¤hle  1  um Ã¼ber einen Filter Deiner Wahl ein Produkt auf diesen Inhaltsstoff zu Ã¼berprÃ¼fen!\n"
+				//+ "WÃ¤hle  2  um Dir das Impressum anzusehen!");
 		
-		try {
+		try { //start try
 			InputStreamReader isr = new InputStreamReader(System.in);
 		    BufferedReader br = new BufferedReader(isr);
 		    boolean verlassen = false;
-		    do{
-		    System.out.println("Wähle  1  um über einen Filter Deiner Wahl, ein Produkt auf diesen Inhaltsstoff zu überprüfen!");
-		    System.out.println("Wähle  2  um den aktuell gesetzten Filter anzuzeigen!");
-		    System.out.println("Wähle  3  um Dir das Impressum anzusehen!");
-			System.out.println("Wähle  4  zum Beenden!");		
-			String eingabe = br.readLine();
-			int auswahl = Integer.parseInt(eingabe);
+		    do{ // start do while menue
+		    System.out.println("Waehle  1  um Filter einzustellen");
+		    System.out.println("Waehle  2  um den aktuell gesetzten Filter anzuzeigen!");
+		    System.out.println("Waehle  3  um Dir das Impressum anzusehen!");
+			System.out.println("Waehle  4  zum Beenden!");		
+			String eingabe = br.readLine();	 // liest die Eingabe
+			int auswahl = Integer.parseInt(eingabe); // wandelt eingabe String zu Integer
 		    switch (auswahl){
 		    	case 1:
 		    		liv.Filter.setFilter();  
 		    		break;
 		    	case 2:
-		    		liv.Filter.toStringFilter();
+		    		liv.Filter.printFilter();
 		    		break;
 		    	case 3:
-		    		System.out.println("Impressum ansehen");			
-		    		// println ersetzen durch Methode nächste Klasse liv.Impressum.xxx
+		    		liv.Impressum.printImpressum();
 		    		break;
 		    	case 4:
 		    		verlassen=true;
 		    		break;
 		    	default:
-		    		System.out.println("Bitte wähle  1 / 2 / 3");  	
-		    		// println ersetzen durch Methode nächste Klasse
+		    		System.out.println("Bitte waehle  1 / 2 / 3 / 4\n");  	
 		    }											   	 
-		    }while (verlassen==false); 
-		} // try
+		    }while (verlassen==false); // end do while menue
+		} // end try
 		catch( IOException ex ) {
 		      System.out.println( ex.getMessage() );
-		    } // catch
+		    } // end catch
 
-	}	// public static void main(String[] args) { 
+	}	// end main
 
-}	// public class Liv {
+}	// end class

@@ -2,6 +2,7 @@ package liv;
 
 import java.io.BufferedReader;
 
+
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
@@ -91,6 +92,10 @@ public class HttpAbfrage {
 		int responseCode = con.getResponseCode();
 		System.out.println("\nSending 'GET' request to URL : " + url);
 		System.out.println("\nResponse Code : " + responseCode + " (wenn 200 ist alles OK)");
+		
+		//felix
+		//https://www.video2brain.com/de/tutorial/daten-entgegennehmen
+		//über Beuth proxy kann man das gucken
 
 		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 		String inputLine;
@@ -104,7 +109,8 @@ public class HttpAbfrage {
 
 		// print result
 		System.out.println("\n" + response.toString());
-	
+
+		
 	}// sendGet
 	
 	

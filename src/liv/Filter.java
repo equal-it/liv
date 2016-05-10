@@ -32,7 +32,7 @@ public class Filter {
 	 * 
 	 */
 
-	static boolean[] filter = new boolean[3]; // default value
+	static boolean[] filter = new boolean[3]; // default value false
 
 	
 	public void setFilter(boolean a, boolean b, boolean c) {
@@ -117,7 +117,7 @@ public class Filter {
 
 	}
 
-	public static void toStringFilter(){
+	public static void printFilter(){
 	System.out.println("Laktose   Filter = " + filter[0]);
 	System.out.println("undifine1 Filter = " + filter[1]);
 	System.out.println("undifine2 Filter = " + filter[2] +"\n");

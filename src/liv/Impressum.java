@@ -12,7 +12,7 @@ package liv;
 
 public class Impressum {
 	// Methode definieren auf die zugegriffen werden kann
-	public static void main(String[] args){
+	public static void printImpressum(){
 		System.out.println ("LIV - Die Smartphone-App,\ndie Menschen mit Lebensmittelunverträglichkeiten\nunerwünschte Inhaltsstoffe von Lebensmitteln\nauf einen Blick erfassen lässt.\n");
 		System.out.println ("LIV by equal-IT");
 
