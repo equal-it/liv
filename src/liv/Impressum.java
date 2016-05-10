@@ -7,7 +7,7 @@ package liv;
  * 
  * @author team equal-IT
  * @mail: team@equal-it.de
- * @version  00.00.01 2016/05/09
+ * @version  00.00.02 2016/05/09
  */
 
 public class Impressum {
