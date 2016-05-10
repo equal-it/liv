@@ -16,9 +16,9 @@ public class Liv { // Console
 
 		System.out.println("Herzlich Willkommen bei LIV - deinem Lebensmittelinhaltverifizierer.");
 		System.out.println("\nWas moechtest Du als naechstes tun?");
-		// + "WÃ¤hle 1 um Ã¼ber einen Filter Deiner Wahl ein Produkt auf diesen
-		// Inhaltsstoff zu Ã¼berprÃ¼fen!\n"
-		// + "WÃ¤hle 2 um Dir das Impressum anzusehen!");
+		// + "Waehle 1 um ueber einen Filter Deiner Wahl ein Produkt auf diesen
+		// Inhaltsstoff zu ueberpruefen!\n"
+		// + "Waehle 2 um Dir das Impressum anzusehen!");
 
 		try { // start try
 			InputStreamReader isr = new InputStreamReader(System.in);
