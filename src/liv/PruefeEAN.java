@@ -9,10 +9,19 @@ package liv;
  */
 
 public class PruefeEAN {
-	public static void pruefeEAN() {
+	public static void pruefeEAN(String eanString) {
+
 		// Variablen deklarieren
 		// int[] ean enthaelt die vorgegebene EAN
-		int[] ean = { 4, 0, 1, 2, 7, 0, 0, 9, 6, 3, 1, 0, 9 };
+		int[] ean = new int[eanString.length()];
+		char[] eanChar = new char[eanString.length()];
+
+		for (int i = 0; i < eanString.length(); i++) {
+			eanChar[i] = eanString.charAt(i);
+		}
+		for (int i = 0; i <= eanString.length() - 1; i++) {
+			ean[i] = Character.getNumericValue(eanChar[i]);
+		}
 		// int summe1 enthaelt die summe der positionen 1,3,5,7,9 und 11
 		int summe1 = 0;
 		// int summe2 enthaelt die summe der positionen 2,4,6,8,10 und 12
@@ -65,11 +74,11 @@ public class PruefeEAN {
 		if (summe4 - summe3 == ean[12]) {
 			// dann ist die EAN korrekt und die entsprechende Meldung wird
 			// ausgegeben
-			System.out.println("Ihre eingegebene EAN ist korrekt :" + ean2);
+			System.out.println("\nIhre eingegebene EAN ist korrekt :" + ean2);
 		} else {
 			// dann ist die EAN nicht korrekt und die entsprechende Meldung wird
 			// ausgegeben
-			System.out.println("Ihre eingegebene EAN ist nicht korrekt :" + ean2);
+			System.out.println("\nIhre eingegebene EAN ist nicht korrekt :" + ean2);
 		}
 	}
 }
