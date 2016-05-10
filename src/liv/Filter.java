@@ -12,8 +12,8 @@ import java.io.InputStreamReader;
  * 
  * Project: Liv - Lebensmittelinhaltverifizierer
  * 
- * @author team equal-IT, team@equal-it.de
- * @version 00.00.01 2016/04/29 - 10:47
+ * @author team equal-IT, team@equal-it.de /felix, anne
+ * @version 00.00.10 2016/05/10
  *
  */
 
