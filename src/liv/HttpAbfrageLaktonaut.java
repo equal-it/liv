@@ -35,7 +35,7 @@ import java.net.URL;
  * @version 00.00.04 2016/05/02
  */
 
-public class HttpAbfrage {
+public class HttpAbfrageLaktonaut {
 
 	private final static String USER_AGENT = "Mozilla/5.0";
 

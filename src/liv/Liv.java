@@ -47,8 +47,8 @@ public class Liv { // Console
 						// PruefeEAN
 						liv.PruefeEAN.pruefeEAN("4000417025005");
 						// HttpAbfrage
-						liv.HttpAbfrage.sendGet("4000417025005");
-						System.out.println("\nLaktose in Barcode 4000417025005 enthalten : " + liv.HttpAbfrage.isLaktose());
+						liv.HttpAbfrageLaktonaut.sendGet("4000417025005");
+						System.out.println("\nLaktose in Barcode 4000417025005 enthalten : " + liv.HttpAbfrageLaktonaut.isLaktose());
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
