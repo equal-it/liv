@@ -12,6 +12,6 @@ package liv;
 
 public class EingabeEAN {
 	
-	// Hier muessen Methoden hin, die einen per Konsole eingegebenen EAN einlesen
+	// Hier muessen Methoden hin, die einen per Konsole eingegebenen EAN (als String)einlesen 
 
 }
