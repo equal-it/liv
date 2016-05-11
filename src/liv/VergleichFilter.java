@@ -21,5 +21,7 @@ public class VergleichFilter {
 	
 	// Reihenfolge: Filter muss gesetzt sein, HttpAbfrage muss aufgerufen sein, Barcodeeingabe
 	// muss passiert sein
+	
+	// kevin war hier und macht das schon
 
 }

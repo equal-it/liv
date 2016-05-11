@@ -13,6 +13,7 @@ import java.util.Scanner;
 
 public class EingabeEAN {
 	
+<<<<<<< HEAD
 	// Hier muessen Methoden hin, die einen per Konsole eingegebenen EAN einlesen
 	
 	public static Scanner einlesen(){
@@ -52,5 +53,8 @@ public class EingabeEAN {
 //		System.out.println("Ausgabe: "+text);
 
 	
+=======
+	// Hier muessen Methoden hin, die einen per Konsole eingegebenen EAN (als String)einlesen 
+>>>>>>> branch 'master' of https://github.com/equal-it/liv.git
 
 }
