@@ -2,18 +2,18 @@ package liv;
 import java.util.Scanner;
 
 /**
- * class Filter
+ * class EingabeEAN
  * 
  * Project: Liv - Lebensmittelinhaltverifizierer
  * 
- * @author team equal-IT, team@equal-it.de
- * @version 00.00.01 2016/05/10
+ * @author team equal-IT, team@equal-it.de, Annes Baustelle
+ * @version 00.00.02 2016/05/11
  *
  */
 
 public class EingabeEAN {
 	
-<<<<<<< HEAD
+// HEAD
 	// Hier muessen Methoden hin, die einen per Konsole eingegebenen EAN einlesen
 	
 	public static Scanner einlesen(){
@@ -26,22 +26,23 @@ public class EingabeEAN {
      System.out.println("Ausgabe: " + eingabe);
 	
      return ean;
-	}
+	} // Methode Scanner
 	
+} //class EingabeEAN
 	
 	// oder
 	
 	
-	public Scanner einlesen2(){
+	//public Scanner einlesen2(){
 		
-		Scanner ean2 = new Scanner(System.in);
-		System.out.print("Bitte EAN eingeben: " + ean2);
-		String eingabe = ean2.nextLine();
-		System.out.println("Eingegebene EAN: " + eingabe);
+		//Scanner ean2 = new Scanner(System.in);
+		//System.out.print("Bitte EAN eingeben: " + ean2);
+		//String eingabe = ean2.nextLine();
+		//System.out.println("Eingegebene EAN: " + eingabe);
 		
-		return ean2;
+		//return ean2;
 		
-	}
+	// } // Methode einlesen2
 	
 	
 //	funzt nicht
@@ -53,8 +54,5 @@ public class EingabeEAN {
 //		System.out.println("Ausgabe: "+text);
 
 	
-=======
 	// Hier muessen Methoden hin, die einen per Konsole eingegebenen EAN (als String)einlesen 
->>>>>>> branch 'master' of https://github.com/equal-it/liv.git
-
-}
+// branch 'master' of https://github.com/equal-it/liv.git
