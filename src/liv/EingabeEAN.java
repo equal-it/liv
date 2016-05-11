@@ -1,4 +1,8 @@
 package liv;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
@@ -11,48 +15,38 @@ import java.util.Scanner;
  *
  */
 
-public class EingabeEAN {
-	
-// HEAD
-	// Hier muessen Methoden hin, die einen per Konsole eingegebenen EAN einlesen
-	
-	public static Scanner einlesen(){
-	
-	 Scanner ean = new Scanner(System.in);
+public class EingabeEAN
+{
+	public static String eingabe;
+/**
+ * 
+ * @return 
+ */
+	public static String getEingabe() {
+		return eingabe;
+	}
+/**
+ * 
+ * @throws IOException
+ */
 
-     System.out.println("Eingabe: ");
-     String eingabe = ean.nextLine();
-     
-     System.out.println("Ausgabe: " + eingabe);
-	
-     return ean;
-	} // Methode Scanner
-	
-} //class EingabeEAN
-	
-	// oder
-	
-	
-	//public Scanner einlesen2(){
-		
-		//Scanner ean2 = new Scanner(System.in);
-		//System.out.print("Bitte EAN eingeben: " + ean2);
-		//String eingabe = ean2.nextLine();
-		//System.out.println("Eingegebene EAN: " + eingabe);
-		
-		//return ean2;
-		
-	// } // Methode einlesen2
-	
-	
-//	funzt nicht
-	// String ean;
-//
-//		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-//		System.out.println("Eingabe :");
-//		ean = input.readLine();
-//		System.out.println("Ausgabe: "+text);
+	public static void einlesen() throws IOException {
 
-	
-	// Hier muessen Methoden hin, die einen per Konsole eingegebenen EAN (als String)einlesen 
-// branch 'master' of https://github.com/equal-it/liv.git
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		System.out.println("Test EAN: 4000417025005");
+		System.out.println("Eingabe: ");
+		System.out.println("Test EAN: \n4000417025005");
+		try {
+			eingabe = br.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		System.out.println("Ausgabe: " + eingabe);
+
+	} // Methode einlesen
+
+} // class EingabeEAN
+

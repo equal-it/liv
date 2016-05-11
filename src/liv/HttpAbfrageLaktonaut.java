@@ -43,7 +43,7 @@ public class HttpAbfrageLaktonaut {
 
 	public static String laktose;
 
-	public static String isLaktose() {
+	public static String getLaktose() {
 		return laktose;
 	}
 

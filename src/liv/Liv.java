@@ -12,7 +12,7 @@ import java.io.*;
 
 public class Liv { // Console
 
-	public static void main(String[] args){
+	public static void main(String[] args) {
 
 		System.out.println("Herzlich Willkommen bei LIV - deinem Lebensmittelinhaltverifizierer.");
 		System.out.println("\nWas moechtest Du als naechstes tun?");
@@ -27,10 +27,7 @@ public class Liv { // Console
 			do { // start do while menue
 				System.out.println("\n---------------------------------------------------------------------");
 				System.out.println("Waehle  1  um Filter einzustellen");
-				System.out.println("Waehle  2  um den aktuell gesetzten Filter anzuzeigen!");
-				System.out.println("Waehle  3  fuer Test Pruefung und Abfrage mit Barcode 4000417025005!");
-				System.out.println("           noch keine uebereinstimmung mit dem gesetzten Filter!!!");
-				System.out.println("           nur zum Testen der Klassen HttpAbfrage und PruefeEAN!!!");
+				System.out.println("Waehle  2  um eine EAN einzugeben!");
 				System.out.println("Waehle  8  um Dir das Impressum anzusehen!");
 				System.out.println("Waehle  9  zum Beenden!");
 				String eingabe = br.readLine(); // liest die Eingabe
@@ -40,19 +37,16 @@ public class Liv { // Console
 					liv.Filter.setFilter();
 					break;
 				case 2:
-					liv.Filter.printFilter();
-					break;
-				case 3:
+					liv.EingabeEAN.einlesen();
+					liv.PruefeEAN.pruefeEAN(liv.EingabeEAN.getEingabe());
 					try {
-						// PruefeEAN
-						liv.PruefeEAN.pruefeEAN("4000417025005");
-						// HttpAbfrage
-						liv.HttpAbfrageLaktonaut.sendGet("4000417025005");
-						System.out.println("\nLaktose in Barcode 4000417025005 enthalten : " + liv.HttpAbfrageLaktonaut.isLaktose());
-					} catch (Exception e) {
+						liv.HttpAbfrageLaktonaut.sendGet(liv.EingabeEAN.getEingabe());
+					} catch (Exception e1) {
 						// TODO Auto-generated catch block
-						e.printStackTrace();
+						e1.printStackTrace();
 					}
+					System.out.println("\nLaktose in Barcode " + liv.EingabeEAN.getEingabe() + " enthalten : "
+							+ liv.HttpAbfrageLaktonaut.getLaktose());
 					break;
 				case 8:
 					liv.Impressum.printImpressum();
