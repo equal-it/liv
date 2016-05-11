@@ -13,12 +13,9 @@ import java.io.*;
 public class Liv { // Console
 
 	public static void main(String[] args) {
-
+		int auswahl = 0;
 		System.out.println("Herzlich Willkommen bei LIV - deinem Lebensmittelinhaltverifizierer.");
 		System.out.println("\nWas moechtest Du als naechstes tun?");
-		// + "Waehle 1 um ueber einen Filter Deiner Wahl ein Produkt auf diesen
-		// Inhaltsstoff zu ueberpruefen!\n"
-		// + "Waehle 2 um Dir das Impressum anzusehen!");
 
 		try { // start try
 			InputStreamReader isr = new InputStreamReader(System.in);
@@ -31,22 +28,26 @@ public class Liv { // Console
 				System.out.println("Waehle  8  um Dir das Impressum anzusehen!");
 				System.out.println("Waehle  9  zum Beenden!");
 				String eingabe = br.readLine(); // liest die Eingabe
-				int auswahl = Integer.parseInt(eingabe); // wandelt eingabe String zu Integer
+				try {
+					auswahl = Integer.parseInt(eingabe);// String to int
+				} catch (Exception e3) {
+					System.out.println("FEHLER! Falsche Menue Eingabe!");
+					auswahl=0;
+				}
 				switch (auswahl) {
 				case 1:
 					liv.Filter.setFilter();
 					break;
 				case 2:
 					liv.EingabeEAN.einlesen();
-					liv.PruefeEAN.pruefeEAN(liv.EingabeEAN.getEingabe());
+					if(liv.PruefeEAN.getEanIsOK()==true){
 					try {
 						liv.HttpAbfrageLaktonaut.sendGet(liv.EingabeEAN.getEingabe());
 					} catch (Exception e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						System.out.println("FEHLER! Problem mit der Abfrage zu EAN: " + liv.EingabeEAN.getEingabe());
 					}
 					System.out.println("\nLaktose in Barcode " + liv.EingabeEAN.getEingabe() + " enthalten : "
-							+ liv.HttpAbfrageLaktonaut.getLaktose());
+							+ liv.HttpAbfrageLaktonaut.getLaktose());} //if
 					break;
 				case 8:
 					liv.Impressum.printImpressum();
@@ -55,7 +56,7 @@ public class Liv { // Console
 					verlassen = true;
 					break;
 				default:
-					System.out.println("Bitte waehle  1 / 2 / 3 / 4\n");
+					System.out.println("Bitte waehle  1 / 2 / 8 / 9\n");
 				}
 			} while (verlassen == false); // end do while menue
 		} // end try

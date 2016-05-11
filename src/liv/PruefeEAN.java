@@ -9,6 +9,18 @@ package liv;
  */
 
 public class PruefeEAN {
+	static boolean eanIsOK = false;
+/**
+ * 
+ * @return
+ */
+	public static boolean getEanIsOK() {
+		return eanIsOK;
+	}
+/**
+ * 
+ * @param eanString
+ */
 	public static void pruefeEAN(String eanString) {
 
 		// Variablen deklarieren
@@ -73,12 +85,11 @@ public class PruefeEAN {
 		// Ist der Wert des Array-Feldes 12 = summe4 - summe3
 		if (summe4 - summe3 == ean[12]) {
 			// dann ist die EAN korrekt und die entsprechende Meldung wird
-			// ausgegeben
-			System.out.println("\nIhre eingegebene EAN ist korrekt :" + ean2);
+			eanIsOK = true;
 		} else {
 			// dann ist die EAN nicht korrekt und die entsprechende Meldung wird
 			// ausgegeben
-			System.out.println("\nIhre eingegebene EAN ist nicht korrekt :" + ean2);
+			eanIsOK = false;
 		}
 	}
 }
