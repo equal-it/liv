@@ -103,7 +103,7 @@ public class HttpAbfrageLaktonaut {
 		}
 
 		in.close();
-		
+		// hier werden die beiden Zeichen hinter <lactose>XX abgefragt (die XX)
 		int laktoseIndex = xmlResponse.lastIndexOf("<lactose>");
 		String laktoseValue = xmlResponse.substring(laktoseIndex + 9, laktoseIndex + 11);
 

@@ -21,6 +21,7 @@ public class Liv { // Console
 			InputStreamReader isr = new InputStreamReader(System.in);
 			BufferedReader br = new BufferedReader(isr);
 			boolean verlassen = false;
+			liv.Filter.setFilter();
 			do { // start do while menue
 				System.out.println("\n---------------------------------------------------------------------");
 				System.out.println("Waehle  1  um Filter einzustellen");
