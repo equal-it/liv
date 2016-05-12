@@ -1,5 +1,11 @@
 package playground;
 
+/**
+ * 
+ * @author felix
+ *
+ */
+
 public class TestHttpAbfrageDatakick {
 	public static void main(String[] args) {
 		try {
