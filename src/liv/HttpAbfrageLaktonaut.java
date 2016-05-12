@@ -25,6 +25,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+// Anne To Do: Ergebnis von class PruefeEAN einbauen: muss bei ean=false abfangen!
+
+
 /**
  * Project: Liv - Lebensmittelinhaltverifizierer
  * 
