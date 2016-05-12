@@ -1,31 +1,37 @@
 package liv;
 
 /**
- * Project: Liv - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * class Ampel
- * Stellt den Filter in Abgleich mit der Abfrage
- * in Ampelform dar.
+ * Ampel
+ * Auswertung des Abgleichs zwischen
+ * dem gesetzten Filter und der HTTPAbfrage
  * 
- * @author team equal-IT
- * @mail: team@equal-it.de
- * @version 00.00.01 2016/05/10
+ * @author	team equal-IT
+ * @mail	team@equal-it.de
+ * @version	00.00.02 2016/05/12
  */
-
+// !!! Sollten wir keine grafische Ampel realisieren können, sind die Ausgabetexte ggf. noch anzupassen ;)
 public class Ampel {
-	public static void AmpelFarbe(String isProduktOK){
-		switch (isProduktOK){
-		case "green":
-			System.out.println("\nALLES OK :-) goenn dir!!!  light=green");
-			break;
-		case "red":
-			System.out.println("\nFucking Danger :-( NICHT essen!!!   light=red");
-			break;
-		case "orange":
-			System.out.println("\nHmm, I don t know. :-| YOLO!!!   light=orange");
-			break;
-		}
-	}
 	
-
-}
+	public static void AmpelFarbe (String isProductOk){
+		
+		switch (isProductOk) {
+		
+		case "green":													// Produkt unbedenklich gem. gesetztem Filter
+			System.out.println("\nALLES OK :-) goenn es dir!!!"); 		// light=green
+			break;
+			
+		case "red":														// Produkt nicht empfehlenswert gem. gesetztem Filter
+			System.out.println("\nFucking Danger :-( NICHT essen!!!");	// light=red
+			break;
+			
+		case "yellow":													// Produkt nicht in der Datenbank enthalten
+			System.out.println("\nHmm, I don t know. :-| YOLO!!!");		// light=yellow
+			break;
+			
+		}	// switch (isProductOK){
+		
+	}	// public static void AmpelFarbe (String isProductOk){
+	
+}	//public class Ampel {
