@@ -48,11 +48,8 @@ public class Liv { // Console
 						System.out.println("FEHLER! Problem mit der Abfrage zu EAN: " + liv.EingabeEAN.getEingabe());
 					}
 					liv.VergleichFilter.vergleicheFilterLaktose(liv.Filter.getFilter(), liv.HttpAbfrageLaktonaut.getLaktose());
-					System.out.println("Ampelfarbe = " + liv.VergleichFilter.getIsProduktOK());
+					liv.Ampel.AmpelFarbe(liv.VergleichFilter.getIsProduktOK());
 					}
-					/**
-					 * hier sollte die Ampel aufgerufen werden
-					 */
 					break;
 				case 8:
 					liv.Impressum.printImpressum();

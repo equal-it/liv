@@ -13,7 +13,19 @@ package liv;
  */
 
 public class Ampel {
-	
+	public static void AmpelFarbe(String isProduktOK){
+		switch (isProduktOK){
+		case "green":
+			System.out.println("\nALLES OK :-) goenn dir!!!  light=green");
+			break;
+		case "red":
+			System.out.println("\nFucking Danger :-( NICHT essen!!!   light=red");
+			break;
+		case "orange":
+			System.out.println("\nHmm, I don t know. :-| YOLO!!!   light=orange");
+			break;
+		}
+	}
 	
 
 }

@@ -38,7 +38,10 @@ public class EingabeEAN {
 			InputStreamReader isr = new InputStreamReader(System.in);
 			BufferedReader br = new BufferedReader(isr);
 			System.out.println("Bitte Test/Eigene EAN eingeben");
-			System.out.println("Test EAN (Ritter Sport Marzipan 100 g) Laktose = no: \n4000417025005\nTest EAN (Milka Alpenmilch 300 g) Laktose = yes: \n7622200004607");
+			System.out.println(
+					"Test EAN (Ritter Sport Marzipan 100 g) Laktose = no:"
+					+ "\n4000417025005\nTest EAN (Milka Alpenmilch 300 g) Laktose = yes:"
+					+ "\n7622200004607\nTest EAN (Ferrero Nutella) Laktose = unbekannt:\n4008400401928");
 			try {
 				eingabe = br.readLine();
 			} catch (IOException e) {

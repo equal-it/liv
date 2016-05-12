@@ -21,7 +21,7 @@ public class VergleichFilter {
 			if (filter[0] == true) {
 				isProduktOK = "green";
 			} else {
-				isProduktOK = "red";
+				isProduktOK = "green";
 			}
 			break;
 		case "yes":
