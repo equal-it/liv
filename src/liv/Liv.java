@@ -47,11 +47,9 @@ public class Liv { // Console
 						//giibt Fehlermeldung aus wenn Fehler in HttpAbfrageLaktonaut
 						System.out.println("FEHLER! Problem mit der Abfrage zu EAN: " + liv.EingabeEAN.getEingabe());
 					}
-					/**
-					 *  Das folgende system.out.printline durch Methodenaufruf Verleiche Filter ersetzen
-					 */
-					System.out.println("\nLaktose in Barcode " + liv.EingabeEAN.getEingabe() + " enthalten : "
-							+ liv.HttpAbfrageLaktonaut.getLaktose());}
+					liv.VergleichFilter.vergleicheFilterLaktose(liv.Filter.getFilter(), liv.HttpAbfrageLaktonaut.getLaktose());
+					System.out.println("Ampelfarbe = " + liv.VergleichFilter.getIsProduktOK());
+					}
 					/**
 					 * hier sollte die Ampel aufgerufen werden
 					 */

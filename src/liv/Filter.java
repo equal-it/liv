@@ -123,7 +123,7 @@ public class Filter {
 	System.out.println("undifine2 Filter = " + filter[2] +"\n");
 	}
 	
-	public boolean[] getFilter() {
+	public static boolean[] getFilter() {
 		return filter;
 	}
 
