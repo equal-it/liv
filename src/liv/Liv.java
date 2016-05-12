@@ -32,7 +32,7 @@ public class Liv { // Console
 					auswahl = Integer.parseInt(eingabe);// String to int
 				} catch (Exception e3) {
 					System.out.println("FEHLER! Falsche Menue Eingabe!");
-					auswahl=0;
+					auswahl=0; // setzt bei Fehler auswahl = 0
 				}
 				switch (auswahl) {
 				case 1:
@@ -44,10 +44,17 @@ public class Liv { // Console
 					try {
 						liv.HttpAbfrageLaktonaut.sendGet(liv.EingabeEAN.getEingabe());
 					} catch (Exception e1) {
+						//giibt Fehlermeldung aus wenn Fehler in HttpAbfrageLaktonaut
 						System.out.println("FEHLER! Problem mit der Abfrage zu EAN: " + liv.EingabeEAN.getEingabe());
 					}
+					/**
+					 *  Das folgende system.out.printline durch Methodenaufruf Verleiche Filter ersetzen
+					 */
 					System.out.println("\nLaktose in Barcode " + liv.EingabeEAN.getEingabe() + " enthalten : "
-							+ liv.HttpAbfrageLaktonaut.getLaktose());} //if
+							+ liv.HttpAbfrageLaktonaut.getLaktose());}
+					/**
+					 * hier sollte die Ampel aufgerufen werden
+					 */
 					break;
 				case 8:
 					liv.Impressum.printImpressum();
