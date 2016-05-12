@@ -19,7 +19,7 @@ public class EingabeEAN {
 
 	/**
 	 * 
-	 * @return
+	 * @return eingabe
 	 */
 	public static String getEingabe() {
 		return eingabe;
@@ -32,7 +32,7 @@ public class EingabeEAN {
 
 	public static void einlesen() throws IOException {
 		boolean eanValue = false; // fuer Auswertung ob ean OK
-		String eingabe2 = null; // fuer Fehler Menue
+		String eingabe2 = null;   // fuer Fehler Menue
 		int auswahl = 0;
 		do {
 			InputStreamReader isr = new InputStreamReader(System.in);
