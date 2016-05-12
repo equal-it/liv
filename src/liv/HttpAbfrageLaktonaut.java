@@ -39,6 +39,16 @@ import java.net.URL;
  */
 
 public class HttpAbfrageLaktonaut {
+	
+	// Testabfrage - allerdings fehlt noch der tatsaechliche Abbruch, aber der Parameter wird geprueft.
+	{
+	if (liv.PruefeEAN.eanIsOK = false){
+			System.out.println("Abbruch - da EAN ungültig, findet keine DB-Abfrage statt.");
+	}
+	else{
+		System.out.println("DB wird nun aufgerufen.");
+	}
+	}
 
 	private final static String USER_AGENT = "Mozilla/5.0";
 
