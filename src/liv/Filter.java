@@ -65,7 +65,7 @@ public class Filter {
 				System.out.println("Waehle '1' fuer " + a + ".");  // + filter[0]
 				System.out.println("Waehle '2' fuer " + b + ".");
 				System.out.println("Waehle '3' fuer " + c + ".");
-				System.out.println("Wahele '4', um zum Hauptmenue zu gelangen.\n");
+				System.out.println("\nOder mit '4' zum Hauptmenue. \n");
 				System.out.println("---------------------------------------------------------------------");
 				
 				eingabeFilter = br.readLine();
