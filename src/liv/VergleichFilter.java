@@ -1,14 +1,14 @@
 package liv;
 
 /**
- * Project: Liv - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltverifizierer
  * 
  * class VergleichFilter Klasse vergleicht gesetzten Filter mit zurueckgegebenen
  * Werten aus der DB
  * 
- * @author team equal-IT
+ * @author team equal-IT /felix, anne
  * @mail: team@equal-it.de
- * @version 00.00.01 2016/05/10
+ * @version 00.00.05 2016/05/16
  */
 
 public class VergleichFilter {
