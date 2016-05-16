@@ -16,13 +16,11 @@ public class VergleichFilter {
 	static String isProduktOK = null;
 
 	public static void vergleicheFilterLaktose(boolean[] filter, String a) {
+		
 		switch (a) {
 		case "no": // bedeutet: kein a enthalten
-			if (liv.Filter.filter[0] == true) {
 				isProduktOK = "green";
-			} else {
-				isProduktOK = "green";
-				}
+			
 		
 		case "yes": // bedeutet: a ist enthalten
 			if (liv.Filter.filter[0] == false) { 
