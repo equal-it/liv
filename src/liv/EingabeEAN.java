@@ -14,6 +14,10 @@ import java.io.InputStreamReader;
  * @version 00.00.04 2016/05/16
  *
  */
+
+
+// ggf. boolean einfuegen, das rausgibt, ob Filter gesetzt wurde... 
+
 public class EingabeEAN {
 	public static String eingabe;
 
