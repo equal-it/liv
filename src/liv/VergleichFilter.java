@@ -18,8 +18,7 @@ public class VergleichFilter {
 	public static void vergleicheFilterLaktose(boolean[] filter, String a) {
 		switch (a) {
 		case "no":
-			// hier muessen weitere Filter ergaenzt werden!
-			if (liv.Filter.filter[0] && liv.Filter.filter[1] && liv.Filter.filter[2] == true) {
+			if (liv.Filter.filter[0] == true) {
 				isProduktOK = "green";
 			} else {
 				isProduktOK = "green";
