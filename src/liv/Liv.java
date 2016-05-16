@@ -24,10 +24,11 @@ public class Liv { // Console
 			// liv.Filter.setFilter(); // wenn nicht als erstes gewuenscht, dann auskommentieren - dann kommt Menue als erstes
 			do { // start do while menue
 				System.out.println("\n---------------------------------------------------------------------");
-				System.out.println("Waehle  1  um Filter einzustellen");
-				// System.out.println("Waehle  2  um eine EAN einzugeben!");
-				System.out.println("Waehle  8  um Dir das Impressum anzusehen!");
-				System.out.println("Waehle  9  zum Beenden!");
+				System.out.println("Waehle  '1'  um Filter einzustellen");
+				// System.out.println("Waehle  '2'  um eine EAN einzugeben!");
+				System.out.println("Waehle  '8'  um Dir das Impressum anzusehen!");
+				System.out.println("Waehle  '9'  zum Beenden!");
+				System.out.println("---------------------------------------------------------------------");
 				String eingabe = br.readLine(); // liest die Eingabe
 				try {
 					auswahl = Integer.parseInt(eingabe);// String to int

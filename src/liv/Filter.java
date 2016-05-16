@@ -31,16 +31,23 @@ public class Filter {
 	 * @return filter - ausgewaehltes Kriterium
 	 * 
 	 */
+	
+	// Fuer die zentrale Aenderung der Filterwerte
+	static String a = "Laktose";
+	static String b = "b";
+	static String c = "c";
+	
 
 	static boolean[] filter = new boolean[3]; // default value false
 
 	
-	public void setFilter(boolean lactose, boolean b, boolean c) {
-		filter[0] = lactose; // Laktose
+	public void setFilter(boolean a, boolean b, boolean c) {
+		filter[0] = a; // Laktose
 		filter[1] = b;
 		filter[2] = c;
-
 	}
+	
+	
 
 	public static void setFilter() {
 		try {
@@ -48,68 +55,81 @@ public class Filter {
 			BufferedReader br = new BufferedReader(isr);
 			String eingabeFilter;
 			String eingabeSetFilter;
+			
 			boolean verlassen = false;
 			int auswahl;
+			
 			do{
-				System.out.println("Welchen Filter wollen sie setzen?\n");
-				System.out.println("Waehle '1' fuer Laktose.");  // + filter[0]
-				System.out.println("Waehle '2' fuer b.");
-				System.out.println("Waehle '3' fuer c.");
-				System.out.println("4: Filter setzten beenden.\n");
+				System.out.println("\n---------------------------------------------------------------------");
+				System.out.println("\nWelchen Filter wollen Sie setzen?\n");
+				System.out.println("Waehle '1' fuer " + a + ".");  // + filter[0]
+				System.out.println("Waehle '2' fuer " + b + ".");
+				System.out.println("Waehle '3' fuer " + c + ".");
+				System.out.println("Wahele '4', um zum Hauptmenue zu gelangen.\n");
+				System.out.println("---------------------------------------------------------------------");
+				
 				eingabeFilter = br.readLine();
 				auswahl = Integer.parseInt(eingabeFilter);
+				
 				switch (auswahl) {
 				case 1:
-					System.out.println("Laktose Filter setzten = s, Filter loeschen = l");
+					System.out.println("\n---------------------------------------------------------------------");
+					System.out.println("Filter '" + a +"' setzen? \nBitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl: \n");
 					eingabeSetFilter = br.readLine();
 					switch (eingabeSetFilter) {
-					case "s":
+					case "j":
 						filter[0] = true;
-						System.out.println("Laktose Filter auf true gesetzt");
+						System.out.println("Filter '" + a + "' wurde gesetzt.");
+						System.out.println("Weitere Filter setzen oder mit '4' zum Hauptmenue.\n");
+						System.out.println("---------------------------------------------------------------------");
 						break;
-					case "l":
+					case "n":
 						filter[0] = false;
-						System.out.println("Laktose Filter auf flase gesetzt");
+						System.out.println("Filter '" + a + "' wurde nicht gesetzt.");
 						break;
 					default:
-						System.out.println("Falsche Eingabe, bitte Filter Auswählen.");
+						System.out.println("Falsche Eingabe, bitte einen Filter auswaehlen.");
 						break;
 					}
 					break;
+					
 				case 2:
-					System.out.println("undefine1 Filter setzten = s, Filter loeschen = l");
+					System.out.println(b + " als Filter setzten, bitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl: \n");
 					eingabeSetFilter = br.readLine();
 					switch (eingabeSetFilter) {
-					case "s":
+					case "j":
 						filter[1] = true;
 						break;
-					case "l":
+					case "n":
 						filter[1] = false;
 						break;
 					default:
-						System.out.println("Falsche Eingabe, bitte Filter Auswählen.");
+						System.out.println("Falsche Eingabe, bitte einen Filter auswaehlen.");
 						break;
 					}
 					break;
+					
 				case 3:
-					System.out.println("undefine2 Filter setzten = s, Filter loeschen = l");
+					System.out.println(c +" als Filter setzten, bitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl: \n");
 					eingabeSetFilter = br.readLine();
 					switch (eingabeSetFilter) {
-					case "s":
+					case "j":
 						filter[2] = true;
 						break;
-					case "l":
+					case "n":
 						filter[2] = false;
 						break;
 					default:
-						System.out.println("Falsche Eingabe, bitte Filter Auswählen.");
+						System.out.println("Falsche Eingabe, bitte einen Filter auswaehlen.");
 						break;
 					}
 					break;
+					
 				case 4:
 					verlassen=true;
 					break;
 				}
+				
 			} while (verlassen==false);
 		} catch (IOException ex) {
 			System.out.println( ex.getMessage() );
@@ -120,7 +140,7 @@ public class Filter {
 	public static void printFilter(){
 	System.out.println("Laktose   Filter = " + filter[0]);
 	System.out.println("undifine1 Filter = " + filter[1]);
-	System.out.println("undifine2 Filter = " + filter[2] +"\n");
+	System.out.println("undifine2 Filter = " + filter[2] + "\n");
 	}
 	
 	public static boolean[] getFilter() {
