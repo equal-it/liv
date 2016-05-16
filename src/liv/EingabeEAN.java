@@ -50,8 +50,8 @@ public class EingabeEAN {
 					boolean eingabeOK = false;
 					
 						System.out.println("FEHLER! Die eingegebene EAN ist nicht gültig!\n");
-						System.out.println("Bitte '1' wählen, falls die EAN erneut eingegeben werden soll:\n");
-						System.out.println("Bitte '2' wählen, falls die Eingabe abgebrochen werden soll.\n");
+						System.out.println("Bitte '1' waehlen, falls die EAN erneut eingegeben werden soll:\n");
+						System.out.println("Bitte '2' waehlen, falls die Eingabe abgebrochen werden soll.\n");
 			} // if-Block
 				
 				else {
