@@ -9,6 +9,8 @@ import java.io.*;
  * @version 00.00.10 2016/05/16
  */
 
+
+
 public class Liv { // Console
 
 	public static void main(String[] args) {

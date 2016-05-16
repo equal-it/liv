@@ -1,6 +1,3 @@
-/**
- * 
- */
 package liv;
 
 import java.io.BufferedReader;
@@ -10,12 +7,17 @@ import java.io.InputStreamReader;
 /**
  * class Filter
  * 
- * Project: Liv - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * @author team equal-IT, team@equal-it.de /felix, anne
+ * @author team equal-IT, team@equal-it.de / felix, anne, mel
  * @version 00.00.10 2016/05/10
  *
  */
+
+// Menue-Moeglichkeit einbauen, alle Filter anzeigen zu lassen!
+// default-Filter ueberpruefen!
+// um weiter Filter neben Laktose testen zu koennen, brauchen wir die Mocks!!
+
 
 public class Filter {
 	/**
