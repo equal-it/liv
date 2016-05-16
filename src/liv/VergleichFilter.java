@@ -18,24 +18,20 @@ public class VergleichFilter {
 	public static void vergleicheFilterLaktose(boolean[] filter, String a) {
 		switch (a) {
 		case "no":
-			if (liv.Filter.filter[0] == true) {
-				isProduktOK = "green";
-			} else {
-				isProduktOK = "green";
-				}
+			isProduktOK = "green";
 			break;
 		case "yes":
 			if (liv.Filter.filter[0] == false) {
 				isProduktOK = "green";
 			} else {
 				isProduktOK = "red";
-				}
+			}
 			break;
 		case "unbekannt":
 			isProduktOK = "yellow";
 			break;
 		default:
-			isProduktOK="yellow";
+			isProduktOK = "yellow";
 
 		}
 	}
@@ -43,7 +39,6 @@ public class VergleichFilter {
 	public static String getIsProduktOK() {
 		return isProduktOK;
 	}
-
 
 	// muss aktuell gesetzten Filter aus der Klasse Filter holen (getFilter)
 	// muss Daten aus HttpAbfrageLaktonaut holen ob yes oder no (isLaktose)
