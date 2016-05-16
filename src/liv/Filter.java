@@ -50,6 +50,7 @@ public class Filter {
 	
 
 	public static void setFilter() {
+		
 		try {
 			InputStreamReader isr = new InputStreamReader(System.in);
 			BufferedReader br = new BufferedReader(isr);
