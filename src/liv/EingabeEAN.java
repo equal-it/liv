@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
  * @author team equal-IT, team@equal-it.de // Annes Baustelle - PFOTEN WEG!!!!! ;)
- * @version 00.00.03 2016/05/15
+ * @version 00.00.04 2016/05/16
  *
  */
 public class EingabeEAN {
