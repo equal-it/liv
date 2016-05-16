@@ -45,7 +45,7 @@ public class Liv { // Console
 					try {
 						liv.HttpAbfrageLaktonaut.sendGet(liv.EingabeEAN.getEingabe());
 					} catch (Exception e1) {
-						//giibt Fehlermeldung aus wenn Fehler in HttpAbfrageLaktonaut
+						//gibt Fehlermeldung aus wenn Fehler in HttpAbfrageLaktonaut
 						System.out.println("FEHLER! Problem mit der Abfrage zu EAN: " + liv.EingabeEAN.getEingabe());
 					}
 					liv.VergleichFilter.vergleicheFilterLaktose(liv.Filter.getFilter(), liv.HttpAbfrageLaktonaut.getLaktose());
@@ -63,6 +63,7 @@ public class Liv { // Console
 				}
 			} while (verlassen == false); // end do while menue
 		} // end try
+		
 		catch (IOException ex) {
 			System.out.println(ex.getMessage());
 		} // end catch
