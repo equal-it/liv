@@ -74,7 +74,7 @@ public class Filter {
 				switch (auswahl) {
 				case 1:
 					System.out.println("\n---------------------------------------------------------------------");
-					System.out.println("Filter '" + a +"' setzen? \nBitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl: \n");
+					System.out.println("Filter '" + a + "' setzen? \nBitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl: \n");
 					eingabeSetFilter = br.readLine();
 					switch (eingabeSetFilter) {
 					case "j":

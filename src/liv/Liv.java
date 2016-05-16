@@ -25,7 +25,7 @@ public class Liv { // Console
 			do { // start do while menue
 				System.out.println("\n---------------------------------------------------------------------");
 				System.out.println("Waehle  '1'  um Filter einzustellen");
-				// System.out.println("Waehle  '2'  um eine EAN einzugeben!");
+				System.out.println("Waehle  '2'  um eine EAN einzugeben!");
 				System.out.println("Waehle  '8'  um Dir das Impressum anzusehen!");
 				System.out.println("Waehle  '9'  zum Beenden!");
 				System.out.println("---------------------------------------------------------------------");
@@ -40,7 +40,7 @@ public class Liv { // Console
 				case 1:
 					liv.Filter.setFilter();
 					break;
-				/*case 2: // rausgenommen, da ohne Filter setzen EAN-Eingabe nicht sinnvoll ist.1
+				case 2: // rausgenommen, da ohne Filter setzen EAN-Eingabe nicht sinnvoll ist.1
 					liv.EingabeEAN.einlesen();
 					if(liv.PruefeEAN.getEanIsOK()==true){
 					try {
@@ -52,7 +52,7 @@ public class Liv { // Console
 					liv.VergleichFilter.vergleicheFilterLaktose(liv.Filter.getFilter(), liv.HttpAbfrageLaktonaut.getLaktose());
 					liv.Ampel.AmpelFarbe(liv.VergleichFilter.getIsProduktOK());
 					}
-					break;*/
+					break;
 				case 8:
 					liv.Impressum.printImpressum();
 					break;

@@ -1,10 +1,9 @@
-//package liv;
 package playground;
-import java.util.Scanner;
+// import java.util.Scanner;
 import java.io.IOException;
 
-// import java.io.BufferedReader;
-// import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 /**
  * class EingabeEAN
@@ -12,108 +11,19 @@ import java.io.IOException;
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
  * @author team equal-IT, team@equal-it.de // Annes Baustelle - PFOTEN WEG!!!!! ;)
- * @version 00.00.03 2016/05/15
+ * @version 00.00.04 2016/05/16
  *
  */
-
-// Versuch, Klasse auf Scanner umzustellen
-
-/**
- * @author anne
- * Was muss die Klasse koennen?
- * - muss Einlesen von der Konsole
- * - springen zur PruefeEAN, ob eingegebene Zahl einer EAN entspricht
- * - ggf. Fehlermeldung geben und zwar
- * 	#nicht gueltig
- *  #Buchstaben bzw. sonstige Zeichen enthalten
- *  #vertippt, zu kurz, zu lang
- * 
- * - muss, if EAN = true, die EAN per return raus als String, aber nur dann!
- * - else return Fehlermeldung plus zurueck Eingabe EAN bzw. Abbruch
- * 
- * - HttpAbfrage startet ueber Liv, wenn EAN == true
- * 
- * 
- *
- */
-
-
-
-public class EingabeEANtest {
-	
-	/**
-	 * @param eingabe
-	 * Variable "eingabe", die die per Konsole eingegebene EAN aufnehmen soll
-	 */
-	public static String eingabe; 
+public class EingabeEAN {
+	public static String eingabe;
 
 	/**
 	 * @return eingabe
-	 * Gibt die eingegebene EAN aus, z.B. an Methoden, die sie sich holen wollen ;)
 	 */
 	public static String getEingabe() {
 		return eingabe;
 	} // Eingabe
 
-	
-	public static void einlesen() {
-		
-		boolean eanValue = false; // fuer Auswertung, ob EAN korrekt
-		
-		// Feld oder lokale Variable nutzen? noch testen...
-		Scanner scan = new Scanner(System.in);
-
-		
-		
-			
-		while (eanValue == false){
-			System.out.println("Bitte EAN eingeben: \n"); // EAN-Input
-			eingabe = scan.next();
-			
-			try {
-				liv.PruefeEAN.pruefeEAN(eingabe);
-			} // try
-			
-			catch (Exception e1) {
-				eanValue = false;
-				System.out.println("Die eingegebene EAN ist nicht gueltig.");
-			} // catch
-			
-			boolean eingabeOK = false;
-				if (liv.PruefeEAN.getEanIsOK() == false) { // Starten falls EAN-Fehler
-					
-					
-						System.out.println("FEHLER! Die eingegebene EAN ist nicht gültig!\n");
-						System.out.println("Bitte '1' waehlen, falls die EAN erneut eingegeben werden soll:\n");
-						System.out.println("Bitte '2' waehlen, falls die Eingabe abgebrochen werden soll.\n");
-			} // if-Block
-				
-				else {
-					eingabeOK = true;
-				}
-			
-		} // while-Block
-		
-		
-					
-					
-		
-		
-					
-		
-	} // Methode einlesen
-	
-} // class
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	//---- ab hier Felix Version ---//
@@ -122,7 +32,7 @@ public class EingabeEANtest {
 	 * @throws IOException
 	 */
 
-	/*public static void einlesen() throws IOException {
+	public static void einlesen() throws IOException {
 		boolean eanValue = false; // fuer Auswertung ob ean OK
 		String eingabe2 = null;   // fuer Fehler Menue
 		int auswahl = 0;
@@ -179,5 +89,5 @@ public class EingabeEANtest {
 		} while (eanValue == false);
 
 	} // Methode einlesen
-*/
-//} // class EingabeEAN
+
+} // class EingabeEAN

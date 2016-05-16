@@ -32,10 +32,10 @@ public class VergleichFilter {
 			}
 			break;
 		case "unbekannt":
-			isProduktOK = "orange";
+			isProduktOK = "yellow";
 			break;
 		default:
-			isProduktOK="orange";
+			isProduktOK="yellow";
 
 		}
 	}
