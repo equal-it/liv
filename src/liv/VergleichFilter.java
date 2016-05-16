@@ -15,17 +15,17 @@ public class VergleichFilter {
 
 	static String isProduktOK = null;
 
-	public static void vergleicheFilterLaktose(boolean[] filter, String laktose) {
-		switch (laktose) {
+	public static void vergleicheFilterLaktose(boolean[] filter, String a) {
+		switch (a) {
 		case "no":
-			if (filter[0] == true) {
+			if (liv.Filter.filter[0] == true) {
 				isProduktOK = "green";
 			} else {
 				isProduktOK = "green";
 			}
 			break;
 		case "yes":
-			if (filter[0] == false) {
+			if (liv.Filter.filter[0] == false) {
 				isProduktOK = "green";
 			} else {
 				isProduktOK = "red";

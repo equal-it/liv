@@ -43,10 +43,10 @@ public class HttpAbfrageLaktonaut {
 	// Testabfrage - allerdings fehlt noch der tatsaechliche Abbruch, aber der Parameter wird geprueft.
 	{
 	if (liv.PruefeEAN.eanIsOK = false){
-			System.out.println("Abbruch - da EAN ungültig, findet keine DB-Abfrage statt.");
+			System.out.println("Abbruch - da EAN ungültig, findet keine DB-Abfrage statt. (Klasse HttpAbfrageLaktonaut)");
 	}
 	else{
-		System.out.println("DB wird nun aufgerufen.");
+		System.out.println("DB wird nun aufgerufen. (Klasse HttpAbfrageLaktonaut)");
 	}
 	}
 
