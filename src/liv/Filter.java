@@ -71,6 +71,9 @@ public class Filter {
 				eingabeFilter = br.readLine();
 				auswahl = Integer.parseInt(eingabeFilter);
 				
+				
+				// überprüfen ob alle 3 cases nötig sind oder die Definition "filter []" ausreicht!!!
+				// Wenn Aenderungen, dann auch in "VergleichFilter"
 				switch (auswahl) {
 				case 1:
 					System.out.println("\n---------------------------------------------------------------------(Klasse Filter)");

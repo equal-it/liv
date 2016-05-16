@@ -67,7 +67,8 @@ public class Liv { // Console
 							System.out.println("FEHLER! Problem mit der Abfrage zu EAN: " + liv.EingabeEAN.getEingabe() + " (Klasse Liv)");
 							}
 					
-					liv.VergleichFilter.vergleicheFilterLaktose(liv.Filter.getFilter(), liv.HttpAbfrageLaktonaut.getLaktose());
+					liv.VergleichFilter.vergleicheFilterLaktose(liv.Filter.getFilter(), 
+					liv.HttpAbfrageLaktonaut.getLaktose());
 					liv.Ampel.AmpelFarbe(liv.VergleichFilter.getIsProduktOK());
 					
 					} // if
@@ -83,7 +84,7 @@ public class Liv { // Console
 					break;
 				
 				default:
-					System.out.println("Bitte waehle  1 / 8 / 9\n");
+					System.out.println("Bitte waehle  1 / 2 / 8 / 9\n");
 				}
 				
 			} // end do-while menue 
