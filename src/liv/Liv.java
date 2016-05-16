@@ -83,7 +83,7 @@ public class Liv { // Console
 					break;
 				
 				default:
-					System.out.println("Bitte waehle  1 / 8 / 9\n");
+					System.out.println("Bitte waehle  1 / 2 / 8 / 9\n");
 				}
 				
 			} // end do-while menue 
