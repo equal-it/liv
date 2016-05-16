@@ -17,30 +17,19 @@ public class VergleichFilter {
 
 	public static void vergleicheFilterLaktose(boolean[] filter, String a) {
 		switch (a) {
-<<<<<<< HEAD
 		case "no": // bedeutet: kein a enthalten
 			if (liv.Filter.filter[0] == true) {
 				isProduktOK = "green";
 			} else {
 				isProduktOK = "green";
 				}
-=======
-		case "no":
-			isProduktOK = "green";
->>>>>>> branch 'master' of https://github.com/equal-it/liv.git
-			break;
-			
+		
 		case "yes": // bedeutet: a ist enthalten
 			if (liv.Filter.filter[0] == false) { 
 				isProduktOK = "green"; // wenn a-Filter NICHT gesetzt, dann ist ok - also gruen
 			} else {
-<<<<<<< HEAD
-				isProduktOK = "red";  // wenn a-Filter gesetzt und a enthalten, dann ist nicht ok - also rot
+				isProduktOK = "red";   // wenn a-Filter gesetzt und a enthalten, dann ist nicht ok - also rot
 				}
-=======
-				isProduktOK = "red";
-			}
->>>>>>> branch 'master' of https://github.com/equal-it/liv.git
 			break;
 			
 		case "unbekannt":
