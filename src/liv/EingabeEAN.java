@@ -1,36 +1,94 @@
 package liv;
-
-import java.io.BufferedReader;
+import java.util.Scanner;
 import java.io.IOException;
-import java.io.InputStreamReader;
+
+// import java.io.BufferedReader;
+// import java.io.InputStreamReader;
 
 /**
  * class EingabeEAN
  * 
- * Project: Liv - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * @author team equal-IT, team@equal-it.de, Annes Baustelle
- * @version 00.00.02 2016/05/11
+ * @author team equal-IT, team@equal-it.de // Annes Baustelle - PFOTEN WEG!!!!! ;)
+ * @version 00.00.03 2016/05/15
  *
  */
-
 public class EingabeEAN {
 	public static String eingabe;
 
 	/**
-	 * 
 	 * @return eingabe
 	 */
 	public static String getEingabe() {
 		return eingabe;
-	}
+	} // Eingabe
 
+	public static void einlesen() throws IOException {
+		boolean eanValue = false; // fuer Auswertung, ob EAN korrekt
+		
+		// Feld oder lokale Variable nutzen? noch testen...
+		Scanner scan = new Scanner(System.in);
+
+		
+		
+			
+		while (eanValue == false){
+			System.out.println("Bitte EAN eingeben: \n"); // EAN-Input
+			eingabe = scan.next();
+			
+			try {
+				liv.PruefeEAN.pruefeEAN(eingabe);
+			} // try
+			
+			catch (Exception e1) {
+				eanValue = false;
+				System.out.println("Die eingegebene EAN ist nicht gültig.");
+			} // catch
+				
+				if (liv.PruefeEAN.getEanIsOK() == false) { // Starten falls EAN-Fehler
+					boolean eingabeOK = false;
+					
+						System.out.println("FEHLER! Die eingegebene EAN ist nicht gültig!\n");
+						System.out.println("Bitte '1' wählen, falls die EAN erneut eingegeben werden soll:\n");
+						System.out.println("Bitte '2' wählen, falls die Eingabe abgebrochen werden soll.\n");
+			} // if-Block
+				
+				else {
+					eingabeOK = true;
+				}
+			
+		} // while-Block
+		
+		
+					
+					
+		
+		
+					
+		
+	} // Methode einlesen
+	
+} // class
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//---- ab hier Felix Version ---//
 	/**
 	 * 
 	 * @throws IOException
 	 */
 
-	public static void einlesen() throws IOException {
+	/*public static void einlesen() throws IOException {
 		boolean eanValue = false; // fuer Auswertung ob ean OK
 		String eingabe2 = null;   // fuer Fehler Menue
 		int auswahl = 0;
@@ -87,5 +145,5 @@ public class EingabeEAN {
 		} while (eanValue == false);
 
 	} // Methode einlesen
-
-} // class EingabeEAN
+*/
+//} // class EingabeEAN
