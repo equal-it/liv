@@ -14,6 +14,8 @@ import java.io.IOException;
  * @version 00.00.03 2016/05/15
  *
  */
+
+// Versuch, Klasse auf Scanner umzustellen
 public class EingabeEAN {
 	public static String eingabe;
 

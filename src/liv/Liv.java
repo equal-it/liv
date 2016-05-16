@@ -21,11 +21,11 @@ public class Liv { // Console
 			InputStreamReader isr = new InputStreamReader(System.in);
 			BufferedReader br = new BufferedReader(isr);
 			boolean verlassen = false;
-			liv.Filter.setFilter(); // wenn nicht als erstes gewuenscht, dann auskommentieren - dann kommt Menue als erstes
+			// liv.Filter.setFilter(); // wenn nicht als erstes gewuenscht, dann auskommentieren - dann kommt Menue als erstes
 			do { // start do while menue
 				System.out.println("\n---------------------------------------------------------------------");
 				System.out.println("Waehle  1  um Filter einzustellen");
-				System.out.println("Waehle  2  um eine EAN einzugeben!");
+				// System.out.println("Waehle  2  um eine EAN einzugeben!");
 				System.out.println("Waehle  8  um Dir das Impressum anzusehen!");
 				System.out.println("Waehle  9  zum Beenden!");
 				String eingabe = br.readLine(); // liest die Eingabe
@@ -39,7 +39,7 @@ public class Liv { // Console
 				case 1:
 					liv.Filter.setFilter();
 					break;
-				case 2:
+				/*case 2: // rausgenommen, da ohne Filter setzen EAN-Eingabe nicht sinnvoll ist.1
 					liv.EingabeEAN.einlesen();
 					if(liv.PruefeEAN.getEanIsOK()==true){
 					try {
@@ -51,7 +51,7 @@ public class Liv { // Console
 					liv.VergleichFilter.vergleicheFilterLaktose(liv.Filter.getFilter(), liv.HttpAbfrageLaktonaut.getLaktose());
 					liv.Ampel.AmpelFarbe(liv.VergleichFilter.getIsProduktOK());
 					}
-					break;
+					break;*/
 				case 8:
 					liv.Impressum.printImpressum();
 					break;
@@ -59,7 +59,7 @@ public class Liv { // Console
 					verlassen = true;
 					break;
 				default:
-					System.out.println("Bitte waehle  1 / 2 / 8 / 9\n");
+					System.out.println("Bitte waehle  1 / 8 / 9\n");
 				}
 			} while (verlassen == false); // end do while menue
 		} // end try
