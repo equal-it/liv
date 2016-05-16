@@ -17,23 +17,26 @@ public class VergleichFilter {
 
 	public static void vergleicheFilterLaktose(boolean[] filter, String a) {
 		switch (a) {
-		case "no":
+		case "no": // bedeutet: kein a enthalten
 			if (liv.Filter.filter[0] == true) {
 				isProduktOK = "green";
 			} else {
 				isProduktOK = "green";
 				}
 			break;
-		case "yes":
-			if (liv.Filter.filter[0] == false) {
-				isProduktOK = "green";
+			
+		case "yes": // bedeutet: a ist enthalten
+			if (liv.Filter.filter[0] == false) { 
+				isProduktOK = "green"; // wenn a-Filter NICHT gesetzt, dann ist ok - also gruen
 			} else {
-				isProduktOK = "red";
+				isProduktOK = "red";  // wenn a-Filter gesetzt und a enthalten, dann ist nicht ok - also rot
 				}
 			break;
+			
 		case "unbekannt":
 			isProduktOK = "yellow";
 			break;
+			
 		default:
 			isProduktOK="yellow";
 
