@@ -62,7 +62,7 @@ public class EingabeEAN {
 			if (liv.PruefeEAN.getEanIsOK() == false) {// start if ean fehler
 				boolean eingabeOK = false;
 				do {
-					System.out.println("FEHLER! EAN hat den falschen wert!\n");
+					
 					System.out.println("1 neue Eingabe");
 					System.out.println("2 Eingabe abbrechen");
 					InputStreamReader isr2 = new InputStreamReader(System.in);
