@@ -27,10 +27,10 @@ public class PruefeEAN {
 		// int[] ean enthaelt die vorgegebene EAN
 		int[] ean = new int[eanString.length()];
 		char[] eanChar = new char[eanString.length()];
+		
 
-		// wenn EAN ungleich 8 oder 13 Stellen erscheint Fehler
-		if (ean.length != 8 || ean.length != 13) System.out.println("FEHLER! EAN hat den falschen wert!\n");
-				
+		
+		
 		for (int i = 0; i < eanString.length(); i++) {
 			eanChar[i] = eanString.charAt(i);
 		}
@@ -94,5 +94,7 @@ public class PruefeEAN {
 			// ausgegeben
 			eanIsOK = false;
 		}
+	
 	}
+	
 }
