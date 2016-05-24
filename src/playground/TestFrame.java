@@ -11,9 +11,9 @@ public class TestFrame extends Frame {
 	   
 	    add(new DrawingPanel());
 	         
-	    setSize(300,600);
+	    setSize(150,300);
 	    setVisible(true);                           
-	}
+	}	// public TestFrame () {
 
 	
 	 class DrawingPanel extends Panel {			// Ampel
