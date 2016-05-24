@@ -16,7 +16,6 @@ public class TestFrame extends Frame {
 	}
 
 	
-	
 	 class DrawingPanel extends Panel {			// Ampel
 		 
 		 public void paint(Graphics g) {
