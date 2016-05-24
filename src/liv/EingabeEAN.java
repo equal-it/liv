@@ -1,7 +1,6 @@
 package liv;
 // import java.util.Scanner;
 import java.io.IOException;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -49,6 +48,7 @@ public class EingabeEAN {
 					+ "Test EAN (Milka Alpenmilch 300 g) Laktose = yes: 7622200004607 \n"
 					+ "Test EAN (Ferrero Nutella) Laktose = unbekannt:4008400401928 \n");
 			System.out.println("----------------------------------\n");
+			
 			try {
 				eingabe = br.readLine();
 			} catch (IOException e) {
@@ -59,10 +59,12 @@ public class EingabeEAN {
 			} catch (Exception e1) {
 				eanValue = false;
 			}
+
+			
 			if (liv.PruefeEAN.getEanIsOK() == false) {// start if ean fehler
 				boolean eingabeOK = false;
 				do {
-					
+					System.out.println("EAN Eingabe war nicht korrekt (EingabeEAN.java)\n");
 					System.out.println("1 neue Eingabe");
 					System.out.println("2 Eingabe abbrechen");
 					InputStreamReader isr2 = new InputStreamReader(System.in);
