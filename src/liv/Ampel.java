@@ -19,15 +19,15 @@ public class Ampel {
 		switch (isProductOk) {
 		
 		case "green":													// Produkt unbedenklich gem. gesetztem Filter
-			System.out.println("\nALLES OK :-) goenn es dir!!! (Klasse Ampel)"); 		// light=green
+			System.out.println("\n :-) Das Lebensmittel enthält kein Laktose. (Klasse Ampel)"); 		// light=green
 			break;
 			
 		case "red":														// Produkt nicht empfehlenswert gem. gesetztem Filter
-			System.out.println("\nFucking Danger :-( NICHT essen!!! (Klasse Ampel)");	// light=red
+			System.out.println("\n :-( Das Lebensmittel enthält Laktose (Klasse Ampel)");	// light=red
 			break;
 			
 		case "yellow":													// Produkt nicht in der Datenbank enthalten
-			System.out.println("\nHmm, I don t know. :-| YOLO!!! (Klasse Ampel)");		// light=yellow
+			System.out.println("\n :-| Dieses Lebensmittel ist leider nicht in der Datenbank enthalten. (Klasse Ampel)");		// light=yellow
 			break;
 			
 		}	// switch (isProductOK){
