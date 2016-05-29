@@ -1,3 +1,4 @@
+package livAnne;
 
 
 public enum Inhaltsstoff {

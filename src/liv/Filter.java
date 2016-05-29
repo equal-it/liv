@@ -38,14 +38,18 @@ public class Filter {
 	// Fuer die zentrale Aenderung der Filterwerte
 	static String a = "Laktose";
 	static String b = "Gluten";
-	static String c = "Soya";
+	static String c = "Glutamat";
+	static String d = "Hefextrakt";
+	static String e = "Nuss";
 
-	static boolean[] filter = new boolean[3]; // default value false
+	static boolean[] filter = new boolean[5]; // default value false
 
-	public void setFilter(boolean a, boolean b, boolean c) {
+	public void setFilter(boolean a, boolean b, boolean c, boolean d, boolean e) {
 		filter[0] = a; // Laktose
 		filter[1] = b;
 		filter[2] = c;
+		filter[3] = d;
+		filter[4] = e;
 	}
 
 	public static void setFilter() {
@@ -66,6 +70,8 @@ public class Filter {
 				System.out.println("Waehle '1' fuer " + a + "."); // + filter[0]
 				System.out.println("Waehle '2' fuer " + b + ".");
 				System.out.println("Waehle '3' fuer " + c + ".");
+				System.out.println("Waehle '4' fuer " + d + ".");
+				System.out.println("Waehle '5' fuer " + e + ".");
 				System.out.println("\nWaehle '8' fuer Filter Anzeige");
 				System.out.println("Oder mit '9' zum Hauptmenue. \n");
 				System.out.println("---------------------------------------------------------------------");
@@ -87,7 +93,7 @@ public class Filter {
 					case "j":
 						filter[0] = true;
 						System.out.println("Filter '" + a + "' wurde gesetzt. (Klasse Filter)");
-						System.out.println("Weitere Filter setzen oder mit '4' zum Hauptmenue.\n");
+						System.out.println("Weitere Filter setzen oder mit '9' zum Hauptmenue.\n");
 						System.out.println("---------------------------------------------------------------------");
 						break;
 					case "n":
@@ -133,10 +139,44 @@ public class Filter {
 						break;
 					}
 					break;
+				case 4:
+					System.out.println(d
+							+ " als Filter setzten, bitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl: (Klasse Filter) \n");
+					eingabeSetFilter = br.readLine();
+					switch (eingabeSetFilter) {
+					case "j":
+						filter[3] = true;
+						break;
+					case "n":
+						filter[3] = false;
+						break;
+					default:
+						System.out.println("Falsche Eingabe, bitte einen Filter auswaehlen. (Klasse Filter)");
+						break;
+					}
+					break;
+				case 5:
+					System.out.println(e
+							+ " als Filter setzten, bitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl: (Klasse Filter) \n");
+					eingabeSetFilter = br.readLine();
+					switch (eingabeSetFilter) {
+					case "j":
+						filter[4] = true;
+						break;
+					case "n":
+						filter[4] = false;
+						break;
+					default:
+						System.out.println("Falsche Eingabe, bitte einen Filter auswaehlen. (Klasse Filter)");
+						break;
+					}
+					break;
 				case 8:
 					System.out.println("Filter : " + a + " ist " + filter[0]);
 					System.out.println("Filter : " + b + " ist " + filter[1]);
 					System.out.println("Filter : " + c + " ist " + filter[2]);
+					System.out.println("Filter : " + d + " ist " + filter[3]);
+					System.out.println("Filter : " + e + " ist " + filter[4]);
 					break;
 				case 9:
 					verlassen = true;
@@ -150,12 +190,6 @@ public class Filter {
 
 	}
 
-	public static void printFilter() {
-		System.out.println(a + "Filter = " + filter[0]);
-		System.out.println(b + "undifine1 Filter = " + filter[1]);
-		System.out.println(c + "undifine2 Filter = " + filter[2] + "\n");
-	}
-
 	public static boolean[] getFilter() {
 		return filter;
 	}
@@ -164,13 +198,4 @@ public class Filter {
 		return filter[filternummer];
 	}
 
-	/**
-	 * Setzt Filter auf Laktose = true als Standard
-	 */
-	public static void setFilterDefault() {
-		filter[0] = false;
-		filter[1] = false;
-		filter[2] = false;
-
-	}
 }
