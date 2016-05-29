@@ -1,4 +1,4 @@
-package liv;
+
 
 public interface Lebensmitteldatenbank {
 

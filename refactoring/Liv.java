@@ -1,4 +1,4 @@
-package liv;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -70,14 +70,14 @@ public class Liv { // Console
 
 				case 1:
 					aktuellerFilter.clear();
-					Set<Inhaltsstoff> inhaltsstoffe = liv.Filter.setFilter();
+					Set<Inhaltsstoff> inhaltsstoffe = Filter.setFilter();
 					aktuellerFilter.addAll(inhaltsstoffe);
 					break;
 
 				case 2:
 					liv.EingabeEAN.einlesen();
 
-					if (liv.PruefeEAN.eanGueltig(EingabeEAN.eingabe)) {
+					if (PruefeEAN.eanGueltig(EingabeEAN.eingabe)) {
 						System.out.println("DB wird nun aufgerufen. (Klasse Liv)");
 						try {
 							if (!aktuellerFilter.isEmpty()) {
@@ -99,7 +99,7 @@ public class Liv { // Console
 									+ " (Klasse Liv)");
 						}
 
-						liv.Ampel.ampelFarbe(liv.VergleichFilter.ueberprufeIndikatoren(indikatoren));
+						Ampel.ampelFarbe(VergleichFilter.ueberprufeIndikatoren(indikatoren));
 
 					} else {
 						System.out.println("Abbruch - da EAN ungültig, findet keine DB-Abfrage statt. (Klasse Liv)");
