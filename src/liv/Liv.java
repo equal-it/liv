@@ -35,12 +35,7 @@ public class Liv { // Console
 			
 			do { // start do while menue
 				
-				System.out.println("\n---------------------------------------------------------------------(Klasse Liv)");
-				System.out.println("Waehle  '1'  um Filter einzustellen");
-				System.out.println("Waehle  '2'  um eine EAN einzugeben!");
-				System.out.println("Waehle  '8'  um Dir das Impressum anzusehen!");
-				System.out.println("Waehle  '9'  zum Beenden!");
-				System.out.println("---------------------------------------------------------------------");
+				liv.StartMenue.printStartMenue();
 				
 				String eingabe = br.readLine(); // liest die Eingabe
 				
