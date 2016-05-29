@@ -14,6 +14,8 @@ public class HttpAbfrageMock1Test {
 	 @Mock
 	 HttpAbfrageMock1Test;
 	
+	 //aloha
+	 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
