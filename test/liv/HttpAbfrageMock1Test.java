@@ -12,7 +12,7 @@ import org.mockito.Mock;
 public class HttpAbfrageMock1Test {
 
 	 @Mock
-	 
+	 HttpAbfrageMock1Test;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {

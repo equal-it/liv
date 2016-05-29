@@ -15,6 +15,8 @@ package liv;
 
 public class HttpAbfrageMock1 {
 	
+	
+	
 	// Hier fehlt die Moeglichkeit, eine weitere "Datenbank" abzufragen
 
 }
