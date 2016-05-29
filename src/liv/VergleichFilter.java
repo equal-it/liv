@@ -15,15 +15,14 @@ public class VergleichFilter {
 
 	static String isProduktOK = null;
 
-	public static void vergleicheFilterLaktose(boolean[] filter, String a) {
-		
+	public static void vergleicheFilterLaktose() {
+		// fuer Filter 0 Laktose
+		String a = liv.HttpAbfrageLaktonaut.getLaktose();
 		switch (a) {
 		case "no": // bedeutet: kein a enthalten
-				isProduktOK = "green";
-			
-		
+				isProduktOK = "green";		
 		case "yes": // bedeutet: a ist enthalten
-			if (liv.Filter.filter[0] == false) { 
+			if (liv.Filter.getFilter(0) == false) { 
 				isProduktOK = "green"; // wenn a-Filter NICHT gesetzt, dann ist ok - also gruen
 			} else {
 				isProduktOK = "red";   // wenn a-Filter gesetzt und a enthalten, dann ist nicht ok - also rot

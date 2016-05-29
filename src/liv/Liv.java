@@ -53,6 +53,11 @@ public class Liv { // Console
 					break;
 					
 				case 2: 
+					if (liv.Filter.filterWurdeGesetzt==false){
+						System.out.println("\nAchtung, du hast noch keine Filter gesetzt.\nAlle Filter sind deaktiviert!\n");
+						System.out.println("Abbruch !!! Bitte erst Filter setzten");
+						break;
+					}
 					liv.EingabeEAN.einlesen();
 					
 					if(liv.PruefeEAN.getEanIsOK()==true){
@@ -64,8 +69,8 @@ public class Liv { // Console
 							System.out.println("FEHLER! Problem mit der Abfrage zu EAN: " + liv.EingabeEAN.getEingabe() + " (Klasse Liv)");
 							}
 					
-					liv.VergleichFilter.vergleicheFilterLaktose(liv.Filter.getFilter(), 
-					liv.HttpAbfrageLaktonaut.getLaktose());
+					liv.VergleichFilter.vergleicheFilterLaktose();
+					
 					liv.Ampel.AmpelFarbe(liv.VergleichFilter.getIsProduktOK());
 					
 					} // if

@@ -89,7 +89,7 @@ public class HttpAbfrageLaktonaut {
 	 * http://www.laktonaut.de/api.php?action=query&gtin=4000417025005&key=test
 	 * 
 	 */
-	public static String sendGet(String ean) throws Exception {
+	public static void sendGet(String ean) throws Exception {
 			
 		String url = "http://www.laktonaut.de/api.php?action=query&gtin=" + ean + "&key=test ";
 
@@ -117,11 +117,11 @@ public class HttpAbfrageLaktonaut {
 
 		in.close();
 		
-		return xmlResponse.toString(); // GGF. 
+		//return xmlResponse.toString(); // GGF. 
 		
 		
 		// hier werden die beiden Zeichen hinter <lactose>XX abgefragt (die XX)
-		/*int laktoseIndex = xmlResponse.lastIndexOf("<lactose>");
+		int laktoseIndex = xmlResponse.lastIndexOf("<lactose>");
 		String laktoseValue = xmlResponse.substring(laktoseIndex + 9, laktoseIndex + 11);
 
 		switch (laktoseValue) {
@@ -134,7 +134,7 @@ public class HttpAbfrageLaktonaut {
 		default:
 			laktose = "unbekannt";
 			break;
-		}*/
+		}
 		//System.out.println("\nLaktose enhalten : " + laktose);
 	}// sendGet
 
