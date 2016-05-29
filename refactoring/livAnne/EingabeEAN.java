@@ -1,5 +1,4 @@
 package livAnne;
-
 // import java.util.Scanner;
 import java.io.IOException;
 import java.io.BufferedReader;
@@ -56,7 +55,7 @@ public class EingabeEAN {
 				eanValue = false;
 			}
 			
-			if (PruefeEAN.eanUngueltig(eingabe)) {
+			if (livAnne.PruefeEAN.eanUngueltig(eingabe)) {
 				boolean eingabeOK = false;
 				do {
 					System.out.println("EAN Eingabe war nicht korrekt (EingabeEAN.java)\n");

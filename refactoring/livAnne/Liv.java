@@ -1,10 +1,8 @@
 package livAnne;
 
-
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -25,7 +23,7 @@ public class Liv { // Console
 
 		Set<Lebensmitteldatenbank> datenbanken = new HashSet<>();
 		datenbanken.add(new HttpAbfrageLaktonaut());
-		datenbanken.add(new HttpAbfrageMock1());
+		datenbanken.add(new GlutenDatenbankMock());
 
 		int auswahl = 0;
 
@@ -34,8 +32,6 @@ public class Liv { // Console
 
 		try { // start try
 
-			InputStreamReader isr = new InputStreamReader(System.in);
-			BufferedReader br = new BufferedReader(isr);
 			boolean verlassen = false;
 
 			// liv.Filter.setFilter(); // wenn nicht als erstes gewuenscht, dann
@@ -58,7 +54,7 @@ public class Liv { // Console
 				System.out.println("Waehle  '9'  zum Beenden!");
 				System.out.println("---------------------------------------------------------------------");
 
-				String eingabe = br.readLine(); // liest die Eingabe
+				String eingabe = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2", "8", "9" }));
 
 				try {
 					auswahl = Integer.parseInt(eingabe);// String to int
@@ -71,14 +67,14 @@ public class Liv { // Console
 
 				case 1:
 					aktuellerFilter.clear();
-					Set<Inhaltsstoff> inhaltsstoffe = Filter.setFilter();
+					Set<Inhaltsstoff> inhaltsstoffe = livAnne.Filter.setFilter();
 					aktuellerFilter.addAll(inhaltsstoffe);
 					break;
 
 				case 2:
-					liv.EingabeEAN.einlesen();
-
-					if (PruefeEAN.eanGueltig(EingabeEAN.eingabe)) {
+					indikatoren.clear();
+					livAnne.EingabeEAN.einlesen();
+					if (livAnne.PruefeEAN.eanGueltig(EingabeEAN.eingabe)) {
 						System.out.println("DB wird nun aufgerufen. (Klasse Liv)");
 						try {
 							if (!aktuellerFilter.isEmpty()) {
@@ -96,11 +92,11 @@ public class Liv { // Console
 						} catch (Exception e1) {
 							// gibt Fehlermeldung aus wenn Fehler in
 							// HttpAbfrageLaktonaut
-							System.out.println("FEHLER! Problem mit der Abfrage zu EAN: " + liv.EingabeEAN.getEingabe()
+							System.out.println("FEHLER! Problem mit der Abfrage zu EAN: " + livAnne.EingabeEAN.getEingabe()
 									+ " (Klasse Liv)");
 						}
 
-						Ampel.ampelFarbe(VergleichFilter.ueberprufeIndikatoren(indikatoren));
+						livAnne.Ampel.ampelFarbe(livAnne.VergleichFilter.ueberprufeIndikatoren(indikatoren));
 
 					} else {
 						System.out.println("Abbruch - da EAN ungültig, findet keine DB-Abfrage statt. (Klasse Liv)");
@@ -109,7 +105,7 @@ public class Liv { // Console
 					break;
 
 				case 8:
-					liv.Impressum.printImpressum();
+					livAnne.Impressum.printImpressum();
 					break;
 
 				case 9:
@@ -130,6 +126,7 @@ public class Liv { // Console
 			System.out.println(ex.getMessage());
 		} // end catch
 
+		System.out.println("Tschüss!!");
 		System.exit(0);
 	} // end main
 

@@ -1,6 +1,5 @@
 package livAnne;
 
-
 /**
  * Project: Liv - Lebensmittelinhaltverifizierer
  * 

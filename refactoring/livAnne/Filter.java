@@ -1,11 +1,7 @@
 package livAnne;
 
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Scanner;
 import java.util.Set;
 
 /**
@@ -27,25 +23,14 @@ public class Filter {
 	private static final String HAUPTMENU = "4";
 
 	public static Set<Inhaltsstoff> setFilter() {
-		// Scanner scanner = new Scanner(System.in);
-		// String eingabe = "";
-		// do {
-		// eingabe = scanner.next();
-		// System.out.println(eingabe);
-		// } while (!"q".equals(eingabe));
-		// scanner.close();
 
 		Set<Inhaltsstoff> inhaltsstoffe = new HashSet<>();
 
 		String auswahl = null;
 		do {
-			auswahl = null;
 			menuAusgeben();
 
-			Scanner scanner = new Scanner(System.in);
-			if (scanner.hasNext()) {
-				auswahl = scanner.next();
-			}
+			auswahl = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2", HAUPTMENU }));
 
 			if (auswahl != null) {
 				Inhaltsstoff inhaltsstoff = Inhaltsstoff.inhaltstoffFuerCode(auswahl);
@@ -65,7 +50,7 @@ public class Filter {
 					break;
 				}
 			}
-			scanner.close();
+
 		} while (!HAUPTMENU.equals(auswahl));
 
 		return inhaltsstoffe;
@@ -83,14 +68,13 @@ public class Filter {
 
 	private static void setzeOderEntferneFilter(Set<Inhaltsstoff> inhaltsstoffe, Inhaltsstoff inhaltsstoff) {
 
-		try (InputStreamReader isr = new InputStreamReader(System.in); BufferedReader br = new BufferedReader(isr)) {
+		String eingabeSetFilter;
+		System.out.println("Filter '" + inhaltsstoff.anzeigename()
+				+ "' setzen? \nBitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl: \n");
 
-			String eingabeSetFilter;
-			System.out.println("Filter '" + inhaltsstoff.anzeigename()
-					+ "' setzen? \nBitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl: \n");
+		eingabeSetFilter = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "j", "n" }));
 
-			eingabeSetFilter = br.readLine();
-
+		if (eingabeSetFilter != null) {
 			switch (eingabeSetFilter) {
 			case "j":
 				inhaltsstoffe.add(inhaltsstoff);
@@ -106,10 +90,7 @@ public class Filter {
 				System.out.println("Falsche Eingabe, bitte einen Filter auswaehlen. (Klasse Filter)");
 				break;
 			}
-		} catch (IOException e) {
-			System.out.println("Konnte Eingabe nicht lesen. Bitte erneut eingeben.");
 		}
-
 	}
 
 }
