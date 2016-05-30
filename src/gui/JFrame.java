@@ -19,11 +19,13 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class JFrame extends javax.swing.JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtEanNummer;
+	private JTextField txtErgebnis;
 
 	/**
 	 * Launch the application.
@@ -46,12 +48,12 @@ public class JFrame extends javax.swing.JFrame {
 	 */
 	public JFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 250, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JButton btnFilter = new JButton("filter");
+		JButton btnFilter = new JButton("Filter");
 		
 		JPopupMenu popupMenu = new JPopupMenu();
 		addPopup(btnFilter, popupMenu);
@@ -73,28 +75,46 @@ public class JFrame extends javax.swing.JFrame {
 		txtEanNummer.setColumns(10);
 		
 		JButton btnPrfe = new JButton("Pr\u00FCfe");
+		
+		JButton btnExit = new JButton("Exit");
+		
+		JButton btnMainmenue = new JButton("MainMenu");
+		
+		txtErgebnis = new JTextField();
+		txtErgebnis.setEditable(false);
+		txtErgebnis.setText("Ergebnis");
+		txtErgebnis.setColumns(10);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(btnFilter, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtErgebnis, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnExit)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(txtEanNummer, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 							.addGap(18)
 							.addComponent(btnPrfe))
-						.addComponent(btnFilter, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(261, Short.MAX_VALUE))
+						.addComponent(btnMainmenue))
+					.addContainerGap(61, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(77)
+					.addGap(36)
+					.addComponent(btnMainmenue)
+					.addGap(18)
 					.addComponent(btnFilter, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
 					.addGap(18)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(txtEanNummer, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(btnPrfe))
-					.addContainerGap(98, Short.MAX_VALUE))
+					.addGap(18)
+					.addComponent(txtErgebnis, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(btnExit)
+					.addContainerGap(19, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
