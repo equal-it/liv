@@ -1,4 +1,4 @@
-package livAnne;
+package livRefactor;
 
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
