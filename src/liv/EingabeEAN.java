@@ -54,14 +54,8 @@ public class EingabeEAN {
 			} catch (IOException e) {
 				eanValue = false;
 			}
-			try {
-				liv.PruefeEAN.pruefeEAN(eingabe);
-			} catch (Exception e1) {
-				eanValue = false;
-			}
-
 			
-			if (liv.PruefeEAN.getEanIsOK() == false) {// start if ean fehler
+			if (liv.PruefeEAN.eanUngueltig(eingabe)) {
 				boolean eingabeOK = false;
 				do {
 					System.out.println("EAN Eingabe war nicht korrekt (EingabeEAN.java)\n");

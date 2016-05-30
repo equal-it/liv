@@ -1,4 +1,4 @@
-package livRefactor;
+package livAlt_2016_05_30;
 
 /**
  * Project: Liv - Lebensmittelinhaltverifizierer
@@ -8,27 +8,29 @@ package livRefactor;
  * @version 00.00.03 2016/04/28
  */
 
-public final class PruefeEAN {
-
-	public static boolean eanGueltig(String eanString) {
-		return pruefeEAN(eanString);
+public class PruefeEAN {
+	static boolean eanIsOK = false;
+/**
+ * 
+ * @return
+ */
+	public static boolean getEanIsOK() {
+		return eanIsOK;
 	}
-
-	public static boolean eanUngueltig(String eanString) {
-		return !eanGueltig(eanString);
-	}
-
-	/**
-	 * 
-	 * @param eanString
-	 */
-	private static boolean pruefeEAN(String eanString) {
+/**
+ * 
+ * @param eanString
+ */
+	public static void pruefeEAN(String eanString) {
 
 		// Variablen deklarieren
 		// int[] ean enthaelt die vorgegebene EAN
 		int[] ean = new int[eanString.length()];
 		char[] eanChar = new char[eanString.length()];
+		
 
+		
+		
 		for (int i = 0; i < eanString.length(); i++) {
 			eanChar[i] = eanString.charAt(i);
 		}
@@ -86,13 +88,13 @@ public final class PruefeEAN {
 		// Ist der Wert des Array-Feldes 12 = summe4 - summe3
 		if (summe4 - summe3 == ean[12]) {
 			// dann ist die EAN korrekt und die entsprechende Meldung wird
-			return true;
+			eanIsOK = true;
 		} else {
 			// dann ist die EAN nicht korrekt und die entsprechende Meldung wird
 			// ausgegeben
-			return false;
+			eanIsOK = false;
 		}
-
+	
 	}
-
+	
 }

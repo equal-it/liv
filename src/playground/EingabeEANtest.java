@@ -71,7 +71,7 @@ public class EingabeEANtest {
 			eingabe = scan.next();
 			
 			try {
-				liv.PruefeEAN.pruefeEAN(eingabe);
+				livAlt_2016_05_30.PruefeEAN.pruefeEAN(eingabe);
 			} // try
 			
 			catch (Exception e1) {
@@ -80,7 +80,7 @@ public class EingabeEANtest {
 			} // catch
 			
 			boolean eingabeOK = false;
-				if (liv.PruefeEAN.getEanIsOK() == false) { // Starten falls EAN-Fehler
+				if (livAlt_2016_05_30.PruefeEAN.getEanIsOK() == false) { // Starten falls EAN-Fehler
 					
 					
 						System.out.println("FEHLER! Die eingegebene EAN ist nicht gültig!\n");

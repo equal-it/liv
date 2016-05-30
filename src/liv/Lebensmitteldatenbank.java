@@ -1,4 +1,4 @@
-package livRefactor;
+package liv;
 
 public interface Lebensmitteldatenbank {
 

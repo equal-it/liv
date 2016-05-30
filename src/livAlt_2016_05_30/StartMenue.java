@@ -1,4 +1,4 @@
-package liv;
+package livAlt_2016_05_30;
 /**
  * Die Klasse gibt nur das Startmenue aus
  * @author felix

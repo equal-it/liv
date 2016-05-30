@@ -1,8 +1,8 @@
 package playground;
 import java.io.*;
 
-import liv.Filter;
-import liv.Impressum;
+import livAlt_2016_05_30.Filter;
+import livAlt_2016_05_30.Impressum;
 
 public class LivStart {
 	
@@ -43,11 +43,11 @@ public class LivStart {
 					}
 					switch (auswahl) {
 					case 1:
-						liv.Filter.setFilter();
+						livAlt_2016_05_30.Filter.setFilter();
 						break;
 					
 					case 8:
-						liv.Impressum.printImpressum();
+						livAlt_2016_05_30.Impressum.printImpressum();
 						break;
 					case 9:
 						verlassen = true;

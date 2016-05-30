@@ -50,11 +50,11 @@ public class EingabeEAN {
 				eanValue = false;
 			}
 			try {
-				liv.PruefeEAN.pruefeEAN(eingabe);
+				livAlt_2016_05_30.PruefeEAN.pruefeEAN(eingabe);
 			} catch (Exception e1) {
 				eanValue = false;
 			}
-			if (liv.PruefeEAN.getEanIsOK() == false) {// start if ean fehler
+			if (livAlt_2016_05_30.PruefeEAN.getEanIsOK() == false) {// start if ean fehler
 				boolean eingabeOK = false;
 				do {
 					System.out.println("FEHLER! EAN hat den falschen wert!\n");

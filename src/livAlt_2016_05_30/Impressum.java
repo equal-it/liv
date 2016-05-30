@@ -1,5 +1,4 @@
-package livRefactor;
-
+package livAlt_2016_05_30;
 
 /**
  * Project: Liv - Lebensmittelinhaltverifizierer

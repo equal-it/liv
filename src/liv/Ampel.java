@@ -14,20 +14,20 @@ package liv;
 // !!! Sollten wir keine grafische Ampel realisieren können, sind die Ausgabetexte ggf. noch anzupassen ;)
 public class Ampel {
 	
-	public static void AmpelFarbe (String isProductOk){
+	public static void ampelFarbe (String isProductOk){
 		
 		switch (isProductOk) {
 		
-		case "green":														// Produkt unbedenklich gem. gesetztem Filter
-			System.out.println("\n :-) Ampel gruen. (Klasse Ampel)"); 		// light=green
+		case "green":													// Produkt unbedenklich gem. gesetztem Filter
+			System.out.println("\n :-) Das Lebensmittel enthält kein Laktose. (Klasse Ampel)"); 		// light=green
 			break;
 			
-		case "red":															// Produkt nicht empfehlenswert gem. gesetztem Filter
-			System.out.println("\n :-( Ampel rot (Klasse Ampel)");			// light=red
+		case "red":														// Produkt nicht empfehlenswert gem. gesetztem Filter
+			System.out.println("\n :-( Das Lebensmittel enthält Laktose (Klasse Ampel)");	// light=red
 			break;
 			
-		case "yellow":														// Produkt nicht in der Datenbank enthalten
-			System.out.println("\n :-| Ampel gelb\nDieses Lebensmittel ist leider nicht in der Datenbank enthalten. (Klasse Ampel)");		// light=yellow
+		case "yellow":													// Produkt nicht in der Datenbank enthalten
+			System.out.println("\n :-| Dieses Lebensmittel ist leider nicht in der Datenbank enthalten. (Klasse Ampel)");		// light=yellow
 			break;
 			
 		}	// switch (isProductOK){

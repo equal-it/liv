@@ -1,4 +1,4 @@
-package livRefactor;
+package livAlt_2016_05_30;
 // import java.util.Scanner;
 import java.io.IOException;
 import java.io.BufferedReader;
@@ -54,8 +54,14 @@ public class EingabeEAN {
 			} catch (IOException e) {
 				eanValue = false;
 			}
+			try {
+				livAlt_2016_05_30.PruefeEAN.pruefeEAN(eingabe);
+			} catch (Exception e1) {
+				eanValue = false;
+			}
+
 			
-			if (livRefactor.PruefeEAN.eanUngueltig(eingabe)) {
+			if (livAlt_2016_05_30.PruefeEAN.getEanIsOK() == false) {// start if ean fehler
 				boolean eingabeOK = false;
 				do {
 					System.out.println("EAN Eingabe war nicht korrekt (EingabeEAN.java)\n");

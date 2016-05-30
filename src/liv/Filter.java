@@ -1,8 +1,8 @@
 package liv;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * class Filter
@@ -19,187 +19,78 @@ import java.io.InputStreamReader;
 // um weiter Filter neben Laktose testen zu koennen, brauchen wir die Mocks!!
 
 public class Filter {
-	/**
-	 * Filterklasse Setzt den Filter fuer die Ampel-Ausgabe
-	 * 
-	 * @param a
-	 * 			= Laktose
-	 * @param b
-	 * 			= Gluten
-	 * @param c
-	 * 			= Glutamat
-	 * @param d
-	 * 			= Hefeextrakt
-	 * @param e
-	 * 			= Nuss
-	 * 
-	 * @return filter - ausgewaehltes Kriterium
-	 * 
-	 */
 
-	static boolean filterWurdeGesetzt = false;
+	private static final String HAUPTMENU = "4";
 
-	// Fuer die zentrale Aenderung der Filterwerte
-	static String a = "Laktose";
-	static String b = "Gluten";
-	static String c = "Glutamat";
-	static String d = "Hefextrakt";
-	static String e = "Nuss";
+	public static Set<Inhaltsstoff> setFilter() {
 
-	static boolean[] filter = new boolean[5]; // default value false
+		Set<Inhaltsstoff> inhaltsstoffe = new HashSet<>();
 
-	public void setFilter(boolean a, boolean b, boolean c, boolean d, boolean e) {
-		filter[0] = a;	// Laktose
-		filter[1] = b; 	// Gluten
-		filter[2] = c;	// Glutamat
-		filter[3] = d;	// Hefextrakt
-		filter[4] = e;	// Nuss
-	}
+		String auswahl = null;
+		do {
+			menuAusgeben();
 
-	public static void setFilter() {
-		filterWurdeGesetzt = true;
-		try {
-			InputStreamReader isr = new InputStreamReader(System.in);
-			BufferedReader br = new BufferedReader(isr);
-			String eingabeFilter;
-			String eingabeSetFilter;
+			auswahl = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2", HAUPTMENU }));
 
-			boolean verlassen = false;
-			int auswahl;
+			if (auswahl != null) {
+				Inhaltsstoff inhaltsstoff = Inhaltsstoff.inhaltstoffFuerCode(auswahl);
 
-			do {
 				System.out.println(
 						"\n---------------------------------------------------------------------(Klasse Filter)");
-				System.out.println("\nWelchen Filter wollen Sie setzen?\n");
-				System.out.println("Waehle '1' fuer " + a + "."); // + filter[0]
-				System.out.println("Waehle '2' fuer " + b + ".");
-				System.out.println("Waehle '3' fuer " + c + ".");
-				System.out.println("Waehle '4' fuer " + d + ".");
-				System.out.println("Waehle '5' fuer " + e + ".");
-				System.out.println("\nWaehle '8' fuer Filter Anzeige");
-				System.out.println("Oder mit '9' zum Hauptmenue. \n");
-				System.out.println("---------------------------------------------------------------------");
-
-				eingabeFilter = br.readLine();
-				auswahl = Integer.parseInt(eingabeFilter);
-
-				// überprüfen ob alle 3 cases nötig sind oder die Definition
-				// "filter []" ausreicht!!!
-				// Wenn Aenderungen, dann auch in "VergleichFilter"
-				switch (auswahl) {
-				case 1:
-					System.out.println(
-							"\n---------------------------------------------------------------------(Klasse Filter)");
-					System.out.println("Filter '" + a
-							+ "' setzen? \nBitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl: \n");
-					eingabeSetFilter = br.readLine();
-					switch (eingabeSetFilter) {
-					case "j":
-						filter[0] = true;
-						System.out.println("Filter '" + a + "' wurde gesetzt. (Klasse Filter)");
-						System.out.println("Weitere Filter setzen oder mit '9' zum Hauptmenue.\n");
-						System.out.println("---------------------------------------------------------------------");
-						break;
-					case "n":
-						filter[0] = false;
-						System.out.println("Filter '" + a + "' wurde nicht gesetzt. (Klasse Filter)");
-						break;
-					default:
-						System.out.println("Falsche Eingabe, bitte einen Filter auswaehlen. (Klasse Filter)");
-						break;
-					}
+				switch (inhaltsstoff) {
+				case LAKTOSE:
+					setzeOderEntferneFilter(inhaltsstoffe, inhaltsstoff);
 					break;
 
-				case 2:
-					System.out.println(b
-							+ " als Filter setzten, bitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl: (Klasse Filter)\n");
-					eingabeSetFilter = br.readLine();
-					switch (eingabeSetFilter) {
-					case "j":
-						filter[1] = true;
-						break;
-					case "n":
-						filter[1] = false;
-						break;
-					default:
-						System.out.println("Falsche Eingabe, bitte einen Filter auswaehlen. (Klasse Filter)");
-						break;
-					}
+				case GLUTEN:
+					setzeOderEntferneFilter(inhaltsstoffe, inhaltsstoff);
 					break;
 
-				case 3:
-					System.out.println(c
-							+ " als Filter setzten, bitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl: (Klasse Filter) \n");
-					eingabeSetFilter = br.readLine();
-					switch (eingabeSetFilter) {
-					case "j":
-						filter[2] = true;
-						break;
-					case "n":
-						filter[2] = false;
-						break;
-					default:
-						System.out.println("Falsche Eingabe, bitte einen Filter auswaehlen. (Klasse Filter)");
-						break;
-					}
-					break;
-				case 4:
-					System.out.println(d
-							+ " als Filter setzten, bitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl: (Klasse Filter) \n");
-					eingabeSetFilter = br.readLine();
-					switch (eingabeSetFilter) {
-					case "j":
-						filter[3] = true;
-						break;
-					case "n":
-						filter[3] = false;
-						break;
-					default:
-						System.out.println("Falsche Eingabe, bitte einen Filter auswaehlen. (Klasse Filter)");
-						break;
-					}
-					break;
-				case 5:
-					System.out.println(e
-							+ " als Filter setzten, bitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl: (Klasse Filter) \n");
-					eingabeSetFilter = br.readLine();
-					switch (eingabeSetFilter) {
-					case "j":
-						filter[4] = true;
-						break;
-					case "n":
-						filter[4] = false;
-						break;
-					default:
-						System.out.println("Falsche Eingabe, bitte einen Filter auswaehlen. (Klasse Filter)");
-						break;
-					}
-					break;
-				case 8:
-					System.out.println("Filter : " + a + " ist " + filter[0]);
-					System.out.println("Filter : " + b + " ist " + filter[1]);
-					System.out.println("Filter : " + c + " ist " + filter[2]);
-					System.out.println("Filter : " + d + " ist " + filter[3]);
-					System.out.println("Filter : " + e + " ist " + filter[4]);
-					break;
-				case 9:
-					verlassen = true;
+				case UNBEKANNT:
 					break;
 				}
+			}
 
-			} while (verlassen == false);
-		} catch (IOException ex) {
-			System.out.println(ex.getMessage());
+		} while (!HAUPTMENU.equals(auswahl));
+
+		return inhaltsstoffe;
+	}
+
+	private static void menuAusgeben() {
+		System.out.println("\n---------------------------------------------------------------------(Klasse Filter)");
+		for (Inhaltsstoff stoff : Inhaltsstoff.values()) {
+			if (stoff != Inhaltsstoff.UNBEKANNT)
+				System.out.println("Waehle " + stoff.code() + " fuer " + stoff.anzeigename() + ".");
 		}
-
+		System.out.println("\nOder mit " + HAUPTMENU + " zum Hauptmenue. \n");
+		System.out.println("---------------------------------------------------------------------");
 	}
 
-	public static boolean[] getFilter() {
-		return filter;
-	}
+	private static void setzeOderEntferneFilter(Set<Inhaltsstoff> inhaltsstoffe, Inhaltsstoff inhaltsstoff) {
 
-	public static boolean getFilter(int filternummer) {
-		return filter[filternummer];
+		String eingabeSetFilter;
+		System.out.println("Filter '" + inhaltsstoff.anzeigename()
+				+ "' setzen? \nBitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl: \n");
+
+		eingabeSetFilter = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "j", "n" }));
+
+		if (eingabeSetFilter != null) {
+			switch (eingabeSetFilter) {
+			case "j":
+				inhaltsstoffe.add(inhaltsstoff);
+				System.out.println("Filter '" + inhaltsstoff.anzeigename() + "' wurde hinzugefuegt. (Klasse Filter)");
+				System.out.println("Weitere Filter setzen oder mit '4' zum Hauptmenue.\n");
+				System.out.println("---------------------------------------------------------------------");
+				break;
+			case "n":
+				inhaltsstoffe.remove(inhaltsstoff);
+				System.out.println("Filter '" + inhaltsstoff.anzeigename() + "' wurde entfernt. (Klasse Filter)");
+				break;
+			default:
+				System.out.println("Falsche Eingabe, bitte einen Filter auswaehlen. (Klasse Filter)");
+				break;
+			}
+		}
 	}
 
 }

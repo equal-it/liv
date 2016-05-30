@@ -27,7 +27,6 @@ import java.net.URL;
 
 // To Do: Ergebnis von class PruefeEAN einbauen: muss bei ean=false abfangen!
 
-
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
@@ -38,21 +37,9 @@ import java.net.URL;
  * @version 00.00.04 2016/05/02
  */
 
-public class HttpAbfrageLaktonaut {
-	
-	// Testabfrage - allerdings fehlt noch der tatsaechliche Abbruch, aber der Parameter wird geprueft.
-	{
-	if (liv.PruefeEAN.eanIsOK = false){
-			System.out.println("Abbruch - da EAN ungültig, findet keine DB-Abfrage statt. (Klasse HttpAbfrageLaktonaut)");
-	}
-	else{
-		System.out.println("DB wird nun aufgerufen. (Klasse HttpAbfrageLaktonaut)");
-	}
-	}
+public class HttpAbfrageLaktonaut implements Lebensmitteldatenbank {
 
 	private final static String USER_AGENT = "Mozilla/5.0";
-
-	public String ean = null;
 
 	public static String laktose;
 
@@ -89,8 +76,8 @@ public class HttpAbfrageLaktonaut {
 	 * http://www.laktonaut.de/api.php?action=query&gtin=4000417025005&key=test
 	 * 
 	 */
-	public static void sendGet(String ean) throws Exception {
-			
+	public static String sendGet(String ean) throws Exception {
+
 		String url = "http://www.laktonaut.de/api.php?action=query&gtin=" + ean + "&key=test ";
 
 		URL obj = new URL(url);
@@ -102,89 +89,46 @@ public class HttpAbfrageLaktonaut {
 		// add request header
 		con.setRequestProperty("User-Agent", USER_AGENT);
 
-		//Bei Problemen mit der Connection die naechsten drei Zeilen wieder aktivieren
-		//int responseCode = con.getResponseCode();
-		//System.out.println("\nSending 'GET' request to URL : " + url);
-		//System.out.println("\nResponse Code : " + responseCode + " (wenn 200 ist alles OK)");
+		// Bei Problemen mit der Connection die naechsten drei Zeilen wieder
+		// aktivieren
+		// int responseCode = con.getResponseCode();
+		// System.out.println("\nSending 'GET' request to URL : " + url);
+		// System.out.println("\nResponse Code : " + responseCode + " (wenn 200
+		// ist alles OK)");
 
 		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 		String inputLine;
-		StringBuffer xmlResponse = new StringBuffer(); 
+		StringBuffer xmlResponse = new StringBuffer();
 
 		while ((inputLine = in.readLine()) != null) {
 			xmlResponse.append(inputLine);
 		}
 
 		in.close();
-		
-		//return xmlResponse.toString(); // GGF. 
-		
-		
-		// hier werden die beiden Zeichen hinter <lactose>XX abgefragt (die XX)
-		int laktoseIndex = xmlResponse.lastIndexOf("<lactose>");
-		String laktoseValue = xmlResponse.substring(laktoseIndex + 9, laktoseIndex + 11);
 
-		switch (laktoseValue) {
-		case "no":
-			laktose = "no";
-			break;
-		case "ye":
-			laktose = "yes";
-			break;
-		default:
-			laktose = "unbekannt";
-			break;
-		}
-		//System.out.println("\nLaktose enhalten : " + laktose);
+		return xmlResponse.toString();
+
 	}// sendGet
 
-	// --- Ab hier erstmal nicht wichtig: ---//
+	@Override
+	public String frageNach(String ean) {
+		try {
+			return sendGet(ean);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 
-	// erstmal kein https erforderlich - ggf. spaeter einbinden
-
-	// import javax.net.ssl.HttpsURLConnection;
-
-	// public static void main(String[] args) throws Exception {
-
-	// laktonaut.de API per GET zu erreichen POST ertmal nicht relevant
-	//
-	// System.out.println("\nTesting 2 - Send Http POST request");
-	// http.sendPost();
-
-	// }
-
-	/*
-	 * HTTP POST request private void sendPost() throws Exception {
-	 * 
-	 * String url = "https://selfsolve.apple.com/wcResults.do"; URL obj = new
-	 * URL(url); HttpsURLConnection con = (HttpsURLConnection)
-	 * obj.openConnection();
-	 * 
-	 * //add reuqest header con.setRequestMethod("POST");
-	 * con.setRequestProperty("User-Agent", USER_AGENT);
-	 * con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
-	 * 
-	 * String urlParameters = "sn=C02G8416DRJM&cn=&locale=&caller=&num=12345";
-	 * 
-	 * // Send post request con.setDoOutput(true); DataOutputStream wr = new
-	 * DataOutputStream(con.getOutputStream()); wr.writeBytes(urlParameters);
-	 * wr.flush(); wr.close();
-	 * 
-	 * int responseCode = con.getResponseCode(); System.out.println(
-	 * "\nSending 'POST' request to URL : " + url); System.out.println(
-	 * "Post parameters : " + urlParameters); System.out.println(
-	 * "Response Code : " + responseCode);
-	 * 
-	 * BufferedReader in = new BufferedReader( new
-	 * InputStreamReader(con.getInputStream())); String inputLine; StringBuffer
-	 * response = new StringBuffer();
-	 * 
-	 * while ((inputLine = in.readLine()) != null) { response.append(inputLine);
-	 * } in.close();
-	 * 
-	 * //print result System.out.println(response.toString());
-	 * 
-	 * }
-	 */
+	@Override
+	public Ampelindikator antwortEnthaeltInhaltsstoff(String anfrageergebnis, Inhaltsstoff inhaltsstoff) {
+		if (inhaltsstoff == Inhaltsstoff.LAKTOSE) {
+			String[] schritt1 = anfrageergebnis.split("<lactose>");
+			String[] schritt2 = schritt1[1].split("</lactose>");
+			String ergebnis = schritt2[0];
+			return "yes".equals(ergebnis) ? Ampelindikator.ENTHALTEN : Ampelindikator.NICHT_ENTHALTEN;
+		}
+		return Ampelindikator.UNBEKANNT;
+	}
 
 } // end class
