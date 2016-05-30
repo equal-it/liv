@@ -10,7 +10,6 @@ import java.io.*;
  */
 
 
-
 public class Liv { // Console
 
 	public static void main(String[] args) {

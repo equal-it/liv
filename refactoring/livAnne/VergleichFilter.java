@@ -18,16 +18,13 @@ public class VergleichFilter {
 
 	public static String ueberprufeIndikatoren(List<Ampelindikator> ergebnisse) {
 
-		String isProduktOK = null;
+		String isProduktOK = "green";
 
-		if (ergebnisse.contains(Ampelindikator.UNBEKANNT)) {
+		if (ergebnisse.isEmpty() || ergebnisse.contains(Ampelindikator.UNBEKANNT)) {
 			isProduktOK = "yellow";
-		} else if (ergebnisse.contains(Ampelindikator.ENTHALTEN)) {
+		} if (ergebnisse.contains(Ampelindikator.ENTHALTEN)) {
 			isProduktOK = "red";
-		} else {
-			isProduktOK = "green";
 		}
-
 		return isProduktOK;
 	}
 

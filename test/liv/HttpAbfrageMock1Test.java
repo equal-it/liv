@@ -12,8 +12,9 @@ import org.mockito.Mock;
 
 public class HttpAbfrageMock1Test {
 
-	 @Mock
-	 HttpAbfrageMock1Test;
+	//@Mock
+	 HttpAbfrageMock1Test() {
+	}
 	
 	 //aloha
 	 
@@ -37,5 +38,7 @@ public class HttpAbfrageMock1Test {
 	public void test() {
 		fail("Not yet implemented");
 	}
+	
+	
 
 }

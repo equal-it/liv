@@ -1,6 +1,5 @@
 package livAnne;
 
-
 public interface Lebensmitteldatenbank {
 
 	String frageNach(final String ean);
