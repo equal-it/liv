@@ -1,4 +1,4 @@
-package liv;
+package playground;
 
 
 import java.util.Scanner;
