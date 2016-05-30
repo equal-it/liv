@@ -19,10 +19,16 @@ public final class PruefeEAN {
 	}
 
 	/**
+	 * Methode prüft 13 stellige EAN code auf gueltigkeit
+	 * 
+	 * Zeile 45 die 11 und Zeile 64 ean[12] zeigen das hier nur 13 stellige EAN
+	 * geprüft werden können ist in der PrüfeEANorginal auch so gewesen
 	 * 
 	 * @param eanString
+	 *            muss aus 13 zahlenzeichen bestehen
 	 */
 	private static boolean pruefeEAN(String eanString) throws Exception {
+
 		try {
 			int[] ean = new int[eanString.length()];
 			char[] eanChar = new char[eanString.length()];
