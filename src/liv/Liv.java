@@ -17,7 +17,7 @@ import java.util.Set;
 
 public class Liv { // Console
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Set<Inhaltsstoff> aktuellerFilter = new HashSet<>();
 		List<Ampelindikator> indikatoren = new ArrayList<>();
 

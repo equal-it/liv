@@ -1,10 +1,10 @@
-package liv;
+package playground;
 
 /**
  * orginal von anica
  */
 
-public class PruefeEAN {
+public class PruefeEANOrginalAnica {
 	public static void pruefeEAN() {
 		// Variablen deklarieren
 		// int[] ean enthaelt die vorgegebene EAN

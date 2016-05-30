@@ -32,10 +32,10 @@ public class EingabeEAN {
 	//---- ab hier Felix Version ---//
 	/**
 	 * 
-	 * @throws IOException
+	 * @throws Exception 
 	 */
 
-	public static void einlesen() throws IOException {
+	public static void einlesen() throws Exception {
 		boolean eanValue = false; // fuer Auswertung ob ean OK
 		String eingabe2 = null;   // fuer Fehler Menue
 		int auswahl = 0;
@@ -58,7 +58,8 @@ public class EingabeEAN {
 			if (liv.PruefeEAN.eanUngueltig(eingabe)) {
 				boolean eingabeOK = false;
 				do {
-					System.out.println("EAN Eingabe war nicht korrekt (EingabeEAN.java)\n");
+					System.out.println("EAN Eingabe war nicht korrekt (EingabeEAN.java)");
+					System.out.println("EAN muss aus 13 Zahlen bestehen!!!\n");
 					System.out.println("1 neue Eingabe");
 					System.out.println("2 Eingabe abbrechen");
 					InputStreamReader isr2 = new InputStreamReader(System.in);
