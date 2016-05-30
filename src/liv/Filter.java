@@ -23,11 +23,15 @@ public class Filter {
 	 * Filterklasse Setzt den Filter fuer die Ampel-Ausgabe
 	 * 
 	 * @param a
-	 *            = Laktose
+	 * 			= Laktose
 	 * @param b
-	 *            = Gluten
+	 * 			= Gluten
 	 * @param c
-	 *            = Soya
+	 * 			= Glutamat
+	 * @param d
+	 * 			= Hefeextrakt
+	 * @param e
+	 * 			= Nuss
 	 * 
 	 * @return filter - ausgewaehltes Kriterium
 	 * 
@@ -45,11 +49,11 @@ public class Filter {
 	static boolean[] filter = new boolean[5]; // default value false
 
 	public void setFilter(boolean a, boolean b, boolean c, boolean d, boolean e) {
-		filter[0] = a; // Laktose
-		filter[1] = b;
-		filter[2] = c;
-		filter[3] = d;
-		filter[4] = e;
+		filter[0] = a;	// Laktose
+		filter[1] = b; 	// Gluten
+		filter[2] = c;	// Glutamat
+		filter[3] = d;	// Hefextrakt
+		filter[4] = e;	// Nuss
 	}
 
 	public static void setFilter() {

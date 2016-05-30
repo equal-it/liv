@@ -18,15 +18,15 @@ public class Ampel {
 		
 		switch (isProductOk) {
 		
-		case "green":													// Produkt unbedenklich gem. gesetztem Filter
+		case "green":														// Produkt unbedenklich gem. gesetztem Filter
 			System.out.println("\n :-) Ampel gruen. (Klasse Ampel)"); 		// light=green
 			break;
 			
-		case "red":														// Produkt nicht empfehlenswert gem. gesetztem Filter
-			System.out.println("\n :-( Ampel rot (Klasse Ampel)");	// light=red
+		case "red":															// Produkt nicht empfehlenswert gem. gesetztem Filter
+			System.out.println("\n :-( Ampel rot (Klasse Ampel)");			// light=red
 			break;
 			
-		case "yellow":													// Produkt nicht in der Datenbank enthalten
+		case "yellow":														// Produkt nicht in der Datenbank enthalten
 			System.out.println("\n :-| Ampel gelb\nDieses Lebensmittel ist leider nicht in der Datenbank enthalten. (Klasse Ampel)");		// light=yellow
 			break;
 			
