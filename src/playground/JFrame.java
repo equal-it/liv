@@ -1,6 +1,5 @@
-package gui;
+package playground;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JPanel;
