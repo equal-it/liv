@@ -1,23 +1,19 @@
 package playground;
 
 
-	import java.awt.BorderLayout;
-	import java.awt.EventQueue;
-
-	import javax.swing.JFrame;
-	import javax.swing.JPanel;
-	import javax.swing.border.EmptyBorder;
-	//import net.miginfocom.swing.MigLayout;
-	import javax.swing.border.BevelBorder;
-	import java.awt.Panel;
-	import javax.swing.border.TitledBorder;
-	import javax.swing.UIManager;
 	import java.awt.Color;
-	import javax.swing.JRadioButton;
-	import javax.swing.JCheckBox;
-	import javax.swing.ButtonGroup;
-	import java.awt.event.ActionListener;
-	import java.awt.event.ActionEvent;
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
 
 	public class KevAmpel1 extends JFrame {
 

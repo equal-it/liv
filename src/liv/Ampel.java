@@ -1,5 +1,7 @@
 package liv;
 
+import playground.TestFrame;
+
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
@@ -18,18 +20,23 @@ public class Ampel {
 		
 		switch (isProductOk) {
 		
-		case "green":													// Produkt unbedenklich gem. gesetztem Filter
-			System.out.println("\n :-) Ampel gruen (Klasse Ampel)"); 		// light=green
+		case "green":	
+			new gui.AmpelGreen();
+			// Produkt unbedenklich gem. gesetztem Filter
+			//System.out.println("\n :-) Ampel gruen (Klasse Ampel)"); 		// light=green
 			break;
-			
-		case "red":														// Produkt nicht empfehlenswert gem. gesetztem Filter
-			System.out.println("\n :-( Ampel rot (Klasse Ampel)");	// light=red
+			//    new AmpelGruen ();
+		case "red":	
+		    new gui.AmpelRed();
+		    // Produkt nicht empfehlenswert gem. gesetztem Filter
+			//System.out.println("\n :-( Ampel rot (Klasse Ampel)");	// light=red
 			break;
-			
+
 		case "yellow":													// Produkt nicht in der Datenbank enthalten
-			System.out.println("\n :-| Ampel gelb (Klasse Ampel)");		// light=yellow
+			new gui.AmpelYellow();
+			//System.out.println("\n :-| Ampel gelb (Klasse Ampel)");		// light=yellow
 			break;
-			
+			//new AmpelGeld();
 		}	// switch (isProductOK){
 		
 	}	// public static void AmpelFarbe (String isProductOk){
