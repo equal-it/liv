@@ -20,6 +20,8 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class JFrame extends javax.swing.JFrame {
 
@@ -27,9 +29,6 @@ public class JFrame extends javax.swing.JFrame {
 	private JTextField txtEanNummer;
 	private JTextField txtErgebnis;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -43,12 +42,9 @@ public class JFrame extends javax.swing.JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public JFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 250, 300);
+		setBounds(400, 200, 250, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -64,11 +60,8 @@ public class JFrame extends javax.swing.JFrame {
 		JRadioButton rdbtnGluten = new JRadioButton("Gluten");
 		popupMenu.add(rdbtnGluten);
 		
-		JRadioButton rdbtnKonservierungsstoffe = new JRadioButton("Konservierungsstoffe");
-		popupMenu.add(rdbtnKonservierungsstoffe);
-		
-		JRadioButton rdbtnZucker = new JRadioButton("Zucker");
-		popupMenu.add(rdbtnZucker);
+		JRadioButton rdbtnUnbekannt = new JRadioButton("Unbekannt");
+		popupMenu.add(rdbtnUnbekannt);
 		
 		txtEanNummer = new JTextField();
 		txtEanNummer.setText("EAN Nummer");
@@ -77,6 +70,12 @@ public class JFrame extends javax.swing.JFrame {
 		JButton btnPrfe = new JButton("Pr\u00FCfe");
 		
 		JButton btnExit = new JButton("Exit");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent exit) {
+				System.exit(0);
+			}
+		});
+		contentPane.add(btnExit);
 		
 		JButton btnMainmenue = new JButton("MainMenu");
 		
