@@ -1,11 +1,11 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Panel;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.Toolkit;
 
 /**
  * @author felix
@@ -13,18 +13,38 @@ import java.awt.event.WindowEvent;
  */
 public class AmpelYellow extends Frame {
 
-	public AmpelYellow() { // Rahmen
+	public AmpelYellow() throws InterruptedException { // Rahmen
 
-		setTitle("Ampel-Test");
-		addWindowListener(new TestWindowListener());
+		int windowWidth = 150;
+		int windowHeight = 325;
+		
+		setTitle("Ampel-Yellow");
+		addWindowListener(new WindowListener());
 
-		add(new DrawingPanel());
+		add(new DrawingPanelYellow());
 
-		setSize(150, 300);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+
+        // Determine the new location of the window
+        int w = this.getSize().width;
+        int h = this.getSize().height;
+        int x = (dim.width-w)/2-windowWidth/2;
+        int y = (dim.height-h)/2-windowHeight/2;
+
+        // Move the window
+        this.setLocation(x, y);
+
+		setSize(windowWidth, windowHeight);
 		setVisible(true);
-	} // public TestFrame () {
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		dispose();
+	}
 
-class DrawingPanel extends Panel { // Ampel
+	class DrawingPanelYellow extends Panel { // Ampel
 
 		public void paint(Graphics g) {
 
@@ -35,16 +55,8 @@ class DrawingPanel extends Panel { // Ampel
 			g.setColor(Color.GRAY);
 			g.fillOval(50, 200, 50, 50);
 			g.setColor(Color.GRAY);
-			g.drawString("Willkomen bei LIV!", 20, 20);
+			g.drawString("yellow!", 50, 20);
 
-		} // public void paint(Graphics g) {
-	} // class DrawingPanel extends Panel {
-
-class TestWindowListener extends WindowAdapter {
-		  
-	    public void windowClosing(WindowEvent e) {
-	    	e.getWindow().dispose();  
-	    	//System.exit(0);                            
-	    }           
-	  } // class TestWindowListener extends WindowAdapter {
+		}
+	}
 }

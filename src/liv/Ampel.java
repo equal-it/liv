@@ -14,24 +14,24 @@ package liv;
 // !!! Sollten wir keine grafische Ampel realisieren können, sind die Ausgabetexte ggf. noch anzupassen ;)
 public class Ampel {
 	
-	public static void ampelFarbe (String isProductOk){
+	public static void ampelFarbe (String isProductOk) throws InterruptedException{
 		
 		switch (isProductOk) {
 		
 		case "green":	
-			new livMitGui_gui.AmpelGreen();
+			new gui.AmpelGreen();
 			// Produkt unbedenklich gem. gesetztem Filter
 			//System.out.println("\n :-) Ampel gruen (Klasse Ampel)"); 		// light=green
 			break;
 			//    new AmpelGruen ();
 		case "red":	
-		    new livMitGui_gui.AmpelRed();
+		    new gui.AmpelRed();
 		    // Produkt nicht empfehlenswert gem. gesetztem Filter
 			//System.out.println("\n :-( Ampel rot (Klasse Ampel)");	// light=red
 			break;
 
 		case "yellow":													// Produkt nicht in der Datenbank enthalten
-			new livMitGui_gui.AmpelYellow();
+			new gui.AmpelYellow();
 			//System.out.println("\n :-| Ampel gelb (Klasse Ampel)");		// light=yellow
 			break;
 			//new AmpelGeld();

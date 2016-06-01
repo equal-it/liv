@@ -55,7 +55,7 @@ public class EingabeEAN {
 				eanValue = false;
 			}
 			
-			if (livMitGui_liv.PruefeEAN.eanUngueltig(eingabe)) {
+			if (liv.PruefeEAN.eanUngueltig(eingabe)) {
 				boolean eingabeOK = false;
 				do {
 					System.out.println("EAN Eingabe war nicht korrekt (EingabeEAN.java)");

@@ -19,19 +19,19 @@ public class Ampel {
 		switch (isProductOk) {
 		
 		case "green":	
-			new gui.AmpelGreen();
+			new livMitGui_gui.AmpelGreen();
 			// Produkt unbedenklich gem. gesetztem Filter
 			//System.out.println("\n :-) Ampel gruen (Klasse Ampel)"); 		// light=green
 			break;
 			//    new AmpelGruen ();
 		case "red":	
-		    new gui.AmpelRed();
+		    new livMitGui_gui.AmpelRed();
 		    // Produkt nicht empfehlenswert gem. gesetztem Filter
 			//System.out.println("\n :-( Ampel rot (Klasse Ampel)");	// light=red
 			break;
 
 		case "yellow":													// Produkt nicht in der Datenbank enthalten
-			new gui.AmpelYellow();
+			new livMitGui_gui.AmpelYellow();
 			//System.out.println("\n :-| Ampel gelb (Klasse Ampel)");		// light=yellow
 			break;
 			//new AmpelGeld();
