@@ -1,8 +1,9 @@
-package liv;
+package livMitGui_liv;
 
-import liv.Ampelindikator;
-import liv.Inhaltsstoff;
-import liv.Lebensmitteldatenbank;
+import livMitGui_liv.Ampelindikator;
+
+import livMitGui_liv.Inhaltsstoff;
+import livMitGui_liv.Lebensmitteldatenbank;
 
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
@@ -14,7 +15,7 @@ import liv.Lebensmitteldatenbank;
  * @version 00.00.01 2016/05/16
  */
 
-public class HttpAbfrageMock1 implements Lebensmitteldatenbank {
+public class GlutenDatenbankMock implements Lebensmitteldatenbank {
 
 	@Override
 	public String frageNach(String ean) {
@@ -34,7 +35,10 @@ public class HttpAbfrageMock1 implements Lebensmitteldatenbank {
 
 	@Override
 	public Ampelindikator antwortEnthaeltInhaltsstoff(String anfrageergebnis, Inhaltsstoff inhaltsstoff) {
-		return Ampelindikator.UNBEKANNT;
+		if (inhaltsstoff == Inhaltsstoff.GLUTEN) {
+			return Ampelindikator.ENTHALTEN;
+		}
+		return Ampelindikator.NICHT_ENTHALTEN;
 	}
 
 	// Hier fehlt die Moeglichkeit, eine weitere "Datenbank" abzufragen

@@ -1,5 +1,9 @@
 package liv;
 
+import liv.Ampelindikator;
+import liv.Inhaltsstoff;
+import liv.Lebensmitteldatenbank;
+
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 

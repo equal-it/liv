@@ -1,8 +1,8 @@
-package liv;
+package livMitGui_liv;
 
-import liv.Ampelindikator;
-import liv.Inhaltsstoff;
-import liv.Lebensmitteldatenbank;
+import livMitGui_liv.Ampelindikator;
+import livMitGui_liv.Inhaltsstoff;
+import livMitGui_liv.Lebensmitteldatenbank;
 
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer

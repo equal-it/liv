@@ -1,4 +1,4 @@
-package liv;
+package livMitGui_liv;
 
 import java.io.BufferedReader;
 
@@ -25,9 +25,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import liv.Ampelindikator;
-import liv.Inhaltsstoff;
-import liv.Lebensmitteldatenbank;
+import livMitGui_liv.Ampelindikator;
+import livMitGui_liv.Inhaltsstoff;
+import livMitGui_liv.Lebensmitteldatenbank;
 
 // To Do: Ergebnis von class PruefeEAN einbauen: muss bei ean=false abfangen!
 

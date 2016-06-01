@@ -1,19 +1,20 @@
-package liv;
+package livMitGui_liv;
 
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import liv.Ampelindikator;
-import liv.EingabeEAN;
-import liv.GlutenDatenbankMock;
-import liv.HttpAbfrageLaktonaut;
-import liv.Inhaltsstoff;
-import liv.Konsoleneingabe;
-import liv.Lebensmitteldatenbank;
+import livMitGui_liv.Ampelindikator;
+import livMitGui_liv.EingabeEAN;
+import livMitGui_liv.GlutenDatenbankMock;
+import livMitGui_liv.HttpAbfrageLaktonaut;
+import livMitGui_liv.Inhaltsstoff;
+import livMitGui_liv.Konsoleneingabe;
+import livMitGui_liv.Lebensmitteldatenbank;
 
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
@@ -75,14 +76,14 @@ public class Liv { // Console
 
 				case 1:
 					aktuellerFilter.clear();
-					Set<Inhaltsstoff> inhaltsstoffe = liv.Filter.setFilter();
+					Set<Inhaltsstoff> inhaltsstoffe = livMitGui_liv.Filter.setFilter();
 					aktuellerFilter.addAll(inhaltsstoffe);
 					break;
 
 				case 2:
 					indikatoren.clear();
-					livMitGui_liv.EingabeEAN.einlesen();
-					if (livMitGui_liv.PruefeEAN.eanGueltig(EingabeEAN.eingabe)) {
+					liv.EingabeEAN.einlesen();
+					if (liv.PruefeEAN.eanGueltig(EingabeEAN.eingabe)) {
 						System.out.println("DB wird nun aufgerufen. (Klasse Liv)");
 						try {
 							if (!aktuellerFilter.isEmpty()) {
@@ -100,11 +101,11 @@ public class Liv { // Console
 						} catch (Exception e1) {
 							// gibt Fehlermeldung aus wenn Fehler in
 							// HttpAbfrageLaktonaut
-							System.out.println("FEHLER! Problem mit der Abfrage zu EAN: " + livMitGui_liv.EingabeEAN.getEingabe()
+							System.out.println("FEHLER! Problem mit der Abfrage zu EAN: " + liv.EingabeEAN.getEingabe()
 									+ " (Klasse Liv)");
 						}
 
-						livMitGui_liv.Ampel.ampelFarbe(liv.VergleichFilter.ueberprufeIndikatoren(indikatoren));
+						liv.Ampel.ampelFarbe(livMitGui_liv.VergleichFilter.ueberprufeIndikatoren(indikatoren));
 
 					} else {
 						System.out.println("Abbruch - da EAN ungültig, findet keine DB-Abfrage statt. (Klasse Liv)");
@@ -113,7 +114,7 @@ public class Liv { // Console
 					break;
 
 				case 8:
-					livMitGui_liv.Impressum.printImpressum();
+					liv.Impressum.printImpressum();
 					break;
 
 				case 9:

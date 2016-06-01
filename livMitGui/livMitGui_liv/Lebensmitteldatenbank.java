@@ -1,7 +1,7 @@
-package liv;
+package livMitGui_liv;
 
-import liv.Ampelindikator;
-import liv.Inhaltsstoff;
+import livMitGui_liv.Ampelindikator;
+import livMitGui_liv.Inhaltsstoff;
 
 public interface Lebensmitteldatenbank {
 

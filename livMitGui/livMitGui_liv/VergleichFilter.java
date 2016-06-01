@@ -1,9 +1,9 @@
-package liv;
+package livMitGui_liv;
 
 
 import java.util.List;
 
-import liv.Ampelindikator;
+import livMitGui_liv.Ampelindikator;
 
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer

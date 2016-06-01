@@ -1,11 +1,11 @@
-package liv;
+package livMitGui_liv;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import liv.Inhaltsstoff;
-import liv.Konsoleneingabe;
+import livMitGui_liv.Inhaltsstoff;
+import livMitGui_liv.Konsoleneingabe;
 
 /**
  * class Filter
