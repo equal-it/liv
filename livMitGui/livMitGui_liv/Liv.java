@@ -82,8 +82,8 @@ public class Liv { // Console
 
 				case 2:
 					indikatoren.clear();
-					liv.EingabeEAN.einlesen();
-					if (liv.PruefeEAN.eanGueltig(EingabeEAN.eingabe)) {
+					livMitGui_liv.EingabeEAN.einlesen();
+					if (livMitGui_liv.PruefeEAN.eanGueltig(EingabeEAN.eingabe)) {
 						System.out.println("DB wird nun aufgerufen. (Klasse Liv)");
 						try {
 							if (!aktuellerFilter.isEmpty()) {
@@ -101,11 +101,11 @@ public class Liv { // Console
 						} catch (Exception e1) {
 							// gibt Fehlermeldung aus wenn Fehler in
 							// HttpAbfrageLaktonaut
-							System.out.println("FEHLER! Problem mit der Abfrage zu EAN: " + liv.EingabeEAN.getEingabe()
+							System.out.println("FEHLER! Problem mit der Abfrage zu EAN: " + livMitGui_liv.EingabeEAN.getEingabe()
 									+ " (Klasse Liv)");
 						}
 
-						liv.Ampel.ampelFarbe(livMitGui_liv.VergleichFilter.ueberprufeIndikatoren(indikatoren));
+						livMitGui_liv.Ampel.ampelFarbe(livMitGui_liv.VergleichFilter.ueberprufeIndikatoren(indikatoren));
 
 					} else {
 						System.out.println("Abbruch - da EAN ungültig, findet keine DB-Abfrage statt. (Klasse Liv)");
@@ -114,7 +114,7 @@ public class Liv { // Console
 					break;
 
 				case 8:
-					liv.Impressum.printImpressum();
+					livMitGui_liv.Impressum.printImpressum();
 					break;
 
 				case 9:
