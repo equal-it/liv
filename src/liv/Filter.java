@@ -23,34 +23,37 @@ import liv.Konsoleneingabe;
 
 public class Filter {
 
-	private static final String HAUPTMENU = "4";
+	private static final String HAUPTMENU = "9";
+	private static final String FILTERANZEIGE = "8";
 
 	public static Set<Inhaltsstoff> setFilter() {
 
 		Set<Inhaltsstoff> inhaltsstoffe = new HashSet<>();
-
 		String auswahl = null;
+
 		do {
 			menuAusgeben();
 
-			auswahl = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2", HAUPTMENU }));
-
+			auswahl = Konsoleneingabe
+					.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2", FILTERANZEIGE, HAUPTMENU }));
+System.out.println(auswahl + "  auswahl");
 			if (auswahl != null) {
-				Inhaltsstoff inhaltsstoff = Inhaltsstoff.inhaltstoffFuerCode(auswahl);
+				if (auswahl.equals(FILTERANZEIGE)) {
+					System.out.println("Filter anzeigen"); // hier muss noch programmiert werden (Felix)
+				} else {
+					Inhaltsstoff inhaltsstoff = Inhaltsstoff.inhaltstoffFuerCode(auswahl);
+					switch (inhaltsstoff) {
+					case LAKTOSE:
+						setzeOderEntferneFilter(inhaltsstoffe, inhaltsstoff);
+						break;
 
-				System.out.println(
-						"\n---------------------------------------------------------------------(Klasse Filter)");
-				switch (inhaltsstoff) {
-				case LAKTOSE:
-					setzeOderEntferneFilter(inhaltsstoffe, inhaltsstoff);
-					break;
+					case GLUTEN:
+						setzeOderEntferneFilter(inhaltsstoffe, inhaltsstoff);
+						break;
 
-				case GLUTEN:
-					setzeOderEntferneFilter(inhaltsstoffe, inhaltsstoff);
-					break;
-
-				case UNBEKANNT:
-					break;
+					case UNBEKANNT:
+						break;
+					}
 				}
 			}
 
@@ -60,13 +63,14 @@ public class Filter {
 	}
 
 	private static void menuAusgeben() {
-		System.out.println("\n---------------------------------------------------------------------(Klasse Filter)");
+		System.out.println("\n---------------------------------------(Klasse Filter - menueAusgabe())");
 		for (Inhaltsstoff stoff : Inhaltsstoff.values()) {
 			if (stoff != Inhaltsstoff.UNBEKANNT)
 				System.out.println("Waehle " + stoff.code() + " fuer " + stoff.anzeigename() + ".");
 		}
+		System.out.println("\nWaehle 8 fuer die Anzeige der aktuell gesetzten Filter.");
 		System.out.println("\nOder mit " + HAUPTMENU + " zum Hauptmenue. \n");
-		System.out.println("---------------------------------------------------------------------");
+
 	}
 
 	private static void setzeOderEntferneFilter(Set<Inhaltsstoff> inhaltsstoffe, Inhaltsstoff inhaltsstoff) {
@@ -81,13 +85,13 @@ public class Filter {
 			switch (eingabeSetFilter) {
 			case "j":
 				inhaltsstoffe.add(inhaltsstoff);
-				System.out.println("Filter '" + inhaltsstoff.anzeigename() + "' wurde hinzugefuegt. (Klasse Filter)");
-				System.out.println("Weitere Filter setzen oder mit '4' zum Hauptmenue.\n");
-				System.out.println("---------------------------------------------------------------------");
+				System.out.println("Filter '" + inhaltsstoff.anzeigename()
+						+ "' wurde hinzugefuegt. (Klasse Filter - setzeOderEntferneFilter())");
 				break;
 			case "n":
 				inhaltsstoffe.remove(inhaltsstoff);
-				System.out.println("Filter '" + inhaltsstoff.anzeigename() + "' wurde entfernt. (Klasse Filter)");
+				System.out.println("Filter '" + inhaltsstoff.anzeigename()
+						+ "' wurde entfernt. (Klasse Filter- setzeOderEntferneFilter())");
 				break;
 			default:
 				System.out.println("Falsche Eingabe, bitte einen Filter auswaehlen. (Klasse Filter)");
