@@ -10,8 +10,7 @@ import java.awt.Toolkit;
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * class AmpelGreen
- * zeigt eine gruene Ampel 
+ * class AmpelGreen zeigt eine gruene Ampel
  * 
  * @author team equal-IT / felix
  * @mail: team@equal-it.de
@@ -19,30 +18,31 @@ import java.awt.Toolkit;
  */
 
 public class AmpelGreen extends Frame {
-	
+
 	/**
 	 * @param windowWidth
-	 * 			legt die Breite des Fensters fest
+	 *            legt die Breite des Fensters fest
 	 * @param windowHeight
-	 * 			legt die Höhe des Fensters fest
+	 *            legt die Höhe des Fensters fest
 	 * @param w
 	 * @param h
 	 * @param x
 	 * @param y
 	 * @param dim
-	 * @throws InterruptedException e
+	 * @throws InterruptedException
+	 *             e
 	 */
 
-	public AmpelGreen() throws InterruptedException{ // Rahmen
-		
+	public AmpelGreen() throws InterruptedException { // Rahmen
+
 		int windowWidth = 150;
 		int windowHeight = 325;
-		
+
 		setTitle("Ampel-Green");
 		addWindowListener(new WindowListener());
 
 		add(new DrawingPanelGreen());
-		
+
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
 		// Determine the new location of the window
@@ -67,7 +67,7 @@ public class AmpelGreen extends Frame {
 	/**
 	 * @param g
 	 */
-	
+
 	class DrawingPanelGreen extends Panel { // Ampel
 
 		public void paint(Graphics g) {
@@ -79,8 +79,6 @@ public class AmpelGreen extends Frame {
 			g.setColor(Color.GREEN);
 			g.fillOval(50, 200, 50, 50);
 			g.setColor(Color.GRAY);
-			g.drawString("green!", 50, 20);
-
 		}
 	}
 }
