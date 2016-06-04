@@ -121,8 +121,7 @@ public class Liv { // Console
 								for (Lebensmitteldatenbank datenbank : datenbanken) {
 									String anfrageergebnis = datenbank.frageNach(EingabeEAN.eingabe);
 									for (Inhaltsstoff inhaltsstoff : aktuellerFilter) {
-										Ampelindikator indikator = datenbank
-												.antwortEnthaeltInhaltsstoff(anfrageergebnis, inhaltsstoff);
+										Ampelindikator indikator = datenbank.antwortEnthaeltInhaltsstoff(anfrageergebnis, inhaltsstoff);
 										indikatoren.add(indikator);
 									}
 								}

@@ -1,7 +1,6 @@
 package liv;
 
 import java.util.List;
-
 import liv.Ampelindikator;
 
 /**
