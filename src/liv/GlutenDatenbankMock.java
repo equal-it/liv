@@ -48,7 +48,7 @@ public class GlutenDatenbankMock implements Lebensmitteldatenbank {
 	@Override
 	public Ampelindikator antwortEnthaeltInhaltsstoff(String anfrageergebnis, Inhaltsstoff inhaltsstoff) {
 		if (inhaltsstoff == Inhaltsstoff.GLUTEN) {
-			return Ampelindikator.ENTHALTEN;
+			return Ampelindikator.UNBEKANNT;
 		}
 		return Ampelindikator.NICHT_ENTHALTEN;
 	}

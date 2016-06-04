@@ -10,8 +10,7 @@ import java.awt.Toolkit;
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * class AmpelRed
- * zeigt eine rote Ampel 
+ * class AmpelRed zeigt eine rote Ampel
  * 
  * @author team equal-IT / felix
  * @mail: team@equal-it.de
@@ -22,37 +21,38 @@ public class AmpelRed extends Frame {
 
 	/**
 	 * @param windowWidth
-	 * 			legt die Breite des Fensters fest
+	 *            legt die Breite des Fensters fest
 	 * @param windowHeight
-	 * 			legt die Höhe des Fensters fest
+	 *            legt die Höhe des Fensters fest
 	 * @param w
 	 * @param h
 	 * @param x
 	 * @param y
 	 * @param dim
-	 * @throws InterruptedException e
+	 * @throws InterruptedException
+	 *             e
 	 */
-	public AmpelRed()throws InterruptedException { // Rahmen
-		
+	public AmpelRed() throws InterruptedException { // Rahmen
+
 		int windowWidth = 150;
 		int windowHeight = 325;
-		
+
 		setTitle("Ampel-Red");
 		addWindowListener(new WindowListener());
 
 		add(new DrawingPanelRed());
-		
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
-        // Determine the new location of the window
-        int w = this.getSize().width;
-        int h = this.getSize().height;
-        int x = (dim.width-w)/2-windowWidth/2;
-        int y = (dim.height-h)/2-windowHeight/2;
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
-        // Move the window
-        this.setLocation(x, y);
-		
+		// Determine the new location of the window
+		int w = this.getSize().width;
+		int h = this.getSize().height;
+		int x = (dim.width - w) / 2 - windowWidth / 2;
+		int y = (dim.height - h) / 2 - windowHeight / 2;
+
+		// Move the window
+		this.setLocation(x, y);
+
 		setSize(windowWidth, windowHeight);
 
 		setVisible(true);
@@ -67,7 +67,7 @@ public class AmpelRed extends Frame {
 	/**
 	 * @param g
 	 */
-	
+
 	class DrawingPanelRed extends Panel { // Ampel
 
 		public void paint(Graphics g) {
@@ -79,8 +79,6 @@ public class AmpelRed extends Frame {
 			g.setColor(Color.GRAY);
 			g.fillOval(50, 200, 50, 50);
 			g.setColor(Color.GRAY);
-			g.drawString("red!", 50, 20);
-
 		}
 	}
 }

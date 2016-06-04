@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
-
  * 
  * @author team equal-IT
  * mail: team@equal-it.de
@@ -17,10 +16,6 @@ import java.io.BufferedReader;
  * http://www.laktonaut.de/api-doku.html
  */
 
-//erstmal nicht erforderlich
-/*
-import java.io.DataOutputStream;
-*/
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -29,7 +24,6 @@ import liv.Ampelindikator;
 import liv.Inhaltsstoff;
 import liv.Lebensmitteldatenbank;
 
-// To Do: Ergebnis von class PruefeEAN einbauen: muss bei ean=false abfangen!
 
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
@@ -50,33 +44,12 @@ public class HttpAbfrageLaktonaut implements Lebensmitteldatenbank {
 	/**
 	 * @return laktose
 	 */
+	
 	public static String getLaktose() {
 		return laktose;
 	}
 
 	/*
-	 * HTTP GET request gtin
-	 * 
-	 * GTIN (EAN) des gesuchten Artikels
-	 * 
-	 * Eine gueltige GTIN ist ein String aus zumeist 8 oder 13, manchmal auch 12
-	 * oder 14 Ziffern. Formal akzeptiert werden allerdings Strings beliebiger
-	 * Laenge. Alle nichtnumerischen Zeichen (beispielsweise Trennzeichen)
-	 * werden dabei ignoriert. Fuehrende Nullen sind jedoch von Bedeutung - eine
-	 * GTIN ist ein String und keine Zahl, 0000012345670 also etwas anderes als
-	 * 12345670.
-	 * 
-	 * Die Angabe wird unabhaengig von ihrer Laenge als vollstaendige GTIN
-	 * interpretiert. Eine Suche nach Teil-GTINs ist derzeit nicht moeglich.
-	 * -----------------------------------------------------------------------
-	 * key
-	 * 
-	 * Persoenlicher Zugangsschluessel des Clients; wird auf Anfrage zugeteilt
-	 * 
-	 * Zu Testzwecken kann der Schluessel test verwendet werden. Dieser ist
-	 * jedoch einer Begrenzung unterworfen, was die Zahl der Anfragen pro IP und
-	 * Zeiteinheit angeht.
-	 * -----------------------------------------------------------------------
 	 * Muster URL =
 	 * http://www.laktonaut.de/api.php?action=query&gtin=gtin&key=key Beispiel
 	 * URL =
@@ -101,10 +74,8 @@ public class HttpAbfrageLaktonaut implements Lebensmitteldatenbank {
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
-		// optional default is GET
 		con.setRequestMethod("GET");
 
-		// add request header
 		con.setRequestProperty("User-Agent", USER_AGENT);
 
 		// Bei Problemen mit der Connection die naechsten drei Zeilen wieder

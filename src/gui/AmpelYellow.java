@@ -10,8 +10,7 @@ import java.awt.Toolkit;
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * class AmpelYellow
- * zeigt eine gelbe Ampel 
+ * class AmpelYellow zeigt eine gelbe Ampel
  * 
  * @author team equal-IT / felix
  * @mail: team@equal-it.de
@@ -19,39 +18,40 @@ import java.awt.Toolkit;
  */
 
 public class AmpelYellow extends Frame {
-	
+
 	/**
 	 * @param windowWidth
-	 * 			legt die Breite des Fensters fest
+	 *            legt die Breite des Fensters fest
 	 * @param windowHeight
-	 * 			legt die Höhe des Fensters fest
+	 *            legt die Höhe des Fensters fest
 	 * @param w
 	 * @param h
 	 * @param x
 	 * @param y
 	 * @param dim
-	 * @throws InterruptedException e
+	 * @throws InterruptedException
+	 *             e
 	 */
 	public AmpelYellow() throws InterruptedException { // Rahmen
 
 		int windowWidth = 150;
 		int windowHeight = 325;
-		
+
 		setTitle("Ampel-Yellow");
 		addWindowListener(new WindowListener());
 
 		add(new DrawingPanelYellow());
 
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
-        // Determine the new location of the window
-        int w = this.getSize().width;
-        int h = this.getSize().height;
-        int x = (dim.width-w)/2-windowWidth/2;
-        int y = (dim.height-h)/2-windowHeight/2;
+		// Determine the new location of the window
+		int w = this.getSize().width;
+		int h = this.getSize().height;
+		int x = (dim.width - w) / 2 - windowWidth / 2;
+		int y = (dim.height - h) / 2 - windowHeight / 2;
 
-        // Move the window
-        this.setLocation(x, y);
+		// Move the window
+		this.setLocation(x, y);
 
 		setSize(windowWidth, windowHeight);
 		setVisible(true);
@@ -66,7 +66,7 @@ public class AmpelYellow extends Frame {
 	/**
 	 * @param g
 	 */
-	
+
 	class DrawingPanelYellow extends Panel { // Ampel
 
 		public void paint(Graphics g) {
@@ -78,8 +78,6 @@ public class AmpelYellow extends Frame {
 			g.setColor(Color.GRAY);
 			g.fillOval(50, 200, 50, 50);
 			g.setColor(Color.GRAY);
-			g.drawString("yellow!", 50, 20);
-
 		}
 	}
 }
