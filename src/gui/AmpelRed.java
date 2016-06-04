@@ -78,7 +78,6 @@ public class AmpelRed extends Frame {
 			g.fillOval(50, 125, 50, 50);
 			g.setColor(Color.GRAY);
 			g.fillOval(50, 200, 50, 50);
-			g.setColor(Color.GRAY);
 		}
 	}
 }
