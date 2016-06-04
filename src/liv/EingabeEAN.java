@@ -62,7 +62,7 @@ public class EingabeEAN {
 			System.out.println(
 					  "Test EAN (Ritter Sport Marzipan 100 g) Laktose = no: 4000417025005 \n"
 					+ "Test EAN (Milka Alpenmilch 300 g) Laktose = yes: 7622200004607 \n"
-					+ "Test EAN (Ferrero Nutella) Laktose = unbekannt:4008400401928 \n");
+					+ "Test EAN (Ferrero Nutella) Laktose = unbekannt: 4008400401928 \n"); 
 			System.out.println("----------------------------------\n");
 			
 			try {
