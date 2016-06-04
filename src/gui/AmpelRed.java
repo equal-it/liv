@@ -34,8 +34,8 @@ public class AmpelRed extends Frame {
 	 */
 	public AmpelRed() throws InterruptedException { // Rahmen
 
-		int windowWidth = 150;
-		int windowHeight = 325;
+		int windowWidth = 250;
+		int windowHeight = 425;
 
 		setTitle("Ampel-Red");
 		addWindowListener(new WindowListener());
@@ -57,7 +57,7 @@ public class AmpelRed extends Frame {
 
 		setVisible(true);
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(10000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -71,13 +71,21 @@ public class AmpelRed extends Frame {
 	class DrawingPanelRed extends Panel { // Ampel
 
 		public void paint(Graphics g) {
-
+			
+			g.setColor(Color.GRAY);
+			g.fill3DRect (60, 40, 150, 300, true);		// Ampelhintergrund Schatten
+			 
+			g.setColor(Color.black);
+			g.fillRect(50, 50, 150, 300);				// Ampelhintergrund
+			
 			g.setColor(Color.RED);
-			g.fillOval(50, 50, 50, 50);
-			g.setColor(Color.GRAY);
-			g.fillOval(50, 125, 50, 50);
-			g.setColor(Color.GRAY);
-			g.fillOval(50, 200, 50, 50);
+			g.fillOval(100, 100, 50, 50);
+			
+			g.setColor(Color.lightGray);
+			g.fillOval(100, 175, 50, 50);
+			
+			g.setColor(Color.lightGray);
+			g.fillOval(100, 250, 50, 50);
 		}
 	}
 }

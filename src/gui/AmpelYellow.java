@@ -34,8 +34,8 @@ public class AmpelYellow extends Frame {
 	 */
 	public AmpelYellow() throws InterruptedException { // Rahmen
 
-		int windowWidth = 150;
-		int windowHeight = 325;
+		int windowWidth = 250;
+		int windowHeight = 425;
 
 		setTitle("Ampel-Yellow");
 		addWindowListener(new WindowListener());
@@ -56,7 +56,7 @@ public class AmpelYellow extends Frame {
 		setSize(windowWidth, windowHeight);
 		setVisible(true);
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(10000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -70,13 +70,22 @@ public class AmpelYellow extends Frame {
 	class DrawingPanelYellow extends Panel { // Ampel
 
 		public void paint(Graphics g) {
-
+			
 			g.setColor(Color.GRAY);
-			g.fillOval(50, 50, 50, 50);
+			g.fill3DRect (60, 40, 150, 300, true);		// Ampelhintergrund Schatten
+			 
+			g.setColor(Color.black);
+			g.fillRect(50, 50, 150, 300);				// Ampelhintergrund
+			
+			g.setColor(Color.lightGray);
+			g.fillOval(100, 100, 50, 50);
+			
 			g.setColor(Color.YELLOW);
-			g.fillOval(50, 125, 50, 50);
-			g.setColor(Color.GRAY);
-			g.fillOval(50, 200, 50, 50);
-			}
+			g.fillOval(100, 175, 50, 50);
+			
+			g.setColor(Color.lightGray);
+			g.fillOval(100, 250, 50, 50);
+
+		}
 	}
 }
