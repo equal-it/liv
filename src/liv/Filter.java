@@ -54,7 +54,7 @@ public class Filter {
 System.out.println(auswahl + "  auswahl");
 			if (auswahl != null) {
 				if (auswahl.equals(FILTERANZEIGE)) {
-					System.out.println("Filter anzeigen"); // hier muss noch programmiert werden (Felix)
+					System.out.println("Filter anzeigen" + auswahl); // hier muss noch programmiert werden (Felix/Anne)
 				} else {
 					Inhaltsstoff inhaltsstoff = Inhaltsstoff.inhaltstoffFuerCode(auswahl);
 					switch (inhaltsstoff) {
