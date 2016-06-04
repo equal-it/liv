@@ -8,11 +8,30 @@ import java.awt.Panel;
 import java.awt.Toolkit;
 
 /**
- * @author felix
- *
+ * Project: LIV - Lebensmittelinhaltverifizierer
+ * 
+ * class AmpelYellow
+ * zeigt eine gelbe Ampel 
+ * 
+ * @author team equal-IT / felix
+ * @mail: team@equal-it.de
+ * @version 00.00.05 2016/05/16
  */
-public class AmpelYellow extends Frame {
 
+public class AmpelYellow extends Frame {
+	
+	/**
+	 * @param windowWidth
+	 * 			legt die Breite des Fensters fest
+	 * @param windowHeight
+	 * 			legt die Höhe des Fensters fest
+	 * @param w
+	 * @param h
+	 * @param x
+	 * @param y
+	 * @param dim
+	 * @throws InterruptedException e
+	 */
 	public AmpelYellow() throws InterruptedException { // Rahmen
 
 		int windowWidth = 150;
@@ -44,6 +63,10 @@ public class AmpelYellow extends Frame {
 		dispose();
 	}
 
+	/**
+	 * @param g
+	 */
+	
 	class DrawingPanelYellow extends Panel { // Ampel
 
 		public void paint(Graphics g) {

@@ -8,14 +8,22 @@ import liv.Lebensmitteldatenbank;
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
  * class HttpAbfrageMock1
+ * Mock Up für die Datenbankabfrage für den Filter "Gluten"
  * 
- * @author team equal-IT // Kevin?
- * @mail: team@equal-it.de
+ * @author	team equal-IT  // Kevin?
+ * @mail	team@equal-it.de
  * @version 00.00.01 2016/05/16
  */
 
 public class GlutenDatenbankMock implements Lebensmitteldatenbank {
 
+	/**
+	 * @param ean
+	 * 			abzufragende EAN
+	 * @param antwort
+	 * 			Rückgabe der Abfrage
+	 * @return antwort
+	 */
 	@Override
 	public String frageNach(String ean) {
 		String antwort = "";
@@ -32,6 +40,11 @@ public class GlutenDatenbankMock implements Lebensmitteldatenbank {
 		return antwort;
 	}
 
+	/**
+	 * @param anfrageergebnis
+	 * @param inhaltsstoff
+	 * @return Ampelindikator
+	 */
 	@Override
 	public Ampelindikator antwortEnthaeltInhaltsstoff(String anfrageergebnis, Inhaltsstoff inhaltsstoff) {
 		if (inhaltsstoff == Inhaltsstoff.GLUTEN) {

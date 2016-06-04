@@ -4,12 +4,14 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-/**
- * class EingabeEAN
- * 
+/** 
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * @author team equal-IT, team@equal-it.de // Annes Baustelle - PFOTEN WEG!!!!! ;)
+ * class EingabeEAN
+ * Eingabe der EAN mit Definition der Exceptions für die EAN
+ * 
+ * @author	team equal-IT  // Annes Baustelle - PFOTEN WEG!!!!! ;)
+ * @mail	team@equal-it.de
  * @version 00.00.04 2016/05/16
  *
  */
@@ -31,8 +33,22 @@ public class EingabeEAN {
 	
 	//---- ab hier Felix Version ---//
 	/**
+	 * Methode, um die EAN per Konsoleneingabe einzulesen
 	 * 
-	 * @throws Exception 
+	 * @param eanValue 
+	 * 			Auswertung, ob EAN ok ist
+	 * @param eingabe
+	 * 			eingegebene EAN
+	 * @param eingabe2 
+	 *			Eingabe bei Fehlermenue		
+	 * @param eingabeOK
+	 * 			boolean true oder false
+	 * @param auswahl
+	 * 			zur Eingabe der Menueauswahl
+	 * @throws Exception e
+	 * 			wenn eine falsche Menueeingabe gemacht wurde
+	 * 
+	 * @see PruefeEAN
 	 */
 
 	public static void einlesen() throws Exception {

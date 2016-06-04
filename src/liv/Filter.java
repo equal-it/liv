@@ -8,11 +8,13 @@ import liv.Inhaltsstoff;
 import liv.Konsoleneingabe;
 
 /**
- * class Filter
- * 
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * @author team equal-IT, team@equal-it.de / felix, anne, mel
+ * class Filter
+ * zeigt die möglichen einzustellenden Filter und lässt diese setzen oder entfernen
+ * 
+ * @author	team equal-IT  / felix, anne, mel
+ * @mail	team@equal-it.de
  * @version 00.00.10 2016/05/10
  *
  */
@@ -26,8 +28,21 @@ public class Filter {
 	private static final String HAUPTMENU = "9";
 	private static final String FILTERANZEIGE = "8";
 
-	public static Set<Inhaltsstoff> setFilter() {
 
+	/**
+	 * Methode, um den Filter für den ausgewählten Inhaltsstoff zu setzen
+	 * 
+	 * @param inhaltsstoffe
+	 * 			HashSet
+	 * @param inhaltsstoff
+	 * 			zur Festlegung der jeweiligen Inhaltsstoffe
+	 * @param auswahl
+	 * 			Menueauswahl per Konsoleneingabe
+	 * @return inhaltsstoffe
+	 */
+	
+	public static Set<Inhaltsstoff> setFilter() {
+		
 		Set<Inhaltsstoff> inhaltsstoffe = new HashSet<>();
 		String auswahl = null;
 
@@ -62,6 +77,12 @@ System.out.println(auswahl + "  auswahl");
 		return inhaltsstoffe;
 	}
 
+	/**
+	 * Methode, um das Menue der Filterauswahl anzuzeigen
+	 * 
+	 * @param stoff
+	 * 			zur Auswahl des jeweiligen Inhaltsstoffs
+	 */
 	private static void menuAusgeben() {
 		System.out.println("\n---------------------------------------(Klasse Filter - menueAusgabe())");
 		for (Inhaltsstoff stoff : Inhaltsstoff.values()) {
@@ -73,6 +94,13 @@ System.out.println(auswahl + "  auswahl");
 
 	}
 
+	/**
+	 * Methode, um einen Filter zu für einen bestimmten Inhaltsstoff zu setzen oder zu entfernen
+	 * 
+	 * @param inhaltsstoffe
+	 * @param inhaltsstoff
+	 * @param eingabeSetFilter
+	 */
 	private static void setzeOderEntferneFilter(Set<Inhaltsstoff> inhaltsstoffe, Inhaltsstoff inhaltsstoff) {
 
 		String eingabeSetFilter;

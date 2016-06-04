@@ -14,6 +14,15 @@ package liv;
 // !!! Sollten wir keine grafische Ampel realisieren können, sind die Ausgabetexte ggf. noch anzupassen ;)
 public class Ampel {
 	
+	 /**
+	   * Methode, GUI zu erzeugen
+	   * 
+	   * @param isProductOK
+	   * @throws InterruptedException
+	   * @see gui.AmpelGreen
+	   * @see gui.AmpelRed
+	   * @see gui.AmpelYellow
+	   */
 	public static void ampelFarbe (String isProductOk) throws InterruptedException{
 		
 		switch (isProductOk) {

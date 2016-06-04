@@ -16,6 +16,13 @@ import liv.Lebensmitteldatenbank;
 
 public class HttpAbfrageMock1 implements Lebensmitteldatenbank {
 
+	/**
+	 * @param ean
+	 * 			abzufragende EAN
+	 * @param antwort
+	 * 			Rückgabe der Abfrage
+	 * @return antwort
+	 */
 	@Override
 	public String frageNach(String ean) {
 		String antwort = "";
@@ -32,6 +39,9 @@ public class HttpAbfrageMock1 implements Lebensmitteldatenbank {
 		return antwort;
 	}
 
+	/**
+	 * @return Ampelindikator
+	 */
 	@Override
 	public Ampelindikator antwortEnthaeltInhaltsstoff(String anfrageergebnis, Inhaltsstoff inhaltsstoff) {
 		return Ampelindikator.UNBEKANNT;

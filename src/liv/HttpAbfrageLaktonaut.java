@@ -34,10 +34,10 @@ import liv.Lebensmitteldatenbank;
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * class HttpAbfrage
+ * class HttpAbfrageLaktonaut
  * 
- * @author team equal-IT
- * @mail: team@equal-it.de
+ * @author	team equal-IT 
+ * @mail	team@equal-it.de
  * @version 00.00.04 2016/05/02
  */
 
@@ -46,7 +46,10 @@ public class HttpAbfrageLaktonaut implements Lebensmitteldatenbank {
 	private final static String USER_AGENT = "Mozilla/5.0";
 
 	public static String laktose;
-
+	
+	/**
+	 * @return laktose
+	 */
 	public static String getLaktose() {
 		return laktose;
 	}
@@ -79,6 +82,17 @@ public class HttpAbfrageLaktonaut implements Lebensmitteldatenbank {
 	 * URL =
 	 * http://www.laktonaut.de/api.php?action=query&gtin=4000417025005&key=test
 	 * 
+	 */
+	
+	/**
+	 * Methode für die Datenbankabfrabe bei Laktonaut
+	 * @param url
+	 * @param con
+	 * @param inputLine
+	 * @param in
+	 * @param xmlResponse
+	 * @throws Exception
+	 * @return xmlResponse
 	 */
 	public static String sendGet(String ean) throws Exception {
 
@@ -114,6 +128,13 @@ public class HttpAbfrageLaktonaut implements Lebensmitteldatenbank {
 
 	}// sendGet
 
+	/**
+	 * @param ean
+	 * 			abzufragende EAN
+	 * @throws Exception e
+	 * 			
+	 * @return null
+	 */
 	@Override
 	public String frageNach(String ean) {
 		try {
@@ -123,7 +144,20 @@ public class HttpAbfrageLaktonaut implements Lebensmitteldatenbank {
 			return null;
 		}
 	}
-
+	
+	/**
+	 * Methode welche ausgeführt wird, wenn der Inhaltsstoff enthalten ist 
+	 * 
+	 * @param anfrageergebnis
+	 * @param inhaltsstoff
+	 * 			abgefragter Inhaltsstoff
+	 * @param schritt1
+	 * 			Array 
+	 * @param schritt2
+	 * 			Array
+	 * @param ergebnis
+	 * @return Ampelindikator
+	 */
 	@Override
 	public Ampelindikator antwortEnthaeltInhaltsstoff(String anfrageergebnis, Inhaltsstoff inhaltsstoff) {
 		if (inhaltsstoff == Inhaltsstoff.LAKTOSE) {

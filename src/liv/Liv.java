@@ -18,6 +18,9 @@ import liv.Lebensmitteldatenbank;
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
+ * class Liv
+ * Konsolenausgabe
+ * 
  * @author team equal-IT // letzter Stand: Anne
  * @mail: team@equal-it.de
  * @version 00.00.10 2016/05/16
@@ -25,6 +28,35 @@ import liv.Lebensmitteldatenbank;
 
 public class Liv { // Console
 
+	/**
+	 * Hauptmethode
+	 * 
+	 * @param aktuellerFilter
+	 * 			HashSet aus den jeweiligen Filteroptionen
+	 * @param datenbanken
+	 * 			HashSet aus HttpAbfrageLaktonaut und GlutenDatenbankMock
+	 * @param datenbank
+	 * @param eingabe
+	 * 			Menueauswahl über Konsoleneingabe
+	 * @param auswahl
+	 * @param inhaltsstoffe
+	 * @param anfrageergebnis
+	 * @param indikator
+	 * @param indikatoren
+	 * 			Array der Indikatoren
+	 * @throws Exception  e1
+	 * 			wenn Fehler in Abfrage zu HttpAbfrageLaktonaut
+	 * @throws Exception e3
+	 * 			wenn Menueeingabe falsch war 
+	 * @throws IOException ex
+	 * 			wenn das Programm beendet wird
+	 * @see liv.EingabeEAN
+	 * @see liv.HttpAbfrageLaktonaut
+	 * @see liv.GlutenDatenbankMock
+	 * @see liv.Filter
+	 * @see liv.PruefeEAN
+	 * @see liv.Impressum
+	 */
 	public static void main(String[] args) throws Exception {
 		Set<Inhaltsstoff> aktuellerFilter = new HashSet<>();
 		List<Ampelindikator> indikatoren = new ArrayList<>();
