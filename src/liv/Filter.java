@@ -10,11 +10,11 @@ import liv.Konsoleneingabe;
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * class Filter
- * zeigt die möglichen einzustellenden Filter und lässt diese setzen oder entfernen
+ * class Filter zeigt die möglichen einzustellenden Filter und lässt diese
+ * setzen oder entfernen
  * 
- * @author	team equal-IT  / felix, anne, mel
- * @mail	team@equal-it.de
+ * @author team equal-IT / felix, anne, mel
+ * @mail team@equal-it.de
  * @version 00.00.10 2016/05/10
  *
  */
@@ -28,21 +28,20 @@ public class Filter {
 	private static final String HAUPTMENU = "9";
 	private static final String FILTERANZEIGE = "8";
 
-
 	/**
 	 * Methode, um den Filter für den ausgewählten Inhaltsstoff zu setzen
 	 * 
 	 * @param inhaltsstoffe
-	 * 			HashSet
+	 *            HashSet
 	 * @param inhaltsstoff
-	 * 			zur Festlegung der jeweiligen Inhaltsstoffe
+	 *            zur Festlegung der jeweiligen Inhaltsstoffe
 	 * @param auswahl
-	 * 			Menueauswahl per Konsoleneingabe
+	 *            Menueauswahl per Konsoleneingabe
 	 * @return inhaltsstoffe
 	 */
-	
+
 	public static Set<Inhaltsstoff> setFilter() {
-		
+
 		Set<Inhaltsstoff> inhaltsstoffe = new HashSet<>();
 		String auswahl = null;
 
@@ -51,10 +50,10 @@ public class Filter {
 
 			auswahl = Konsoleneingabe
 					.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2", FILTERANZEIGE, HAUPTMENU }));
-System.out.println(auswahl + "  auswahl");
 			if (auswahl != null) {
 				if (auswahl.equals(FILTERANZEIGE)) {
-					System.out.println("Filter anzeigen" + auswahl); // hier muss noch programmiert werden (Felix/Anne)
+					System.out.println("\nAktuell gesetzte Filter sind: ");
+					System.out.println(inhaltsstoffe.toString());
 				} else {
 					Inhaltsstoff inhaltsstoff = Inhaltsstoff.inhaltstoffFuerCode(auswahl);
 					switch (inhaltsstoff) {
@@ -81,7 +80,7 @@ System.out.println(auswahl + "  auswahl");
 	 * Methode, um das Menue der Filterauswahl anzuzeigen
 	 * 
 	 * @param stoff
-	 * 			zur Auswahl des jeweiligen Inhaltsstoffs
+	 *            zur Auswahl des jeweiligen Inhaltsstoffs
 	 */
 	private static void menuAusgeben() {
 		System.out.println("\n---------------------------------------(Klasse Filter - menueAusgabe())");
@@ -95,7 +94,8 @@ System.out.println(auswahl + "  auswahl");
 	}
 
 	/**
-	 * Methode, um einen Filter zu für einen bestimmten Inhaltsstoff zu setzen oder zu entfernen
+	 * Methode, um einen Filter zu für einen bestimmten Inhaltsstoff zu setzen
+	 * oder zu entfernen
 	 * 
 	 * @param inhaltsstoffe
 	 * @param inhaltsstoff
