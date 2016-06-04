@@ -15,7 +15,7 @@ package liv;
 public class Ampel {
 	
 	 /**
-	   * Methode, GUI zu erzeugen
+	   * Methode, um GUI zu erzeugen
 	   * 
 	   * @param isProductOK
 	   * @throws InterruptedException
