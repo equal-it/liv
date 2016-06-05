@@ -4,7 +4,9 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Panel;
+import java.awt.RenderingHints;
 import java.awt.Toolkit;
 
 /**
@@ -71,6 +73,7 @@ public class AmpelRed extends Frame {
 	class DrawingPanelRed extends Panel { // Ampel
 
 		public void paint(Graphics g) {
+			Graphics2D g2d = (Graphics2D)g;
 			
 			g.setColor(Color.GRAY);
 			g.fill3DRect (60, 40, 150, 300, true);		// Ampelhintergrund Schatten
@@ -78,14 +81,16 @@ public class AmpelRed extends Frame {
 			g.setColor(Color.black);
 			g.fillRect(50, 50, 150, 300);				// Ampelhintergrund
 			
-			g.setColor(Color.RED);
-			g.fillOval(100, 100, 50, 50);
+			g2d.setRenderingHint (RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 			
-			g.setColor(Color.lightGray);
-			g.fillOval(100, 175, 50, 50);
+			g2d.setColor(Color.RED);
+			g2d.fillOval(100, 100, 50, 50);
 			
-			g.setColor(Color.lightGray);
-			g.fillOval(100, 250, 50, 50);
+			g2d.setColor(Color.lightGray);
+			g2d.fillOval(100, 175, 50, 50);
+			
+			g2d.setColor(Color.lightGray);
+			g2d.fillOval(100, 250, 50, 50);
 		}
 	}
 }
