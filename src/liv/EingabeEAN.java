@@ -64,7 +64,6 @@ public class EingabeEAN {
 							+ "Test EAN (Ferrero Giotto) Laktose = yes: 4008400121925 \n"
 							+ "Test EAN (Rapunzel Gemüsebrühe) Laktose = no: 4006040271505 \n"
 							+ "Test EAN (Ritter Sport Dunkle Vollnuss) Laktose = yes: 4000417224002 \n"
-							+ "Test EAN (Ritter Sport Marzipan) Laktose = no: 4000417025005 \n"
 							+ "Test EAN (Alnatura Dinkel Doppel Keks 330g) Laktose = yes: 4104420053922 \n"
 							+ "");
 			System.out.println("----------------------------------\n");
