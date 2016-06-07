@@ -105,7 +105,7 @@ public class Filter {
 
 		String eingabeSetFilter;
 		System.out.println("Filter '" + inhaltsstoff.anzeigename()
-				+ "' setzen? \nBitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl: \n");
+				+ "' setzen? \nBitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl:");
 
 		eingabeSetFilter = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "j", "n" }));
 

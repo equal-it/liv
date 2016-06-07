@@ -22,7 +22,7 @@ public class Konsoleneingabe {
 	 * Methode, um Eingabe der Konsole einzulesen
 	 * 
 	 * @param gueltigeWerte
-	 * @param eingabe
+	 * @param eingabeEanNummer
 	 * 			Wert per Konsoleneingabe
 	 * @param br
 	 * 			BufferedReader

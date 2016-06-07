@@ -27,7 +27,7 @@ public class Liv { // Console
 	 * @param datenbanken
 	 *            HashSet aus HttpAbfrageLaktonaut und GlutenDatenbankMock
 	 * @param datenbank
-	 * @param eingabe
+	 * @param eingabeEanNummer
 	 *            Menueauswahl über Konsoleneingabe
 	 * @param auswahl
 	 * @param inhaltsstoffe
@@ -58,10 +58,8 @@ public class Liv { // Console
 
 		int auswahl = 0;
 
-		System.out
-				.println("Herzlich Willkommen bei LIV - deinem Lebensmittelinhaltverifizierer. (Klasse Liv)");
-		System.out
-				.println("\nWas moechtest Du als naechstes tun? (Klasse Liv)");
+		System.out.println("Herzlich Willkommen bei LIV - deinem Lebensmittelinhaltverifizierer. (Klasse Liv)");
+		System.out.println("\nWas moechtest Du als naechstes tun? (Klasse Liv)");
 
 		try { // start try
 
@@ -83,22 +81,13 @@ public class Liv { // Console
 						.println("\n---------------------------------------------------------------------(Klasse Liv)");
 				System.out.println("Waehle  '1'  um Filter einzustellen");
 				System.out.println("Waehle  '2'  um eine EAN einzugeben!");
-				System.out
-						.println("Waehle  '8'  um Dir das Impressum anzusehen!");
+				System.out.println("Waehle  '8'  um Dir das Impressum anzusehen!");
 				System.out.println("Waehle  '9'  zum Beenden!");
-				System.out
-						.println("---------------------------------------------------------------------");
+				System.out.println("---------------------------------------------------------------------");
 
-				String eingabe = Konsoleneingabe.leseKonsoleFuer(Arrays
-						.asList(new String[] { "1", "2", "8", "9" }));
+				String eingabe = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2", "8", "9" }));
+				auswahl = Integer.parseInt(eingabe);// String to int
 
-				try {
-					auswahl = Integer.parseInt(eingabe);// String to int
-				} catch (Exception e3) {
-					System.out
-							.println("FEHLER! Falsche Menue Eingabe! (Klasse Liv)");
-					auswahl = 0; // setzt bei Fehler auswahl = 0
-				}
 				switch (auswahl) {
 
 				case 1:
@@ -110,41 +99,29 @@ public class Liv { // Console
 				case 2:
 					indikatoren.clear();
 					liv.EingabeEAN.einlesen();
-					if (liv.PruefeEAN.eanGueltig(EingabeEAN.eingabe)) {
-						System.out
-								.println("DB wird nun aufgerufen. (Klasse Liv)");
+					if (liv.PruefeEAN.eanGueltig(EingabeEAN.eingabeEanNummer)) {
+						System.out.println("DB wird nun aufgerufen. (Klasse Liv)");
 						try {
 							if (!aktuellerFilter.isEmpty()) {
 								for (Lebensmitteldatenbank datenbank : datenbanken) {
-									String anfrageergebnis = datenbank
-											.frageNach(EingabeEAN.eingabe);
+									String anfrageergebnis = datenbank.frageNach(EingabeEAN.eingabeEanNummer);
 									for (Inhaltsstoff inhaltsstoff : aktuellerFilter) {
 										Ampelindikator indikator = datenbank
-												.antwortEnthaeltInhaltsstoff(
-														anfrageergebnis,
-														inhaltsstoff);
+												.antwortEnthaeltInhaltsstoff(anfrageergebnis, inhaltsstoff);
 										indikatoren.add(indikator);
 									}
 								}
 							} else {
-								System.out
-										.println("Es sind keine Filter gesetzt. (Klasse Liv)");
+								System.out.println("Es sind keine Filter gesetzt. (Klasse Liv)");
 							}
 						} catch (Exception e1) {
-							// gibt Fehlermeldung aus wenn Fehler in
-							// HttpAbfrageLaktonaut
-							System.out
-									.println("FEHLER! Problem mit der Abfrage zu EAN: "
-											+ liv.EingabeEAN.getEingabe()
-											+ " (Klasse Liv)");
+							System.out.println("FEHLER! Bei DB Abfrage ------- (Klasse Liv - main() - case 2)");
 						}
 
-						liv.Ampel.ampelFarbe(liv.VergleichFilter
-								.ueberprufeIndikatoren(indikatoren));
+						liv.Ampel.ampelFarbe(liv.VergleichFilter.ueberprufeIndikatoren(indikatoren));
 
 					} else {
-						System.out
-								.println("Abbruch - da EAN ungültig, findet keine DB-Abfrage statt. (Klasse Liv)");
+						System.out.println("Abbruch - da EAN ungültig, findet keine DB-Abfrage statt. (Klasse Liv)");
 					}
 
 					break;

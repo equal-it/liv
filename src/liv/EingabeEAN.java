@@ -1,9 +1,9 @@
 package liv;
 
-// import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
@@ -16,25 +16,22 @@ import java.io.InputStreamReader;
  *
  */
 
-// ggf. boolean einfuegen, das rausgibt, ob Filter gesetzt wurde...
-
 public class EingabeEAN {
-	public static String eingabe;
+	public static String eingabeEanNummer;
 
 	/**
 	 * @return eingabe
 	 */
 	public static String getEingabe() {
-		return eingabe;
-	} // Eingabe
+		return eingabeEanNummer;
+	} 
 
-	// ---- ab hier Felix Version ---//
 	/**
 	 * Methode, um die EAN per Konsoleneingabe einzulesen
 	 * 
 	 * @param eanValue
 	 *            Auswertung, ob EAN ok ist
-	 * @param eingabe
+	 * @param eingabeEanNummer
 	 *            eingegebene EAN
 	 * @param eingabe2
 	 *            Eingabe bei Fehlermenue
@@ -49,66 +46,54 @@ public class EingabeEAN {
 	 */
 
 	public static void einlesen() throws Exception {
-		boolean eanValue = false; // fuer Auswertung ob ean OK
-		String eingabe2 = null; // fuer Fehler Menue
+		boolean eanValueOK = false; // fuer Auswertung ob ean OK
 		int auswahl = 0;
 		do {
 			InputStreamReader isr = new InputStreamReader(System.in);
 			BufferedReader br = new BufferedReader(isr);
 			System.out.println("Bitte (Test-)EAN eingeben:");
-			System.out
-					.println("Test EAN (Ritter Sport Marzipan 100 g) Laktose = no: 4000417025005 \n"
-							+ "Test EAN (Ferrero Nutella 1000 g) Laktose = yes: 4008400401829  \n"
-							+ "Test EAN (unbekanntes Produkt) Laktose = unbekannt: 4008400401928 \n"
-							+ "Test EAN (Griesson Softcakes) Laktose = no:4001518722466 \n"
-							+ "Test EAN (Ferrero Giotto) Laktose = yes: 4008400121925 \n"
-							+ "Test EAN (Rapunzel Gemüsebrühe) Laktose = no: 4006040271505 \n"
-							+ "Test EAN (Ritter Sport Dunkle Vollnuss) Laktose = yes: 4000417224002 \n"
-							+ "Test EAN (Alnatura Dinkel Doppel Keks 330g) Laktose = yes: 4104420053922 \n"
-							+ "");
+			System.out.println("Test EAN (Ritter Sport Marzipan 100 g) Laktose = no: 4000417025005 \n"
+					+ "Test EAN (Ferrero Nutella 1000 g) Laktose = yes: 4008400401829  \n"
+					+ "Test EAN (unbekanntes Produkt) Laktose = unbekannt: 4008400401928 \n"
+					+ "Test EAN (Griesson Softcakes) Laktose = no:4001518722466 \n"
+					+ "Test EAN (Ferrero Giotto) Laktose = yes: 4008400121925 \n"
+					+ "Test EAN (Rapunzel Gemüsebrühe) Laktose = no: 4006040271505 \n"
+					+ "Test EAN (Ritter Sport Dunkle Vollnuss) Laktose = yes: 4000417224002 \n"
+					+ "Test EAN (Alnatura Dinkel Doppel Keks 330g) Laktose = yes: 4104420053922 \n" + "");
 			System.out.println("----------------------------------\n");
 
 			try {
-				eingabe = br.readLine();
+				eingabeEanNummer = br.readLine();
 			} catch (IOException e) {
-				eanValue = false;
+				eanValueOK = false;
 			}
 
-			if (liv.PruefeEAN.eanUngueltig(eingabe)) {
-				boolean eingabeOK = false;
-				do {
-					System.out
-							.println("EAN Eingabe war nicht korrekt (EingabeEAN.java)");
-					System.out.println("EAN muss aus 13 Zahlen bestehen!!!\n");
-					System.out.println("1 neue Eingabe");
-					System.out.println("2 Eingabe abbrechen");
-					InputStreamReader isr2 = new InputStreamReader(System.in);
-					BufferedReader br2 = new BufferedReader(isr2);
-					eingabe2 = br2.readLine();
-					try { // start try parseint
-						auswahl = Integer.parseInt(eingabe2);// String to int
-						eingabeOK = true;
-					} // ende try parseInt
-					catch (Exception e) { // start catch parseInt
-						System.out.println("FEHLER! Falsche Menue Eingabe!");
-						auswahl = 0; // if parseInt fail auswahl=0
-						eingabeOK = false;
-					} // ende catch parseInt
-				} while (eingabeOK == false);
-				switch (auswahl) {// start switch
-				case 2: // Eingabe beenden
-					eanValue = true;
+			if (liv.PruefeEAN.eanUngueltig(eingabeEanNummer)) {
+				System.out.println("EAN ungueltig (Klasse PruefeEAN - einlesen())");
+				System.out.println("Tip: EAN muss aus 13 Zahlen bestehen\n");
+				System.out.println("1 neue Eingabe");
+				System.out.println("2 Eingabe abbrechen");
+
+				String eingabeFehlerMenue = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
+				auswahl = Integer.parseInt(eingabeFehlerMenue);
+
+				switch (auswahl) {
+				case 1:
+					eanValueOK = false;
+					break;
+				case 2:
+					eanValueOK = true;
 					break;
 				default:
-					eanValue = false;
+					eanValueOK = false;
 					break;
-				}// end switch
-			} // end if ean fehler
+				}
+			} 
 			else {
-				eanValue = true;
+				eanValueOK = true;
 			}
 
-		} while (eanValue == false);
+		} while (eanValueOK == false);
 
 	} // Methode einlesen
 
