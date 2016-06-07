@@ -40,6 +40,8 @@ public class Konsoleneingabe {
 				eingabe = br.readLine();
 				if (gueltigeWerte.contains(eingabe)) {
 					return eingabe;
+				}else{
+					System.out.println("Eingabe Fehler! Bitte neu Eingeben! ------ (Klasse Konsoleneingabe - leseKonsoleFuer())");
 				}
 			}
 		} catch (IOException e) {

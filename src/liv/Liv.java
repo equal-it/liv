@@ -99,7 +99,6 @@ public class Liv { // Console
 							.println("FEHLER! Falsche Menue Eingabe! (Klasse Liv)");
 					auswahl = 0; // setzt bei Fehler auswahl = 0
 				}
-
 				switch (auswahl) {
 
 				case 1:
@@ -160,6 +159,7 @@ public class Liv { // Console
 
 				default:
 					System.out.println("Bitte waehle  1 / 2 / 8 / 9\n");
+					break;
 				}
 
 			} // end do-while menue
