@@ -48,10 +48,10 @@ public class NussDatenbankMock implements Lebensmitteldatenbank {
 	public Ampelindikator antwortEnthaeltInhaltsstoff(String anfrageergebnis, Inhaltsstoff inhaltsstoff) {
 		return Ampelindikator.UNBEKANNT;
 		/**
-		 * Variante fuerGlutenDatenbankMock antwort. Wenn Filter gesetzt return
+		 * Variante fuer NussDatenbankMock antwort. Wenn Filter gesetzt return
 		 * Enthalten, wenn Filter nicht gesetzt return nicht Enthalten
 		 * 
-		 * if (inhaltsstoff == Inhaltsstoff.GLUTEN) { return
+		 * if (inhaltsstoff == Inhaltsstoff.NUSS) { return
 		 * Ampelindikator.ENTHALTEN; } return Ampelindikator.NICHT_ENTHALTEN;
 		 */
 	}

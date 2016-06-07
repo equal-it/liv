@@ -64,17 +64,7 @@ public class Liv { // Console
 		try { // start try
 
 			boolean verlassen = false;
-
-			// liv.Filter.setFilter(); // wenn nicht als erstes gewuenscht, dann
-			// auskommentieren - dann kommt Menue als erstes
-
-			// HIER MUSS NOCH IRGENDWO REIN:
-			// Wenn KEIN Filter gesetzt ist, dieses zurueckgeben, BEVOR
-			// DB-Abfrage stattfindet!!
-			// z.B.: "Wenn Du keinen Filter setzt, sind natuerlich alle Produkte
-			// ok ;)
-			// Bitte Filter mit '2' setzen :)"
-
+			
 			do { // start do while menue
 
 				System.out
