@@ -68,7 +68,6 @@ public class LaktonautDatenbankAbfrage implements Lebensmitteldatenbank {
 	 * @return xmlResponse
 	 */
 	public static String sendGet(String ean) throws Exception {
-
 		String url = "http://www.laktonaut.de/api.php?action=query&gtin=" + ean + "&key=test ";
 
 		URL obj = new URL(url);
@@ -111,7 +110,9 @@ public class LaktonautDatenbankAbfrage implements Lebensmitteldatenbank {
 		try {
 			return sendGet(ean);
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
+			System.out.println("Fehler bei der Laktonaut Server abfrage.\n"
+					+ "Tip: Internet ist notwendig fuer Server Abfrage.");
 			return null;
 		}
 	}
