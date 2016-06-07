@@ -42,7 +42,7 @@ public class Liv { // Console
 	 * @throws IOException
 	 *             ex wenn das Programm beendet wird
 	 * @see liv.EingabeEAN
-	 * @see liv.HttpAbfrageLaktonaut
+	 * @see liv.LaktonautDatenbankAbfrage
 	 * @see liv.GlutenDatenbankMock
 	 * @see liv.Filter
 	 * @see liv.PruefeEAN
@@ -53,7 +53,7 @@ public class Liv { // Console
 		List<Ampelindikator> indikatoren = new ArrayList<>();
 
 		Set<Lebensmitteldatenbank> datenbanken = new HashSet<>();
-		datenbanken.add(new HttpAbfrageLaktonaut());
+		datenbanken.add(new LaktonautDatenbankAbfrage());
 		datenbanken.add(new GlutenDatenbankMock());
 
 		int auswahl = 0;

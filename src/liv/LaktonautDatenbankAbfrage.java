@@ -35,7 +35,7 @@ import liv.Lebensmitteldatenbank;
  * @version 00.00.04 2016/05/02
  */
 
-public class HttpAbfrageLaktonaut implements Lebensmitteldatenbank {
+public class LaktonautDatenbankAbfrage implements Lebensmitteldatenbank {
 
 	private final static String USER_AGENT = "Mozilla/5.0";
 
