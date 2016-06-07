@@ -49,7 +49,7 @@ public class Filter {
 			menuAusgeben();
 
 			auswahl = Konsoleneingabe
-					.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2", FILTERANZEIGE, HAUPTMENU }));
+					.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2", "3", FILTERANZEIGE, HAUPTMENU }));
 			if (auswahl != null) {
 				if (auswahl.equals(FILTERANZEIGE)) {
 					System.out.println("\nAktuell gesetzte Filter sind: ");
@@ -60,11 +60,11 @@ public class Filter {
 					case LAKTOSE:
 						setzeOderEntferneFilter(inhaltsstoffe, inhaltsstoff);
 						break;
-
 					case GLUTEN:
 						setzeOderEntferneFilter(inhaltsstoffe, inhaltsstoff);
 						break;
-
+					case NUSS:
+						setzeOderEntferneFilter(inhaltsstoffe, inhaltsstoff);
 					case UNBEKANNT:
 						break;
 					}

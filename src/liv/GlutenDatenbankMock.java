@@ -7,11 +7,11 @@ import liv.Lebensmitteldatenbank;
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * class HttpAbfrageMock1
- * Mock Up für die Datenbankabfrage für den Filter "Gluten"
+ * class HttpAbfrageMock1 Mock Up für die Datenbankabfrage für den Filter
+ * "Gluten"
  * 
- * @author	team equal-IT  // Kevin?
- * @mail	team@equal-it.de
+ * @author team equal-IT // Kevin?
+ * @mail team@equal-it.de
  * @version 00.00.01 2016/05/16
  */
 
@@ -19,9 +19,9 @@ public class GlutenDatenbankMock implements Lebensmitteldatenbank {
 
 	/**
 	 * @param ean
-	 * 			abzufragende EAN
+	 *            abzufragende EAN
 	 * @param antwort
-	 * 			Rückgabe der Abfrage
+	 *            Rückgabe der Abfrage
 	 * @return antwort
 	 */
 	@Override
@@ -47,12 +47,13 @@ public class GlutenDatenbankMock implements Lebensmitteldatenbank {
 	 */
 	@Override
 	public Ampelindikator antwortEnthaeltInhaltsstoff(String anfrageergebnis, Inhaltsstoff inhaltsstoff) {
-		if (inhaltsstoff == Inhaltsstoff.GLUTEN) {
-			return Ampelindikator.UNBEKANNT;
-		}
-		return Ampelindikator.NICHT_ENTHALTEN;
+		return Ampelindikator.UNBEKANNT;
+		/**
+		 * Variante fuerGlutenDatenbankMock antwort. Wenn Filter gesetzt return
+		 * Enthalten, wenn Filter nicht gesetzt return nicht Enthalten
+		 * 
+		 * if (inhaltsstoff == Inhaltsstoff.GLUTEN) { return
+		 * Ampelindikator.ENTHALTEN; } return Ampelindikator.NICHT_ENTHALTEN;
+		 */
 	}
-
-	// Hier fehlt die Moeglichkeit, eine weitere "Datenbank" abzufragen
-
 }

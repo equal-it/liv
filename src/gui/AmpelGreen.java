@@ -59,7 +59,7 @@ public class AmpelGreen extends Frame {
 		setSize(windowWidth, windowHeight);
 		setVisible(true);
 		try {
-			Thread.sleep(10000);
+			Thread.sleep(5000); // 5000 = 5 sek.
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

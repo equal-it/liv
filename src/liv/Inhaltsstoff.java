@@ -13,7 +13,7 @@ import liv.Inhaltsstoff;
  */
 
 public enum Inhaltsstoff {
-	UNBEKANNT("0", "Unbekannter Inhaltsstoff"), LAKTOSE("1", "Laktose"), GLUTEN("2", "Gluten");
+	UNBEKANNT("0", "Unbekannter Inhaltsstoff"), LAKTOSE("1", "Laktose"), GLUTEN("2", "Gluten"), NUSS("3", "Nuss");
 
 	
 	/**

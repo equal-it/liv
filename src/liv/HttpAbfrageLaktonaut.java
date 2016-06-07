@@ -78,11 +78,11 @@ public class HttpAbfrageLaktonaut implements Lebensmitteldatenbank {
 
 		con.setRequestProperty("User-Agent", USER_AGENT);
 
-		// Bei Problemen mit der Connection die naechsten drei Zeilen wieder
-		// aktivieren
+		// Bei Connection Problemen auskommentierte Zeilen aktivieren
+		//
 		// int responseCode = con.getResponseCode();
 		// System.out.println("\nSending 'GET' request to URL : " + url);
-		// System.out.println("\nResponse Code : " + responseCode + " (wenn 200
+		// System.out.println("\nServer Response Code : " + responseCode + " (wenn 200
 		// ist alles OK)");
 
 		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
