@@ -28,7 +28,7 @@ import liv.Lebensmitteldatenbank;
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * class HttpAbfrageLaktonaut
+ * class LaktonautDatenbankAbfrage
  * 
  * @author	team equal-IT 
  * @mail	team@equal-it.de

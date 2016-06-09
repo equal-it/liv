@@ -6,6 +6,7 @@ import liv.Inhaltsstoff;
 /**
  * Project: Liv - Lebensmittelinhaltverifizierer
  * 
+ * class Lebensmitteldatenbank
  * 
  * @author team equal-IT
  * @mail: team@equal-it.de

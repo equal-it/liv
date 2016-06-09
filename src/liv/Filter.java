@@ -29,7 +29,7 @@ public class Filter {
 	private static final String FILTERANZEIGE = "8";
 
 	/**
-	 * Methode, um den Filter für den ausgewählten Inhaltsstoff zu setzen
+	 * Methode, um die gesetzten Filter anzuzeigen
 	 * 
 	 * @param inhaltsstoffe
 	 *            HashSet
@@ -94,7 +94,7 @@ public class Filter {
 	}
 
 	/**
-	 * Methode, um einen Filter zu für einen bestimmten Inhaltsstoff zu setzen
+	 * Methode, um einen Filter für einen bestimmten Inhaltsstoff zu setzen
 	 * oder zu entfernen
 	 * 
 	 * @param inhaltsstoffe
@@ -105,7 +105,7 @@ public class Filter {
 
 		String eingabeSetFilter;
 		System.out.println("Filter '" + inhaltsstoff.anzeigename()
-				+ "' setzen? \nBitte mit 'j' bestaetigen oder mit 'n' zurueck zur Auswahl:");
+				+ "' setzen oder entfernen? \nBitte mit 'j' setzen oder mit 'n' entfernen und zurueck zur Auswahl:");
 
 		eingabeSetFilter = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "j", "n" }));
 

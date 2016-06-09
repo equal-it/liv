@@ -20,7 +20,7 @@ public class EingabeEAN {
 	public static String eingabeEanNummer;
 
 	/**
-	 * @return eingabe
+	 * @return eingabeEanNummer
 	 */
 	public static String getEingabe() {
 		return eingabeEanNummer;
@@ -39,8 +39,8 @@ public class EingabeEAN {
 	 *            boolean true oder false
 	 * @param auswahl
 	 *            zur Eingabe der Menueauswahl
-	 * @throws Exception
-	 *             e wenn eine falsche Menueeingabe gemacht wurde
+	 * @throws Exception e
+	 *            wenn eine falsche Menueeingabe gemacht wurde
 	 * 
 	 * @see PruefeEAN
 	 */

@@ -19,7 +19,7 @@ import java.util.Collection;
 public class Konsoleneingabe {
 	
 	/**
-	 * Methode, um Eingabe der Konsole einzulesen
+	 * Methode, um Eingabe über die Konsole einzulesen
 	 * 
 	 * @param gueltigeWerte
 	 * @param eingabeEanNummer

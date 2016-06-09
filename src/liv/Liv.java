@@ -10,7 +10,8 @@ import java.util.Set;
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * class Liv Konsolenausgabe
+ * class Liv 
+ * Konsolenausgabe
  * 
  * @author team equal-IT // letzter Stand: Anne
  * @mail: team@equal-it.de
