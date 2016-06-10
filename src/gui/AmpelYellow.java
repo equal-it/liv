@@ -19,6 +19,7 @@ import java.awt.Toolkit;
  * @version 00.00.05 2016/05/16
  */
 
+@SuppressWarnings("serial")
 public class AmpelYellow extends Frame {
 
 	/**
@@ -72,22 +73,23 @@ public class AmpelYellow extends Frame {
 	class DrawingPanelYellow extends Panel { // Ampel
 
 		public void paint(Graphics g) {
-			Graphics2D g2d = (Graphics2D)g;
-			
+			Graphics2D g2d = (Graphics2D) g;
+
 			g.setColor(Color.GRAY);
-			g.fill3DRect (60, 40, 150, 300, true);		// Ampelhintergrund Schatten
-			 
+			g.fill3DRect(60, 40, 150, 300, true); // Ampelhintergrund Schatten
+
 			g.setColor(Color.black);
-			g.fillRect(50, 50, 150, 300);				// Ampelhintergrund
-			
-			g2d.setRenderingHint (RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-			
+			g.fillRect(50, 50, 150, 300); // Ampelhintergrund
+
+			g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+					RenderingHints.VALUE_ANTIALIAS_ON);
+
 			g2d.setColor(Color.lightGray);
 			g2d.fillOval(100, 100, 50, 50);
-			
+
 			g2d.setColor(Color.YELLOW);
 			g2d.fillOval(100, 175, 50, 50);
-			
+
 			g2d.setColor(Color.lightGray);
 			g2d.fillOval(100, 250, 50, 50);
 
