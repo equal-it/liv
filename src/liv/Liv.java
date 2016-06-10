@@ -7,6 +7,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import datenbankAbfragen.GlutenDatenbankMock;
+import datenbankAbfragen.LaktonautDatenbankAbfrage;
+import datenbankAbfragen.Lebensmitteldatenbank;
+
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
@@ -43,8 +47,8 @@ public class Liv { // Console
 	 * @throws IOException
 	 *             ex wenn das Programm beendet wird
 	 * @see liv.EingabeEAN
-	 * @see liv.LaktonautDatenbankAbfrage
-	 * @see liv.GlutenDatenbankMock
+	 * @see datenbankAbfragen.LaktonautDatenbankAbfrage
+	 * @see datenbankAbfragen.GlutenDatenbankMock
 	 * @see liv.Filter
 	 * @see liv.PruefeEAN
 	 * @see liv.Impressum

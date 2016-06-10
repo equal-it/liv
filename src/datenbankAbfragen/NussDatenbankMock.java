@@ -1,7 +1,7 @@
-package liv;
+package datenbankAbfragen;
+import datenbankAbfragen.Lebensmitteldatenbank;
 import liv.Ampelindikator;
 import liv.Inhaltsstoff;
-import liv.Lebensmitteldatenbank;
 
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer

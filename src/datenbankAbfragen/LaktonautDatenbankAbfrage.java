@@ -1,4 +1,4 @@
-package liv;
+package datenbankAbfragen;
 
 import java.io.BufferedReader;
 
@@ -20,9 +20,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import datenbankAbfragen.Lebensmitteldatenbank;
 import liv.Ampelindikator;
 import liv.Inhaltsstoff;
-import liv.Lebensmitteldatenbank;
 
 
 /**
