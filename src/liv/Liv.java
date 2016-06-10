@@ -7,6 +7,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import Eingabe.EingabeEAN;
+import Eingabe.Konsoleneingabe;
 import datenbankAbfragen.GlutenDatenbankMock;
 import datenbankAbfragen.LaktonautDatenbankAbfrage;
 import datenbankAbfragen.Lebensmitteldatenbank;
@@ -46,7 +48,7 @@ public class Liv { // Console
 	 *             e3 wenn Menueeingabe falsch war
 	 * @throws IOException
 	 *             ex wenn das Programm beendet wird
-	 * @see liv.EingabeEAN
+	 * @see Eingabe.EingabeEAN
 	 * @see datenbankAbfragen.LaktonautDatenbankAbfrage
 	 * @see datenbankAbfragen.GlutenDatenbankMock
 	 * @see liv.Filter
@@ -93,7 +95,7 @@ public class Liv { // Console
 
 				case 2:
 					indikatoren.clear();
-					liv.EingabeEAN.einlesen();
+					Eingabe.EingabeEAN.einlesen();
 					if (liv.PruefeEAN.eanGueltig(EingabeEAN.eingabeEanNummer)) {
 						System.out.println("DB wird nun aufgerufen. (Klasse Liv)");
 						try {

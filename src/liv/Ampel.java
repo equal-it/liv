@@ -19,22 +19,22 @@ public class Ampel {
 	   * 
 	   * @param isProductOK
 	   * @throws InterruptedException
-	   * @see gui.AmpelGreen
-	   * @see gui.AmpelRed
-	   * @see gui.AmpelYellow
+	   * @see Ampelgrafik.AmpelGreen
+	   * @see Ampelgrafik.AmpelRed
+	   * @see Ampelgrafik.AmpelYellow
 	   */
 	
 	public static void ampelFarbe (String isProductOk) throws InterruptedException{
 		
 		switch (isProductOk) {
 				case "green":	
-			new gui.AmpelGreen();
+			new Ampelgrafik.AmpelGreen();
 			break;
 		case "red":	
-		    new gui.AmpelRed();
+		    new Ampelgrafik.AmpelRed();
 			break;
 		case "yellow":							
-			new gui.AmpelYellow();
+			new Ampelgrafik.AmpelYellow();
 			break;
 		}	// switch (isProductOK){
 		

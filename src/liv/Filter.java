@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import Eingabe.Konsoleneingabe;
 import liv.Inhaltsstoff;
-import liv.Konsoleneingabe;
 
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
