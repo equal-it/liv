@@ -1,4 +1,4 @@
-package Ampelgrafik;
+package ampelGrafik;
 
 import java.awt.Color;
 import java.awt.Dimension;
