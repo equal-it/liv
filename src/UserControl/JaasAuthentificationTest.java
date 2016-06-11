@@ -3,7 +3,7 @@ package UserControl;
 import javax.security.auth.login.LoginContext;
 import javax.security.auth.login.LoginException;
 
-public class JaasAuth {
+public class JaasAuthentificationTest {
 
 	public static void main(String[] args) {
 		System.setProperty("java.security.auth.login.config", "jaas.config");
