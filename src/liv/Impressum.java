@@ -1,10 +1,10 @@
 package liv;
 
-
 /**
  * Project: Liv - Lebensmittelinhaltverifizierer
  * 
  * class Impressum
+ * zeigt das Impressum 
  * 
  * @author team equal-IT
  * @mail: team@equal-it.de
@@ -14,6 +14,10 @@ package liv;
 public class Impressum {
 	// Methode definieren, auf die zugegriffen werden kann
 	// Texte erweitern!
+	
+	/**
+	 * Methode, um das Impressum anzuzeigen
+	 */
 	public static void printImpressum(){
 		System.out.println ("LIV - Die Smartphone-App,\n"
 				+ "die Menschen mit Lebensmittelunvertraeglichkeiten\n"

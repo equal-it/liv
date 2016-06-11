@@ -11,30 +11,31 @@ package liv;
  * @mail	team@equal-it.de
  * @version	00.00.02 2016/05/12
  */
-// !!! Sollten wir keine grafische Ampel realisieren können, sind die Ausgabetexte ggf. noch anzupassen ;)
+
 public class Ampel {
 	
-	public static void ampelFarbe (String isProductOk){
+	 /**
+	   * Methode, um GUI zu erzeugen
+	   * 
+	   * @param isProductOK
+	   * @throws InterruptedException
+	   * @see ampelGrafik.AmpelGreen
+	   * @see ampelGrafik.AmpelRed
+	   * @see ampelGrafik.AmpelYellow
+	   */
+	
+	public static void ampelFarbe (String isProductOk) throws InterruptedException{
 		
 		switch (isProductOk) {
-		
-		case "green":	
-			new livMitGui_gui.AmpelGreen();
-			// Produkt unbedenklich gem. gesetztem Filter
-			//System.out.println("\n :-) Ampel gruen (Klasse Ampel)"); 		// light=green
+				case "green":	
+			new ampelGrafik.AmpelGreen();
 			break;
-			//    new AmpelGruen ();
 		case "red":	
-		    new livMitGui_gui.AmpelRed();
-		    // Produkt nicht empfehlenswert gem. gesetztem Filter
-			//System.out.println("\n :-( Ampel rot (Klasse Ampel)");	// light=red
+		    new ampelGrafik.AmpelRed();
 			break;
-
-		case "yellow":													// Produkt nicht in der Datenbank enthalten
-			new livMitGui_gui.AmpelYellow();
-			//System.out.println("\n :-| Ampel gelb (Klasse Ampel)");		// light=yellow
+		case "yellow":							
+			new ampelGrafik.AmpelYellow();
 			break;
-			//new AmpelGeld();
 		}	// switch (isProductOK){
 		
 	}	// public static void AmpelFarbe (String isProductOk){

@@ -1,15 +1,13 @@
 package liv;
 
-
 import java.util.List;
-
 import liv.Ampelindikator;
 
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * class VergleichFilter Klasse vergleicht gesetzten Filter mit zurueckgegebenen
- * Werten aus der DB
+ * class VergleichFilter 
+ * Klasse vergleicht gesetzten Filter mit zurueckgegebenen Werten aus der DB
  * 
  * @author team equal-IT /felix, anne
  * @mail: team@equal-it.de
@@ -18,16 +16,21 @@ import liv.Ampelindikator;
 
 public class VergleichFilter {
 
+	/**
+	 * @param isProductOK
+	 * @param ergebnisse
+	 * @return isProductOK
+	 */
 	public static String ueberprufeIndikatoren(List<Ampelindikator> ergebnisse) {
 
-		String isProduktOK = "green";
+		String isProductOK = "green";
 
 		if (ergebnisse.isEmpty() || ergebnisse.contains(Ampelindikator.UNBEKANNT)) {
-			isProduktOK = "yellow";
+			isProductOK = "yellow";
 		} if (ergebnisse.contains(Ampelindikator.ENTHALTEN)) {
-			isProduktOK = "red";
+			isProductOK = "red";
 		}
-		return isProduktOK;
+		return isProductOK;
 	}
 
 }

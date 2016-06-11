@@ -3,6 +3,9 @@ package liv;
 /**
  * Project: Liv - Lebensmittelinhaltverifizierer
  * 
+ * class Pruefe EAN
+ * prüft 13-stellige EAN auf Gültigkeit
+ * 
  * @author team equal-IT // Anicas Baustelle
  * @mail: team@equal-it.de
  * @version 00.00.03 2016/04/28
@@ -10,10 +13,17 @@ package liv;
 
 public final class PruefeEAN {
 
+	/**@param eanString
+	 * @return pruefeEAN
+	 */
 	public static boolean eanGueltig(String eanString) throws Exception {
 		return pruefeEAN(eanString);
 	}
 
+	/**
+	 * @param eanString
+	 * @return eanGueltig
+	 */
 	public static boolean eanUngueltig(String eanString) throws Exception {
 		return !eanGueltig(eanString);
 	}
@@ -25,7 +35,21 @@ public final class PruefeEAN {
 	 * geprüft werden können ist in der PrüfeEANorginal auch so gewesen
 	 * 
 	 * @param eanString
-	 *            muss aus 13 zahlenzeichen bestehen
+	 * 			komplette EAN; muss aus 13 zahlenzeichen bestehen
+	 * @param ean
+	 * 			Array aus eanString
+	 * @param summe1
+	 * 			enthaelt die summe der positionen 1,3,5,7,9 und 11
+	 * @param summe2
+	 * 			enthaelt die summe der positionen 2,4,6,8,10 und 12
+	 * @param summe3
+	 * 			enthaelt die summe von summe1 und summe2 multipliziert mit 3
+	 * @param summe4
+	 * 			enthaelt die summe von summe1 und summe2 multipliziert mit 3
+	 * @param eanChar
+	 * @throws Exception e
+	 * 			wenn die EAN nicht korrekt ist
+	 * @return booelan true or false
 	 */
 	private static boolean pruefeEAN(String eanString) throws Exception {
 
