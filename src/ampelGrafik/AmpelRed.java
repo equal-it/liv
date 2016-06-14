@@ -2,6 +2,7 @@ package ampelGrafik;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -37,7 +38,7 @@ public class AmpelRed extends Frame {
 	 */
 	public AmpelRed() throws InterruptedException { // Rahmen
 
-		int windowWidth = 250;
+		int windowWidth = 700;				// Box zu Testzwecken Text erweitert. Orginalwert 250!!
 		int windowHeight = 425;
 
 		setTitle("Ampel-Red");
@@ -60,7 +61,7 @@ public class AmpelRed extends Frame {
 
 		setVisible(true);
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(10000);						// zum Testen hochgesetzt
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -76,8 +77,8 @@ public class AmpelRed extends Frame {
 		public void paint(Graphics g) {
 			Graphics2D g2d = (Graphics2D) g;
 
-			g.setColor(Color.GRAY);
-			g.fill3DRect(60, 40, 150, 300, true); // Ampelhintergrund Schatten
+			g.setColor(Color.GRAY);		// Box zu Testzwecken Text erweitert. Orginalwert 60, 40 150, 300, true!!
+			g.fill3DRect(60, 40, 600, 300, true); // Ampelhintergrund Schatten
 
 			g.setColor(Color.black);
 			g.fillRect(50, 50, 150, 300); // Ampelhintergrund
@@ -93,6 +94,16 @@ public class AmpelRed extends Frame {
 
 			g2d.setColor(Color.lightGray);
 			g2d.fillOval(100, 250, 50, 50);
+			
+			
+			// zusätzlicher Text in der Grafik - dient nur als Beispiel, ginge auch in schön ;)
+			Font test = new Font("Arial",Font.BOLD,20);
+			g.setFont(test);
+			g.setColor(Color.RED);
+			g.drawString("Vorsicht!", 250, 130);
+			g.setColor(Color.WHITE);
+			g.drawString("unerwünschte Inhaltsstoffe", 250, 180);   
+			
 		}
 	}
 }
