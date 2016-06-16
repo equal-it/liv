@@ -116,7 +116,7 @@ public class Filter {
 		System.out.println("Waehle  2  zum entfernen des Filters");
 		System.out.println("\n---------------------------------------------------------------------");
 
-		eingabeSetFilter = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "j", "n" }));
+		eingabeSetFilter = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
 
 		if (eingabeSetFilter != null) {
 			switch (eingabeSetFilter) {
