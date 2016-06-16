@@ -41,11 +41,11 @@ public class Konsoleneingabe {
 				if (gueltigeWerte.contains(eingabe)) {
 					return eingabe;
 				}else{
-					System.out.println("Eingabe Fehler! Bitte neu Eingeben! ------ (Klasse Konsoleneingabe - leseKonsoleFuer())");
+					System.out.println("Die Eingabe war ungültig. Bitte erneut eingeben. ------ (Klasse Konsoleneingabe - leseKonsoleFuer())");
 				}
 			}
 		} catch (IOException e) {
-			System.err.println("Eingabe konnte nicht gelesen werden.");
+			System.err.println("Die Eingabe konnte nicht gelesen werden.");
 		}
 		return null;
 	}
