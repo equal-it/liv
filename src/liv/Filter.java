@@ -25,8 +25,8 @@ import liv.Inhaltsstoff;
 
 public class Filter {
 
-	private static final String HAUPTMENU = "9";
-	private static final String FILTERANZEIGE = "8";
+	private static final String HAUPTMENU = "5";
+	private static final String FILTERANZEIGE = "4";
 
 	/**
 	 * Methode, um die gesetzten Filter anzuzeigen
@@ -52,7 +52,7 @@ public class Filter {
 					.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2", "3", FILTERANZEIGE, HAUPTMENU }));
 			if (auswahl != null) {
 				if (auswahl.equals(FILTERANZEIGE)) {
-					System.out.println("\nAktuell gesetzte Filter sind: ");
+					System.out.println("\nMomentan sind folgende Filter gesetzt: ");
 					System.out.println(inhaltsstoffe.toString());
 				} else {
 					Inhaltsstoff inhaltsstoff = Inhaltsstoff.inhaltstoffFuerCode(auswahl);
@@ -83,13 +83,17 @@ public class Filter {
 	 *            zur Auswahl des jeweiligen Inhaltsstoffs
 	 */
 	private static void menuAusgeben() {
-		System.out.println("\n---------------------------------------(Klasse Filter - menueAusgabe())");
+		System.out.println("---------------------------------------------------------------------(Klasse Filter - menueAusgabe())");
+		System.out.println("");
+		System.out.println("Fuer welchen Inhaltsstoff moechtest du einen Filter setzen oder entfernen?");
+		System.out.println("");
 		for (Inhaltsstoff stoff : Inhaltsstoff.values()) {
 			if (stoff != Inhaltsstoff.UNBEKANNT)
 				System.out.println("Waehle " + stoff.code() + " fuer " + stoff.anzeigename() + ".");
 		}
-		System.out.println("\nWaehle 8 fuer die Anzeige der aktuell gesetzten Filter.");
-		System.out.println("\nOder mit " + HAUPTMENU + " zum Hauptmenue. \n");
+		System.out.println("\nWaehle  " + FILTERANZEIGE + "  fuer die Anzeige der aktuell gesetzten Filter.");
+		System.out.println("Waehle  " + HAUPTMENU + "  um zum Hauptmenue zu gelangen. \n");
+		System.out.println("---------------------------------------------------------------------");
 
 	}
 
@@ -104,25 +108,39 @@ public class Filter {
 	private static void setzeOderEntferneFilter(Set<Inhaltsstoff> inhaltsstoffe, Inhaltsstoff inhaltsstoff) {
 
 		String eingabeSetFilter;
-		System.out.println("Filter '" + inhaltsstoff.anzeigename()
-				+ "' setzen oder entfernen? \nBitte mit 'j' setzen oder mit 'n' entfernen und zurueck zur Auswahl:");
+		System.out.println("---------------------------------------------------------------------");
+		System.out.println("");
+		System.out.println("Moechtest du den Filter '" + inhaltsstoff.anzeigename()
+				+ "' setzen oder entfernen?");
+		System.out.println("\nWaehle  1  zum setzen des Filters");
+		System.out.println("Waehle  2  zum entfernen des Filters");
+		System.out.println("\n---------------------------------------------------------------------");
 
 		eingabeSetFilter = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "j", "n" }));
 
 		if (eingabeSetFilter != null) {
 			switch (eingabeSetFilter) {
-			case "j":
+			case "1":
 				inhaltsstoffe.add(inhaltsstoff);
-				System.out.println("Filter '" + inhaltsstoff.anzeigename()
+				System.out.println("---------------------------------------------------------------------");
+				System.out.println("");
+				System.out.println("Der Filter fuer '" + inhaltsstoff.anzeigename()
 						+ "' wurde hinzugefuegt. (Klasse Filter - setzeOderEntferneFilter())");
+				System.out.println("");
 				break;
-			case "n":
+			case "2":
 				inhaltsstoffe.remove(inhaltsstoff);
-				System.out.println("Filter '" + inhaltsstoff.anzeigename()
+				System.out.println("---------------------------------------------------------------------");
+				System.out.println("");
+				System.out.println("Der Filter fuer '" + inhaltsstoff.anzeigename()
 						+ "' wurde entfernt. (Klasse Filter- setzeOderEntferneFilter())");
+				System.out.println("");
 				break;
 			default:
+				System.out.println("---------------------------------------------------------------------");
+				System.out.println("");
 				System.out.println("Falsche Eingabe, bitte einen Filter auswaehlen. (Klasse Filter)");
+				System.out.println("");
 				break;
 			}
 		}
