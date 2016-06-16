@@ -9,41 +9,62 @@ import java.sql.Statement;
 
 public class synologyDatenbank {
 
+	/**
+	 * Main um Klasse testen zu können. Main kann weg wenn Klasse implementiert
+	 * wird
+	 * 
+	 * @param args
+	 */
+
 	public static void main(String[] args) {
 
-		testConnection();
+		synologyDbAbfrage();
 	}
 
-	public static void testConnection() {
+	/**
+	 * Verbindung zur DB aufbauen, abfragen, antwort ausgeben
+	 */
+	
+	public static void synologyDbAbfrage() {
 		Connection connection = null;
-
 		try {
-			Class.forName("org.mariadb.jdbc.Driver"); 
+
+			// Verbindung zum Server testen (eigentlich nicht notwendig)
 			System.out.println("Teste Verbindung zum Server.");
 			testServerConnection();
-			System.out.println("\nlade DB Treiber");
+
+			// DB Treiben in java laden
+			System.out.println("\nlade JDBC DB Treiber");
 			try {
 				Class.forName("org.mariadb.jdbc.Driver").newInstance();
 			} catch (ClassNotFoundException e) {
-				System.out.println("Die Treiber-Klasse wurde nicht gefunden.");
+				System.out.println("Die JDBC-Treiber-Klasse wurde nicht gefunden.");
 				System.exit(1);
 			} catch (Exception e) {
 				System.out.println("Der JDBC-Treiber kann nicht geladen werden: " + e.getMessage());
 				System.exit(1);
 			}
-			connection = DriverManager.getConnection("jdbc:mariadb://felixwyrwal.synology.me/liv","liv","livdb");
-			System.out.println("\nVerbindung zur mariaDB aufgebaut.\n");
+
+			// Verbinung zur Datenbank aufbauen
+			String dbUrl = "jdbc:mariadb://felixwyrwal.synology.me/liv";
+			String dbBenutzerName = "liv";
+			String dbBenutzerPassword = "livdb";
 			
+			connection = DriverManager.getConnection(dbUrl, dbBenutzerName, dbBenutzerPassword);
+			System.out.println("\nVerbindung zur mariaDB aufgebaut.\n");
+
+			// SQL Abfrage erstellen und Antwort ausgeben
 			Statement stmt = connection.createStatement();
 			ResultSet res;
 			res = stmt.executeQuery("select * from ean");
-			while (res.next()){
+			while (res.next()) {
 				System.out.println(res.getString("name") + "\t");
-				System.out.println(" Laktose: " + res.getInt("laktose") + 
-				 " gluten: " + res.getInt("gluten") +
-				" nuss: " + res.getInt("nuss"));
+				System.out.println(" Laktose: " + res.getInt("laktose") + " gluten: " + res.getInt("gluten") + " nuss: "
+						+ res.getInt("nuss"));
 			}
 			stmt.close();
+
+			// Verbindung zu DB beenden
 			connection.close();
 			System.out.println("\nVerbindung zur mariaDB abgebaut.");
 		}
@@ -54,6 +75,9 @@ public class synologyDatenbank {
 
 	}
 
+	/**
+	 * Verbindung zu DB testen
+	 */
 	private static void testServerConnection() {
 		try {
 
