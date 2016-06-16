@@ -123,11 +123,11 @@ public class Liv { // Console
 
 					break;
 
-				case 8:
+				case 3:
 					liv.Impressum.printImpressum();
 					break;
 
-				case 9:
+				case 4:
 					verlassen = true;
 					break;
 
