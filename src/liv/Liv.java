@@ -75,14 +75,14 @@ public class Liv { // Console
 			do { // start do while menue
 
 				System.out
-						.println("\n---------------------------------------------------------------------(Klasse Liv)");
-				System.out.println("Waehle  '1'  um Filter einzustellen");
-				System.out.println("Waehle  '2'  um eine EAN einzugeben!");
-				System.out.println("Waehle  '8'  um Dir das Impressum anzusehen!");
-				System.out.println("Waehle  '9'  zum Beenden!");
+				.println("\n---------------------------------------------------------------------(Klasse Liv)");
+				System.out.println("Waehle  1  um einen Filter zu setzen oder zu loeschen");
+				System.out.println("Waehle  2  um eine EAN einzugeben und zu pruefen");
+				System.out.println("Waehle  3  um Dir das Impressum anzusehen");
+				System.out.println("Waehle  4  um das Programm zu Beenden");
 				System.out.println("---------------------------------------------------------------------");
 
-				String eingabe = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2", "8", "9" }));
+				String eingabe = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2", "3", "4" }));
 				auswahl = Integer.parseInt(eingabe);// String to int
 
 				switch (auswahl) {
@@ -97,7 +97,7 @@ public class Liv { // Console
 					indikatoren.clear();
 					eingaben.EingabeEAN.einlesen();
 					if (liv.PruefeEAN.eanGueltig(EingabeEAN.eingabeEanNummer)) {
-						System.out.println("DB wird nun aufgerufen. (Klasse Liv)");
+						System.out.println("Die Datenbank wird nun aufgerufen. (Klasse Liv)");
 						try {
 							if (!aktuellerFilter.isEmpty()) {
 								for (Lebensmitteldatenbank datenbank : datenbanken) {
@@ -112,13 +112,13 @@ public class Liv { // Console
 								System.out.println("Es sind keine Filter gesetzt. (Klasse Liv)");
 							}
 						} catch (Exception e1) {
-							System.out.println("FEHLER! Bei DB Abfrage ------- (Klasse Liv - main() - case 2)");
+							System.out.println("FEHLER bei der Datenbankabfrage ------- (Klasse Liv - main() - case 2)");
 						}
 
 						liv.Ampel.ampelFarbe(liv.VergleichFilter.ueberprufeIndikatoren(indikatoren));
 
 					} else {
-						System.out.println("Abbruch - da EAN ungültig, findet keine DB-Abfrage statt. (Klasse Liv)");
+						System.out.println("Abbruch, da die EAN ungueltig ist. Es findet keine Datenbankabfrage statt. (Klasse Liv)");
 					}
 
 					break;
@@ -132,7 +132,7 @@ public class Liv { // Console
 					break;
 
 				default:
-					System.out.println("Bitte waehle  1 / 2 / 8 / 9\n");
+					System.out.println("Bitte waehle  1 / 2 / 3 / 4\n");
 					break;
 				}
 
@@ -146,7 +146,7 @@ public class Liv { // Console
 			System.out.println(ex.getMessage());
 		} // end catch
 
-		System.out.println("Tschüss!!");
+		System.out.println("Tschuess!!");
 		System.exit(0);
 	} // end main
 
