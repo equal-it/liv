@@ -58,7 +58,7 @@ public class Liv { // Console
 		final String FILTER = "f";
 		final String EAN = "e";
 		final String IMPRESSUM = "i";
-		final String ENDE = "b";
+		final String ENDE = "q";
 		Set<Inhaltsstoff> aktuellerFilter = new HashSet<>();
 		List<Ampelindikator> indikatoren = new ArrayList<>();
 
@@ -82,11 +82,11 @@ public class Liv { // Console
 				System.out
 						.println("\n---------------------------------------------------------------------(Klasse Liv)");
 				System.out
-						.println("Waehle  " + FILTER + "  um einen Filter zu setzen oder zu loeschen");
+						.println(FILTER + "  - Filter setzten");
 				System.out
-						.println("Waehle  " + EAN + "  um eine EAN einzugeben und zu pruefen");
-				System.out.println("Waehle  " + IMPRESSUM + "  um Dir das Impressum anzusehen");
-				System.out.println("Waehle  " + ENDE + "  um das Programm zu Beenden");
+						.println(EAN + "  - EAN anzeigen");
+				System.out.println(IMPRESSUM + "  - Impressum");
+				System.out.println(ENDE + "  Beenden");
 				System.out
 						.println("---------------------------------------------------------------------");
 
