@@ -55,10 +55,10 @@ public class Liv { // Console
 	 * @see liv.Impressum
 	 */
 	public static void main(String[] args) throws Exception {
-		final String FILTER = "f";
-		final String EAN = "e";
-		final String IMPRESSUM = "i";
-		final String ENDE = "q";
+		final String FILTER = "1";
+		final String EAN = "2";
+		final String IMPRESSUM = "3";
+		final String ENDE = "4";
 		Set<Inhaltsstoff> aktuellerFilter = new HashSet<>();
 		List<Ampelindikator> indikatoren = new ArrayList<>();
 
@@ -88,20 +88,20 @@ public class Liv { // Console
 				System.out
 						.println("---------------------------------------------------------------------");
 
-				String auswahl = Konsoleneingabe.leseKonsoleFuer(Arrays
+				String eingabe = Konsoleneingabe.leseKonsoleFuer(Arrays
 						.asList(new String[] { FILTER, EAN, IMPRESSUM, ENDE }));
 				//kommentar dinger entfernen wenn Zahlen im menue stehen
-				//int auswahl = Integer.parseInt(auswahl);// String to int
+				int auswahl = Integer.parseInt(eingabe);// String to int
 
 				switch (auswahl) {
 
-				case "f":
+				case 1:
 					aktuellerFilter.clear();
 					Set<Inhaltsstoff> inhaltsstoffe = liv.Filter.setFilter();
 					aktuellerFilter.addAll(inhaltsstoffe);
 					break;
 
-				case "e":
+				case 2:
 					indikatoren.clear();
 					eingaben.EingabeEAN.einlesen();
 					if (liv.PruefeEAN.eanGueltig(EingabeEAN.eingabeEanNummer)) {
@@ -139,11 +139,11 @@ public class Liv { // Console
 
 					break;
 
-				case "i":
+				case 3:
 					liv.Impressum.printImpressum();
 					break;
 
-				case "b":
+				case 4:
 					verlassen = true;
 					break;
 
