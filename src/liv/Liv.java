@@ -10,7 +10,6 @@ import java.util.Set;
 import datenbankAbfragen.GlutenDatenbankMock;
 import datenbankAbfragen.LaktonautDatenbankAbfrage;
 import datenbankAbfragen.Lebensmitteldatenbank;
-import datenbankAbfragen.LivDatenbankAnfrage;
 import eingaben.EingabeEAN;
 import eingaben.Konsoleneingabe;
 
@@ -19,9 +18,9 @@ import eingaben.Konsoleneingabe;
  * 
  * class Liv Konsolenausgabe
  * 
- * @author team equal-IT // letzter Stand: Team-Abend am 20.06.
+ * @author team equal-IT // letzter Stand: Anne
  * @mail: team@equal-it.de
- * @version 00.00.80 2016/65/20
+ * @version 00.00.10 2016/05/16
  */
 
 public class Liv { // Console
@@ -56,17 +55,14 @@ public class Liv { // Console
 	 * @see liv.Impressum
 	 */
 	public static void main(String[] args) throws Exception {
-		final String FILTER = "1";
-		final String EAN = "2";
-		final String IMPRESSUM = "3";
-		final String ENDE = "4";
-
 		Set<Inhaltsstoff> aktuellerFilter = new HashSet<>();
 		List<Ampelindikator> indikatoren = new ArrayList<>();
 
 		Set<Lebensmitteldatenbank> datenbanken = new HashSet<>();
 		datenbanken.add(new LaktonautDatenbankAbfrage());
 		datenbanken.add(new GlutenDatenbankMock());
+
+		int auswahl = 0;
 
 		System.out
 				.println("Herzlich Willkommen bei LIV - deinem Lebensmittelinhaltverifizierer. (Klasse Liv)");
@@ -79,11 +75,20 @@ public class Liv { // Console
 
 			do { // start do while menue
 
-				// ausgabe.AusgabeMenue.ausgabeHauptmenue(); // Hier stimmt was
-				// nicht, ACHTUNG korrigieren!!
+				System.out
+						.println("\n---------------------------------------------------------------------(Klasse Liv)");
+				System.out
+						.println("Waehle  1  um einen Filter zu setzen oder zu loeschen");
+				System.out
+						.println("Waehle  2  um eine EAN einzugeben und zu pruefen");
+				System.out.println("Waehle  3  um Dir das Impressum anzusehen");
+				System.out.println("Waehle  4  um das Programm zu Beenden");
+				System.out
+						.println("---------------------------------------------------------------------");
+
 				String eingabe = Konsoleneingabe.leseKonsoleFuer(Arrays
-						.asList(new String[] { FILTER, EAN, IMPRESSUM, ENDE }));
-				int auswahl = Integer.parseInt(eingabe);// String to int
+						.asList(new String[] { "1", "2", "3", "4" }));
+				auswahl = Integer.parseInt(eingabe);// String to int
 
 				switch (auswahl) {
 
@@ -101,43 +106,17 @@ public class Liv { // Console
 								.println("Die Datenbank wird nun aufgerufen. (Klasse Liv)");
 						try {
 							if (!aktuellerFilter.isEmpty()) {
-
-								LivDatenbankAnfrage livDatenbankAnfrage = new LivDatenbankAnfrage();
-								String livAntwort = livDatenbankAnfrage
-										.frageNach(EingabeEAN.eingabeEanNummer);
-
-								if (livAntwort == null) {
-									// Menu: andere DB befragen oder neuer
-									// Eintrag in Liv
-									boolean eintragen = true;
-									if (eintragen) {
-										// werte eingeben
-										// indikatoren.add(indikator);
-									} else {
-										// andere DB abfragen
-										for (Lebensmitteldatenbank datenbank : datenbanken) {
-											String anfrageergebnis = datenbank
-													.frageNach(EingabeEAN.eingabeEanNummer);
-											for (Inhaltsstoff inhaltsstoff : aktuellerFilter) {
-												Ampelindikator indikator = datenbank
-														.antwortEnthaeltInhaltsstoff(
-																anfrageergebnis,
-																inhaltsstoff);
-												indikatoren.add(indikator);
-											}
-										}
-									}
-
-								} else {
+								for (Lebensmitteldatenbank datenbank : datenbanken) {
+									String anfrageergebnis = datenbank
+											.frageNach(EingabeEAN.eingabeEanNummer);
 									for (Inhaltsstoff inhaltsstoff : aktuellerFilter) {
-										Ampelindikator indikator = livDatenbankAnfrage
+										Ampelindikator indikator = datenbank
 												.antwortEnthaeltInhaltsstoff(
-														livAntwort,
+														anfrageergebnis,
 														inhaltsstoff);
 										indikatoren.add(indikator);
 									}
 								}
-
 							} else {
 								System.out
 										.println("Es sind keine Filter gesetzt. (Klasse Liv)");
@@ -166,8 +145,7 @@ public class Liv { // Console
 					break;
 
 				default:
-					System.out.println("Bitte waehle  " + FILTER + " / " + EAN
-							+ " / " + IMPRESSUM + " / " + ENDE + "\n");
+					System.out.println("Bitte waehle  1 / 2 / 3 / 4\n");
 					break;
 				}
 
