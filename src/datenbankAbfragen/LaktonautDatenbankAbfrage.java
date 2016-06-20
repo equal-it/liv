@@ -1,13 +1,14 @@
 package datenbankAbfragen;
 
 import java.io.BufferedReader;
-
+import java.net.HttpURLConnection;
+import java.net.URL;
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
  * @author team equal-IT
  * mail: team@equal-it.de
- * @version  00.00.02 2016/05/01 - 13:45
+ * @version  00.00.10 2016/06/20 - 23:25
  * 
  * Link Vorlage fuer http-Anfrage:
  * http://www.mkyong.com/java/how-to-send-http-request-getpost-in-java/
@@ -15,23 +16,18 @@ import java.io.BufferedReader;
  * Laktonaut API Doku:
  * http://www.laktonaut.de/api-doku.html
  */
-
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
-import datenbankAbfragen.Lebensmitteldatenbank;
 import liv.Ampelindikator;
 import liv.Inhaltsstoff;
-
 
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
  * class LaktonautDatenbankAbfrage
  * 
- * @author	team equal-IT 
- * @mail	team@equal-it.de
+ * @author team equal-IT
+ * @mail team@equal-it.de
  * @version 00.00.04 2016/05/02
  */
 
@@ -40,11 +36,11 @@ public class LaktonautDatenbankAbfrage implements Lebensmitteldatenbank {
 	private final static String USER_AGENT = "Mozilla/5.0";
 
 	public static String laktose;
-	
+
 	/**
 	 * @return laktose
 	 */
-	
+
 	public static String getLaktose() {
 		return laktose;
 	}
@@ -54,11 +50,11 @@ public class LaktonautDatenbankAbfrage implements Lebensmitteldatenbank {
 	 * http://www.laktonaut.de/api.php?action=query&gtin=gtin&key=key Beispiel
 	 * URL =
 	 * http://www.laktonaut.de/api.php?action=query&gtin=4000417025005&key=test
-	 * 
 	 */
-	
+
 	/**
 	 * Methode für die Datenbankabfrabe bei Laktonaut
+	 * 
 	 * @param url
 	 * @param con
 	 * @param inputLine
@@ -68,7 +64,8 @@ public class LaktonautDatenbankAbfrage implements Lebensmitteldatenbank {
 	 * @return xmlResponse
 	 */
 	public static String sendGet(String ean) throws Exception {
-		String url = "http://www.laktonaut.de/api.php?action=query&gtin=" + ean + "&key=test ";
+		String url = "http://www.laktonaut.de/api.php?action=query&gtin=" + ean
+				+ "&key=test ";
 
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -81,10 +78,12 @@ public class LaktonautDatenbankAbfrage implements Lebensmitteldatenbank {
 		//
 		// int responseCode = con.getResponseCode();
 		// System.out.println("\nSending 'GET' request to URL : " + url);
-		// System.out.println("\nServer Response Code : " + responseCode + " (wenn 200
+		// System.out.println("\nServer Response Code : " + responseCode + "
+		// (wenn 200
 		// ist alles OK)");
 
-		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+		BufferedReader in = new BufferedReader(new InputStreamReader(
+				con.getInputStream()));
 		String inputLine;
 		StringBuffer xmlResponse = new StringBuffer();
 
@@ -100,9 +99,10 @@ public class LaktonautDatenbankAbfrage implements Lebensmitteldatenbank {
 
 	/**
 	 * @param ean
-	 * 			abzufragende EAN
-	 * @throws Exception e
-	 * 			
+	 *            abzufragende EAN
+	 * @throws Exception
+	 *             e
+	 * 
 	 * @return null
 	 */
 	@Override
@@ -110,33 +110,37 @@ public class LaktonautDatenbankAbfrage implements Lebensmitteldatenbank {
 		try {
 			return sendGet(ean);
 		} catch (Exception e) {
-			//e.printStackTrace();
+			// e.printStackTrace();
 			System.out.println("Fehler bei der Laktonaut Server abfrage.\n"
 					+ "Tip: Internet ist notwendig fuer Server Abfrage.");
 			return null;
 		}
 	}
-	
+
 	/**
-	 * Methode welche ausgeführt wird, wenn der Inhaltsstoff enthalten ist 
+	 * Methode welche ausgeführt wird, wenn der Inhaltsstoff enthalten ist
 	 * 
 	 * @param anfrageergebnis
 	 * @param inhaltsstoff
-	 * 			abgefragter Inhaltsstoff
+	 *            abgefragter Inhaltsstoff
 	 * @param schritt1
-	 * 			Array 
+	 *            Array
 	 * @param schritt2
-	 * 			Array
+	 *            Array
 	 * @param ergebnis
 	 * @return Ampelindikator
 	 */
 	@Override
-	public Ampelindikator antwortEnthaeltInhaltsstoff(String anfrageergebnis, Inhaltsstoff inhaltsstoff) {
+	public Ampelindikator antwortEnthaeltInhaltsstoff(String anfrageergebnis,
+			Inhaltsstoff inhaltsstoff) {
 		if (inhaltsstoff == Inhaltsstoff.LAKTOSE) {
 			String[] schritt1 = anfrageergebnis.split("<lactose>");
 			String[] schritt2 = schritt1[1].split("</lactose>");
 			String ergebnis = schritt2[0];
-			return "yes".equals(ergebnis) ? Ampelindikator.ENTHALTEN : Ampelindikator.NICHT_ENTHALTEN;
+			if ("yes".equals(ergebnis))
+				return Ampelindikator.ENTHALTEN;
+			else
+				return Ampelindikator.NICHT_ENTHALTEN;
 		}
 		return Ampelindikator.UNBEKANNT;
 	}

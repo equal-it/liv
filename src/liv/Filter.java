@@ -12,9 +12,9 @@ import eingaben.Konsoleneingabe;
  * class Filter zeigt die möglichen einzustellenden Filter und lässt diese
  * setzen oder entfernen
  * 
- * @author team equal-IT / felix, anne, mel
+ * @author team equal-IT / Team-Abend
  * @mail team@equal-it.de
- * @version 00.00.10 2016/05/10
+ * @version 00.00.10 2016/06/20
  *
  */
 

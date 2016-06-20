@@ -1,26 +1,24 @@
 package liv;
 
-import liv.Inhaltsstoff;
-
 /**
  * Project: Liv - Lebensmittelinhaltverifizierer
  * 
  * class Inhaltsstoff
  * 
- * @author team equal-IT
+ * @author team equal-IT / Team-Abend
  * @mail: team@equal-it.de
- * @version  00.00.02 2016/05/09
+ * @version 00.00.02 2016/06/20
  */
 
 public enum Inhaltsstoff {
-	UNBEKANNT("0", "Unbekannter Inhaltsstoff"), LAKTOSE("1", "Laktose"), GLUTEN("2", "Gluten"), NUSS("3", "Nuss");
+	UNBEKANNT("0", "Unbekannter Inhaltsstoff"), LAKTOSE("1", "Laktose"), GLUTEN(
+			"2", "Gluten"), NUSS("3", "Nuss");
 
-	
 	/**
 	 * @param code
 	 * @param anzeigename
 	 */
-	
+
 	private final String code;
 	private final String anzeigename;
 
