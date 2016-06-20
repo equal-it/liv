@@ -55,6 +55,10 @@ public class Liv { // Console
 	 * @see liv.Impressum
 	 */
 	public static void main(String[] args) throws Exception {
+		final String FILTER = "f";
+		final String EAN = "e";
+		final String IMPRESSUM = "i";
+		final String ENDE = "b";
 		Set<Inhaltsstoff> aktuellerFilter = new HashSet<>();
 		List<Ampelindikator> indikatoren = new ArrayList<>();
 
@@ -78,16 +82,16 @@ public class Liv { // Console
 				System.out
 						.println("\n---------------------------------------------------------------------(Klasse Liv)");
 				System.out
-						.println("Waehle  f  um einen Filter zu setzen oder zu loeschen");
+						.println("Waehle  " + FILTER + "  um einen Filter zu setzen oder zu loeschen");
 				System.out
-						.println("Waehle  e  um eine EAN einzugeben und zu pruefen");
-				System.out.println("Waehle  i  um Dir das Impressum anzusehen");
-				System.out.println("Waehle  b  um das Programm zu Beenden");
+						.println("Waehle  " + EAN + "  um eine EAN einzugeben und zu pruefen");
+				System.out.println("Waehle  " + IMPRESSUM + "  um Dir das Impressum anzusehen");
+				System.out.println("Waehle  " + ENDE + "  um das Programm zu Beenden");
 				System.out
 						.println("---------------------------------------------------------------------");
 
 				String auswahl = Konsoleneingabe.leseKonsoleFuer(Arrays
-						.asList(new String[] { "f", "e", "i", "b" }));
+						.asList(new String[] { FILTER, EAN, IMPRESSUM, ENDE }));
 				//auswahl = Integer.parseInt(eingabe);// String to int
 
 				switch (auswahl) {
