@@ -62,7 +62,7 @@ public class Liv { // Console
 		datenbanken.add(new LaktonautDatenbankAbfrage());
 		datenbanken.add(new GlutenDatenbankMock());
 
-		int auswahl = 0;
+		//String eingabe = 0;
 
 		System.out
 				.println("Herzlich Willkommen bei LIV - deinem Lebensmittelinhaltverifizierer. (Klasse Liv)");
@@ -78,27 +78,27 @@ public class Liv { // Console
 				System.out
 						.println("\n---------------------------------------------------------------------(Klasse Liv)");
 				System.out
-						.println("Waehle  1  um einen Filter zu setzen oder zu loeschen");
+						.println("Waehle  f  um einen Filter zu setzen oder zu loeschen");
 				System.out
-						.println("Waehle  2  um eine EAN einzugeben und zu pruefen");
-				System.out.println("Waehle  3  um Dir das Impressum anzusehen");
-				System.out.println("Waehle  4  um das Programm zu Beenden");
+						.println("Waehle  e  um eine EAN einzugeben und zu pruefen");
+				System.out.println("Waehle  i  um Dir das Impressum anzusehen");
+				System.out.println("Waehle  b  um das Programm zu Beenden");
 				System.out
 						.println("---------------------------------------------------------------------");
 
-				String eingabe = Konsoleneingabe.leseKonsoleFuer(Arrays
-						.asList(new String[] { "1", "2", "3", "4" }));
-				auswahl = Integer.parseInt(eingabe);// String to int
+				String auswahl = Konsoleneingabe.leseKonsoleFuer(Arrays
+						.asList(new String[] { "f", "e", "i", "b" }));
+				//auswahl = Integer.parseInt(eingabe);// String to int
 
 				switch (auswahl) {
 
-				case 1:
+				case "f":
 					aktuellerFilter.clear();
 					Set<Inhaltsstoff> inhaltsstoffe = liv.Filter.setFilter();
 					aktuellerFilter.addAll(inhaltsstoffe);
 					break;
 
-				case 2:
+				case "e":
 					indikatoren.clear();
 					eingaben.EingabeEAN.einlesen();
 					if (liv.PruefeEAN.eanGueltig(EingabeEAN.eingabeEanNummer)) {
@@ -136,11 +136,11 @@ public class Liv { // Console
 
 					break;
 
-				case 3:
+				case "i":
 					liv.Impressum.printImpressum();
 					break;
 
-				case 4:
+				case "b":
 					verlassen = true;
 					break;
 
