@@ -66,8 +66,6 @@ public class Liv { // Console
 		datenbanken.add(new LaktonautDatenbankAbfrage());
 		datenbanken.add(new GlutenDatenbankMock());
 
-		//String eingabe = 0;
-
 		System.out
 				.println("Herzlich Willkommen bei LIV - deinem Lebensmittelinhaltverifizierer. (Klasse Liv)");
 		System.out
@@ -92,7 +90,8 @@ public class Liv { // Console
 
 				String auswahl = Konsoleneingabe.leseKonsoleFuer(Arrays
 						.asList(new String[] { FILTER, EAN, IMPRESSUM, ENDE }));
-				//auswahl = Integer.parseInt(eingabe);// String to int
+				//kommentar dinger entfernen wenn Zahlen im menue stehen
+				//int auswahl = Integer.parseInt(auswahl);// String to int
 
 				switch (auswahl) {
 
