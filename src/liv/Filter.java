@@ -24,8 +24,8 @@ import eingaben.Konsoleneingabe;
 
 public class Filter {
 
-	private static final String HAUPTMENU = "5";
-	private static final String FILTERANZEIGE = "4";
+	private static final String HAUPTMENU = "h";
+	private static final String FILTERANZEIGE = "f";
 
 	/**
 	 * Methode, um die gesetzten Filter anzuzeigen
@@ -90,9 +90,10 @@ public class Filter {
 		System.out
 				.println("Fuer welchen Inhaltsstoff moechtest du einen Filter setzen oder entfernen?");
 		System.out.println("");
+		System.out.println("Waehle...");
 		for (Inhaltsstoff stoff : Inhaltsstoff.values()) {
 			if (stoff != Inhaltsstoff.UNBEKANNT)
-				System.out.println("Waehle " + stoff.code() + " fuer "
+				System.out.println("... " + stoff.code() + " fuer "
 						+ stoff.anzeigename() + ".");
 		}
 		System.out.println("\nWaehle  " + FILTERANZEIGE
