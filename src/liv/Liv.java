@@ -59,6 +59,7 @@ public class Liv { // Console
 		final String EAN = "2";
 		final String IMPRESSUM = "3";
 		final String ENDE = "4";
+
 		Set<Inhaltsstoff> aktuellerFilter = new HashSet<>();
 		List<Ampelindikator> indikatoren = new ArrayList<>();
 
@@ -66,10 +67,8 @@ public class Liv { // Console
 		datenbanken.add(new LaktonautDatenbankAbfrage());
 		datenbanken.add(new GlutenDatenbankMock());
 
-		System.out
-				.println("Herzlich Willkommen bei LIV - deinem Lebensmittelinhaltverifizierer. (Klasse Liv)");
-		System.out
-				.println("\nWas moechtest Du als naechstes tun? (Klasse Liv)");
+		System.out.println("Herzlich Willkommen bei LIV - deinem Lebensmittelinhaltverifizierer. (Klasse Liv)");
+		System.out.println("\nWas moechtest Du als naechstes tun? (Klasse Liv)");
 
 		try { // start try
 
@@ -77,20 +76,9 @@ public class Liv { // Console
 
 			do { // start do while menue
 
-				System.out
-						.println("\n---------------------------------------------------------------------(Klasse Liv)");
-				System.out
-						.println(FILTER + "  - Filter setzten");
-				System.out
-						.println(EAN + "  - EAN anzeigen");
-				System.out.println(IMPRESSUM + "  - Impressum");
-				System.out.println(ENDE + "  - Beenden");
-				System.out
-						.println("---------------------------------------------------------------------");
-
-				String eingabe = Konsoleneingabe.leseKonsoleFuer(Arrays
-						.asList(new String[] { FILTER, EAN, IMPRESSUM, ENDE }));
-				//kommentar dinger entfernen wenn Zahlen im menue stehen
+				ausgabe.AusgabeMenue.ausgabeHauptmenue();
+				String eingabe = Konsoleneingabe
+						.leseKonsoleFuer(Arrays.asList(new String[] { FILTER, EAN, IMPRESSUM, ENDE }));
 				int auswahl = Integer.parseInt(eingabe);// String to int
 
 				switch (auswahl) {
@@ -105,36 +93,30 @@ public class Liv { // Console
 					indikatoren.clear();
 					eingaben.EingabeEAN.einlesen();
 					if (liv.PruefeEAN.eanGueltig(EingabeEAN.eingabeEanNummer)) {
-						System.out
-								.println("Die Datenbank wird nun aufgerufen. (Klasse Liv)");
+						System.out.println("Die Datenbank wird nun aufgerufen. (Klasse Liv)");
 						try {
 							if (!aktuellerFilter.isEmpty()) {
 								for (Lebensmitteldatenbank datenbank : datenbanken) {
-									String anfrageergebnis = datenbank
-											.frageNach(EingabeEAN.eingabeEanNummer);
+									String anfrageergebnis = datenbank.frageNach(EingabeEAN.eingabeEanNummer);
 									for (Inhaltsstoff inhaltsstoff : aktuellerFilter) {
 										Ampelindikator indikator = datenbank
-												.antwortEnthaeltInhaltsstoff(
-														anfrageergebnis,
-														inhaltsstoff);
+												.antwortEnthaeltInhaltsstoff(anfrageergebnis, inhaltsstoff);
 										indikatoren.add(indikator);
 									}
 								}
 							} else {
-								System.out
-										.println("Es sind keine Filter gesetzt. (Klasse Liv)");
+								System.out.println("Es sind keine Filter gesetzt. (Klasse Liv)");
 							}
 						} catch (Exception e1) {
 							System.out
 									.println("FEHLER bei der Datenbankabfrage ------- (Klasse Liv - main() - case 2)");
 						}
 
-						liv.Ampel.ampelFarbe(liv.VergleichFilter
-								.ueberprufeIndikatoren(indikatoren));
+						liv.Ampel.ampelFarbe(liv.VergleichFilter.ueberprufeIndikatoren(indikatoren));
 
 					} else {
-						System.out
-								.println("Abbruch, da die EAN ungueltig ist. Es findet keine Datenbankabfrage statt. (Klasse Liv)");
+						System.out.println(
+								"Abbruch, da die EAN ungueltig ist. Es findet keine Datenbankabfrage statt. (Klasse Liv)");
 					}
 
 					break;
@@ -148,7 +130,8 @@ public class Liv { // Console
 					break;
 
 				default:
-					System.out.println("Bitte waehle  " + FILTER + " / " + EAN + " / " + IMPRESSUM + " / " + ENDE + "\n");
+					System.out
+							.println("Bitte waehle  " + FILTER + " / " + EAN + " / " + IMPRESSUM + " / " + ENDE + "\n");
 					break;
 				}
 
