@@ -86,7 +86,7 @@ public class Liv { // Console
 				System.out
 						.println(EAN + "  - EAN anzeigen");
 				System.out.println(IMPRESSUM + "  - Impressum");
-				System.out.println(ENDE + "  Beenden");
+				System.out.println(ENDE + "  - Beenden");
 				System.out
 						.println("---------------------------------------------------------------------");
 
