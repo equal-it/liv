@@ -148,7 +148,7 @@ public class Liv { // Console
 					break;
 
 				default:
-					System.out.println("Bitte waehle  1 / 2 / 3 / 4\n");
+					System.out.println("Bitte waehle  " + FILTER + " / " + EAN + " / " + IMPRESSUM + " / " + ENDE + "\n");
 					break;
 				}
 
