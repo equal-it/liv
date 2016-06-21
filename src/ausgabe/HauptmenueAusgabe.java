@@ -14,4 +14,7 @@ public class HauptmenueAusgabe {
 
 	}
 
+	public static void eingabeMenueAndereDB() {
+		System.out.println("Produkt ist nicht in LIV DB!!!\n\n1 - in nicht LIV DB suchen\n" + "2 - Produkt zur DB hinzuefuegen");
+	}
 }

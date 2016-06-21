@@ -71,10 +71,11 @@ public class Liv { // Console
 			do { // start do while menue
 
 				ausgabe.HauptmenueAusgabe.LivHauptmenueAusgabe();
-				String eingabe = Konsoleneingabe.leseKonsoleFuer(
+				String eingabeHauptmenue = Konsoleneingabe.leseKonsoleFuer(
 						Arrays.asList(new String[] { HauptmenueEintraege.FILTER.code(), HauptmenueEintraege.EAN.code(),
 								HauptmenueEintraege.IMPRESSUM.code(), HauptmenueEintraege.ENDE.code() }));
-				int auswahl = Integer.parseInt(eingabe);// String to int
+				int auswahl = Integer.parseInt(eingabeHauptmenue);// String to
+																	// int
 
 				switch (auswahl) {
 
@@ -89,30 +90,36 @@ public class Liv { // Console
 					eingaben.EingabeEAN.einlesen();
 					if (liv.PruefeEAN.eanGueltig(EingabeEAN.eingabeEanNummer)) {
 						try {
-							if (!aktuellerFilter.isEmpty()) {
+							
+							if (!aktuellerFilter.isEmpty()) { // start if fuer filter ist leer
 								System.out.println("LIV DB wird Abgefragt!!!");
 								LivDatenbankAnfrage livDatenbankAnfrage = new LivDatenbankAnfrage();
 								String livAntwort = livDatenbankAnfrage.frageNach(EingabeEAN.eingabeEanNummer);
-								if (livAntwort == null) {
-									System.out.println("nicht LIV DB werden Abgefragt!!!");
-									/*
-									 * // Menu: andere DB befragen oder neuer //
-									 * Eintrag in Liv boolean eintragen = true;
-									 * if (eintragen) { // werte eingeben //
-									 * indikatoren.add(indikator); } else {
-									 */
-									// andere DB abfragen
-									for (Lebensmitteldatenbank datenbank : datenbanken) {
-										String anfrageergebnis = datenbank.frageNach(EingabeEAN.eingabeEanNummer);
-										for (Inhaltsstoff inhaltsstoff : aktuellerFilter) {
-											Ampelindikator indikator = datenbank
-													.antwortEnthaeltInhaltsstoff(anfrageergebnis, inhaltsstoff);
-											indikatoren.add(indikator);
+								
+								if (livAntwort == null) {// start wenn keine werte in LIV DB zufinden sind
+									ausgabe.HauptmenueAusgabe.eingabeMenueAndereDB();
+									String eingabeMenueAndereDB = Konsoleneingabe
+											.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
+									if (eingabeMenueAndereDB.equals("1")) {// start nicht LIV DB werden Abgefragt
+										
+										System.out.println("nicht LIV DB werden Abgefragt!!!");
+										for (Lebensmitteldatenbank datenbank : datenbanken) {
+											String anfrageergebnis = datenbank.frageNach(EingabeEAN.eingabeEanNummer);
+											for (Inhaltsstoff inhaltsstoff : aktuellerFilter) {
+												Ampelindikator indikator = datenbank
+														.antwortEnthaeltInhaltsstoff(anfrageergebnis, inhaltsstoff);
+												indikatoren.add(indikator);
+											}
 										}
-									}
-									// }
+									} // ende nicht LIV DB werden Abgefragt
+									else { // start Benutzeranlegen und Produkt in DB schreiben
+										System.out.println("UNDER CONSTRUCTION\n"
+												+ "Hier kommt Benutzeranlegen und Produkt in DB schreiben");
+										break;
+									}// ende Benutzeranlegen und Produkt in DB schreiben
 
-								} else {
+								} // ende if fuer filter ist leer
+								else {
 									for (Inhaltsstoff inhaltsstoff : aktuellerFilter) {
 										Ampelindikator indikator = livDatenbankAnfrage
 												.antwortEnthaeltInhaltsstoff(livAntwort, inhaltsstoff);
@@ -120,7 +127,8 @@ public class Liv { // Console
 									}
 								}
 
-							} else {
+							}// ende if fuer filter ist leer 
+							else {
 								System.out.println("Es sind keine Filter gesetzt. (Klasse Liv)");
 								break;
 							}
@@ -135,7 +143,7 @@ public class Liv { // Console
 						System.out.println(
 								"Abbruch, da die EAN ungueltig ist. Es findet keine Datenbankabfrage statt. (Klasse Liv)");
 					}
-					
+
 					break;
 
 				case 3:
