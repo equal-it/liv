@@ -1,14 +1,14 @@
 package ausgabe;
 
-import ausgabe.MenueEintraege;
+import ausgabe.HauptmenueEintraege;
 
-public enum MenueEintraege {
-	FILTER("1", "Filter"), EAN("2", "EAN"), IMPRESSUM("3", "IMPRESSUM"), ENDE("4", "ENDE");
+public enum HauptmenueEintraege {
+	FILTER("1", "Filter"), EAN("2", "EAN"), IMPRESSUM("3", "IMPRESSUM"), ENDE("4", "ENDE"), ;
 
 	private final String code;
 	private final String anzeigename;
 
-	private MenueEintraege(final String code, final String anzeigename) {
+	private HauptmenueEintraege(final String code, final String anzeigename) {
 		this.code = code;
 		this.anzeigename = anzeigename;
 	}

@@ -26,7 +26,7 @@ public class EingabeEAN {
 	 */
 	public static String getEingabe() {
 		return eingabeEanNummer;
-	} 
+	}
 
 	/**
 	 * Methode, um die EAN per Konsoleneingabe einzulesen
@@ -41,8 +41,8 @@ public class EingabeEAN {
 	 *            boolean true oder false
 	 * @param auswahl
 	 *            zur Eingabe der Menueauswahl
-	 * @throws Exception e
-	 *            wenn eine falsche Menueeingabe gemacht wurde
+	 * @throws Exception
+	 *             e wenn eine falsche Menueeingabe gemacht wurde
 	 * 
 	 * @see PruefeEAN
 	 */
@@ -53,21 +53,10 @@ public class EingabeEAN {
 		do {
 			InputStreamReader isr = new InputStreamReader(System.in);
 			BufferedReader br = new BufferedReader(isr);
-			System.out.println("---------------------------------------------------------------------");
-			System.out.println("");
-			System.out.println("Bitte gib eine (Test-)EAN ein:");
-			System.out.println("");
-			System.out.println("Bitte (Test-)EAN eingeben:");
-			System.out.println("Test EAN (Ritter Sport Marzipan 100 g) Laktose = no: 4000417025005 \n"
-					+ "Test EAN (Ferrero Nutella 1000 g) Laktose = yes: 4008400401829  \n"
-					+ "Test EAN (unbekanntes Produkt) Laktose = unbekannt: 4008400401928 \n"
-					+ "Test EAN (Griesson Softcakes) Laktose = no:4001518722466 \n"
-					+ "Test EAN (Ferrero Giotto) Laktose = yes: 4008400121925 \n"
-					+ "Test EAN (Rapunzel Gemüsebrühe) Laktose = no: 4006040271505 \n"
-					+ "Test EAN (Ritter Sport Dunkle Vollnuss) Laktose = yes: 4000417224002 \n"
-					+ "Test EAN (Alnatura Dinkel Doppel Keks 330g) Laktose = yes: 4104420053922 \n" + "");
-			System.out.println("---------------------------------------------------------------------");
-
+			
+			//Menue Ausgabe
+			ausgabe.EingabeEANAusgabe.testEANAuagabe();
+			
 			try {
 				eingabeEanNummer = br.readLine();
 			} catch (IOException e) {
@@ -75,15 +64,10 @@ public class EingabeEAN {
 			}
 
 			if (liv.PruefeEAN.eanUngueltig(eingabeEanNummer)) {
-				System.out.println("---------------------------------------------------------------------");
-				System.out.println("");
-				System.out.println("Die EAN ist ungueltig. (Klasse PruefeEAN - einlesen())");
-				System.out.println("Tip: Die EAN muss aus 13 Zahlen bestehen.\n");
-				System.out.println("Waehle  1  für eine neue Eingabe.");
-				System.out.println("Waehle  2  um die Eingabe abzubrechen.");
-				System.out.println("");
-				System.out.println("---------------------------------------------------------------------");
-
+				
+				//Menue Ausgabe
+				ausgabe.EingabeEANAusgabe.ungueltigeEANAusgabe();
+				
 				String eingabeFehlerMenue = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
 				auswahl = Integer.parseInt(eingabeFehlerMenue);
 
@@ -98,8 +82,7 @@ public class EingabeEAN {
 					eanValueOK = false;
 					break;
 				}
-			} 
-			else {
+			} else {
 				eanValueOK = true;
 			}
 
