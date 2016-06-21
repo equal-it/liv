@@ -122,19 +122,20 @@ public class Liv { // Console
 
 							} else {
 								System.out.println("Es sind keine Filter gesetzt. (Klasse Liv)");
+								break;
 							}
 						} catch (Exception e1) {
-							System.out
-									.println("FEHLER bei der Datenbankabfrage ------- (Klasse Liv - main() - case 2)");
+							System.out.println("FEHLER bei der Datenbankabfrage \n"
+									+ "Wahrscheilich ist EAN in keiner DB zu finden\n"
+									+ "(Klasse Liv - main() - case 2)");
+
 						}
-
 						liv.Ampel.ampelFarbe(liv.VergleichFilter.ueberprufeIndikatoren(indikatoren));
-
 					} else {
 						System.out.println(
 								"Abbruch, da die EAN ungueltig ist. Es findet keine Datenbankabfrage statt. (Klasse Liv)");
 					}
-
+					
 					break;
 
 				case 3:

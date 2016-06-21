@@ -86,8 +86,8 @@ public class Filter {
 		String eingabeSetFilter;
 		System.out.println("");
 		System.out.println("Moechtest du den Filter '" + inhaltsstoff.anzeigename() + "' setzen oder entfernen?");
-		System.out.println("\nWaehle  1  zum setzen des Filters");
-		System.out.println("Waehle  2  zum entfernen des Filters");
+		System.out.println("\n1 - zum setzen des Filters");
+		System.out.println("2 - zum entfernen des Filters");
 		eingabeSetFilter = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
 
 		if (eingabeSetFilter != null) {
