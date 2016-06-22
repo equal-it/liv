@@ -1,7 +1,13 @@
 package liv;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Properties;
 import java.util.Set;
 
 import eingaben.Konsoleneingabe;
@@ -39,6 +45,21 @@ public class Filter {
 	public static Set<Inhaltsstoff> setFilter() {
 
 		Set<Inhaltsstoff> inhaltsstoffe = new HashSet<>();
+		
+			try{
+				File file = new File("test.properties");
+				FileInputStream fileInput = new FileInputStream(file);
+				Properties properties = new Properties();
+				properties.load(fileInput);
+				fileInput.close();
+			
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			
+		}
+			
 		String auswahl = null;
 
 		do {
@@ -83,6 +104,8 @@ public class Filter {
 	 */
 	private static void setzeOderEntferneFilter(Set<Inhaltsstoff> inhaltsstoffe, Inhaltsstoff inhaltsstoff) {
 
+		Properties properties = new Properties();
+
 		String eingabeSetFilter;
 		System.out.println("");
 		System.out.println("Moechtest du den Filter '" + inhaltsstoff.anzeigename() + "' setzen oder entfernen?");
@@ -94,10 +117,37 @@ public class Filter {
 			switch (eingabeSetFilter) {
 			case "1":
 				inhaltsstoffe.add(inhaltsstoff);
+				
+				try {
+					properties.setProperty(inhaltsstoff.anzeigename(), "gesetzt");
+				
+					File file = new File("test.properties");
+					FileOutputStream fileOut = new FileOutputStream(file);
+					properties.store(fileOut, "livFilter");
+					fileOut.close();
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}	
 				System.out.println("\nDer Filter fuer '" + inhaltsstoff.anzeigename() + "' wurde hinzugefuegt.)");
 				break;
 			case "2":
 				inhaltsstoffe.remove(inhaltsstoff);
+				
+				try {
+					properties.remove(inhaltsstoff.anzeigename(), "gesetzt");
+					
+					File file = new File("test.properties");
+					FileOutputStream fileOut = new FileOutputStream(file);
+					properties.store(fileOut, "livFilter");
+					fileOut.close();
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}	
+				
 				System.out.println("\nDer Filter fuer '" + inhaltsstoff.anzeigename() + "' wurde entfernt.");
 				break;
 			default:
