@@ -96,7 +96,7 @@ public class Liv { // Console
 				switch (auswahl) {
 
 				case 1:
-					aktuellerFilter.clear();
+					//aktuellerFilter.clear();
 					Set<Inhaltsstoff> inhaltsstoffe = liv.Filter.setFilter();
 					aktuellerFilter.addAll(inhaltsstoffe);
 					break;
