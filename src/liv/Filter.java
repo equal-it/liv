@@ -40,6 +40,7 @@ public class Filter {
 	 * @param auswahl
 	 *            Menueauswahl per Konsoleneingabe
 	 * @return inhaltsstoffe
+	 * bla
 	 */
 
 	public static Set<Inhaltsstoff> setFilter() {
