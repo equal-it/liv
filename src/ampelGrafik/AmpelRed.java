@@ -61,7 +61,7 @@ public class AmpelRed extends Frame {
 
 		setVisible(true);
 		try {
-			Thread.sleep(10000);						// zum Testen hochgesetzt
+			Thread.sleep(5000);						// zum Testen hochgesetzt
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

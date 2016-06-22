@@ -7,9 +7,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import ausgabe.HauptmenueEintraege;
 import datenbankAbfragen.GlutenDatenbankMock;
 import datenbankAbfragen.LaktonautDatenbankAbfrage;
 import datenbankAbfragen.Lebensmitteldatenbank;
+import datenbankAbfragen.LivDatenbankAnfrage;
 import eingaben.EingabeEAN;
 import eingaben.Konsoleneingabe;
 
@@ -55,10 +57,7 @@ public class Liv { // Console
 	 * @see liv.Impressum
 	 */
 	public static void main(String[] args) throws Exception {
-		final String FILTER = "1";
-		final String EAN = "2";
-		final String IMPRESSUM = "3";
-		final String ENDE = "4";
+
 		Set<Inhaltsstoff> aktuellerFilter = new HashSet<>();
 		List<Ampelindikator> indikatoren = new ArrayList<>();
 
@@ -67,9 +66,8 @@ public class Liv { // Console
 		datenbanken.add(new GlutenDatenbankMock());
 
 		System.out
-				.println("Herzlich Willkommen bei LIV - deinem Lebensmittelinhaltverifizierer. (Klasse Liv)");
-		System.out
-				.println("\nWas moechtest Du als naechstes tun? (Klasse Liv)");
+				.println("Herzlich Willkommen bei LIV - deinem Lebensmittelinhaltverifizierer.");
+		System.out.println("\nWas moechtest Du als naechstes tun?");
 
 		try { // start try
 
@@ -77,21 +75,15 @@ public class Liv { // Console
 
 			do { // start do while menue
 
-				System.out
-						.println("\n---------------------------------------------------------------------(Klasse Liv)");
-				System.out
-						.println(FILTER + "  - Filter setzten");
-				System.out
-						.println(EAN + "  - EAN anzeigen");
-				System.out.println(IMPRESSUM + "  - Impressum");
-				System.out.println(ENDE + "  - Beenden");
-				System.out
-						.println("---------------------------------------------------------------------");
-
-				String eingabe = Konsoleneingabe.leseKonsoleFuer(Arrays
-						.asList(new String[] { FILTER, EAN, IMPRESSUM, ENDE }));
-				//kommentar dinger entfernen wenn Zahlen im menue stehen
-				int auswahl = Integer.parseInt(eingabe);// String to int
+				ausgabe.HauptmenueAusgabe.LivHauptmenueAusgabe();
+				String eingabeHauptmenue = Konsoleneingabe
+						.leseKonsoleFuer(Arrays.asList(new String[] {
+								HauptmenueEintraege.FILTER.code(),
+								HauptmenueEintraege.EAN.code(),
+								HauptmenueEintraege.IMPRESSUM.code(),
+								HauptmenueEintraege.ENDE.code() }));
+				int auswahl = Integer.parseInt(eingabeHauptmenue);// String to
+																	// int
 
 				switch (auswahl) {
 
@@ -105,33 +97,79 @@ public class Liv { // Console
 					indikatoren.clear();
 					eingaben.EingabeEAN.einlesen();
 					if (liv.PruefeEAN.eanGueltig(EingabeEAN.eingabeEanNummer)) {
-						System.out
-								.println("Die Datenbank wird nun aufgerufen. (Klasse Liv)");
 						try {
-							if (!aktuellerFilter.isEmpty()) {
-								for (Lebensmitteldatenbank datenbank : datenbanken) {
-									String anfrageergebnis = datenbank
-											.frageNach(EingabeEAN.eingabeEanNummer);
+
+							if (!aktuellerFilter.isEmpty()) { // start if fuer
+																// filter ist
+																// leer
+								System.out.println("LIV DB wird Abgefragt!!!");
+								LivDatenbankAnfrage livDatenbankAnfrage = new LivDatenbankAnfrage();
+								String livAntwort = livDatenbankAnfrage
+										.frageNach(EingabeEAN.eingabeEanNummer);
+
+								if (livAntwort == null) {// start wenn keine
+															// werte in LIV DB
+															// zufinden sind
+									ausgabe.HauptmenueAusgabe
+											.eingabeMenueAndereDB();
+									String eingabeMenueAndereDB = Konsoleneingabe
+											.leseKonsoleFuer(Arrays
+													.asList(new String[] { "1",
+															"2" }));
+									if (eingabeMenueAndereDB.equals("1")) {// start
+																			// nicht
+																			// LIV
+																			// DB
+																			// werden
+																			// Abgefragt
+
+										System.out
+												.println("nicht LIV DB werden Abgefragt!!!");
+										for (Lebensmitteldatenbank datenbank : datenbanken) {
+											String anfrageergebnis = datenbank
+													.frageNach(EingabeEAN.eingabeEanNummer);
+											for (Inhaltsstoff inhaltsstoff : aktuellerFilter) {
+												Ampelindikator indikator = datenbank
+														.antwortEnthaeltInhaltsstoff(
+																anfrageergebnis,
+																inhaltsstoff);
+												indikatoren.add(indikator);
+											}
+										}
+									} // ende nicht LIV DB werden Abgefragt
+									else { // start Benutzeranlegen und Produkt
+											// in DB schreiben
+										dbbenutzer.Benutzeranlegen.bnanlegen();
+										break;
+									}// ende Benutzeranlegen und Produkt in DB
+										// schreiben
+
+								} // ende if fuer filter ist leer
+								else {
 									for (Inhaltsstoff inhaltsstoff : aktuellerFilter) {
-										Ampelindikator indikator = datenbank
+										Ampelindikator indikator = livDatenbankAnfrage
 												.antwortEnthaeltInhaltsstoff(
-														anfrageergebnis,
+														livAntwort,
 														inhaltsstoff);
 										indikatoren.add(indikator);
 									}
 								}
-							} else {
+
+							}// ende if fuer filter ist leer
+							else {
 								System.out
 										.println("Es sind keine Filter gesetzt. (Klasse Liv)");
+								break;
 							}
 						} catch (Exception e1) {
 							System.out
-									.println("FEHLER bei der Datenbankabfrage ------- (Klasse Liv - main() - case 2)");
-						}
+									.println("FEHLER bei der Datenbankabfrage \n"
+											+ "Wahrscheilich ist EAN in keiner DB zu finden\n"
+											+ "(Klasse Liv - main() - case 2)");
 
+						}
 						liv.Ampel.ampelFarbe(liv.VergleichFilter
 								.ueberprufeIndikatoren(indikatoren));
-
 					} else {
 						System.out
 								.println("Abbruch, da die EAN ungueltig ist. Es findet keine Datenbankabfrage statt. (Klasse Liv)");
@@ -148,7 +186,12 @@ public class Liv { // Console
 					break;
 
 				default:
-					System.out.println("Bitte waehle  " + FILTER + " / " + EAN + " / " + IMPRESSUM + " / " + ENDE + "\n");
+					System.out.println("Bitte waehle  "
+							+ ausgabe.HauptmenueEintraege.FILTER.code() + " / "
+							+ ausgabe.HauptmenueEintraege.EAN.code() + " / "
+							+ ausgabe.HauptmenueEintraege.IMPRESSUM.code()
+							+ " / " + ausgabe.HauptmenueEintraege.ENDE.code()
+							+ "\n");
 					break;
 				}
 
