@@ -27,7 +27,7 @@ public class Ampel {
 	public static void ampelFarbe (String isProductOk) throws InterruptedException{
 		
 		switch (isProductOk) {
-				case "green":	
+		case "green":	
 			new ampelGrafik.AmpelGreen();
 			break;
 		case "red":	
