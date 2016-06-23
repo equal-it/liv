@@ -28,6 +28,9 @@ public class livDbBenutzerAnlegen {
 		InputStreamReader inReader = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(inReader);
 
+		System.out.println("\n---------------------------------------\n"
+				+ "ACHTUNG FUNKTIONIERT SCHON UND AENDERT DIE LV DB!!!\n" + "---------------------------------------");
+
 		// Menueausgabe, benutzernamen und password einlesen
 		System.out.print("\nNeuen Benutzer anlegen! (Name und Password)\n" + "Benutzer Name eingeben: ");
 		try {
@@ -50,17 +53,35 @@ public class livDbBenutzerAnlegen {
 		// SQL Statement wird erstellt
 		Statement stmt;
 		try {
-			stmt = connection.createStatement();
-			// Dummy fuer Benutzer erstellen
-			System.out.println("\nDUMMY Benutzer wird in DB erstellt!!!\n"
-					+ "Hier fehlen die SQL Statments um einen Benutzer zu erstellen.\n"
-					+ "livDbInteraktion.livDbBenutzerAnlegen ab Zeile 55");
-			System.out.println(
-					"DUMMY Benutzer: " + benutzerName + " mit Password: " + benutzerPassword + " wird ersetellt");
 			/*
-			 * Hier muss ein SQL Statement rein um einen Benutzer zu erzeugen
+			 * hilfe links mariaDB doc
 			 * 
+			 * https://mariadb.com/kb/en/mariadb/create-user/#examples
+			 * https://mariadb.com/kb/en/mariadb/grant/#examples
+			 * https://mariadb.com/kb/en/mariadb/account-management-sql-
+			 * commands/
 			 */
+
+			stmt = connection.createStatement();
+
+			String sqlBenutzerAnlegen = "CREATE USER '" + benutzerName + "'@'%' IDENTIFIED BY '" + benutzerPassword
+					+ "';";
+			String sqlBenutzerRechtVergeben = "GRANT SELECT, INSERT, UPDATE ON  liv.ean to '" + benutzerName
+					+ "'@'%' WITH GRANT OPTION;";
+			try {
+				stmt.executeUpdate(sqlBenutzerAnlegen);
+				System.out.println("Benutzer anlegt!");
+			} catch (Exception e) {
+				System.out.println("Benutzer anlegen geht nicht");
+				System.out.println(e.getMessage());
+			}
+			try {
+				stmt.executeUpdate(sqlBenutzerRechtVergeben);
+				System.out.println("Benutzer Rechte erteilt!");
+			} catch (Exception e) {
+				System.out.println("Rechte vergeben geht nicht");
+				System.out.println(e.getMessage());
+			}
 			stmt.close();
 			connection.close();
 		} catch (SQLException e) {

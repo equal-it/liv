@@ -47,8 +47,9 @@ public class livDbneuesProduktHinzufuegen {
 		Statement stmt;
 		try {
 			stmt = connection.createStatement();
-			stmt.executeUpdate("INSERT INTO `ean` (`ean`, `name`, `laktose`, `gluten`, `nuss`) VALUES ('" + ean + "', '"
-					+ name + "', '" + laktose + "', '" + gluten + "', '" + nuss + "') ");
+			String sql="INSERT INTO `ean` (`ean`, `name`, `laktose`, `gluten`, `nuss`) VALUES ('" + ean + "', '"
+					+ name + "', '" + laktose + "', '" + gluten + "', '" + nuss + "') ";
+			stmt.executeUpdate(sql);
 			System.out.println("Fuege : ean " + ean + " name " + name + " laktose " + laktose + " gluten " + gluten
 					+ " nuss " + nuss + "\nZur LIV DB hinzu.");
 			stmt.close();
