@@ -1,4 +1,4 @@
-package datenbankAbfragen;
+package datenbanken;
 
 import liv.Ampelindikator;
 import liv.Inhaltsstoff;

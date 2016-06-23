@@ -1,5 +1,6 @@
-package dbbenutzer;
+package livDbInteraktion;
 
+import java.sql.SQLException;
 import java.util.Arrays;
 
 import eingaben.Konsoleneingabe;
@@ -11,25 +12,34 @@ import eingaben.Konsoleneingabe;
  * 
  */
 
-public class Benutzeranlegen {
+public class livDbInteraktionsmenue {
 
-	public static void bnanlegen() {
+	public static void livDbMenue() {
+		
 		ausgabe.BenutzeranlegenAusgabe.benutzeranlegenMenue();
 
 		String eingabeMenueBenutzeranlegenDB = Konsoleneingabe
 				.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
 		int auswahl = Integer.parseInt(eingabeMenueBenutzeranlegenDB); // String
 
-		// System.out.println("Waehlen Sie \n" + "1 - Benutzer anlegen\n"
-		// + "2 - Neues Produkt in Datenbank ergaenzen");
-
 		switch (auswahl) {
+		// case 1 benutzer anlegen
 		case 1:
-			System.out.println("Benutzer anlegen: DUMMY");
+			try {
+				livDbBenutzerAnlegen.benutzerAnlegen();
+			} catch (SQLException e) {
+				System.out.println("Benutzer Anlegen fehlgeschlagen!");
+				e.printStackTrace();
+			}
 			break;
-
+			
+		// case 2 neues Produkt in LIV DB schreiben
 		case 2:
-			System.out.println("Neues Produkt in DB ergaenzen: DUMMY");
+			try{
+			livDbInteraktion.livDbneuesProduktHinzufuegen.neuesProduktHinzufuegen();
+			}catch (Exception e){
+				System.out.println("Produkt in LIV DB anlegen fehlegschlagen!");
+			}
 			break;
 
 		default:

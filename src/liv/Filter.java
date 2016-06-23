@@ -1,13 +1,7 @@
 package liv;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Properties;
 import java.util.Set;
 
 import eingaben.Konsoleneingabe;
@@ -23,10 +17,6 @@ import eingaben.Konsoleneingabe;
  * @version 00.00.10 2016/06/20
  *
  */
-
-// Menue-Moeglichkeit einbauen, alle Filter anzeigen zu lassen!
-// default-Filter ueberpruefen!
-// um weiter Filter neben Laktose testen zu koennen, brauchen wir die Mocks!!
 
 public class Filter {
 
@@ -46,7 +36,7 @@ public class Filter {
 	public static Set<Inhaltsstoff> setFilter() {
 
 		Set<Inhaltsstoff> inhaltsstoffe = new HashSet<>();
-		
+		/* Kevins Baustelle
 			try{
 				File file = new File("test.properties");
 				FileInputStream fileInput = new FileInputStream(file);
@@ -59,7 +49,7 @@ public class Filter {
 			} catch (IOException e) {
 				e.printStackTrace();
 			
-		}
+		}*/
 			
 		String auswahl = null;
 
@@ -105,7 +95,7 @@ public class Filter {
 	 */
 	private static void setzeOderEntferneFilter(Set<Inhaltsstoff> inhaltsstoffe, Inhaltsstoff inhaltsstoff) {
 
-		Properties properties = new Properties();
+		//Properties properties = new Properties(); Kevins Baustelle
 
 		String eingabeSetFilter;
 		System.out.println("");
@@ -118,7 +108,7 @@ public class Filter {
 			switch (eingabeSetFilter) {
 			case "1":
 				inhaltsstoffe.add(inhaltsstoff);
-				
+				/* Kevins Baustelle
 				try {
 					properties.setProperty(inhaltsstoff.anzeigename(), "gesetzt");
 				
@@ -130,12 +120,12 @@ public class Filter {
 					e.printStackTrace();
 				} catch (IOException e) {
 					e.printStackTrace();
-				}	
+				}	*/
 				System.out.println("\nDer Filter fuer '" + inhaltsstoff.anzeigename() + "' wurde hinzugefuegt.)");
 				break;
 			case "2":
 				inhaltsstoffe.remove(inhaltsstoff);
-				
+				/* Kevins Baustelle
 				try {
 					properties.remove(inhaltsstoff.anzeigename(), "gesetzt");
 					
@@ -147,7 +137,7 @@ public class Filter {
 					e.printStackTrace();
 				} catch (IOException e) {
 					e.printStackTrace();
-				}	
+				}	*/
 				
 				System.out.println("\nDer Filter fuer '" + inhaltsstoff.anzeigename() + "' wurde entfernt.");
 				break;

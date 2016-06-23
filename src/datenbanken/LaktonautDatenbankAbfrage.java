@@ -1,4 +1,4 @@
-package datenbankAbfragen;
+package datenbanken;
 
 import java.io.BufferedReader;
 import java.net.HttpURLConnection;

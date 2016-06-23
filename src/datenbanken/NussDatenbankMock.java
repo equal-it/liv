@@ -1,5 +1,5 @@
-package datenbankAbfragen;
-import datenbankAbfragen.Lebensmitteldatenbank;
+package datenbanken;
+import datenbanken.Lebensmitteldatenbank;
 import liv.Ampelindikator;
 import liv.Inhaltsstoff;
 
