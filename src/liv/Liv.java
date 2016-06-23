@@ -104,7 +104,7 @@ public class Liv { // Console
 								if (livAntwort == null) {
 									ausgabe.HauptmenueAusgabe.eingabeMenueAndereDB();
 									String eingabeMenueAndereDB = Konsoleneingabe
-											.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
+											.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2", "3" }));
 									// start nicht LIV DB werden Abgefragt
 									if (eingabeMenueAndereDB.equals("1")) {
 										System.out.println("nicht LIV DB werden Abgefragt!!!");
@@ -116,7 +116,9 @@ public class Liv { // Console
 												indikatoren.add(indikator);
 											}
 										}
-									} // ende nicht LIV DB werden Abgefragt
+									} else if(eingabeMenueAndereDB.equals("3")){// ende nicht LIV DB werden Abgefragt
+										break;
+									}
 									else { // start Benutzeranlegen und Produkt in DB schreiben
 										livDbInteraktion.livDbInteraktionsmenue.livDbMenue();
 										break;
