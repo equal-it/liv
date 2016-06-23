@@ -29,28 +29,24 @@ public class Filter {
 	 *            zur Festlegung der jeweiligen Inhaltsstoffe
 	 * @param auswahl
 	 *            Menueauswahl per Konsoleneingabe
-	 * @return inhaltsstoffe
-	 * bla
+	 * @return inhaltsstoffe bla
 	 */
 
 	public static Set<Inhaltsstoff> setFilter() {
 
 		Set<Inhaltsstoff> inhaltsstoffe = new HashSet<>();
-		/* Kevins Baustelle
-			try{
-				File file = new File("test.properties");
-				FileInputStream fileInput = new FileInputStream(file);
-				Properties properties = new Properties();
-				properties.load(fileInput);
-				fileInput.close();
-			
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			
-		}*/
-			
+		/*
+		 * Kevins Baustelle try{ File file = new File("test.properties");
+		 * FileInputStream fileInput = new FileInputStream(file); Properties
+		 * properties = new Properties(); properties.load(fileInput);
+		 * fileInput.close();
+		 * 
+		 * } catch (FileNotFoundException e) { e.printStackTrace(); } catch
+		 * (IOException e) { e.printStackTrace();
+		 * 
+		 * }
+		 */
+
 		String auswahl = null;
 
 		do {
@@ -61,8 +57,7 @@ public class Filter {
 					ausgabe.FiltermenueEintrage.FILTERANZEIGE.code(), ausgabe.FiltermenueEintrage.HAUPTMENU.code() }));
 			if (auswahl != null) {
 				if (auswahl.equals(ausgabe.FiltermenueEintrage.FILTERANZEIGE.code())) {
-					System.out.println("\nAktiv gesetzte Filter: \n");
-					System.out.println(inhaltsstoffe.toString() + "\n\n");
+					System.out.println("\nAktiv gesetzte Filter: " + inhaltsstoffe.toString() + "\n");
 				} else {
 					Inhaltsstoff inhaltsstoff = Inhaltsstoff.inhaltstoffFuerCode(auswahl);
 					switch (inhaltsstoff) {
@@ -95,7 +90,7 @@ public class Filter {
 	 */
 	private static void setzeOderEntferneFilter(Set<Inhaltsstoff> inhaltsstoffe, Inhaltsstoff inhaltsstoff) {
 
-		//Properties properties = new Properties(); Kevins Baustelle
+		// Properties properties = new Properties(); Kevins Baustelle
 
 		String eingabeSetFilter;
 		System.out.println("");
@@ -108,37 +103,32 @@ public class Filter {
 			switch (eingabeSetFilter) {
 			case "1":
 				inhaltsstoffe.add(inhaltsstoff);
-				/* Kevins Baustelle
-				try {
-					properties.setProperty(inhaltsstoff.anzeigename(), "gesetzt");
-				
-					File file = new File("test.properties");
-					FileOutputStream fileOut = new FileOutputStream(file);
-					properties.store(fileOut, "livFilter");
-					fileOut.close();
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}	*/
+				/*
+				 * Kevins Baustelle try {
+				 * properties.setProperty(inhaltsstoff.anzeigename(),
+				 * "gesetzt");
+				 * 
+				 * File file = new File("test.properties"); FileOutputStream
+				 * fileOut = new FileOutputStream(file);
+				 * properties.store(fileOut, "livFilter"); fileOut.close(); }
+				 * catch (FileNotFoundException e) { e.printStackTrace(); }
+				 * catch (IOException e) { e.printStackTrace(); }
+				 */
 				System.out.println("\nDer Filter fuer '" + inhaltsstoff.anzeigename() + "' wurde hinzugefuegt.)");
 				break;
 			case "2":
 				inhaltsstoffe.remove(inhaltsstoff);
-				/* Kevins Baustelle
-				try {
-					properties.remove(inhaltsstoff.anzeigename(), "gesetzt");
-					
-					File file = new File("test.properties");
-					FileOutputStream fileOut = new FileOutputStream(file);
-					properties.store(fileOut, "livFilter");
-					fileOut.close();
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}	*/
-				
+				/*
+				 * Kevins Baustelle try {
+				 * properties.remove(inhaltsstoff.anzeigename(), "gesetzt");
+				 * 
+				 * File file = new File("test.properties"); FileOutputStream
+				 * fileOut = new FileOutputStream(file);
+				 * properties.store(fileOut, "livFilter"); fileOut.close(); }
+				 * catch (FileNotFoundException e) { e.printStackTrace(); }
+				 * catch (IOException e) { e.printStackTrace(); }
+				 */
+
 				System.out.println("\nDer Filter fuer '" + inhaltsstoff.anzeigename() + "' wurde entfernt.");
 				break;
 			default:

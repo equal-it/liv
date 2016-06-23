@@ -22,7 +22,7 @@ public class FiltermenueAusgabe {
 				System.out.println(stoff.code() + " - " + stoff.anzeigename() + ".");
 		}
 		System.out.println("\n" + FILTERANZEIGE.code() + " - Anzeige der aktuell gesetzten Filter.");
-		System.out.println(HAUPTMENU.code() + " - Hauptmenue. \n");
+		System.out.println(HAUPTMENU.code() + " - Hauptmenue.");
 	}
 
 }

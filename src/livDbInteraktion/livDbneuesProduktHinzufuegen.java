@@ -33,9 +33,9 @@ public class livDbneuesProduktHinzufuegen {
 		try {
 
 			System.out.print(
-					"\nNeues Produkt anlegen!" + "\nBsp.: gueltige test ean: 5449000096241\nProdukt ean eingeben: ");
+					"\nNeues Produkt anlegen!" + "\nBsp.: gueltige test ean: 5449000096241\nProdukt ean eingeben: \n");
 			ean = Konsoleneingabe.leseKonsoleFuerEanEingabe();
-			System.out.print("\nProdukt Namen eingeben: ");
+			System.out.print("Produkt Namen eingeben: ");
 			name = Konsoleneingabe.leseKonsole();
 			System.out.print("Produkt enhält laktose (0=nein 1=ja): ");
 			laktose = Konsoleneingabe.leseKonsoleFuer(Arrays.asList("0", "1"));
@@ -62,8 +62,8 @@ public class livDbneuesProduktHinzufuegen {
 			String sql = "INSERT INTO `ean` (`ean`, `name`, `laktose`, `gluten`, `nuss`) VALUES ('" + ean + "', '"
 					+ name + "', '" + laktose + "', '" + gluten + "', '" + nuss + "') ";
 			stmt.executeUpdate(sql);
-			System.out.println("\nFuege ean: " + ean + " name: " + name + " laktose " + laktose + " gluten " + gluten
-					+ " nuss " + nuss + "\nZur LIV DB hinzu.");
+			System.out.println("\nFuege, ean: " + ean + " name: " + name + " laktose " + laktose + " gluten " + gluten
+					+ " nuss " + nuss + ", zur LIV DB hinzu.");
 			stmt.close();
 			connection.close();
 		} catch (SQLException e) {
