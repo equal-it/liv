@@ -15,13 +15,14 @@ import eingaben.Konsoleneingabe;
 public class livDbneuesProduktHinzufuegen {
 
 	public static void neuesProduktHinzufuegen() {
-		System.out.println("\n---------------------------------------\n"
-				+ "ACHTUNG FUNKTIONIERT SCHON UND AENDERT DIE LV DB!!!\n"
-				+ "---------------------------------------\n");
+		System.out.println(
+				"\n---------------------------------------\n" + "ACHTUNG FUNKTIONIERT SCHON UND AENDERT DIE LV DB!!!\n"
+						+ "---------------------------------------\n");
+		System.out.println("Authentifizieren Sie sich bitte!");
 		System.out.print("Benutzer Namen eingeben (test benutzer 'test'):");
-		String benutzerName=Konsoleneingabe.leseKonsole();
+		String benutzerName = Konsoleneingabe.leseKonsole();
 		System.out.print("Password eingeben (test password 'testdb'):");
-		String benutzerPassword=Konsoleneingabe.leseKonsole();
+		String benutzerPassword = Konsoleneingabe.leseKonsole();
 
 		String ean = null;
 		String name = null;
@@ -31,9 +32,10 @@ public class livDbneuesProduktHinzufuegen {
 
 		try {
 
-			System.out.print("\nNeues Produkt anlegen! \n" + "\nProdukt ean eingeben: ");
+			System.out.print(
+					"\nNeues Produkt anlegen!" + "\nBsp.: gueltige test ean: 5449000096241\nProdukt ean eingeben: ");
 			ean = Konsoleneingabe.leseKonsoleFuerEanEingabe();
-			System.out.print("Produkt Namen eingeben: ");
+			System.out.print("\nProdukt Namen eingeben: ");
 			name = Konsoleneingabe.leseKonsole();
 			System.out.print("Produkt enhält laktose (0=nein 1=ja): ");
 			laktose = Konsoleneingabe.leseKonsoleFuer(Arrays.asList("0", "1"));
@@ -52,15 +54,15 @@ public class livDbneuesProduktHinzufuegen {
 		Statement stmt;
 		try {
 			stmt = connection.createStatement();
-			//löscht die test ean wenn test ean für insert benutzt wird
-			if(ean.equals("5449000096241")){
-			String sqlTestProduktloeschen ="DELETE FROM `ean` WHERE `ean`.`ean` = '5449000096241';";
-			stmt.executeUpdate(sqlTestProduktloeschen);
+			// löscht die test ean wenn test ean für insert benutzt wird
+			if (ean.equals("5449000096241")) {
+				String sqlTestProduktloeschen = "DELETE FROM `ean` WHERE `ean`.`ean` = '5449000096241';";
+				stmt.executeUpdate(sqlTestProduktloeschen);
 			}
-			String sql="INSERT INTO `ean` (`ean`, `name`, `laktose`, `gluten`, `nuss`) VALUES ('" + ean + "', '"
+			String sql = "INSERT INTO `ean` (`ean`, `name`, `laktose`, `gluten`, `nuss`) VALUES ('" + ean + "', '"
 					+ name + "', '" + laktose + "', '" + gluten + "', '" + nuss + "') ";
 			stmt.executeUpdate(sql);
-			System.out.println("Fuege : ean " + ean + " name " + name + " laktose " + laktose + " gluten " + gluten
+			System.out.println("\nFuege ean: " + ean + " name: " + name + " laktose " + laktose + " gluten " + gluten
 					+ " nuss " + nuss + "\nZur LIV DB hinzu.");
 			stmt.close();
 			connection.close();

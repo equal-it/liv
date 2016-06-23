@@ -76,7 +76,7 @@ public class Konsoleneingabe {
 					} else {
 						System.out.print("Die Eingabe war ungueltig. Bitte erneut eingeben.\n"
 								+ "ean MUSS GENAU 13 stellen haben\n"
-								+ "Bsp.: gueltige test ean: 5449000096241\n"
+								+ "Bsp.: gueltige test ean: 5449000096241\n\n"
 								+ "Produkt ean eingeben: ");
 					}
 				} catch (Exception e) {

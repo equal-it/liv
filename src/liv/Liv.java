@@ -96,7 +96,7 @@ public class Liv { // Console
 						try {
 							// start if fuer filter ist leer
 							if (!aktuellerFilter.isEmpty()) {
-								System.out.println("LIV DB wird Abgefragt!!!");
+								System.out.println("\nLIV DB wird Abgefragt!!!");
 								LivDatenbankAnfrage livDatenbankAnfrage = new LivDatenbankAnfrage();
 								String livAntwort = livDatenbankAnfrage.frageNach(EingabeEAN.eingabeEanNummer);
 								// start wenn keine werte in LIV DB zufinden sind

@@ -70,17 +70,15 @@ public class livDbBenutzerAnlegen {
 					+ "'@'%' WITH GRANT OPTION;";
 			try {
 				stmt.executeUpdate(sqlBenutzerAnlegen);
-				System.out.println("Benutzer anlegt!");
 			} catch (Exception e) {
-				System.out.println("Benutzer anlegen geht nicht");
-				System.out.println(e.getMessage());
+				System.out.println("Benutzer anlegen geht nicht/schon vorhanden");
+				//System.out.println(e.getMessage());
 			}
 			try {
 				stmt.executeUpdate(sqlBenutzerRechtVergeben);
-				System.out.println("Benutzer Rechte erteilt!");
 			} catch (Exception e) {
 				System.out.println("Rechte vergeben geht nicht");
-				System.out.println(e.getMessage());
+				//System.out.println(e.getMessage());
 			}
 			stmt.close();
 			connection.close();
