@@ -32,7 +32,7 @@ public class livDbBenutzerAnlegen {
 				+ "ACHTUNG FUNKTIONIERT SCHON UND AENDERT DIE LV DB!!!\n" + "---------------------------------------");
 
 		// Menueausgabe, benutzernamen und password einlesen
-		System.out.print("\nNeuen Benutzer anlegen! (Name und Password)\n" + "Benutzer Name eingeben: ");
+		System.out.print("\nNeuen Benutzer anlegen! (Name und Password)\n" + "\nBenutzer Name eingeben: ");
 		try {
 			benutzerName = br.readLine();
 		} catch (IOException e) {
@@ -66,7 +66,7 @@ public class livDbBenutzerAnlegen {
 
 			String sqlBenutzerAnlegen = "CREATE USER '" + benutzerName + "'@'%' IDENTIFIED BY '" + benutzerPassword
 					+ "';";
-			String sqlBenutzerRechtVergeben = "GRANT SELECT, INSERT, UPDATE ON  liv.ean to '" + benutzerName
+			String sqlBenutzerRechtVergeben = "GRANT SELECT, INSERT, UPDATE, DELETE ON  liv.ean to '" + benutzerName
 					+ "'@'%' WITH GRANT OPTION;";
 			try {
 				stmt.executeUpdate(sqlBenutzerAnlegen);
@@ -88,7 +88,7 @@ public class livDbBenutzerAnlegen {
 			System.out.println("Probleme beim User in Liv DB erstellen");
 			e.printStackTrace();
 		}
-
+		livDbInteraktion.livDbneuesProduktHinzufuegen.neuesProduktHinzufuegen();
 	}
 
 }

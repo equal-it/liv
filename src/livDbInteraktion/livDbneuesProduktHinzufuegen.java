@@ -15,6 +15,13 @@ import eingaben.Konsoleneingabe;
 public class livDbneuesProduktHinzufuegen {
 
 	public static void neuesProduktHinzufuegen() {
+		System.out.println("\n---------------------------------------\n"
+				+ "ACHTUNG FUNKTIONIERT SCHON UND AENDERT DIE LV DB!!!\n"
+				+ "---------------------------------------\n");
+		System.out.print("Benutzer Namen eingeben (test benutzer 'test'):");
+		String benutzerName=Konsoleneingabe.leseKonsole();
+		System.out.print("Password eingeben (test password 'testdb'):");
+		String benutzerPassword=Konsoleneingabe.leseKonsole();
 
 		String ean = null;
 		String name = null;
@@ -23,10 +30,8 @@ public class livDbneuesProduktHinzufuegen {
 		String nuss = null;
 
 		try {
-			System.out.println("\n---------------------------------------\n"
-					+ "ACHTUNG FUNKTIONIERT SCHON UND AENDERT DIE LV DB!!!\n"
-					+ "---------------------------------------");
-			System.out.print("\nNeues Produkt anlegen! \n" + "Produkt ean eingeben: ");
+
+			System.out.print("\nNeues Produkt anlegen! \n" + "\nProdukt ean eingeben: ");
 			ean = Konsoleneingabe.leseKonsoleFuerEanEingabe();
 			System.out.print("Produkt Namen eingeben: ");
 			name = Konsoleneingabe.leseKonsole();
@@ -42,11 +47,16 @@ public class livDbneuesProduktHinzufuegen {
 		}
 		// verbindung zur DB wird aufgebaut
 		datenbanken.LivDatenbank.livDbTreiberLaden();
-		Connection connection = datenbanken.LivDatenbank.openLivDbConnection();
+		Connection connection = datenbanken.LivDatenbank.openLivDbConnectionForUser(benutzerName, benutzerPassword);
 		// SQL Statement wird erstellt
 		Statement stmt;
 		try {
 			stmt = connection.createStatement();
+			//löscht die test ean wenn test ean für insert benutzt wird
+			if(ean.equals("5449000096241")){
+			String sqlTestProduktloeschen ="DELETE FROM `ean` WHERE `ean`.`ean` = '5449000096241';";
+			stmt.executeUpdate(sqlTestProduktloeschen);
+			}
 			String sql="INSERT INTO `ean` (`ean`, `name`, `laktose`, `gluten`, `nuss`) VALUES ('" + ean + "', '"
 					+ name + "', '" + laktose + "', '" + gluten + "', '" + nuss + "') ";
 			stmt.executeUpdate(sql);

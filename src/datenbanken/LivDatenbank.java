@@ -34,6 +34,16 @@ public class LivDatenbank {
 
 	}
 	
-	
+	public static Connection openLivDbConnectionForUser(String user, String password) {
+		Connection connection = null;
+		try {
+			connection = DriverManager.getConnection(dbUrl, user, password);
+		} catch (SQLException e) {
+			System.out.println("Liv DB Connection Problem");
+			e.printStackTrace();
+		}
+		return connection;
+
+	}
 	
 }
