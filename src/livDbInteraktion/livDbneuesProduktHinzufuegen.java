@@ -1,8 +1,5 @@
 package livDbInteraktion;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -25,23 +22,21 @@ public class livDbneuesProduktHinzufuegen {
 		String gluten = null;
 		String nuss = null;
 
-		InputStreamReader inReader = new InputStreamReader(System.in);
-		BufferedReader br = new BufferedReader(inReader);
 		try {
 			System.out.println("\n---------------------------------------\n"
 					+ "ACHTUNG FUNKTIONIERT SCHON UND AENDERT DIE LV DB!!!\n"
 					+ "---------------------------------------");
 			System.out.print("\nNeues Produkt anlegen! \n" + "Produkt ean eingeben: ");
-			ean = br.readLine();
+			ean = Konsoleneingabe.leseKonsoleFuerEanEingabe();
 			System.out.print("Produkt Namen eingeben: ");
-			name = br.readLine();
+			name = Konsoleneingabe.leseKonsole();
 			System.out.print("Produkt enhält laktose (0=nein 1=ja): ");
 			laktose = Konsoleneingabe.leseKonsoleFuer(Arrays.asList("0", "1"));
 			System.out.print("Produkt enhält gluten (0=nein 1=ja): ");
 			gluten = Konsoleneingabe.leseKonsoleFuer(Arrays.asList("0", "1"));
 			System.out.print("Produkt enhält nuss (0=nein 1=ja): ");
 			nuss = Konsoleneingabe.leseKonsoleFuer(Arrays.asList("0", "1"));
-		} catch (IOException e) {
+		} catch (Exception e) {
 			System.out.print("Problem beim Produkt einlesen!");
 			e.printStackTrace();
 		}
@@ -52,9 +47,10 @@ public class livDbneuesProduktHinzufuegen {
 		Statement stmt;
 		try {
 			stmt = connection.createStatement();
-			stmt.executeUpdate("INSERT INTO `ean` (`ean`, `name`, `laktose`, `gluten`, `nuss`) VALUES ('" + ean + "', '" + name + "', '" + laktose + "', '" + gluten + "', '"+ nuss + "') ");
-			System.out.println("Fuege : ean " + ean + " name " + name + " laktose " + laktose + " gluten " + gluten + " nuss "
-					+ nuss + "\nZur LIV DB hinzu.");
+			stmt.executeUpdate("INSERT INTO `ean` (`ean`, `name`, `laktose`, `gluten`, `nuss`) VALUES ('" + ean + "', '"
+					+ name + "', '" + laktose + "', '" + gluten + "', '" + nuss + "') ");
+			System.out.println("Fuege : ean " + ean + " name " + name + " laktose " + laktose + " gluten " + gluten
+					+ " nuss " + nuss + "\nZur LIV DB hinzu.");
 			stmt.close();
 			connection.close();
 		} catch (SQLException e) {

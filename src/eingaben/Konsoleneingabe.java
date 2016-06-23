@@ -40,8 +40,47 @@ public class Konsoleneingabe {
 				if (gueltigeWerte.contains(eingabe)) {
 					return eingabe;
 				} else {
-					System.out
-							.println("Die Eingabe war ungueltig. Bitte erneut eingeben. ------ (Klasse Konsoleneingabe - leseKonsoleFuer())");
+					System.out.println(
+							"Die Eingabe war ungueltig. Bitte erneut eingeben. ------ (Klasse Konsoleneingabe - leseKonsoleFuer())");
+				}
+			}
+		} catch (IOException e) {
+			System.err.println("Die Eingabe konnte nicht gelesen werden.");
+		}
+		return null;
+	}
+
+	public static String leseKonsole() {
+		String eingabe = null;
+		InputStreamReader inReader = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(inReader);
+		try {
+			eingabe = br.readLine();
+			return eingabe;
+		} catch (Exception e) {
+			System.err.println("Die Eingabe konnte nicht gelesen werden.");
+		}
+		return null;
+	}
+
+	public static String leseKonsoleFuerEanEingabe() {
+		String eanEingabe = null;
+		InputStreamReader inReader = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(inReader);
+		try {
+			while (true) {
+				eanEingabe = br.readLine();
+				try {
+					if (liv.PruefeEAN.eanGueltig(eanEingabe)) {
+						return eanEingabe;
+					} else {
+						System.out.print("Die Eingabe war ungueltig. Bitte erneut eingeben.\n"
+								+ "Bsp.: gueltige test ean: 5449000096241\n"
+								+ "Produkt ean eingeben: ");
+					}
+				} catch (Exception e) {
+					System.out.println("Probleme mit der EAN Gueltigkeitspruefung!");
+					e.printStackTrace();
 				}
 			}
 		} catch (IOException e) {

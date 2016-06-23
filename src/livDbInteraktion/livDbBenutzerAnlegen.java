@@ -29,13 +29,13 @@ public class livDbBenutzerAnlegen {
 		BufferedReader br = new BufferedReader(inReader);
 
 		// Menueausgabe, benutzernamen und password einlesen
-		System.out.println("\nNeuen Benutzer anlegen! (Name und Password)\n" + "Benutzer Name eingeben: ");
+		System.out.print("\nNeuen Benutzer anlegen! (Name und Password)\n" + "Benutzer Name eingeben: ");
 		try {
 			benutzerName = br.readLine();
 		} catch (IOException e) {
 			System.out.println("Problem beim Benutz Namen einlesen!");
 		}
-		System.out.println("Password eingeben: ");
+		System.out.print("Password eingeben: ");
 		try {
 			benutzerPassword = br.readLine();
 		} catch (IOException e) {
@@ -52,8 +52,9 @@ public class livDbBenutzerAnlegen {
 		try {
 			stmt = connection.createStatement();
 			// Dummy fuer Benutzer erstellen
-			System.out.println("DUMMY Benutzer wird in DB erstellt!!!\n"
-					+ "hier fehlen die SQL Statments um einen Benutzer zu erstellen");
+			System.out.println("\nDUMMY Benutzer wird in DB erstellt!!!\n"
+					+ "Hier fehlen die SQL Statments um einen Benutzer zu erstellen.\n"
+					+ "livDbInteraktion.livDbBenutzerAnlegen ab Zeile 55");
 			System.out.println(
 					"DUMMY Benutzer: " + benutzerName + " mit Password: " + benutzerPassword + " wird ersetellt");
 			/*
