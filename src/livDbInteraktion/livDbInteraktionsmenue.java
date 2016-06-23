@@ -15,8 +15,8 @@ import eingaben.Konsoleneingabe;
 public class livDbInteraktionsmenue {
 
 	public static void livDbMenue() {
-		
-		ausgabe.BenutzeranlegenAusgabe.benutzeranlegenMenue();
+
+		System.out.println("Waehlen Sie \n" + "1 - Benutzer anlegen\n" + "2 - Neues Produkt in Datenbank ergaenzen");
 
 		String eingabeMenueBenutzeranlegenDB = Konsoleneingabe
 				.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
@@ -32,12 +32,12 @@ public class livDbInteraktionsmenue {
 				e.printStackTrace();
 			}
 			break;
-			
+
 		// case 2 neues Produkt in LIV DB schreiben
 		case 2:
-			try{
-			livDbInteraktion.livDbneuesProduktHinzufuegen.neuesProduktHinzufuegen();
-			}catch (Exception e){
+			try {
+				livDbInteraktion.livDbneuesProduktHinzufuegen.neuesProduktHinzufuegen();
+			} catch (Exception e) {
 				System.out.println("Produkt in LIV DB anlegen fehlegschlagen!");
 			}
 			break;
