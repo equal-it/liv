@@ -3,7 +3,7 @@ package liv;
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * Ampel
+ * class Ampel
  * Auswertung des Abgleichs zwischen
  * dem gesetzten Filter und der HTTPAbfrage
  * 

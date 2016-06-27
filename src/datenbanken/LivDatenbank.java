@@ -4,6 +4,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Project: LIV - Lebensmittelinhaltverifizierer
+ * 
+ * class LivDatenbank
+ * 
+ * @author team equal-IT 
+ * @mail: team@equal-it.de
+ * @version 00.00.10 2016/05/16
+ */
+
 public class LivDatenbank {
 
 	private static final String dbUrl = "jdbc:mariadb://felixwyrwal.synology.me/liv";

@@ -8,10 +8,15 @@ import java.util.Arrays;
 import eingaben.Konsoleneingabe;
 
 /**
+ * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * @author felix
- *
+ * class livDbneuesProduktHinzufuegen
+ * 
+ * @author team equal-IT 
+ * @mail: team@equal-it.de
+ * @version 00.00.10 2016/06/16
  */
+
 public class livDbneuesProduktHinzufuegen {
 
 	public static void neuesProduktHinzufuegen() {

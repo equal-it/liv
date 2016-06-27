@@ -10,9 +10,11 @@ import liv.Inhaltsstoff;
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * @author team equal-IT mail: team@equal-it.de
- * @version 00.00.02 2016/06/20 - 23:25
+ * class LivDatenbankAnfrage
  * 
+ * @author team equal-IT 
+ * @mail: team@equal-it.de
+ * @version 00.00.10 2016/05/16
  */
 
 public class LivDatenbankAnfrage implements Lebensmitteldatenbank {

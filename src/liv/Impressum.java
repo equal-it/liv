@@ -18,6 +18,7 @@ public class Impressum {
 	 * Methode, um das Impressum anzuzeigen
 	 */
 	public static void printImpressum() {
+		System.out.println("\n--------------------------------------------");
 		System.out.println("LIV - Die Smartphone-App,\n"
 				+ "die Menschen mit Lebensmittelunvertraeglichkeiten\n"
 				+ "unerwuenschte Inhaltsstoffe von Lebensmitteln\n"

@@ -57,7 +57,8 @@ public class Filter {
 					ausgabe.FiltermenueEintrage.FILTERANZEIGE.code(), ausgabe.FiltermenueEintrage.HAUPTMENU.code() }));
 			if (auswahl != null) {
 				if (auswahl.equals(ausgabe.FiltermenueEintrage.FILTERANZEIGE.code())) {
-					System.out.println("\nAktiv gesetzte Filter: " + inhaltsstoffe.toString() + "\n");
+					System.out.println("\n--------------------------------------------");
+					System.out.println("\nAktiv gesetzte Filter: " + inhaltsstoffe.toString() + "");
 				} else {
 					Inhaltsstoff inhaltsstoff = Inhaltsstoff.inhaltstoffFuerCode(auswahl);
 					switch (inhaltsstoff) {
@@ -93,10 +94,11 @@ public class Filter {
 		// Properties properties = new Properties(); Kevins Baustelle
 
 		String eingabeSetFilter;
-		System.out.println("");
+		System.out.println("\n--------------------------------------------");
 		System.out.println("Moechtest du den Filter '" + inhaltsstoff.anzeigename() + "' setzen oder entfernen?");
 		System.out.println("\n1 - zum setzen des Filters");
 		System.out.println("2 - zum entfernen des Filters");
+		System.out.println("\n--------------------------------------------");
 		eingabeSetFilter = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
 
 		if (eingabeSetFilter != null) {

@@ -2,6 +2,16 @@ package ausgabe;
 
 import static ausgabe.HauptmenueEintraege.*;
 
+/**
+ * Project: LIV - Lebensmittelinhaltverifizierer
+ * 
+ * class HauptmenueAusgabe
+ * 
+ * @author team equal-IT 
+ * @mail: team@equal-it.de
+ * @version 00.00.10 2016/05/16
+ */
+
 public class HauptmenueAusgabe {
 
 	public static void LivHauptmenueAusgabe() {
@@ -10,7 +20,7 @@ public class HauptmenueAusgabe {
 		System.out.println(EAN.code() + " - EAN eingeben");
 		System.out.println(IMPRESSUM.code() + " - Impressum");
 		System.out.println(ENDE.code() + " - Beenden");
-		System.out.println("--------------------------------------------");
+		System.out.println("\n--------------------------------------------");
 
 	}
 

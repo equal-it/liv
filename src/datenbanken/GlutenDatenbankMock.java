@@ -10,7 +10,7 @@ import liv.Inhaltsstoff;
  * class HttpAbfrageMock1 Mock Up für die Datenbankabfrage für den Filter
  * "Gluten"
  * 
- * @author team equal-IT // Kevin?
+ * @author team equal-IT 
  * @mail team@equal-it.de
  * @version 00.00.01 2016/05/16
  */

@@ -1,9 +1,20 @@
 package ausgabe;
 
+/**
+ * Project: LIV - Lebensmittelinhaltverifizierer
+ * 
+ * class EingabeEANAusgabe Test EANs und Fehlerausgabe
+ * 
+ * @author team equal-IT 
+ * @mail: team@equal-it.de
+ * @version 00.00.10 2016/05/16
+ */
+
 public class EingabeEANAusgabe {
 
 	public static void testEANAuagabe() {
-		System.out.println("\nBitte (Test-)EAN eingeben:");
+		System.out.println("\n--------------------------------------------");
+		System.out.println("Bitte (Test-)EAN eingeben:");
 		System.out.println(
 				"\nTest EAN (Ritter Sport Marzipan 100 g) Laktose = no / Gluten = no / Nuss = no: 4000417025005 (in LIV DB)\n"
 						+ "Test EAN (Ferrero Nutella 1000 g) Laktose = yes / Gluten = no / Nuss = yes = yes: 4008400401829  (in LIV DB)\n"
@@ -14,7 +25,7 @@ public class EingabeEANAusgabe {
 						+ "Test EAN (Rapunzel Gemüsebrühe) Laktose = no: 4006040271505 \n"
 						+ "Test EAN (Ritter Sport Dunkle Vollnuss) Laktose = yes: 4000417224002 \n"
 						+ "\nTest EAN von Produkt hinzufuegen: 5449000096241");
-		System.out.println("--------------------------------------------");
+		System.out.println("\n--------------------------------------------");
 	}
 
 	public static void ungueltigeEANAusgabe() {

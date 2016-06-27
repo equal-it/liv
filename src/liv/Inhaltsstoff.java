@@ -3,8 +3,6 @@ package liv;
 /**
  * Project: Liv - Lebensmittelinhaltverifizierer
  * 
- * class Inhaltsstoff
- * 
  * @author team equal-IT / Team-Abend
  * @mail: team@equal-it.de
  * @version 00.00.02 2016/06/20

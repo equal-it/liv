@@ -8,8 +8,11 @@ import eingaben.Konsoleneingabe;
 /**
  * Project: LIV - Lebensmittelinhaltverifizierer
  * 
- * @author team equal-IT mail: team@equal-it.de
+ * class livDbInteraktionsmenue
  * 
+ * @author team equal-IT 
+ * @mail: team@equal-it.de
+ * @version 00.00.10 2016/06/16
  */
 
 public class livDbInteraktionsmenue {
