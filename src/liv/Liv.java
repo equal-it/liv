@@ -102,6 +102,8 @@ public class Liv { // Console
 								String livAntwort = livDatenbankAnfrage.frageNach(EingabeEAN.eingabeEanNummer);
 								// start wenn keine werte in LIV DB zufinden sind
 								if (livAntwort == null) {
+									indikatoren.add(Ampelindikator.UNBEKANNT);
+									liv.Ampel.ampelFarbe(liv.VergleichFilter.ueberprufeIndikatoren(indikatoren));
 									ausgabe.HauptmenueAusgabe.eingabeMenueAndereDB();
 									String eingabeMenueAndereDB = Konsoleneingabe
 											.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2", "3" }));
@@ -136,11 +138,15 @@ public class Liv { // Console
 								System.out.println("\nEs sind keine Filter gesetzt.");
 								break;
 							}
+							
 						} catch (Exception e1) {
-							System.out.println("\nFEHLER bei der Datenbankabfrage \n"
-									+ "Wahrscheilich ist EAN in keiner DB zu finden\n"
-									+ "(Klasse Liv - main() - case 2)");
-
+							liv.Ampel.ampelFarbe(liv.VergleichFilter.ueberprufeIndikatoren(indikatoren));
+							ausgabe.HauptmenueAusgabe.eingabeMenueInLivDBEintragen();
+							String eingabeMenueInLivDBEintragen = Konsoleneingabe
+									.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2"}));
+							if(eingabeMenueInLivDBEintragen.equals("1")){
+								livDbInteraktion.livDbneuesProduktHinzufuegen.neuesProduktHinzufuegen();
+							}
 						}
 						liv.Ampel.ampelFarbe(liv.VergleichFilter.ueberprufeIndikatoren(indikatoren));
 					} else {
