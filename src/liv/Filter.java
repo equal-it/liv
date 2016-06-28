@@ -7,9 +7,9 @@ import java.util.Set;
 import eingaben.Konsoleneingabe;
 
 /**
- * Project: LIV - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * class Filter zeigt die möglichen einzustellenden Filter und lässt diese
+ * class Filter zeigt die moeglichen einzustellenden Filter und laesst diese
  * setzen oder entfernen
  * 
  * @author team equal-IT / Team-Abend

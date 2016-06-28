@@ -8,7 +8,7 @@ import java.util.Arrays;
 import eingaben.Konsoleneingabe;
 
 /**
- * Project: LIV - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
  * class livDbneuesProduktHinzufuegen
  * 
@@ -23,10 +23,14 @@ public class livDbneuesProduktHinzufuegen {
 		System.out.println(
 				"\n---------------------------------------\n" + "ACHTUNG FUNKTIONIERT SCHON UND AENDERT DIE LV DB!!!\n"
 						+ "---------------------------------------\n");
+		
+		System.out.println("--------------------------------");
 		System.out.println("Authentifizieren Sie sich bitte!");
-		System.out.print("Benutzer Namen eingeben (test benutzer 'test'):");
+		System.out.println("--------------------------------");
+		
+		System.out.print("Benutzername (Test-Benutzername 'test'):");
 		String benutzerName = Konsoleneingabe.leseKonsole();
-		System.out.print("Password eingeben (test password 'testdb'):");
+		System.out.print("Passwort (Test-Passwort 'testdb'):");
 		String benutzerPassword = Konsoleneingabe.leseKonsole();
 
 		String ean = null;
@@ -36,23 +40,27 @@ public class livDbneuesProduktHinzufuegen {
 		String nuss = null;
 
 		try {
-
-			System.out.print(
-					"\nNeues Produkt anlegen!" + "\nBsp.: gueltige test ean: 5449000096241\nProdukt ean eingeben: \n");
-			ean = Konsoleneingabe.leseKonsoleFuerEanEingabe();
-			System.out.print("Produkt Namen eingeben: ");
+			System.out.println	("\n--------------------------------------------" +
+								 "\nNeues Produkt anlegen" + 
+								 "\n--------------------------------------------");
+			
+			System.out.println ("\nBsp.: gueltige Test_EAN: 5449000096241\n);");			
+			
+			System.out.print("Produkt-Name eingeben: \t");
 			name = Konsoleneingabe.leseKonsole();
-			System.out.print("Produkt enhält laktose (0=nein 1=ja): ");
+			System.out.print("Produkt-EAN eingeben: \t");
+			ean = Konsoleneingabe.leseKonsoleFuerEanEingabe();			
+			System.out.print("Produkt enhält Laktose \t(0 = nein | 1 = ja): ");
 			laktose = Konsoleneingabe.leseKonsoleFuer(Arrays.asList("0", "1"));
-			System.out.print("Produkt enhält gluten (0=nein 1=ja): ");
+			System.out.print("Produkt enhält Gluten \t(0 = nein | 1 = ja): ");
 			gluten = Konsoleneingabe.leseKonsoleFuer(Arrays.asList("0", "1"));
-			System.out.print("Produkt enhält nuss (0=nein 1=ja): ");
+			System.out.print("Produkt enhält Nuss \t(0 = nein | 1 = ja): ");
 			nuss = Konsoleneingabe.leseKonsoleFuer(Arrays.asList("0", "1"));
 		} catch (Exception e) {
-			System.out.print("Problem beim Produkt einlesen!");
+			System.err.print("Beim Anlegen des Produktes in der Datenbank ist ein Problem aufgetreten!");
 			e.printStackTrace();
 		}
-		// verbindung zur DB wird aufgebaut
+		// Verbindung zur DB wird aufgebaut
 		datenbanken.LivDatenbank.livDbTreiberLaden();
 		Connection connection = datenbanken.LivDatenbank.openLivDbConnectionForUser(benutzerName, benutzerPassword);
 		// SQL Statement wird erstellt
@@ -67,12 +75,18 @@ public class livDbneuesProduktHinzufuegen {
 			String sql = "INSERT INTO `ean` (`ean`, `name`, `laktose`, `gluten`, `nuss`) VALUES ('" + ean + "', '"
 					+ name + "', '" + laktose + "', '" + gluten + "', '" + nuss + "') ";
 			stmt.executeUpdate(sql);
-			System.out.println("\nFuege, ean: " + ean + " name: " + name + " laktose " + laktose + " gluten " + gluten
-					+ " nuss " + nuss + ", zur LIV DB hinzu.");
+			System.out.println("\nDas folgende Produkt wurde zur Datenbank hinzugefügt:\n " +
+					"\nProdukt-Name:\t" + name +  
+					"\nProdukt-EAN:\t" 	+ ean + 
+					"\nLaktose:\t" 		+ laktose + 
+					"\nGluten:\t\t" 	+ gluten +
+					"\nNuss:\t\t" 		+ nuss +
+					"\n\nVielen Dank fuer Deine Unterstützung!");
+			
 			stmt.close();
 			connection.close();
 		} catch (SQLException e) {
-			System.out.println("Probleme beim Produkt hinzufügen in Liv DB!");
+			System.err.println("Beim Anlegen des Produktes in der Datenbank ist ein Problem aufgetreten!");
 			e.printStackTrace();
 		}
 

@@ -4,10 +4,10 @@ import liv.Ampelindikator;
 import liv.Inhaltsstoff;
 
 /**
- * Project: LIV - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * class NussDatenbankMock Mock Up für die Datenbankabfrage für den Filter
- * "Nuss"
+ * class NussDatenbankMock Mock Up fuer die Datenbankabfrage
+ * Filter "Nuss"
  * 
  * @author team equal-IT 
  * @mail team@equal-it.de

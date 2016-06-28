@@ -2,6 +2,17 @@ package ausgabe;
 
 import ausgabe.HauptmenueEintraege;
 
+/**
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer
+ * 
+ * class HauptmenueEintraege
+ * 
+ * @author team equal-IT 
+ * @mail: team@equal-it.de
+ * @version 00.00.10 2016/05/16
+ */
+
+
 public enum HauptmenueEintraege {
 	FILTER("1", "Filter"), EAN("2", "EAN"), IMPRESSUM("3", "IMPRESSUM"), ENDE("4", "ENDE"), ;
 

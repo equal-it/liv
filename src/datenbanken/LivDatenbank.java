@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * Project: LIV - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
  * class LivDatenbank
  * 

@@ -1,7 +1,7 @@
 package liv;
 
 /**
- * Project: LIV - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
  * class Ampel
  * Auswertung des Abgleichs zwischen

@@ -6,7 +6,7 @@ import java.util.Arrays;
 import eingaben.Konsoleneingabe;
 
 /**
- * Project: LIV - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
  * class livDbInteraktionsmenue
  * 

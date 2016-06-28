@@ -1,7 +1,7 @@
 package liv;
 
 /**
- * Project: LIV - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
  * Ampelindikator
  * 

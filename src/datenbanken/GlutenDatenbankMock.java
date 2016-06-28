@@ -5,10 +5,10 @@ import liv.Ampelindikator;
 import liv.Inhaltsstoff;
 
 /**
- * Project: LIV - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * class HttpAbfrageMock1 Mock Up für die Datenbankabfrage für den Filter
- * "Gluten"
+ * class HttpAbfrageMock1 Mock Up fuer die Datenbankabfrage 
+ * Filter "Gluten"
  * 
  * @author team equal-IT 
  * @mail team@equal-it.de

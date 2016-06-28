@@ -8,9 +8,9 @@ import java.util.Arrays;
 import liv.PruefeEAN;
 
 /**
- * Project: LIV - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * class EingabeEAN Eingabe der EAN mit Definition der Exceptions für die EAN
+ * class EingabeEAN Eingabe der EAN mit Definition der Exceptions fuer die EAN
  * 
  * @author team equal-IT // Annes Baustelle - PFOTEN WEG!!!!! ;)
  * @mail team@equal-it.de

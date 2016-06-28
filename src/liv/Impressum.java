@@ -1,7 +1,7 @@
 package liv;
 
 /**
- * Project: Liv - Lebensmittelinhaltverifizierer
+ * Project: Liv - Lebensmittelinhaltsstoffverifizierer
  * 
  * class Impressum zeigt das Impressum
  * 

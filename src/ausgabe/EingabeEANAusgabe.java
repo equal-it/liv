@@ -1,7 +1,7 @@
 package ausgabe;
 
 /**
- * Project: LIV - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
  * class EingabeEANAusgabe Test EANs und Fehlerausgabe
  * 

@@ -22,7 +22,7 @@ import liv.Ampelindikator;
 import liv.Inhaltsstoff;
 
 /**
- * Project: LIV - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
  * class LaktonautDatenbankAbfrage
  * 

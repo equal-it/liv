@@ -6,9 +6,9 @@ import java.io.InputStreamReader;
 import java.util.Collection;
 
 /**
- * Project: Liv - Lebensmittelinhaltverifizierer
+ * Project: Liv - Lebensmittelinhaltsstoffverifizierer
  * 
- * class Konsoleneingabe wirft Exception bei Fehlerhafter Eingabe
+ * class Konsoleneingabe wirft Exception bei fehlerhafter Eingabe
  * 
  * @author team equal-IT
  * @mail: team@equal-it.de

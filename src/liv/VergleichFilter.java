@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Project: LIV - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
  * class VergleichFilter Klasse vergleicht gesetzten Filter mit zurueckgegebenen
  * Werten aus der DB

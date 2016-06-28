@@ -1,9 +1,9 @@
 package liv;
 
 /**
- * Project: Liv - Lebensmittelinhaltverifizierer
+ * Project: Liv - Lebensmittelinhaltsstoffverifizierer
  * 
- * class PruefeEAN prüft 13-stellige EAN auf Gültigkeit
+ * class PruefeEAN prueft 13-stellige EAN auf Gueltigkeit
  * 
  * @author team equal-IT // Anicas Baustelle
  * @mail: team@equal-it.de

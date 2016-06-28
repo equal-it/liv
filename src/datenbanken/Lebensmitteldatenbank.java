@@ -4,7 +4,7 @@ import liv.Ampelindikator;
 import liv.Inhaltsstoff;
 
 /**
- * Project: Liv - Lebensmittelinhaltverifizierer
+ * Project: Liv - Lebensmittelinhaltsstoffverifizierer
  * 
  * class Lebensmitteldatenbank
  * 

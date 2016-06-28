@@ -3,7 +3,7 @@ package ausgabe;
 import static ausgabe.FiltermenueEintrage.*;
 
 /**
- * Project: LIV - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
  * class Liv FiltermenueAusgabe
  * 

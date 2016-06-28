@@ -11,7 +11,7 @@ import java.awt.RenderingHints;
 import java.awt.Toolkit;
 
 /**
- * Project: LIV - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
  * class AmpelYellow zeigt eine gelbe Ampel
  * 

@@ -16,7 +16,7 @@ import eingaben.EingabeEAN;
 import eingaben.Konsoleneingabe;
 
 /**
- * Project: LIV - Lebensmittelinhaltverifizierer
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
  * class Liv Konsolenausgabe
  * 
@@ -66,7 +66,10 @@ public class Liv { // Console
 		datenbanken.add(new LaktonautDatenbankAbfrage());
 		datenbanken.add(new GlutenDatenbankMock());
 
-		System.out.println("Herzlich Willkommen bei LIV - deinem Lebensmittelinhaltverifizierer.");
+		System.out.println("HERZLICH WILLKOMMEN bei LIV "
+						+ "\ndem LebensmittelInhaltsstoffVerifizierer"
+						+ "\nby equal-IT");
+		
 		System.out.println("\nWas moechtest Du als naechstes tun?");
 
 		try { // start try
@@ -95,21 +98,21 @@ public class Liv { // Console
 					eingaben.EingabeEAN.einlesen();
 					if (liv.PruefeEAN.eanGueltig(EingabeEAN.eingabeEanNummer)) {
 						try {
-							// start if fuer filter ist leer
+							// Start if Filter ist leer
 							if (!aktuellerFilter.isEmpty()) {
-								System.out.println("\nLIV DB wird Abgefragt!!!");
+								System.out.println("\nLIV-Datenbank wird abgefragt!!!");
 								LivDatenbankAnfrage livDatenbankAnfrage = new LivDatenbankAnfrage();
 								String livAntwort = livDatenbankAnfrage.frageNach(EingabeEAN.eingabeEanNummer);
-								// start wenn keine werte in LIV DB zufinden sind
+								// Start wenn keine Werte in LIV DB zu finden sind
 								if (livAntwort == null) {
 									indikatoren.add(Ampelindikator.UNBEKANNT);
 									liv.Ampel.ampelFarbe(liv.VergleichFilter.ueberprufeIndikatoren(indikatoren));
 									ausgabe.HauptmenueAusgabe.eingabeMenueAndereDB();
 									String eingabeMenueAndereDB = Konsoleneingabe
 											.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2", "3" }));
-									// start nicht LIV DB werden Abgefragt
+									// Start Externe Datenbank wird abgefragt
 									if (eingabeMenueAndereDB.equals("1")) {
-										System.out.println("nicht LIV DB werden Abgefragt!!!");
+										System.out.println("Externe Datenbanken werden abgefragt!!!");
 										for (Lebensmitteldatenbank datenbank : datenbanken) {
 											String anfrageergebnis = datenbank.frageNach(EingabeEAN.eingabeEanNummer);
 											for (Inhaltsstoff inhaltsstoff : aktuellerFilter) {
@@ -150,8 +153,8 @@ public class Liv { // Console
 						}
 						liv.Ampel.ampelFarbe(liv.VergleichFilter.ueberprufeIndikatoren(indikatoren));
 					} else {
-						System.out.println(
-								"\nAbbruch, da die EAN ungueltig ist. Es findet keine Datenbankabfrage statt.");
+						System.err.println(
+								"\nAbbruch. Die EAN ist ungueltig. Es findet keine Datenbankabfrage statt.");
 					}
 					break;
 					
