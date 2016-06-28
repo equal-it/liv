@@ -1,4 +1,4 @@
-package Properties;
+/*package Properties;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,7 +12,7 @@ public class WriteFilterProp {
 			try {
 				Properties properties = new Properties();
 				properties.setProperty("kevin", "kesselfliker");
-				properties.setProperty("leber", "straße");
+				properties.setProperty("leber", "straï¿½e");
 				properties.setProperty("berlin", "berlin");
 
 				File file = new File("test.properties");
@@ -27,4 +27,4 @@ public class WriteFilterProp {
 
 		}
 	}
-}
+}*/
