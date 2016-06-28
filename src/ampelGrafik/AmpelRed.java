@@ -36,12 +36,13 @@ public class AmpelRed extends Frame {
 	 * @throws InterruptedException
 	 *             e
 	 */
+	
 	public AmpelRed() throws InterruptedException { // Rahmen
 
-		int windowWidth = 700;				// Box zu Testzwecken Text erweitert. Orginalwert 250!!
-		int windowHeight = 425;
+		int windowWidth = 670;				// Box zu Testzwecken Text erweitert. Orginalwert 250!!
+		int windowHeight = 415;
 
-		setTitle("Ampel-Red");
+		setTitle("Ampel-ROT");
 		addWindowListener(new WindowListener());
 
 		add(new DrawingPanelRed());
@@ -58,7 +59,6 @@ public class AmpelRed extends Frame {
 		this.setLocation(x, y);
 
 		setSize(windowWidth, windowHeight);
-
 		setVisible(true);
 		try {
 			Thread.sleep(5000);						// zum Testen hochgesetzt
@@ -78,12 +78,12 @@ public class AmpelRed extends Frame {
 			Graphics2D g2d = (Graphics2D) g;
 
 			// Hintergrundbox
-			g.setColor(Color.GRAY);		// Box zu Testzwecken Text erweitert. Orginalwert 60, 40 150, 300, true!!
-			g.fill3DRect(60, 40, 600, 300, true); // Ampelhintergrund Schatten
+			g.setColor(Color.GRAY);	
+			g.fill3DRect(60, 40, 560, 300, true);
 
 			// Ampelbox
 			g.setColor(Color.black);
-			g.fillRect(50, 50, 150, 300); // Ampelhintergrund
+			g.fillRect(50, 50, 150, 300); 
 
 			// Antialiasing für die Kreise der Ampel
 			g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
@@ -100,13 +100,16 @@ public class AmpelRed extends Frame {
 			g2d.fillOval(100, 250, 50, 50);
 			
 			// Textausgabe
-			Font test = new Font("Arial",Font.BOLD,20);
-			g.setFont(test);
+			Font head = new Font("Arial",Font.BOLD,28);
+			g.setFont(head);
 			g.setColor(Color.RED);
-			g.drawString("Vorsicht!", 250, 130);
+			g.drawString("Vorsicht!", 245, 165);
+			
+			Font text = new Font("Arial",Font.BOLD,20);
+			g.setFont(text);
 			g.setColor(Color.WHITE);
-			g.drawString("Das Produkt enthält mindestens", 250, 180);   
-			g.drawString("einen unerwünschten Inhaltsstoff", 250, 230);   
+			g.drawString("Das Produkt enthält mindestens", 245, 205);   
+			g.drawString("einen unerwünschten Inhaltsstoff.", 245, 235);   
 
 		}
 	}

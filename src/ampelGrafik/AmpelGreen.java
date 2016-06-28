@@ -39,8 +39,8 @@ public class AmpelGreen extends Frame {
 
 	public AmpelGreen() throws InterruptedException { // Rahmen
 
-		int windowWidth = 700;
-		int windowHeight = 425;
+		int windowWidth = 670;
+		int windowHeight = 415;
 
 		setTitle("Ampel-Green");
 		addWindowListener(new WindowListener());
@@ -61,7 +61,7 @@ public class AmpelGreen extends Frame {
 		setSize(windowWidth, windowHeight);
 		setVisible(true);
 		try {
-			Thread.sleep(5000); // 5000 = 5 sek.
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -79,7 +79,7 @@ public class AmpelGreen extends Frame {
 
 			// Hintergrundbox
 			g.setColor(Color.GRAY);
-			g.fill3DRect(60, 40, 600, 300, true); // Ampelhintergrund Schatten
+			g.fill3DRect(60, 40, 560, 300, true);
 
 			// Ampelbox
 			g.setColor(Color.black);
@@ -100,13 +100,17 @@ public class AmpelGreen extends Frame {
 			g2d.fillOval(100, 250, 50, 50);
 
 			// Textausgabe
-			Font test = new Font("Arial",Font.BOLD,20);
-			g.setFont(test);
+			Font head = new Font("Arial",Font.BOLD,28);
+			g.setFont(head);
 			g.setColor(Color.GREEN);
-			g.drawString("Be happy!", 250, 130);
+			g.drawString("Be happy!", 245, 165);
+			
+			Font text = new Font("Arial",Font.BOLD,20);
+			g.setFont(text);
 			g.setColor(Color.WHITE);
-			g.drawString("Das Produkt enthält keine", 250, 180);   
-			g.drawString("unerwünschten Inhaltsstoffe", 250, 230);   
+			g.drawString("Das Produkt enthält keine", 245, 205);   
+			g.drawString("unerwünschten Inhaltsstoffe.", 245, 235);   
+		
 		}
 	}
 }

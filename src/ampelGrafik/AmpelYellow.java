@@ -38,10 +38,10 @@ public class AmpelYellow extends Frame {
 	 */
 	public AmpelYellow() throws InterruptedException { // Rahmen
 
-		int windowWidth = 700;
-		int windowHeight = 425;
+		int windowWidth = 670;
+		int windowHeight = 415;
 
-		setTitle("Ampel-Yellow");
+		setTitle("Ampel-GELB");
 		addWindowListener(new WindowListener());
 
 		add(new DrawingPanelYellow());
@@ -78,7 +78,7 @@ public class AmpelYellow extends Frame {
 
 			// Hintergrundbox
 			g.setColor(Color.GRAY);
-			g.fill3DRect(60, 40, 600, 300, true); // Ampelhintergrund Schatten
+			g.fill3DRect(60, 40, 560, 300, true);
 
 			// Ampelbox
 			g.setColor(Color.black);
@@ -99,13 +99,16 @@ public class AmpelYellow extends Frame {
 			g2d.fillOval(100, 250, 50, 50);
 
 			// Textausgabe
-			Font test = new Font("Arial",Font.BOLD,20);
-			g.setFont(test);
+			Font head = new Font("Arial",Font.BOLD,28);
+			g.setFont(head);
 			g.setColor(Color.YELLOW);
-			g.drawString("Sorry!", 250, 130);
+			g.drawString("Sorry!", 245, 165);
+			
+			Font text = new Font("Arial",Font.BOLD,20);
+			g.setFont(text);
 			g.setColor(Color.WHITE);
-			g.drawString("Das Produkt ist nicht in der", 250, 180);   
-			g.drawString("Datenbank enthalten", 250, 230);  
+			g.drawString("Das Produkt ist nicht", 245, 205);   
+			g.drawString("in der Datenbank enthalten.", 245, 235);  
 			
 		}
 	}
