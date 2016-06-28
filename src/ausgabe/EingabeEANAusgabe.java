@@ -17,7 +17,7 @@ public class EingabeEANAusgabe {
 		System.out.println("Bitte (Test-)EAN eingeben:");
 		System.out.println(
 				"\nTest EAN (Ritter Sport Marzipan 100 g) Laktose = no / Gluten = no / Nuss = no: 4000417025005 (in LIV DB)\n"
-						+ "Test EAN (Ferrero Nutella 1000 g) Laktose = yes / Gluten = no / Nuss = yes = yes: 4008400401829  (in LIV DB)\n"
+						+ "Test EAN (Ferrero Nutella 1000 g) Laktose = yes / Gluten = no / Nuss = yes: 4008400401829  (in LIV DB)\n"
 						+ "Test EAN (Griesson Softcakes) Laktose = no / Gluten = no / Nuss = no: 4001518722466 (in LIV DB)\n"
 						+ "Test EAN (Alnatura Dinkel Doppel Keks 330g) Laktose = yes / Gluten = no / Nuss = no: 4104420053922 (in LIV DB)\n"
 						+ "Test EAN (unbekanntes Produkt) Laktose = unbekannt: 4008400401928 \n"
