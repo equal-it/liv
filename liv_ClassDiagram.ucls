@@ -2,7 +2,7 @@
 <class-diagram version="1.1.10" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
   realizations="true" associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
   <package id="1" language="java" name="liv" project="liv" file="/liv/src/liv" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="680" width="1421" x="23" y="27"/>    
+    <position height="1380" width="2123" x="20" y="24"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <class id="2" language="java" name="liv.Filter" project="liv" file="/liv/src/liv/Filter.java" binary="false" 

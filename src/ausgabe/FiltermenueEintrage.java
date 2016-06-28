@@ -11,7 +11,7 @@ package ausgabe;
  */
 
 public enum FiltermenueEintrage {
-	HAUPTMENU("5", "HAUPTMENU"), FILTERANZEIGE("4","FILTERANZEIGE");
+	HAUPTMENUE("5", "HAUPTMENU"), FILTERANZEIGE("4","FILTERANZEIGE");
 	
 	private final String code;
 	private final String anzeigename;

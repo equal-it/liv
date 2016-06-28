@@ -54,7 +54,7 @@ public class Filter {
 
 			auswahl = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { liv.Inhaltsstoff.LAKTOSE.code(),
 					liv.Inhaltsstoff.GLUTEN.code(), liv.Inhaltsstoff.NUSS.code(),
-					ausgabe.FiltermenueEintrage.FILTERANZEIGE.code(), ausgabe.FiltermenueEintrage.HAUPTMENU.code() }));
+					ausgabe.FiltermenueEintrage.FILTERANZEIGE.code(), ausgabe.FiltermenueEintrage.HAUPTMENUE.code() }));
 			if (auswahl != null) {
 				if (auswahl.equals(ausgabe.FiltermenueEintrage.FILTERANZEIGE.code())) {
 					System.out.println("\n--------------------------------------------");
@@ -76,7 +76,7 @@ public class Filter {
 				}
 			}
 
-		} while (!ausgabe.FiltermenueEintrage.HAUPTMENU.code().equals(auswahl));
+		} while (!ausgabe.FiltermenueEintrage.HAUPTMENUE.code().equals(auswahl));
 
 		return inhaltsstoffe;
 	}
