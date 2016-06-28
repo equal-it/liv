@@ -2,6 +2,7 @@ package ampelGrafik;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -16,7 +17,7 @@ import java.awt.Toolkit;
  * 
  * @author team equal-IT
  * @mail: team@equal-it.de
- * @version 00.00.05 2016/05/16
+ * @version 00.00.05 2016/05/28
  */
 
 @SuppressWarnings("serial")
@@ -38,7 +39,7 @@ public class AmpelGreen extends Frame {
 
 	public AmpelGreen() throws InterruptedException { // Rahmen
 
-		int windowWidth = 250;
+		int windowWidth = 700;
 		int windowHeight = 425;
 
 		setTitle("Ampel-Green");
@@ -76,15 +77,19 @@ public class AmpelGreen extends Frame {
 		public void paint(Graphics g) {
 			Graphics2D g2d = (Graphics2D) g;
 
+			// Hintergrundbox
 			g.setColor(Color.GRAY);
-			g.fill3DRect(60, 40, 150, 300, true); // Ampelhintergrund Schatten
+			g.fill3DRect(60, 40, 600, 300, true); // Ampelhintergrund Schatten
 
+			// Ampelbox
 			g.setColor(Color.black);
 			g.fillRect(50, 50, 150, 300); // Ampelhintergrund
 
+			// Antialiasing für die Kreise der Ampel
 			g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 					RenderingHints.VALUE_ANTIALIAS_ON);
 
+			// Ampelfarben
 			g2d.setColor(Color.lightGray);
 			g2d.fillOval(100, 100, 50, 50);
 
@@ -94,6 +99,14 @@ public class AmpelGreen extends Frame {
 			g2d.setColor(Color.green);
 			g2d.fillOval(100, 250, 50, 50);
 
+			// Textausgabe
+			Font test = new Font("Arial",Font.BOLD,20);
+			g.setFont(test);
+			g.setColor(Color.GREEN);
+			g.drawString("Be happy!", 250, 130);
+			g.setColor(Color.WHITE);
+			g.drawString("Das Produkt enthält keine", 250, 180);   
+			g.drawString("unerwünschten Inhaltsstoffe", 250, 230);   
 		}
 	}
 }

@@ -17,7 +17,7 @@ import java.awt.Toolkit;
  * 
  * @author team equal-IT
  * @mail: team@equal-it.de
- * @version 00.00.05 2016/05/16
+ * @version 00.00.05 2016/05/28
  */
 
 @SuppressWarnings("serial")
@@ -77,15 +77,19 @@ public class AmpelRed extends Frame {
 		public void paint(Graphics g) {
 			Graphics2D g2d = (Graphics2D) g;
 
+			// Hintergrundbox
 			g.setColor(Color.GRAY);		// Box zu Testzwecken Text erweitert. Orginalwert 60, 40 150, 300, true!!
 			g.fill3DRect(60, 40, 600, 300, true); // Ampelhintergrund Schatten
 
+			// Ampelbox
 			g.setColor(Color.black);
 			g.fillRect(50, 50, 150, 300); // Ampelhintergrund
 
+			// Antialiasing für die Kreise der Ampel
 			g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 					RenderingHints.VALUE_ANTIALIAS_ON);
 
+			// Ampelfarben
 			g2d.setColor(Color.RED);
 			g2d.fillOval(100, 100, 50, 50);
 
@@ -95,15 +99,15 @@ public class AmpelRed extends Frame {
 			g2d.setColor(Color.lightGray);
 			g2d.fillOval(100, 250, 50, 50);
 			
-			
-			// zusätzlicher Text in der Grafik - dient nur als Beispiel, ginge auch in schön ;)
+			// Textausgabe
 			Font test = new Font("Arial",Font.BOLD,20);
 			g.setFont(test);
 			g.setColor(Color.RED);
 			g.drawString("Vorsicht!", 250, 130);
 			g.setColor(Color.WHITE);
-			g.drawString("unerwünschte Inhaltsstoffe", 250, 180);   
-			
+			g.drawString("Das Produkt enthält mindestens", 250, 180);   
+			g.drawString("einen unerwünschten Inhaltsstoff", 250, 230);   
+
 		}
 	}
 }
