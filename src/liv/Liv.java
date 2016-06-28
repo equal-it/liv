@@ -66,9 +66,12 @@ public class Liv { // Console
 		datenbanken.add(new LaktonautDatenbankAbfrage());
 		datenbanken.add(new GlutenDatenbankMock());
 
-		System.out.println("HERZLICH WILLKOMMEN bei LIV "
+		System.out.println(
+						  "********************************************"
+						+ "\nHERZLICH WILLKOMMEN bei LIV "
 						+ "\ndem LebensmittelInhaltsstoffVerifizierer"
-						+ "\nby equal-IT");
+						+ "\nby equal-IT"
+						+ "\n********************************************");
 		
 		System.out.println("\nWas moechtest Du als naechstes tun?");
 
