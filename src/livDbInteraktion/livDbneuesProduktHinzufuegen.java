@@ -44,7 +44,7 @@ public class livDbneuesProduktHinzufuegen {
 								 "\nNeues Produkt anlegen" + 
 								 "\n--------------------------------------------");
 			
-			System.out.println ("\nBsp.: gueltige Test_EAN: 5449000096241\n);");			
+			System.out.println ("\nBsp.: gueltige Test_EAN: 5449000096241\n)");			
 			
 			System.out.print("Produkt-Name eingeben: \t");
 			name = Konsoleneingabe.leseKonsole();

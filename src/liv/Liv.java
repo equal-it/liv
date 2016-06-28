@@ -67,11 +67,11 @@ public class Liv { // Console
 		datenbanken.add(new GlutenDatenbankMock());
 
 		System.out.println(
-						  "********************************************"
+						  "********************************************\n"
 						+ "\nHERZLICH WILLKOMMEN bei LIV "
 						+ "\ndem LebensmittelInhaltsstoffVerifizierer"
 						+ "\nby equal-IT"
-						+ "\n********************************************");
+						+ "\n\n********************************************");
 		
 		System.out.println("\nWas moechtest Du als naechstes tun?");
 
