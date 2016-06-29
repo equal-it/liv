@@ -14,7 +14,7 @@ import ausgabe.HauptmenueEintraege;
 
 
 public enum HauptmenueEintraege {
-	FILTER("1", "Filter"), EAN("2", "EAN"), IMPRESSUM("3", "IMPRESSUM"), ENDE("4", "ENDE"), ;
+	FILTER("1", "FILTER"), EAN("2", "EAN"), IMPRESSUM("3", "IMPRESSUM"), ENDE("4", "ENDE"), ;
 
 	private final String code;
 	private final String anzeigename;

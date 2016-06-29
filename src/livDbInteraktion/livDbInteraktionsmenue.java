@@ -19,29 +19,29 @@ public class livDbInteraktionsmenue {
 
 	public static void livDbMenue() {
 
-		System.out.println("Haben Sie einen Benutzer Namen?");
+		System.out.println("Haben Sie einen Benutzernamen?");
 		System.out.println("1 - ja\n2 - nein");
 		String habeBenutzername = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
 		if (habeBenutzername.equals("2")) {
 			System.out.println("Sie muessen erst einen Benutzer anlegen");
-			System.out.println("Wollen Sie einene Benutzer anlegen?");
+			System.out.println("Wollen Sie einen neuen Benutzer anlegen?");
 			System.out.println("1 - ja\n2 - nein");
 			String willBenutzerAnlegen = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
 			if (willBenutzerAnlegen.equals("1")) {
 				try {
 					livDbBenutzerAnlegen.benutzerAnlegen();
 				} catch (SQLException e) {
-					System.out.println("Benutzer Anlegen fehlgeschlagen!");
+					System.out.println("Benutzer anlegen fehlgeschlagen!");
 					e.printStackTrace();
 				}
 			} else {
-				System.out.println("Produnkt hinzufügen Abgebrochen!");
+				System.out.println("Produkt hinzufügen abgebrochen!");
 			}
 		} else {
 			try {
 				livDbInteraktion.livDbneuesProduktHinzufuegen.neuesProduktHinzufuegen();
 			} catch (Exception e) {
-				System.out.println("Produkt in LIV DB anlegen fehlegschlagen!");
+				System.out.println("Produkt in LIV-Datenbank anlegen ist fehlgeschlagen!");
 			}
 		}
 	}

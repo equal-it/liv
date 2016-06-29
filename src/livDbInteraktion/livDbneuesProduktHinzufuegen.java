@@ -21,12 +21,12 @@ public class livDbneuesProduktHinzufuegen {
 
 	public static void neuesProduktHinzufuegen() {
 		System.out.println(
-				"\n---------------------------------------\n" + "ACHTUNG FUNKTIONIERT SCHON UND AENDERT DIE LV DB!!!\n"
-						+ "---------------------------------------\n");
+				"\n--------------------------------------------\n" + "ACHTUNG FUNKTIONIERT SCHON UND AENDERT DIE LV DB!!!\n"
+						+ "--------------------------------------------\n");
 		
-		System.out.println("--------------------------------");
+		System.out.println("--------------------------------------------");
 		System.out.println("Authentifizieren Sie sich bitte!");
-		System.out.println("--------------------------------");
+		System.out.println("--------------------------------------------");
 		
 		System.out.print("Benutzername (Test-Benutzername 'test'):");
 		String benutzerName = Konsoleneingabe.leseKonsole();
@@ -44,7 +44,7 @@ public class livDbneuesProduktHinzufuegen {
 								 "\nNeues Produkt anlegen" + 
 								 "\n--------------------------------------------");
 			
-			System.out.println ("\nBsp.: gueltige Test_EAN: 5449000096241\n)");			
+			System.out.println ("Bsp.: gueltige Test_EAN: 5449000096241\n");			
 			
 			System.out.print("Produkt-Name eingeben: \t");
 			name = Konsoleneingabe.leseKonsole();
@@ -56,10 +56,13 @@ public class livDbneuesProduktHinzufuegen {
 			gluten = Konsoleneingabe.leseKonsoleFuer(Arrays.asList("0", "1"));
 			System.out.print("Produkt enhält Nuss \t(0 = nein | 1 = ja): ");
 			nuss = Konsoleneingabe.leseKonsoleFuer(Arrays.asList("0", "1"));
+			System.out.println	("\n--------------------------------------------");
+			
 		} catch (Exception e) {
 			System.err.print("Beim Anlegen des Produktes in der Datenbank ist ein Problem aufgetreten!");
 			e.printStackTrace();
-		}
+			}
+		
 		// Verbindung zur DB wird aufgebaut
 		datenbanken.LivDatenbank.livDbTreiberLaden();
 		Connection connection = datenbanken.LivDatenbank.openLivDbConnectionForUser(benutzerName, benutzerPassword);

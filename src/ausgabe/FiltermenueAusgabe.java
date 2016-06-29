@@ -22,17 +22,18 @@ public class FiltermenueAusgabe {
 	 *            zur Auswahl des jeweiligen Inhaltsstoffs
 	 */
 	public static void FilterHauptmenueAusgabe() {
-		System.out.println(
-				"\n--------------------------------------------");
+		System.out.println("\n--------------------------------------------");
+		System.out.println("FILTERMENUE");
+		System.out.println("--------------------------------------------");
 
-		System.out.println("Fuer welchen Inhaltsstoff moechtest du einen Filter setzen oder entfernen?\n");
+		System.out.println("Fuer welchen Inhaltsstoff moechtest du\neinen Filter setzen oder entfernen?\n");
 
 		for (Inhaltsstoff stoff : Inhaltsstoff.values()) {
 			if (stoff != Inhaltsstoff.UNBEKANNT)
-				System.out.println(stoff.code() + " - " + stoff.anzeigename() + ".");
+				System.out.println(stoff.code() + " - " + stoff.anzeigename());
 		}
-		System.out.println("\n" + FILTERANZEIGE.code() + " - Anzeige der aktuell gesetzten Filter.");
-		System.out.println(HAUPTMENUE.code() + " - Hauptmenue.");
+		System.out.println("\n" + FILTERANZEIGE.code() + " - Anzeige der aktuell gesetzten Filter");
+		System.out.println(HAUPTMENUE.code() + " - Hauptmenue");
 		System.out.println("\n--------------------------------------------");
 	}
 

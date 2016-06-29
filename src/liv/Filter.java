@@ -95,9 +95,9 @@ public class Filter {
 
 		String eingabeSetFilter;
 		System.out.println("\n--------------------------------------------");
-		System.out.println("Moechtest du den Filter '" + inhaltsstoff.anzeigename() + "' setzen oder entfernen?");
-		System.out.println("\n1 - zum setzen des Filters");
-		System.out.println("2 - zum entfernen des Filters");
+		System.out.println("Filter '" + inhaltsstoff.anzeigename() + "' setzen oder entfernen?");
+		System.out.println("\n1 - Filter setzen");
+		System.out.println("2 - Filter entfernen");
 		System.out.println("\n--------------------------------------------");
 		eingabeSetFilter = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
 
@@ -116,7 +116,7 @@ public class Filter {
 				 * catch (FileNotFoundException e) { e.printStackTrace(); }
 				 * catch (IOException e) { e.printStackTrace(); }
 				 */
-				System.out.println("\nDer Filter fuer '" + inhaltsstoff.anzeigename() + "' wurde hinzugefuegt.)");
+				System.out.println("\nFilter '" + inhaltsstoff.anzeigename() + "' wurde hinzugefuegt.");
 				break;
 			case "2":
 				inhaltsstoffe.remove(inhaltsstoff);
@@ -131,10 +131,10 @@ public class Filter {
 				 * catch (IOException e) { e.printStackTrace(); }
 				 */
 
-				System.out.println("\nDer Filter fuer '" + inhaltsstoff.anzeigename() + "' wurde entfernt.");
+				System.out.println("\nFilter '" + inhaltsstoff.anzeigename() + "' wurde entfernt.");
 				break;
 			default:
-				System.out.println("\nFalsche Eingabe, bitte einen Filter auswaehlen.");
+				System.out.println("\nFalsche Eingabe, bitte waehle einen Filter aus!");
 				break;
 			}
 		}

@@ -49,7 +49,7 @@ public class GlutenDatenbankMock implements Lebensmitteldatenbank {
 	public Ampelindikator antwortEnthaeltInhaltsstoff(String anfrageergebnis, Inhaltsstoff inhaltsstoff) {
 		return Ampelindikator.UNBEKANNT;
 		/**
-		 * Variante fuerGlutenDatenbankMock antwort. Wenn Filter gesetzt return
+		 * Variante fuer GlutenDatenbankMock Antwort. Wenn Filter gesetzt return
 		 * Enthalten, wenn Filter nicht gesetzt return nicht Enthalten
 		 * 
 		 * if (inhaltsstoff == Inhaltsstoff.GLUTEN) { return

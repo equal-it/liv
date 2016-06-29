@@ -37,17 +37,17 @@ public class livDbBenutzerAnlegen {
 				+ "ACHTUNG FUNKTIONIERT SCHON UND AENDERT DIE LV DB!!!\n" + "---------------------------------------");
 
 		// Menueausgabe, benutzernamen und password einlesen
-		System.out.print("\nNeuen Benutzer anlegen! (Name und Password)\n" + "\nBenutzer Name eingeben: ");
+		System.out.print("\nNeuen Benutzer anlegen! (Name und Passwort)\n" + "\nBenutzername eingeben: ");
 		try {
 			benutzerName = br.readLine();
 		} catch (IOException e) {
-			System.out.println("Problem beim Benutz Namen einlesen!");
+			System.out.println("Problem beim Einlesen des Benutzernamen!");
 		}
-		System.out.print("Password eingeben: ");
+		System.out.print("Passwort eingeben: ");
 		try {
 			benutzerPassword = br.readLine();
 		} catch (IOException e) {
-			System.out.println("Problem beim Benutzer Password einlesen!");
+			System.out.println("Problem beim Einlesen des Passwortes!");
 			e.printStackTrace();
 		}
 
@@ -76,7 +76,7 @@ public class livDbBenutzerAnlegen {
 			try {
 				stmt.executeUpdate(sqlBenutzerAnlegen);
 			} catch (Exception e) {
-				System.out.println("Benutzer anlegen geht nicht/schon vorhanden");
+				System.out.println("Benutzer anlegen fehlgeschlagen. Der Benutzer ist bereits vorhanden");
 				//System.out.println(e.getMessage());
 			}
 			try {
@@ -88,7 +88,7 @@ public class livDbBenutzerAnlegen {
 			stmt.close();
 			connection.close();
 		} catch (SQLException e) {
-			System.out.println("Probleme beim User in Liv DB erstellen");
+			System.out.println("Probleme beim Erstellen des Users in der Liv-Datenbank.");
 			e.printStackTrace();
 		}
 		livDbInteraktion.livDbneuesProduktHinzufuegen.neuesProduktHinzufuegen();

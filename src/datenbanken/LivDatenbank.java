@@ -37,7 +37,7 @@ public class LivDatenbank {
 		try {
 			connection = DriverManager.getConnection(dbUrl, dbBenutzerName, dbBenutzerPassword);
 		} catch (SQLException e) {
-			System.out.println("Liv DB Connection Problem");
+			System.out.println("LIV-Datenbank Connection Problem");
 			e.printStackTrace();
 		}
 		return connection;
@@ -49,7 +49,7 @@ public class LivDatenbank {
 		try {
 			connection = DriverManager.getConnection(dbUrl, user, password);
 		} catch (SQLException e) {
-			System.out.println("Liv DB Connection Problem");
+			System.out.println("LIV-Datenbank Connection Problem");
 			e.printStackTrace();
 		}
 		return connection;

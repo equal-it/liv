@@ -103,7 +103,7 @@ public class Liv { // Console
 						try {
 							// Start if Filter ist leer
 							if (!aktuellerFilter.isEmpty()) {
-								System.out.println("\nLIV-Datenbank wird abgefragt!!!");
+								System.out.println("\nLIV-Datenbank wird abgefragt...");
 								LivDatenbankAnfrage livDatenbankAnfrage = new LivDatenbankAnfrage();
 								String livAntwort = livDatenbankAnfrage.frageNach(EingabeEAN.eingabeEanNummer);
 								// Start wenn keine Werte in LIV DB zu finden sind
@@ -115,7 +115,7 @@ public class Liv { // Console
 											.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2", "3" }));
 									// Start Externe Datenbank wird abgefragt
 									if (eingabeMenueAndereDB.equals("1")) {
-										System.out.println("Externe Datenbanken werden abgefragt!!!");
+										System.out.println("Externe Datenbanken werden abgefragt...");
 										for (Lebensmitteldatenbank datenbank : datenbanken) {
 											String anfrageergebnis = datenbank.frageNach(EingabeEAN.eingabeEanNummer);
 											for (Inhaltsstoff inhaltsstoff : aktuellerFilter) {
