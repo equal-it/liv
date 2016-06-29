@@ -28,6 +28,9 @@ public class HauptmenueAusgabe {
 
 	public static void eingabeMenueAndereDB() {
 		System.out.println ("\nDas Produkt ist nicht in der LIV-Datenbank enthalten!!!\n");
+		System.out.println("\n--------------------------------------------");
+		System.out.println ("xxxMENUE"); //Klasse HauptmenueAusgabe
+		System.out.println("--------------------------------------------\n");
 		System.out.println ("\n1 - Externe Datenbanken durchsuchen" + 
 							"\n2 - Produkt zur LIV-Datenbank hinzuefuegen" + 
 							"\n3 - Abbrechen und zurueck zum Hauptmenue");
@@ -35,6 +38,9 @@ public class HauptmenueAusgabe {
 	
 	}
 	public static void eingabeMenueInLivDBEintragen(){
+		System.out.println("\n--------------------------------------------");
+		System.out.println ("xxxMENUE"); //Klasse HauptmenueAusgabe
+		System.out.println("--------------------------------------------\n");
 		System.out.println("\n1 - Produkt zur LIV-Datenbank hinzufuegen\n" + "2 - Zurueck zum Hauptmenue");
 		
 	}
