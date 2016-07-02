@@ -48,9 +48,9 @@ public class LivDatenbank {
 		Connection connection = null;
 		try {
 			connection = DriverManager.getConnection(dbUrl, user, password);
-		} catch (SQLException e) {
+			//return connection;
+		} catch (Exception e) {
 			System.out.println("LIV-Datenbank Connection Problem");
-			e.printStackTrace();
 		}
 		return connection;
 

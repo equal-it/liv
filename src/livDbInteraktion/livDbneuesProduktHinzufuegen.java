@@ -1,7 +1,6 @@
 package livDbInteraktion;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Arrays;
 
@@ -60,15 +59,14 @@ public class livDbneuesProduktHinzufuegen {
 			
 		} catch (Exception e) {
 			System.err.print("Beim Anlegen des Produktes in der Datenbank ist ein Problem aufgetreten!");
-			e.printStackTrace();
 			}
-		
+		try {
 		// Verbindung zur DB wird aufgebaut
 		datenbanken.LivDatenbank.livDbTreiberLaden();
 		Connection connection = datenbanken.LivDatenbank.openLivDbConnectionForUser(benutzerName, benutzerPassword);
 		// SQL Statement wird erstellt
 		Statement stmt;
-		try {
+
 			stmt = connection.createStatement();
 			// löscht die test ean wenn test ean für insert benutzt wird
 			if (ean.equals("5449000096241")) {
@@ -88,9 +86,8 @@ public class livDbneuesProduktHinzufuegen {
 			
 			stmt.close();
 			connection.close();
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			System.err.println("Beim Anlegen des Produktes in der Datenbank ist ein Problem aufgetreten!");
-			e.printStackTrace();
 		}
 
 	}
