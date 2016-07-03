@@ -143,8 +143,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="18" language="java" name="datenbanken.LivDatenbank" project="liv" 
-    file="/liv/src/datenbanken/LivDatenbank.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="18" language="java" name="datenbanken.LivDatenbankConnectionService" project="liv" 
+    file="/liv/src/datenbanken/LivDatenbankConnectionService.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="174" y="553"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -311,33 +311,33 @@
     </display>  
   </class>  
   <nesting id="38">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="8"/>  
-  </nesting>  
-  <nesting id="39">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="7"/>  
-  </nesting>  
-  <realization id="40">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="17"/>  
-  </realization>  
-  <realization id="41">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="17"/>  
-  </realization>  
-  <realization id="42">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="17"/>  
-  </realization>  
-  <realization id="43">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="17"/>  
-  </realization>  
-  <nesting id="44">    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="3"/>  
   </nesting>  
+  <realization id="39">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <nesting id="40">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="7"/>  
+  </nesting>  
+  <nesting id="41">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="8"/>  
+  </nesting>  
+  <realization id="42">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <realization id="43">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <realization id="44">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

@@ -52,8 +52,8 @@ public class livDbBenutzerAnlegen {
 		}
 
 		// verbindung zur DB wird aufgebaut
-		datenbanken.LivDatenbank.livDbTreiberLaden();
-		Connection connection = datenbanken.LivDatenbank.openLivDbConnection();
+		datenbanken.LivDatenbankConnectionService.livDbTreiberLaden();
+		Connection connection = datenbanken.LivDatenbankConnectionService.openLivDbConnection();
 
 		// SQL Statement wird erstellt
 		Statement stmt;

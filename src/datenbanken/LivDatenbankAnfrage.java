@@ -25,11 +25,11 @@ public class LivDatenbankAnfrage implements Lebensmitteldatenbank {
 		try {
 			// DB Treiben in java laden
 			
-			datenbanken.LivDatenbank.livDbTreiberLaden();
+			datenbanken.LivDatenbankConnectionService.livDbTreiberLaden();
 
 			// Verbinung zur Datenbank aufbauen
 
-			connection = datenbanken.LivDatenbank.openLivDbConnection();
+			connection = datenbanken.LivDatenbankConnectionService.openLivDbConnection();
 
 			// SQL Abfrage erstellen und Antwort ausgeben
 			Statement stmt = connection.createStatement();

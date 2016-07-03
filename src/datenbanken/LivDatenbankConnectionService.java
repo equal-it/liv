@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * @version 00.00.10 2016/05/16
  */
 
-public class LivDatenbank {
+public class LivDatenbankConnectionService {
 
 	private static final String dbUrl = "jdbc:mariadb://felixwyrwal.synology.me/liv";
 	private static final String dbBenutzerName = "liv";

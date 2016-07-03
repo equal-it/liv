@@ -62,8 +62,8 @@ public class livDbneuesProduktHinzufuegen {
 			}
 		try {
 		// Verbindung zur DB wird aufgebaut
-		datenbanken.LivDatenbank.livDbTreiberLaden();
-		Connection connection = datenbanken.LivDatenbank.openLivDbConnectionForUser(benutzerName, benutzerPassword);
+		datenbanken.LivDatenbankConnectionService.livDbTreiberLaden();
+		Connection connection = datenbanken.LivDatenbankConnectionService.openLivDbConnectionForUser(benutzerName, benutzerPassword);
 		// SQL Statement wird erstellt
 		Statement stmt;
 
