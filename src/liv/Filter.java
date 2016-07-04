@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import Properties.Einstellungen;
+import properties.Einstellungen;
 import eingaben.Konsoleneingabe;
 
 /**
@@ -30,7 +30,7 @@ public class Filter {
 	 *            zur Festlegung der jeweiligen Inhaltsstoffe
 	 * @param auswahl
 	 *            Menueauswahl per Konsoleneingabe
-	 * @return inhaltsstoffe
+	 * @return inhaltsstoffe bla
 	 */
 	static Einstellungen einstellungen = new Einstellungen();
 
@@ -44,15 +44,22 @@ public class Filter {
 		do {
 			ausgabe.FiltermenueAusgabe.FilterHauptmenueAusgabe();
 
-			auswahl = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { liv.Inhaltsstoff.LAKTOSE.code(),
-					liv.Inhaltsstoff.GLUTEN.code(), liv.Inhaltsstoff.NUSS.code(),
-					ausgabe.FiltermenueEintrage.FILTERANZEIGE.code(), ausgabe.FiltermenueEintrage.HAUPTMENUE.code() }));
+			auswahl = Konsoleneingabe.leseKonsoleFuer(Arrays
+					.asList(new String[] { liv.Inhaltsstoff.LAKTOSE.code(),
+							liv.Inhaltsstoff.GLUTEN.code(),
+							liv.Inhaltsstoff.NUSS.code(),
+							ausgabe.FiltermenueEintrage.FILTERANZEIGE.code(),
+							ausgabe.FiltermenueEintrage.HAUPTMENUE.code() }));
 			if (auswahl != null) {
-				if (auswahl.equals(ausgabe.FiltermenueEintrage.FILTERANZEIGE.code())) {
-					System.out.println("\n--------------------------------------------");
-					System.out.println("\nAktiv gesetzte Filter: " + inhaltsstoffe.toString() + "");
+				if (auswahl.equals(ausgabe.FiltermenueEintrage.FILTERANZEIGE
+						.code())) {
+					System.out
+							.println("\n--------------------------------------------");
+					System.out.println("\nAktiv gesetzte Filter: "
+							+ inhaltsstoffe.toString() + "");
 				} else {
-					Inhaltsstoff inhaltsstoff = Inhaltsstoff.inhaltstoffFuerCode(auswahl);
+					Inhaltsstoff inhaltsstoff = Inhaltsstoff
+							.inhaltstoffFuerCode(auswahl);
 					switch (inhaltsstoff) {
 					case LAKTOSE:
 						setzeOderEntferneFilter(inhaltsstoffe, inhaltsstoff);
@@ -81,26 +88,32 @@ public class Filter {
 	 * @param inhaltsstoff
 	 * @param eingabeSetFilter
 	 */
-	private static void setzeOderEntferneFilter(Set<Inhaltsstoff> inhaltsstoffe, Inhaltsstoff inhaltsstoff) {
+	private static void setzeOderEntferneFilter(
+			Set<Inhaltsstoff> inhaltsstoffe, Inhaltsstoff inhaltsstoff) {
 		String eingabeSetFilter;
 		System.out.println("\n--------------------------------------------");
-		System.out.println("Filter '" + inhaltsstoff.anzeigename() + "' setzen oder entfernen?");
+		System.out.println("Filter '" + inhaltsstoff.anzeigename()
+				+ "' setzen oder entfernen?");
 		System.out.println("\n1 - Filter setzen");
 		System.out.println("2 - Filter entfernen");
 		System.out.println("\n--------------------------------------------");
-		eingabeSetFilter = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
+		eingabeSetFilter = Konsoleneingabe.leseKonsoleFuer(Arrays
+				.asList(new String[] { "1", "2" }));
 		if (eingabeSetFilter != null) {
 			switch (eingabeSetFilter) {
 			case "1":
 				inhaltsstoffe.add(inhaltsstoff);
-				System.out.println("\nFilter '" + inhaltsstoff.anzeigename() + "' wurde hinzugefuegt.");
+				System.out.println("\nFilter '" + inhaltsstoff.anzeigename()
+						+ "' wurde hinzugefuegt.");
 				break;
 			case "2":
 				inhaltsstoffe.remove(inhaltsstoff);
-				System.out.println("\nFilter '" + inhaltsstoff.anzeigename() + "' wurde entfernt.");
+				System.out.println("\nFilter '" + inhaltsstoff.anzeigename()
+						+ "' wurde entfernt.");
 				break;
 			default:
-				System.out.println("\nFalsche Eingabe, bitte waehle einen Filter aus!");
+				System.out
+						.println("\nFalsche Eingabe, bitte waehle einen Filter aus!");
 				break;
 			}
 			einstellungen.schreibeAktuellenFilter(inhaltsstoffe);
