@@ -91,8 +91,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="livdatenbank.livDbBenutzerAnlegen" project="liv" 
-    file="/liv/src/livdatenbank/livDbBenutzerAnlegen.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="12" language="java" name="livdatenbank.LivDbBenutzerAnlegen" project="liv" 
+    file="/liv/src/livdatenbank/LivDbBenutzerAnlegen.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="278" y="900"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -100,8 +100,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="livdatenbank.livDbneuesProduktHinzufuegen" project="liv" 
-    file="/liv/src/livdatenbank/livDbneuesProduktHinzufuegen.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="13" language="java" name="livdatenbank.LivDbneuesProduktHinzufuegen" project="liv" 
+    file="/liv/src/livdatenbank/LivDbneuesProduktHinzufuegen.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="518" y="1027"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      

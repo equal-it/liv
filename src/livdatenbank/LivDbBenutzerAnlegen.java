@@ -17,7 +17,7 @@ import java.sql.Statement;
  * @version 00.00.10 2016/06/16
  */
 
-public class livDbBenutzerAnlegen {
+public class LivDbBenutzerAnlegen {
 
 	/**
 	 * @throws SQLException
@@ -91,7 +91,7 @@ public class livDbBenutzerAnlegen {
 			System.out.println("Probleme beim Erstellen des Users in der Liv-Datenbank.");
 			e.printStackTrace();
 		}
-		livdatenbank.livDbneuesProduktHinzufuegen.neuesProduktHinzufuegen();
+		livdatenbank.LivDbneuesProduktHinzufuegen.neuesProduktHinzufuegen();
 	}
 
 }

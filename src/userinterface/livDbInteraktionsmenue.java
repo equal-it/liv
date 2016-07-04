@@ -3,8 +3,8 @@ package userinterface;
 import java.sql.SQLException;
 import java.util.Arrays;
 
-import livdatenbank.livDbBenutzerAnlegen;
-import livdatenbank.livDbneuesProduktHinzufuegen;
+import livdatenbank.LivDbBenutzerAnlegen;
+import livdatenbank.LivDbneuesProduktHinzufuegen;
 import eingaben.Konsoleneingabe;
 
 /**
@@ -31,7 +31,7 @@ public class livDbInteraktionsmenue {
 			String willBenutzerAnlegen = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
 			if (willBenutzerAnlegen.equals("1")) {
 				try {
-					livDbBenutzerAnlegen.benutzerAnlegen();
+					LivDbBenutzerAnlegen.benutzerAnlegen();
 				} catch (SQLException e) {
 					System.out.println("Benutzer anlegen fehlgeschlagen!");
 					e.printStackTrace();
@@ -41,7 +41,7 @@ public class livDbInteraktionsmenue {
 			}
 		} else {
 			try {
-				livdatenbank.livDbneuesProduktHinzufuegen.neuesProduktHinzufuegen();
+				livdatenbank.LivDbneuesProduktHinzufuegen.neuesProduktHinzufuegen();
 			} catch (Exception e) {
 				System.out.println("Produkt in LIV-Datenbank anlegen ist fehlgeschlagen!");
 			}

@@ -16,7 +16,7 @@ import eingaben.Konsoleneingabe;
  * @version 00.00.10 2016/06/16
  */
 
-public class livDbneuesProduktHinzufuegen {
+public class LivDbneuesProduktHinzufuegen {
 
 	public static void neuesProduktHinzufuegen() {
 		System.out.println(

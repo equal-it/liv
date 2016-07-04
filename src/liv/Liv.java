@@ -181,7 +181,7 @@ public class Liv {
 									.leseKonsoleFuer(Arrays
 											.asList(new String[] { "1", "2" }));
 							if (eingabeMenueInLivDBEintragen.equals("1")) {
-								livdatenbank.livDbneuesProduktHinzufuegen
+								livdatenbank.LivDbneuesProduktHinzufuegen
 										.neuesProduktHinzufuegen();
 							}
 						}
