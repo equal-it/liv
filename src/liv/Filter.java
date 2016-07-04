@@ -30,7 +30,7 @@ public class Filter {
 	 *            zur Festlegung der jeweiligen Inhaltsstoffe
 	 * @param auswahl
 	 *            Menueauswahl per Konsoleneingabe
-	 * @return inhaltsstoffe bla
+	 * @return inhaltsstoffe
 	 */
 	static Einstellungen einstellungen = new Einstellungen();
 
