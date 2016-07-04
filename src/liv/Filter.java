@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import Properties.Einstellungen;
+import properties.Einstellungen;
 import eingaben.Konsoleneingabe;
 
 /**
@@ -30,7 +30,7 @@ public class Filter {
 	 *            zur Festlegung der jeweiligen Inhaltsstoffe
 	 * @param auswahl
 	 *            Menueauswahl per Konsoleneingabe
-	 * @return inhaltsstoffe
+	 * @return inhaltsstoffe 
 	 */
 	static Einstellungen einstellungen = new Einstellungen();
 
