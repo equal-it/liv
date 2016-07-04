@@ -36,10 +36,11 @@ public class AmpelRed extends Frame {
 	 * @throws InterruptedException
 	 *             e
 	 */
-	
-	public AmpelRed() throws InterruptedException { // Rahmen
 
-		int windowWidth = 670;				// Box zu Testzwecken Text erweitert. Orginalwert 250!!
+	public AmpelRed(final String text) throws InterruptedException { // Rahmen
+
+		int windowWidth = 670;
+		// Box zu Testzwecken Text erweitert. Originalwert 250!
 		int windowHeight = 415;
 
 		setTitle("Ampel-ROT");
@@ -61,7 +62,7 @@ public class AmpelRed extends Frame {
 		setSize(windowWidth, windowHeight);
 		setVisible(true);
 		try {
-			Thread.sleep(5000);						// zum Testen hochgesetzt
+			Thread.sleep(5000); // zum Testen hochgesetzt
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -74,16 +75,29 @@ public class AmpelRed extends Frame {
 
 	class DrawingPanelRed extends Panel { // Ampel
 
+		// Textausgabe Filter
+		private final String text;
+
+		public DrawingPanelRed(final String text) {
+			this.text = text;
+		}
+
+		public DrawingPanelRed() {
+			this.text = "";
+		}
+
+		// Textausgabe Filter Ende
+
 		public void paint(Graphics g) {
 			Graphics2D g2d = (Graphics2D) g;
 
 			// Hintergrundbox
-			g.setColor(Color.GRAY);	
+			g.setColor(Color.GRAY);
 			g.fill3DRect(60, 40, 560, 300, true);
 
 			// Ampelbox
 			g.setColor(Color.black);
-			g.fillRect(50, 50, 150, 300); 
+			g.fillRect(50, 50, 150, 300);
 
 			// Antialiasing für die Kreise der Ampel
 			g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
@@ -98,18 +112,19 @@ public class AmpelRed extends Frame {
 
 			g2d.setColor(Color.lightGray);
 			g2d.fillOval(100, 250, 50, 50);
-			
+
 			// Textausgabe
-			Font head = new Font("Arial",Font.BOLD,28);
+			Font head = new Font("Arial", Font.BOLD, 28);
 			g.setFont(head);
 			g.setColor(Color.RED);
 			g.drawString("Vorsicht!", 245, 165);
-			
-			Font text = new Font("Arial",Font.BOLD,20);
+
+			Font text = new Font("Arial", Font.BOLD, 20);
 			g.setFont(text);
 			g.setColor(Color.WHITE);
-			g.drawString("Das Produkt enthält mindestens", 245, 205);   
-			g.drawString("einen unerwünschten Inhaltsstoff.", 245, 235);   
+			g.drawString("Das Produkt enthält mindestens", 245, 205);
+			g.drawString("einen unerwünschten Inhaltsstoff.", 245, 235);
+			g.drawString(this.text, 245, 265);
 
 		}
 	}

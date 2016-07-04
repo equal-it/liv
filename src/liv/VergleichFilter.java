@@ -21,16 +21,17 @@ public class VergleichFilter {
 	 * @param ergebnisse
 	 * @return isProductOK
 	 */
-	public static String ueberprufeIndikatoren(List<Ampelindikator> ergebnisse) {
+	public static Ampelfarbe ueberprufeIndikatoren(
+			List<Ampelindikator> ergebnisse) {
 
-		String isProductOK = "green";
+		Ampelfarbe isProductOK = Ampelfarbe.GRUEN;
 
 		if (ergebnisse.isEmpty()
 				|| ergebnisse.contains(Ampelindikator.UNBEKANNT)) {
-			isProductOK = "yellow";
+			isProductOK = Ampelfarbe.GELB;
 		}
 		if (ergebnisse.contains(Ampelindikator.ENTHALTEN)) {
-			isProductOK = "red";
+			isProductOK = Ampelfarbe.ROT;
 		}
 
 		return isProductOK;
@@ -39,14 +40,14 @@ public class VergleichFilter {
 	public static void main(String args[]) {
 		List<Ampelindikator> ergebnisse = new ArrayList<>();
 
-		String ergebnis = ueberprufeIndikatoren(ergebnisse);
-		if (!ergebnis.equals("yellow")) {
+		Ampelfarbe ergebnis = ueberprufeIndikatoren(ergebnisse);
+		if (ergebnis != Ampelfarbe.GELB) {
 			throw new RuntimeException();
 		}
 
 		ergebnisse.add(Ampelindikator.NICHT_ENTHALTEN);
 		ergebnis = ueberprufeIndikatoren(ergebnisse);
-		if (!ergebnis.equals("green")) {
+		if (ergebnis != Ampelfarbe.GRUEN) {
 			throw new RuntimeException();
 		}
 
