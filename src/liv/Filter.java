@@ -31,7 +31,7 @@ public class Filter {
 	 * @param auswahl
 	 *            Menueauswahl per Konsoleneingabe
 <<<<<<< HEAD
-	 * @return inhaltsstoffe bla
+	 * @return inhaltsstoffe
 =======
 	 * @return inhaltsstoffe 
 >>>>>>> branch 'master' of https://github.com/equal-it/liv.git
