@@ -46,7 +46,7 @@ public class AmpelRed extends Frame {
 		setTitle("Ampel-ROT");
 		addWindowListener(new WindowListener());
 
-		add(new DrawingPanelRed());
+		add(new DrawingPanelRed(text));
 
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
