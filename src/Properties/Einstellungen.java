@@ -1,4 +1,4 @@
-package properties;
+package Properties;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -14,8 +14,8 @@ public class Einstellungen {
 	private static final String EINSTELLUNGEN = "einstellungen.properties";
 	private static final String AKTUELLER_FILTER = "aktueller_Filter";
 
-	private Properties properties = null;
-	private String dateipfad = EINSTELLUNGEN;
+	public Properties properties = null;
+	public String dateipfad = EINSTELLUNGEN;
 
 	public void schreibeAktuellenFilter(Set<Inhaltsstoff> inhaltsstoffe) {
 		Set<String> anzeigenamen = new HashSet<>();
@@ -64,7 +64,7 @@ public class Einstellungen {
 		this.properties = properties;
 	}
 
-	private void schreibePropertiesDatei() {
+	public void schreibePropertiesDatei() {
 		String comment = "Properties aktualisiert am:";
 		try (FileOutputStream out = new FileOutputStream(dateipfad)) {
 			this.properties.store(out, comment);

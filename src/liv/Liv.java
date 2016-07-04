@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import Properties.Einstellungen;
 import ausgabe.HauptmenueEintraege;
 import datenbanken.GlutenDatenbankMock;
 import datenbanken.LaktonautDatenbankAbfrage;
@@ -198,6 +199,8 @@ public class Liv { // Console
 
 				case 4:
 					verlassen = true;
+					liv.Filter.einstellungen.properties.clear();
+					liv.Filter.einstellungen.schreibePropertiesDatei();
 					break;
 
 				default:

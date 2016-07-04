@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import Properties.Einstellungen;
 import eingaben.Konsoleneingabe;
 
 /**
@@ -31,22 +32,13 @@ public class Filter {
 	 *            Menueauswahl per Konsoleneingabe
 	 * @return inhaltsstoffe bla
 	 */
+	static Einstellungen einstellungen = new Einstellungen();
 
 	public static Set<Inhaltsstoff> setFilter() {
 
 		Set<Inhaltsstoff> inhaltsstoffe = new HashSet<>();
-		/*
-		 * Kevins Baustelle try{ File file = new File("test.properties");
-		 * FileInputStream fileInput = new FileInputStream(file); Properties
-		 * properties = new Properties(); properties.load(fileInput);
-		 * fileInput.close();
-		 * 
-		 * } catch (FileNotFoundException e) { e.printStackTrace(); } catch
-		 * (IOException e) { e.printStackTrace();
-		 * 
-		 * }
-		 */
-
+		Set<Inhaltsstoff> aktuellerFilter = einstellungen.leseAktuellenFilter();
+		inhaltsstoffe = aktuellerFilter;
 		String auswahl = null;
 
 		do {
@@ -137,6 +129,7 @@ public class Filter {
 				System.out.println("\nFalsche Eingabe, bitte waehle einen Filter aus!");
 				break;
 			}
+			einstellungen.schreibeAktuellenFilter(inhaltsstoffe);
 		}
 	}
 
