@@ -5,9 +5,9 @@ package pruefen;
  * 
  * class PruefeEAN prueft 13-stellige EAN auf Gueltigkeit
  * 
- * @author team equal-IT // Anicas Baustelle
+ * @author team equal-IT
  * @mail: team@equal-it.de
- * @version 00.00.03 2016/04/28
+ * @version 1.0 2016/07/08
  */
 
 public final class PruefeEAN {

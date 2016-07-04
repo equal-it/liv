@@ -22,9 +22,9 @@ import filter.Inhaltsstoff;
  * 
  * class Liv Konsolenausgabe
  * 
- * @author team equal-IT // letzter Stand: Anne
+ * @author team equal-IT 
  * @mail: team@equal-it.de
- * @version 00.00.10 2016/05/16
+ * @version 1.0 2016/07/08
  */
 
 public class Liv { 

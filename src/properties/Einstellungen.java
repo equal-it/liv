@@ -1,6 +1,7 @@
 package properties;
 
 import java.io.FileInputStream;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashSet;
@@ -8,6 +9,16 @@ import java.util.Properties;
 import java.util.Set;
 
 import filter.Inhaltsstoff;
+
+/**
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer
+ * 
+ * class Liv Einstellungen
+ * 
+ * @author team equal-IT 
+ * @mail: team@equal-it.de
+ * @version 1.0 2016/07/08
+ */
 
 public class Einstellungen {
 
