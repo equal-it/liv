@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Properties;
 import java.util.Set;
 
-import liv.Inhaltsstoff;
+import filter.Inhaltsstoff;
 
 public class Einstellungen {
 

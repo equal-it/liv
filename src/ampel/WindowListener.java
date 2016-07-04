@@ -1,4 +1,4 @@
-package ampelGrafik;
+package ampel;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;

@@ -1,4 +1,4 @@
-package ausgabe;
+package userinterface;
 
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer

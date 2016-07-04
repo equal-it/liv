@@ -71,7 +71,7 @@ public class Konsoleneingabe {
 			while (true) {
 				eanEingabe = br.readLine();
 				try {
-					if (liv.PruefeEAN.eanGueltig(eanEingabe)) {
+					if (pruefen.PruefeEAN.eanGueltig(eanEingabe)) {
 						return eanEingabe;
 					} else {
 						System.out.print("\nUngueltige Eingabe. Bitte erneut eingeben.\n"

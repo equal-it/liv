@@ -1,4 +1,4 @@
-package livDbInteraktion;
+package livdatenbank;
 
 import java.sql.Connection;
 import java.sql.Statement;
@@ -62,8 +62,8 @@ public class livDbneuesProduktHinzufuegen {
 			}
 		try {
 		// Verbindung zur DB wird aufgebaut
-		datenbanken.LivDatenbankConnectionService.livDbTreiberLaden();
-		Connection connection = datenbanken.LivDatenbankConnectionService.openLivDbConnectionForUser(benutzerName, benutzerPassword);
+		livdatenbank.LivDatenbankConnectionService.livDbTreiberLaden();
+		Connection connection = livdatenbank.LivDatenbankConnectionService.openLivDbConnectionForUser(benutzerName, benutzerPassword);
 		// SQL Statement wird erstellt
 		Statement stmt;
 

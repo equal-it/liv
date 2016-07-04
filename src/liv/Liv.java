@@ -7,13 +7,15 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import ausgabe.HauptmenueEintraege;
+import userinterface.HauptmenueEintraege;
+import ampel.Ampelindikator;
 import datenbanken.GlutenDatenbankMock;
 import datenbanken.LaktonautDatenbankAbfrage;
 import datenbanken.Lebensmitteldatenbank;
 import datenbanken.LivDatenbankAnfrage;
 import eingaben.EingabeEAN;
 import eingaben.Konsoleneingabe;
+import filter.Inhaltsstoff;
 
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
@@ -53,7 +55,7 @@ public class Liv {
 	 * @see datenbanken.LaktonautDatenbankAbfrage
 	 * @see datenbanken.GlutenDatenbankMock
 	 * @see liv.Filter
-	 * @see liv.PruefeEAN
+	 * @see pruefen.PruefeEAN
 	 * @see liv.Impressum
 	 */
 	public static void main(String[] args) throws Exception {
@@ -80,7 +82,7 @@ public class Liv {
 
 			do { // start do while menue
 
-				ausgabe.HauptmenueAusgabe.LivHauptmenueAusgabe();
+				userinterface.HauptmenueAusgabe.LivHauptmenueAusgabe();
 				String eingabeHauptmenue = Konsoleneingabe
 						.leseKonsoleFuer(Arrays.asList(new String[] {
 								HauptmenueEintraege.FILTER.code(),
@@ -101,7 +103,7 @@ public class Liv {
 				case 2:
 					indikatoren.clear();
 					eingaben.EingabeEAN.einlesen();
-					if (liv.PruefeEAN.eanGueltig(EingabeEAN.eingabeEanNummer)) {
+					if (pruefen.PruefeEAN.eanGueltig(EingabeEAN.eingabeEanNummer)) {
 						try {
 							// Start if Filter ist leer
 							if (!aktuellerFilter.isEmpty()) {
@@ -114,12 +116,12 @@ public class Liv {
 								// sind
 								if (livAntwort == null) {
 									indikatoren.add(Ampelindikator.UNBEKANNT);
-									liv.Ampel
+									ampel.Ampel
 											.ampelFarbe(
-													liv.VergleichFilter
+													filter.VergleichFilter
 															.ueberprufeIndikatoren(indikatoren),
 													aktuellerFilterAlsText(aktuellerFilter));
-									ausgabe.HauptmenueAusgabe
+									userinterface.HauptmenueAusgabe
 											.eingabeMenueAndereDB();
 									String eingabeMenueAndereDB = Konsoleneingabe
 											.leseKonsoleFuer(Arrays
@@ -147,7 +149,7 @@ public class Liv {
 										break;
 									} else { // start Benutzeranlegen und
 												// Produkt in DB schreiben
-										livDbInteraktion.livDbInteraktionsmenue
+										userinterface.livDbInteraktionsmenue
 												.livDbMenue();
 										break;
 									} // ende Benutzeranlegen und Produkt in DB
@@ -170,20 +172,20 @@ public class Liv {
 							}
 
 						} catch (Exception e1) {
-							liv.Ampel.ampelFarbe(liv.VergleichFilter
+							ampel.Ampel.ampelFarbe(filter.VergleichFilter
 									.ueberprufeIndikatoren(indikatoren),
 									aktuellerFilterAlsText(aktuellerFilter));
-							ausgabe.HauptmenueAusgabe
+							userinterface.HauptmenueAusgabe
 									.eingabeMenueInLivDBEintragen();
 							String eingabeMenueInLivDBEintragen = Konsoleneingabe
 									.leseKonsoleFuer(Arrays
 											.asList(new String[] { "1", "2" }));
 							if (eingabeMenueInLivDBEintragen.equals("1")) {
-								livDbInteraktion.livDbneuesProduktHinzufuegen
+								livdatenbank.livDbneuesProduktHinzufuegen
 										.neuesProduktHinzufuegen();
 							}
 						}
-						liv.Ampel.ampelFarbe(liv.VergleichFilter
+						ampel.Ampel.ampelFarbe(filter.VergleichFilter
 								.ueberprufeIndikatoren(indikatoren),
 								aktuellerFilterAlsText(aktuellerFilter));
 					} else {
@@ -204,10 +206,10 @@ public class Liv {
 
 				default:
 					System.out.println("Bitte waehle  "
-							+ ausgabe.HauptmenueEintraege.FILTER.code() + " / "
-							+ ausgabe.HauptmenueEintraege.EAN.code() + " / "
-							+ ausgabe.HauptmenueEintraege.IMPRESSUM.code()
-							+ " / " + ausgabe.HauptmenueEintraege.ENDE.code()
+							+ userinterface.HauptmenueEintraege.FILTER.code() + " / "
+							+ userinterface.HauptmenueEintraege.EAN.code() + " / "
+							+ userinterface.HauptmenueEintraege.IMPRESSUM.code()
+							+ " / " + userinterface.HauptmenueEintraege.ENDE.code()
 							+ "\n");
 					break;
 				}

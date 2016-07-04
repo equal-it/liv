@@ -1,4 +1,4 @@
-package livDbInteraktion;
+package livdatenbank;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -52,8 +52,8 @@ public class livDbBenutzerAnlegen {
 		}
 
 		// verbindung zur DB wird aufgebaut
-		datenbanken.LivDatenbankConnectionService.livDbTreiberLaden();
-		Connection connection = datenbanken.LivDatenbankConnectionService.openLivDbConnection();
+		livdatenbank.LivDatenbankConnectionService.livDbTreiberLaden();
+		Connection connection = livdatenbank.LivDatenbankConnectionService.openLivDbConnection();
 
 		// SQL Statement wird erstellt
 		Statement stmt;
@@ -91,7 +91,7 @@ public class livDbBenutzerAnlegen {
 			System.out.println("Probleme beim Erstellen des Users in der Liv-Datenbank.");
 			e.printStackTrace();
 		}
-		livDbInteraktion.livDbneuesProduktHinzufuegen.neuesProduktHinzufuegen();
+		livdatenbank.livDbneuesProduktHinzufuegen.neuesProduktHinzufuegen();
 	}
 
 }

@@ -1,4 +1,4 @@
-package liv;
+package ampel;
 
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer

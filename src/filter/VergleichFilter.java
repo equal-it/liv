@@ -1,7 +1,10 @@
-package liv;
+package filter;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import ampel.Ampelfarbe;
+import ampel.Ampelindikator;
 
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer

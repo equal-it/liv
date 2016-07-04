@@ -6,6 +6,7 @@ import java.util.Set;
 
 import properties.Einstellungen;
 import eingaben.Konsoleneingabe;
+import filter.Inhaltsstoff;
 
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
@@ -30,11 +31,7 @@ public class Filter {
 	 *            zur Festlegung der jeweiligen Inhaltsstoffe
 	 * @param auswahl
 	 *            Menueauswahl per Konsoleneingabe
-<<<<<<< HEAD
-	 * @return inhaltsstoffe
-=======
 	 * @return inhaltsstoffe 
->>>>>>> branch 'master' of https://github.com/equal-it/liv.git
 	 */
 	static Einstellungen einstellungen = new Einstellungen();
 
@@ -46,16 +43,16 @@ public class Filter {
 		String auswahl = null;
 
 		do {
-			ausgabe.FiltermenueAusgabe.FilterHauptmenueAusgabe();
+			userinterface.FiltermenueAusgabe.FilterHauptmenueAusgabe();
 
 			auswahl = Konsoleneingabe.leseKonsoleFuer(Arrays
-					.asList(new String[] { liv.Inhaltsstoff.LAKTOSE.code(),
-							liv.Inhaltsstoff.GLUTEN.code(),
-							liv.Inhaltsstoff.NUSS.code(),
-							ausgabe.FiltermenueEintrage.FILTERANZEIGE.code(),
-							ausgabe.FiltermenueEintrage.HAUPTMENUE.code() }));
+					.asList(new String[] { filter.Inhaltsstoff.LAKTOSE.code(),
+							filter.Inhaltsstoff.GLUTEN.code(),
+							filter.Inhaltsstoff.NUSS.code(),
+							userinterface.FiltermenueEintrage.FILTERANZEIGE.code(),
+							userinterface.FiltermenueEintrage.HAUPTMENUE.code() }));
 			if (auswahl != null) {
-				if (auswahl.equals(ausgabe.FiltermenueEintrage.FILTERANZEIGE
+				if (auswahl.equals(userinterface.FiltermenueEintrage.FILTERANZEIGE
 						.code())) {
 					System.out
 							.println("\n--------------------------------------------");
@@ -79,7 +76,7 @@ public class Filter {
 				}
 			}
 
-		} while (!ausgabe.FiltermenueEintrage.HAUPTMENUE.code().equals(auswahl));
+		} while (!userinterface.FiltermenueEintrage.HAUPTMENUE.code().equals(auswahl));
 
 		return inhaltsstoffe;
 	}
@@ -120,8 +117,9 @@ public class Filter {
 						.println("\nFalsche Eingabe, bitte waehle einen Filter aus!");
 				break;
 			}
-			einstellungen.schreibeAktuellenFilter(inhaltsstoffe);
+			
 		}
+		einstellungen.schreibeAktuellenFilter(inhaltsstoffe);
 	}
 
 }

@@ -1,6 +1,6 @@
-package ausgabe;
+package userinterface;
 
-import ausgabe.HauptmenueEintraege;
+import userinterface.HauptmenueEintraege;
 
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer

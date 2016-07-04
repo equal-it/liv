@@ -1,4 +1,4 @@
-package liv;
+package filter;
 
 /**
  * Project: Liv - Lebensmittelinhaltsstoffverifizierer

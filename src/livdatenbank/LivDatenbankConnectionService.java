@@ -1,4 +1,4 @@
-package datenbanken;
+package livdatenbank;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

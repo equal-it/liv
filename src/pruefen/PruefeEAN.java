@@ -1,4 +1,4 @@
-package liv;
+package pruefen;
 
 /**
  * Project: Liv - Lebensmittelinhaltsstoffverifizierer

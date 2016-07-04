@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-import liv.PruefeEAN;
+import pruefen.PruefeEAN;
 
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
@@ -55,7 +55,7 @@ public class EingabeEAN {
 			BufferedReader br = new BufferedReader(isr);
 			
 			//Menue Ausgabe
-			ausgabe.EingabeEANAusgabe.testEANAuagabe();
+			userinterface.EingabeEANAusgabe.testEANAuagabe();
 			
 			try {
 				eingabeEanNummer = br.readLine();
@@ -63,10 +63,10 @@ public class EingabeEAN {
 				eanValueOK = false;
 			}
 
-			if (liv.PruefeEAN.eanUngueltig(eingabeEanNummer)) {
+			if (pruefen.PruefeEAN.eanUngueltig(eingabeEanNummer)) {
 				
 				//Menue Ausgabe
-				ausgabe.EingabeEANAusgabe.ungueltigeEANAusgabe();
+				userinterface.EingabeEANAusgabe.ungueltigeEANAusgabe();
 				
 				String eingabeFehlerMenue = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
 				auswahl = Integer.parseInt(eingabeFehlerMenue);

@@ -1,4 +1,5 @@
-package liv;
+package ampel;
+
 
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
@@ -18,9 +19,9 @@ public class Ampel {
 	 * 
 	 * @param isProductOK
 	 * @throws InterruptedException
-	 * @see ampelGrafik.AmpelGreen
-	 * @see ampelGrafik.AmpelRed
-	 * @see ampelGrafik.AmpelYellow
+	 * @see ampel.AmpelGreen
+	 * @see ampel.AmpelRed
+	 * @see ampel.AmpelYellow
 	 */
 
 	public static void ampelFarbe(final Ampelfarbe isProductOk,
@@ -28,13 +29,13 @@ public class Ampel {
 
 		switch (isProductOk) {
 		case GRUEN:
-			new ampelGrafik.AmpelGreen();
+			new ampel.AmpelGreen();
 			break;
 		case ROT:
-			new ampelGrafik.AmpelRed(text);
+			new ampel.AmpelRed(text);
 			break;
 		case GELB:
-			new ampelGrafik.AmpelYellow();
+			new ampel.AmpelYellow();
 			break;
 		} // switch (isProductOK){
 

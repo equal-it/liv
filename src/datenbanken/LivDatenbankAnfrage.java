@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import liv.Ampelindikator;
-import liv.Inhaltsstoff;
+import filter.Inhaltsstoff;
+import ampel.Ampelindikator;
 
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
@@ -25,11 +25,11 @@ public class LivDatenbankAnfrage implements Lebensmitteldatenbank {
 		try {
 			// DB Treiben in java laden
 			
-			datenbanken.LivDatenbankConnectionService.livDbTreiberLaden();
+			livdatenbank.LivDatenbankConnectionService.livDbTreiberLaden();
 
 			// Verbinung zur Datenbank aufbauen
 
-			connection = datenbanken.LivDatenbankConnectionService.openLivDbConnection();
+			connection = livdatenbank.LivDatenbankConnectionService.openLivDbConnection();
 
 			// SQL Abfrage erstellen und Antwort ausgeben
 			Statement stmt = connection.createStatement();

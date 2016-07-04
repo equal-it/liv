@@ -1,6 +1,5 @@
-package ausgabe;
+package userinterface;
 
-import static ausgabe.FiltermenueEintrage.*;
 
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
@@ -12,7 +11,8 @@ import static ausgabe.FiltermenueEintrage.*;
  * @version 00.00.10 2016/05/16
  */
 
-import liv.Inhaltsstoff;
+import static userinterface.FiltermenueEintrage.*;
+import filter.Inhaltsstoff;
 
 public class FiltermenueAusgabe {
 	/**

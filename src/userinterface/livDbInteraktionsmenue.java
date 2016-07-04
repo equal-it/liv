@@ -1,8 +1,10 @@
-package livDbInteraktion;
+package userinterface;
 
 import java.sql.SQLException;
 import java.util.Arrays;
 
+import livdatenbank.livDbBenutzerAnlegen;
+import livdatenbank.livDbneuesProduktHinzufuegen;
 import eingaben.Konsoleneingabe;
 
 /**
@@ -39,7 +41,7 @@ public class livDbInteraktionsmenue {
 			}
 		} else {
 			try {
-				livDbInteraktion.livDbneuesProduktHinzufuegen.neuesProduktHinzufuegen();
+				livdatenbank.livDbneuesProduktHinzufuegen.neuesProduktHinzufuegen();
 			} catch (Exception e) {
 				System.out.println("Produkt in LIV-Datenbank anlegen ist fehlgeschlagen!");
 			}

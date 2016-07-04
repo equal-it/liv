@@ -14,7 +14,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="3" language="java" name="liv.Inhaltsstoff" project="liv" file="/liv/src/liv/Inhaltsstoff.java" 
+  <enumeration id="3" language="java" name="filter.Inhaltsstoff" project="liv" file="/liv/src/filter/Inhaltsstoff.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="597" y="537"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
@@ -32,8 +32,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="5" language="java" name="liv.Ampelindikator" project="liv" file="/liv/src/liv/Ampelindikator.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <enumeration id="5" language="java" name="ampel.Ampelindikator" project="liv" 
+    file="/liv/src/ampel/Ampelindikator.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1178" y="483"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -50,7 +50,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="liv.VergleichFilter" project="liv" file="/liv/src/liv/VergleichFilter.java" 
+  <class id="7" language="java" name="filter.VergleichFilter" project="liv" file="/liv/src/filter/VergleichFilter.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1177" y="301"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
@@ -59,7 +59,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="liv.Ampel" project="liv" file="/liv/src/liv/Ampel.java" binary="false" 
+  <class id="8" language="java" name="ampel.Ampel" project="liv" file="/liv/src/ampel/Ampel.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="692" y="292"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
@@ -68,8 +68,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="liv.PruefeEAN" project="liv" file="/liv/src/liv/PruefeEAN.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="9" language="java" name="pruefen.PruefeEAN" project="liv" file="/liv/src/pruefen/PruefeEAN.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="897" y="310"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -78,48 +78,21 @@
     </display>  
   </class>  
   <dependency id="10">    
-    <bendpoint x="410" y="538"/>    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="3"/>  
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="5"/>  
   </dependency>  
   <dependency id="11">    
-    <bendpoint x="408" y="156"/>    
     <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="2"/>  
   </dependency>  
   <dependency id="12">    
-    <bendpoint x="596" y="241"/>    
-    <end type="SOURCE" refId="6"/>    
+    <bendpoint x="410" y="538"/>    
+    <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="3"/>  
   </dependency>  
   <dependency id="13">    
     <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="8"/>  
-  </dependency>  
-  <dependency id="14">    
-    <bendpoint x="135" y="124"/>    
-    <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <dependency id="15">    
-    <bendpoint x="1179" y="124"/>    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="7"/>  
-  </dependency>  
-  <dependency id="16">    
-    <bendpoint x="1008" y="155"/>    
-    <bendpoint x="1008" y="481"/>    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="5"/>  
-  </dependency>  
-  <dependency id="17">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="5"/>  
-  </dependency>  
-  <dependency id="18">    
-    <bendpoint x="896" y="164"/>    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="9"/>  
   </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
     sort-features="false" accessors="true" visibility="true">    

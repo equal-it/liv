@@ -1,9 +1,9 @@
-package ausgabe;
+package userinterface;
 
-import static ausgabe.HauptmenueEintraege.EAN;
-import static ausgabe.HauptmenueEintraege.ENDE;
-import static ausgabe.HauptmenueEintraege.FILTER;
-import static ausgabe.HauptmenueEintraege.IMPRESSUM;
+import static userinterface.HauptmenueEintraege.EAN;
+import static userinterface.HauptmenueEintraege.ENDE;
+import static userinterface.HauptmenueEintraege.FILTER;
+import static userinterface.HauptmenueEintraege.IMPRESSUM;
 
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer

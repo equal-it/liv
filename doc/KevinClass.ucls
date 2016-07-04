@@ -2,13 +2,12 @@
 <class-diagram version="1.1.10" icons="true" automaticImage="JPEG" always-add-relationships="false" 
   generalizations="true" realizations="true" associations="true" dependencies="true" nesting-relationships="true" 
   router="FAN">  
-  <package id="1" language="java" name="ampelGrafik" project="liv" file="/liv/src/ampelGrafik" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <package id="1" language="java" name="ampel" project="liv" file="/liv/src/ampel" binary="false" corner="BOTTOM_RIGHT">    
     <position height="326" width="711" x="15" y="14"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <class id="2" language="java" name="ampelGrafik.AmpelYellow" project="liv" 
-    file="/liv/src/ampelGrafik/AmpelYellow.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="ampel.AmpelYellow" project="liv" file="/liv/src/ampel/AmpelYellow.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="97" y="111"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -16,8 +15,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="ampelGrafik.AmpelYellow.DrawingPanelYellow" project="liv" 
-    file="/liv/src/ampelGrafik/AmpelYellow.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="3" language="java" name="ampel.AmpelYellow.DrawingPanelYellow" project="liv" 
+    file="/liv/src/ampel/AmpelYellow.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="118" y="259"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -25,8 +24,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="ampelGrafik.AmpelRed" project="liv" file="/liv/src/ampelGrafik/AmpelRed.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <class id="4" language="java" name="ampel.AmpelRed" project="liv" file="/liv/src/ampel/AmpelRed.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="468" y="111"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -34,7 +33,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="ampelGrafik.AmpelGreen" project="liv" file="/liv/src/ampelGrafik/AmpelGreen.java" 
+  <class id="5" language="java" name="ampel.AmpelGreen" project="liv" file="/liv/src/ampel/AmpelGreen.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="599" y="111"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -43,8 +42,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="ampelGrafik.WindowListener" project="liv" 
-    file="/liv/src/ampelGrafik/WindowListener.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="6" language="java" name="ampel.WindowListener" project="liv" file="/liv/src/ampel/WindowListener.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="285" y="120"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -52,8 +51,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="ampelGrafik.AmpelRed.DrawingPanelRed" project="liv" 
-    file="/liv/src/ampelGrafik/AmpelRed.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="7" language="java" name="ampel.AmpelRed.DrawingPanelRed" project="liv" file="/liv/src/ampel/AmpelRed.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="449" y="259"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -61,8 +60,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="ampelGrafik.AmpelGreen.DrawingPanelGreen" project="liv" 
-    file="/liv/src/ampelGrafik/AmpelGreen.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="8" language="java" name="ampel.AmpelGreen.DrawingPanelGreen" project="liv" 
+    file="/liv/src/ampel/AmpelGreen.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="620" y="259"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -70,13 +69,13 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <package id="9" language="java" name="ausgabe" project="liv" file="/liv/src/ausgabe" binary="false" 
+  <package id="9" language="java" name="userinterface" project="liv" file="/liv/src/userinterface" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="338" width="934" x="750" y="19"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <enumeration id="10" language="java" name="ausgabe.FiltermenueEintrage" project="liv" 
-    file="/liv/src/ausgabe/FiltermenueEintrage.java" binary="false" corner="BOTTOM_RIGHT">    
+  <enumeration id="10" language="java" name="userinterface.FiltermenueEintrage" project="liv" 
+    file="/liv/src/userinterface/FiltermenueEintrage.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="863" y="174"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -84,8 +83,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <class id="11" language="java" name="ausgabe.HauptmenueAusgabe" project="liv" 
-    file="/liv/src/ausgabe/HauptmenueAusgabe.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="11" language="java" name="userinterface.HauptmenueAusgabe" project="liv" 
+    file="/liv/src/userinterface/HauptmenueAusgabe.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1105" y="132"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -93,8 +92,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="ausgabe.EingabeEANAusgabe" project="liv" 
-    file="/liv/src/ausgabe/EingabeEANAusgabe.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="12" language="java" name="userinterface.EingabeEANAusgabe" project="liv" 
+    file="/liv/src/userinterface/EingabeEANAusgabe.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1089" y="276"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -102,8 +101,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="ausgabe.FiltermenueAusgabe" project="liv" 
-    file="/liv/src/ausgabe/FiltermenueAusgabe.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="13" language="java" name="userinterface.FiltermenueAusgabe" project="liv" 
+    file="/liv/src/userinterface/FiltermenueAusgabe.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1345" y="133"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -111,8 +110,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="14" language="java" name="ausgabe.HauptmenueEintraege" project="liv" 
-    file="/liv/src/ausgabe/HauptmenueEintraege.java" binary="false" corner="BOTTOM_RIGHT">    
+  <enumeration id="14" language="java" name="userinterface.HauptmenueEintraege" project="liv" 
+    file="/liv/src/userinterface/HauptmenueEintraege.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1566" y="201"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -143,8 +142,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="18" language="java" name="datenbanken.LivDatenbankConnectionService" project="liv" 
-    file="/liv/src/datenbanken/LivDatenbankConnectionService.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="18" language="java" name="livdatenbank.LivDatenbankConnectionService" project="liv" 
+    file="/liv/src/livdatenbank/LivDatenbankConnectionService.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="174" y="553"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -202,13 +201,13 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <package id="25" language="java" name="livDbInteraktion" project="liv" file="/liv/src/livDbInteraktion" binary="false" 
+  <package id="25" language="java" name="livdatenbank" project="liv" file="/liv/src/livdatenbank" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="454" width="237" x="345" y="837"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <class id="26" language="java" name="livDbInteraktion.livDbInteraktionsmenue" project="liv" 
-    file="/liv/src/livDbInteraktion/livDbInteraktionsmenue.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="26" language="java" name="userinterface.livDbInteraktionsmenue" project="liv" 
+    file="/liv/src/userinterface/livDbInteraktionsmenue.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="99" width="158" x="382" y="906"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -216,8 +215,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="27" language="java" name="livDbInteraktion.livDbBenutzerAnlegen" project="liv" 
-    file="/liv/src/livDbInteraktion/livDbBenutzerAnlegen.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="27" language="java" name="livdatenbank.livDbBenutzerAnlegen" project="liv" 
+    file="/liv/src/livdatenbank/livDbBenutzerAnlegen.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="462" y="1064"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -225,8 +224,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="28" language="java" name="livDbInteraktion.livDbneuesProduktHinzufuegen" project="liv" 
-    file="/liv/src/livDbInteraktion/livDbneuesProduktHinzufuegen.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="28" language="java" name="livdatenbank.livDbneuesProduktHinzufuegen" project="liv" 
+    file="/liv/src/livdatenbank/livDbneuesProduktHinzufuegen.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="461" y="1179"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -247,7 +246,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="31" language="java" name="liv.Inhaltsstoff" project="liv" file="/liv/src/liv/Inhaltsstoff.java" 
+  <enumeration id="31" language="java" name="filter.Inhaltsstoff" project="liv" file="/liv/src/filter/Inhaltsstoff.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1089" y="1021"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -265,8 +264,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="33" language="java" name="liv.Ampelindikator" project="liv" file="/liv/src/liv/Ampelindikator.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <enumeration id="33" language="java" name="ampel.Ampelindikator" project="liv" 
+    file="/liv/src/ampel/Ampelindikator.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1316" y="1076"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -283,7 +282,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="35" language="java" name="liv.VergleichFilter" project="liv" file="/liv/src/liv/VergleichFilter.java" 
+  <class id="35" language="java" name="filter.VergleichFilter" project="liv" file="/liv/src/filter/VergleichFilter.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1089" y="1214"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -292,7 +291,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="36" language="java" name="liv.Ampel" project="liv" file="/liv/src/liv/Ampel.java" binary="false" 
+  <class id="36" language="java" name="ampel.Ampel" project="liv" file="/liv/src/ampel/Ampel.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1311" y="946"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -301,8 +300,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="37" language="java" name="liv.PruefeEAN" project="liv" file="/liv/src/liv/PruefeEAN.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="37" language="java" name="pruefen.PruefeEAN" project="liv" file="/liv/src/pruefen/PruefeEAN.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="772" y="1211"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -310,34 +309,34 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <nesting id="38">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="3"/>  
-  </nesting>  
-  <realization id="39">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="17"/>  
-  </realization>  
-  <nesting id="40">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="7"/>  
-  </nesting>  
-  <nesting id="41">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="8"/>  
-  </nesting>  
-  <realization id="42">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="17"/>  
-  </realization>  
-  <realization id="43">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="17"/>  
-  </realization>  
-  <realization id="44">    
+  <realization id="38">    
     <end type="SOURCE" refId="20"/>    
     <end type="TARGET" refId="17"/>  
   </realization>  
+  <nesting id="39">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="7"/>  
+  </nesting>  
+  <nesting id="40">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="8"/>  
+  </nesting>  
+  <realization id="41">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <realization id="42">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <realization id="43">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <nesting id="44">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </nesting>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
