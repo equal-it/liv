@@ -57,4 +57,15 @@ public enum Inhaltsstoff {
 		}
 		return UNBEKANNT;
 	}
+
+	public static Inhaltsstoff inhaltstoffFuerAnzeigenamen(
+			final String anzeigename) {
+		for (Inhaltsstoff inhaltsstoff : values()) {
+			if (inhaltsstoff.anzeigename.equals(anzeigename)) {
+				return inhaltsstoff;
+			}
+		}
+		return UNBEKANNT;
+	}
+
 }
