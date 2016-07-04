@@ -82,9 +82,6 @@ public class Filter {
 	 * @param eingabeSetFilter
 	 */
 	private static void setzeOderEntferneFilter(Set<Inhaltsstoff> inhaltsstoffe, Inhaltsstoff inhaltsstoff) {
-
-		// Properties properties = new Properties(); Kevins Baustelle
-
 		String eingabeSetFilter;
 		System.out.println("\n--------------------------------------------");
 		System.out.println("Filter '" + inhaltsstoff.anzeigename() + "' setzen oder entfernen?");
@@ -92,37 +89,14 @@ public class Filter {
 		System.out.println("2 - Filter entfernen");
 		System.out.println("\n--------------------------------------------");
 		eingabeSetFilter = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
-
 		if (eingabeSetFilter != null) {
 			switch (eingabeSetFilter) {
 			case "1":
 				inhaltsstoffe.add(inhaltsstoff);
-				/*
-				 * Kevins Baustelle try {
-				 * properties.setProperty(inhaltsstoff.anzeigename(),
-				 * "gesetzt");
-				 * 
-				 * File file = new File("test.properties"); FileOutputStream
-				 * fileOut = new FileOutputStream(file);
-				 * properties.store(fileOut, "livFilter"); fileOut.close(); }
-				 * catch (FileNotFoundException e) { e.printStackTrace(); }
-				 * catch (IOException e) { e.printStackTrace(); }
-				 */
 				System.out.println("\nFilter '" + inhaltsstoff.anzeigename() + "' wurde hinzugefuegt.");
 				break;
 			case "2":
 				inhaltsstoffe.remove(inhaltsstoff);
-				/*
-				 * Kevins Baustelle try {
-				 * properties.remove(inhaltsstoff.anzeigename(), "gesetzt");
-				 * 
-				 * File file = new File("test.properties"); FileOutputStream
-				 * fileOut = new FileOutputStream(file);
-				 * properties.store(fileOut, "livFilter"); fileOut.close(); }
-				 * catch (FileNotFoundException e) { e.printStackTrace(); }
-				 * catch (IOException e) { e.printStackTrace(); }
-				 */
-
 				System.out.println("\nFilter '" + inhaltsstoff.anzeigename() + "' wurde entfernt.");
 				break;
 			default:

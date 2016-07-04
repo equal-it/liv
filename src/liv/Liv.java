@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import Properties.Einstellungen;
 import ausgabe.HauptmenueEintraege;
 import datenbanken.GlutenDatenbankMock;
 import datenbanken.LaktonautDatenbankAbfrage;
@@ -26,7 +25,7 @@ import eingaben.Konsoleneingabe;
  * @version 00.00.10 2016/05/16
  */
 
-public class Liv { // Console
+public class Liv { 
 
 	/**
 	 * Hauptmethode
