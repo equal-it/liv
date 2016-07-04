@@ -30,7 +30,11 @@ public class Filter {
 	 *            zur Festlegung der jeweiligen Inhaltsstoffe
 	 * @param auswahl
 	 *            Menueauswahl per Konsoleneingabe
+<<<<<<< HEAD
 	 * @return inhaltsstoffe bla
+=======
+	 * @return inhaltsstoffe 
+>>>>>>> branch 'master' of https://github.com/equal-it/liv.git
 	 */
 	static Einstellungen einstellungen = new Einstellungen();
 
