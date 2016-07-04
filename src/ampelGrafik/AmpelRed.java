@@ -123,8 +123,8 @@ public class AmpelRed extends Frame {
 			g.setFont(text);
 			g.setColor(Color.WHITE);
 			g.drawString("Das Produkt enthält mindestens", 245, 205);
-			g.drawString("einen unerwünschten Inhaltsstoff.", 245, 235);
-			g.drawString(this.text, 245, 265);
+			g.drawString("einen der unerwünschten Inhaltsstoffe", 245, 235);
+			g.drawString("(" + this.text + ").", 245, 265);
 
 		}
 	}

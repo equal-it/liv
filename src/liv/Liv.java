@@ -171,7 +171,8 @@ public class Liv { // Console
 
 						} catch (Exception e1) {
 							liv.Ampel.ampelFarbe(liv.VergleichFilter
-									.ueberprufeIndikatoren(indikatoren), aktuellerFilterAlsText(aktuellerFilter));
+									.ueberprufeIndikatoren(indikatoren),
+									aktuellerFilterAlsText(aktuellerFilter));
 							ausgabe.HauptmenueAusgabe
 									.eingabeMenueInLivDBEintragen();
 							String eingabeMenueInLivDBEintragen = Konsoleneingabe
@@ -183,7 +184,8 @@ public class Liv { // Console
 							}
 						}
 						liv.Ampel.ampelFarbe(liv.VergleichFilter
-								.ueberprufeIndikatoren(indikatoren), aktuellerFilterAlsText(aktuellerFilter));
+								.ueberprufeIndikatoren(indikatoren),
+								aktuellerFilterAlsText(aktuellerFilter));
 					} else {
 						System.err
 								.println("\nAbbruch. Die EAN ist ungueltig. Es findet keine Datenbankabfrage statt.");
@@ -222,13 +224,15 @@ public class Liv { // Console
 		System.exit(0);
 	} // end main
 
+	// Fuer Textanzeige des gesetzten Filters in der Ampel (derzeit nur in der
+	// roten):
 	private static String aktuellerFilterAlsText(
 			Set<Inhaltsstoff> aktuellerFilter) {
 		Set<String> anzeigenamen = new HashSet<>();
 		for (Inhaltsstoff inhaltsstoff : aktuellerFilter) {
 			anzeigenamen.add(inhaltsstoff.anzeigename());
 		}
-		return String.join(",", anzeigenamen);
+		return String.join(", ", anzeigenamen);
 	}
 
 } // end class
