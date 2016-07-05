@@ -19,7 +19,7 @@ import eingaben.Konsoleneingabe;
 public class LivDbneuesProduktHinzufuegen {
 
 	public static void neuesProduktHinzufuegen() {
-		System.out.println("--------------------------------------------");
+		System.out.println("\n--------------------------------------------");
 		System.out.println("DATENBANK-LOGIN");
 		System.out.println("--------------------------------------------");
 		

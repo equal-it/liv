@@ -35,9 +35,9 @@ public class LivDbBenutzerAnlegen {
 
 		// Menueausgabe, benutzernamen und password einlesen
 		System.out.println	("\n--------------------------------------------" +
-				 "\nNeueen Benutzer anlegen" + 
-				 "\n--------------------------------------------\n");
-		System.out.print("\nNeuen Benutzer anlegen! (Name und Passwort)\n" + "\nBenutzername eingeben: ");
+				 "\nNEUEN BENUTZER ANLEGEN" + 
+				 "\n--------------------------------------------");
+		System.out.print("\nNeuen Benutzer anlegen (Name und Passwort)\n" + "\nBenutzername eingeben: ");
 		try {
 			benutzerName = br.readLine();
 		} catch (IOException e) {
