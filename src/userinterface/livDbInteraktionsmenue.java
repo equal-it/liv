@@ -3,9 +3,8 @@ package userinterface;
 import java.sql.SQLException;
 import java.util.Arrays;
 
-import livdatenbank.LivDbBenutzerAnlegen;
-import livdatenbank.LivDbneuesProduktHinzufuegen;
 import eingaben.Konsoleneingabe;
+import livdatenbank.LivDbBenutzerAnlegen;
 
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer

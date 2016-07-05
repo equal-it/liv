@@ -1,4 +1,4 @@
-package liv;
+package filter;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -6,7 +6,6 @@ import java.util.Set;
 
 import properties.Einstellungen;
 import eingaben.Konsoleneingabe;
-import filter.Inhaltsstoff;
 
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
@@ -33,7 +32,7 @@ public class Filter {
 	 *            Menueauswahl per Konsoleneingabe
 	 * @return inhaltsstoffe 
 	 */
-	static Einstellungen einstellungen = new Einstellungen();
+	public static Einstellungen einstellungen = new Einstellungen();
 
 	public static Set<Inhaltsstoff> setFilter() {
 

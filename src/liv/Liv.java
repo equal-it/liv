@@ -54,7 +54,7 @@ public class Liv {
 	 * @see eingaben.EingabeEAN
 	 * @see datenbanken.LaktonautDatenbankAbfrage
 	 * @see datenbanken.GlutenDatenbankMock
-	 * @see liv.Filter
+	 * @see filter.Filter
 	 * @see pruefen.PruefeEAN
 	 * @see liv.Impressum
 	 */
@@ -96,7 +96,7 @@ public class Liv {
 
 				case 1:
 					aktuellerFilter.clear();
-					Set<Inhaltsstoff> inhaltsstoffe = liv.Filter.setFilter();
+					Set<Inhaltsstoff> inhaltsstoffe = filter.Filter.setFilter();
 					aktuellerFilter.addAll(inhaltsstoffe);
 					break;
 
@@ -200,8 +200,8 @@ public class Liv {
 
 				case 4:
 					verlassen = true;
-					liv.Filter.einstellungen.properties.clear();
-					liv.Filter.einstellungen.schreibePropertiesDatei();
+					filter.Filter.einstellungen.properties.clear();
+					filter.Filter.einstellungen.schreibePropertiesDatei();
 					break;
 
 				default:

@@ -237,7 +237,7 @@
     <position height="468" width="843" x="618" y="838"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <class id="30" language="java" name="liv.Filter" project="liv" file="/liv/src/liv/Filter.java" binary="false" 
+  <class id="30" language="java" name="filter.Filter" project="liv" file="/liv/src/filter/Filter.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="786" y="958"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -309,34 +309,34 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <realization id="38">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="17"/>  
-  </realization>  
+  <nesting id="38">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </nesting>  
   <nesting id="39">    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="7"/>  
   </nesting>  
-  <nesting id="40">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="8"/>  
-  </nesting>  
-  <realization id="41">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="17"/>  
-  </realization>  
-  <realization id="42">    
+  <realization id="40">    
     <end type="SOURCE" refId="19"/>    
     <end type="TARGET" refId="17"/>  
   </realization>  
-  <realization id="43">    
+  <realization id="41">    
     <end type="SOURCE" refId="21"/>    
     <end type="TARGET" refId="17"/>  
   </realization>  
-  <nesting id="44">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="3"/>  
+  <realization id="42">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <nesting id="43">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="8"/>  
   </nesting>  
+  <realization id="44">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
