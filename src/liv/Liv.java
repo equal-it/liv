@@ -107,90 +107,61 @@ public class Liv {
 						try {
 							// Start if Filter ist leer
 							if (!aktuellerFilter.isEmpty()) {
-								System.out
-										.println("\nLIV-Datenbank wird abgefragt...");
+								System.out.println("\nLIV-Datenbank wird abgefragt...");
 								LivDatenbankAnfrage livDatenbankAnfrage = new LivDatenbankAnfrage();
 								String livAntwort = livDatenbankAnfrage
 										.frageNach(EingabeEAN.eingabeEanNummer);
-								// Start wenn keine Werte in LIV DB zu finden
-								// sind
+								// Start wenn keine Werte in LIV DB zu finden sind
 								if (livAntwort == null) {
+									//zeige Ampel mit UNBEKANNT
 									indikatoren.add(Ampelindikator.UNBEKANNT);
-									ampel.Ampel
-											.ampelFarbe(
-													filter.VergleichFilter
-															.ueberprufeIndikatoren(indikatoren),
-													aktuellerFilterAlsText(aktuellerFilter));
-									userinterface.HauptmenueAusgabe
-											.eingabeMenueAndereDB();
-									String eingabeMenueAndereDB = Konsoleneingabe
-											.leseKonsoleFuer(Arrays
-													.asList(new String[] { "1",
-															"2", "3" }));
+									ampel.Ampel.ampelFarbe(filter.VergleichFilter.ueberprufeIndikatoren(indikatoren),aktuellerFilterAlsText(aktuellerFilter));
+									//rufe eingabeMenueAndereDB auf
+									userinterface.HauptmenueAusgabe.eingabeMenueAndereDB();
+									String eingabeMenueAndereDB = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1",	"2", "3" }));
 									// Start Externe Datenbank wird abgefragt
 									if (eingabeMenueAndereDB.equals("1")) {
-										System.out
-												.println("Externe Datenbanken werden abgefragt...");
+										System.out.println("Externe Datenbanken werden abgefragt...");
 										for (Lebensmitteldatenbank datenbank : datenbanken) {
-											String anfrageergebnis = datenbank
-													.frageNach(EingabeEAN.eingabeEanNummer);
+											String anfrageergebnis = datenbank.frageNach(EingabeEAN.eingabeEanNummer);
 											for (Inhaltsstoff inhaltsstoff : aktuellerFilter) {
-												Ampelindikator indikator = datenbank
-														.antwortEnthaeltInhaltsstoff(
-																anfrageergebnis,
-																inhaltsstoff);
+												Ampelindikator indikator = datenbank.antwortEnthaeltInhaltsstoff(anfrageergebnis, inhaltsstoff);
 												indikatoren.add(indikator);
 											}
 										}
 									} else if (eingabeMenueAndereDB.equals("3")) {
-										// ende
-										// nicht-LIV-DB werden abgefragt
-
+										// ende nicht-LIV-DB werden abgefragt
+										// Abbruch und zurück zum Hauptmenue
 										break;
-									} else { // start Benutzeranlegen und
-												// Produkt in DB schreiben
-										userinterface.livDbInteraktionsmenue
-												.livDbMenue();
+									} else { // start livDbInteraktionsmenue
+										userinterface.livDbInteraktionsmenue.livDbMenue();
 										break;
-									} // ende Benutzeranlegen und Produkt in DB
-										// schreiben
+									} // ende livDbInteraktionsmenue
 								} // ende if fuer filter ist leer
 								else {
 									for (Inhaltsstoff inhaltsstoff : aktuellerFilter) {
-										Ampelindikator indikator = livDatenbankAnfrage
-												.antwortEnthaeltInhaltsstoff(
-														livAntwort,
-														inhaltsstoff);
+										Ampelindikator indikator = livDatenbankAnfrage.antwortEnthaeltInhaltsstoff(livAntwort, inhaltsstoff);
 										indikatoren.add(indikator);
 									}
 								}
 							} // ende if fuer filter ist leer
 							else {
-								System.out
-										.println("\nEs sind keine Filter gesetzt.");
+								System.out.println("\nEs sind keine Filter gesetzt.");
 								break;
 							}
-
+							ampel.Ampel.ampelFarbe(filter.VergleichFilter.ueberprufeIndikatoren(indikatoren), aktuellerFilterAlsText(aktuellerFilter));
 						} catch (Exception e1) {
-							ampel.Ampel.ampelFarbe(filter.VergleichFilter
-									.ueberprufeIndikatoren(indikatoren),
-									aktuellerFilterAlsText(aktuellerFilter));
-							userinterface.HauptmenueAusgabe
-									.eingabeMenueInLivDBEintragen();
-							String eingabeMenueInLivDBEintragen = Konsoleneingabe
-									.leseKonsoleFuer(Arrays
-											.asList(new String[] { "1", "2" }));
+							
+							ampel.Ampel.ampelFarbe(filter.VergleichFilter.ueberprufeIndikatoren(indikatoren), aktuellerFilterAlsText(aktuellerFilter));
+							userinterface.HauptmenueAusgabe.eingabeMenueInLivDBEintragen();
+							String eingabeMenueInLivDBEintragen = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
 							if (eingabeMenueInLivDBEintragen.equals("1")) {
-								livdatenbank.LivDbneuesProduktHinzufuegen
-										.neuesProduktHinzufuegen();
+								livdatenbank.LivDbneuesProduktHinzufuegen.neuesProduktHinzufuegen();
 							}
 						}
-						ampel.Ampel.ampelFarbe(filter.VergleichFilter
-								.ueberprufeIndikatoren(indikatoren),
-								aktuellerFilterAlsText(aktuellerFilter));
+						
 					} else {
-						System.err
-								.println("\nAbbruch. Die EAN ist ungueltig. Es findet keine Datenbankabfrage statt.");
+						System.err.println("\nAbbruch. Die EAN ist ungueltig. Es findet keine Datenbankabfrage statt.");
 					}
 					break;
 
