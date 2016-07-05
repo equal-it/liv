@@ -172,8 +172,12 @@ public class Liv {
 					break;
 				case 4: // Programm verlassen
 					verlassen = true;
+					try{
 					filter.Filter.einstellungen.properties.clear();
 					filter.Filter.einstellungen.schreibePropertiesDatei();
+					}catch (Exception e){
+						
+					}
 					break;
 				default:
 					System.out.println("Bitte waehle  " + userinterface.HauptmenueEintraege.FILTER.code() + " / "
