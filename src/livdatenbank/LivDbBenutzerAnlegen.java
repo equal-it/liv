@@ -33,10 +33,10 @@ public class LivDbBenutzerAnlegen {
 		InputStreamReader inReader = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(inReader);
 
-		System.out.println("\n---------------------------------------\n"
-				+ "ACHTUNG FUNKTIONIERT SCHON UND AENDERT DIE LV DB!!!\n" + "---------------------------------------");
-
 		// Menueausgabe, benutzernamen und password einlesen
+		System.out.println	("\n--------------------------------------------" +
+				 "\nNeueen Benutzer anlegen" + 
+				 "\n--------------------------------------------\n");
 		System.out.print("\nNeuen Benutzer anlegen! (Name und Passwort)\n" + "\nBenutzername eingeben: ");
 		try {
 			benutzerName = br.readLine();

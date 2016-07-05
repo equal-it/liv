@@ -19,17 +19,13 @@ import eingaben.Konsoleneingabe;
 public class LivDbneuesProduktHinzufuegen {
 
 	public static void neuesProduktHinzufuegen() {
-		System.out.println(
-				"\n--------------------------------------------\n" + "ACHTUNG FUNKTIONIERT SCHON UND AENDERT DIE LV DB!!!\n"
-						+ "--------------------------------------------\n");
-		
 		System.out.println("--------------------------------------------");
-		System.out.println("Authentifizieren Sie sich bitte!");
+		System.out.println("DATENBANK-LOGIN");
 		System.out.println("--------------------------------------------");
 		
-		System.out.print("Benutzername (Test-Benutzername 'test'):");
+		System.out.print("Benutzername: ");
 		String benutzerName = Konsoleneingabe.leseKonsole();
-		System.out.print("Passwort (Test-Passwort 'testdb'):");
+		System.out.print("Passwort: ");
 		String benutzerPassword = Konsoleneingabe.leseKonsole();
 
 		String ean = null;
@@ -40,7 +36,7 @@ public class LivDbneuesProduktHinzufuegen {
 
 		try {
 			System.out.println	("\n--------------------------------------------" +
-								 "\nNeues Produkt anlegen" + 
+								 "\nNEUES PRODUKT ANLEGEN" + 
 								 "\n--------------------------------------------");
 			
 			System.out.println ("Bsp.: gueltige Test_EAN: 5449000096241\n");			

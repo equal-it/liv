@@ -110,7 +110,6 @@ public class LaktonautDatenbankAbfrage implements Lebensmitteldatenbank {
 		try {
 			return sendGet(ean);
 		} catch (Exception e) {
-			// e.printStackTrace();
 			System.out.println("Fehler bei der Laktonaut-Serverabfrage.\n"
 					+ "Tip: Internet ist notwendig fuer Serverabfrage.");
 			return null;
