@@ -20,14 +20,16 @@ public class livDbInteraktionsmenue {
 
 	public static void livDbMenue() {
 		System.out.println("--------------------------------------------\n");
-		System.out.println("Haben Sie einen Benutzernamen?\n");
+		System.out.println("Haben Sie einen Benutzernamen?");
+		System.out.println("--------------------------------------------\n");
 		System.out.println("1 - ja\n2 - nein");
 		System.out.println("--------------------------------------------");
 		String habeBenutzername = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));
 		if (habeBenutzername.equals("2")) {
 			System.out.println("--------------------------------------------\n");
 			System.out.println("Sie muessen erst einen Benutzer anlegen");
-			System.out.println("Wollen Sie einen neuen Benutzer anlegen?\n");
+			System.out.println("Wollen Sie einen neuen Benutzer anlegen?");
+			System.out.println("--------------------------------------------\n");
 			System.out.println("1 - ja\n2 - nein");
 			System.out.println("--------------------------------------------");
 			String willBenutzerAnlegen = Konsoleneingabe.leseKonsoleFuer(Arrays.asList(new String[] { "1", "2" }));

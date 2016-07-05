@@ -35,7 +35,6 @@ public class HauptmenueAusgabe {
 		System.out.println("\n--------------------------------------------");
 		System.out.println("MENUE EXT DB"); // Klasse HauptmenueAusgabe
 		System.out.println("--------------------------------------------\n");
-		System.out.println("--------------------------------------------");
 		System.out.println("1 - Externe Datenbanken durchsuchen"
 				+ "\n2 - Produkt zur LIV-Datenbank hinzuefuegen"
 				+ "\n3 - Abbrechen und zurueck zum Hauptmenue");
