@@ -40,7 +40,6 @@ public class AmpelRed extends Frame {
 	public AmpelRed(final String text) throws InterruptedException { // Rahmen
 
 		int windowWidth = 670;
-		// Box zu Testzwecken Text erweitert. Originalwert 250!
 		int windowHeight = 415;
 
 		setTitle("Ampel-ROT");
@@ -62,7 +61,7 @@ public class AmpelRed extends Frame {
 		setSize(windowWidth, windowHeight);
 		setVisible(true);
 		try {
-			Thread.sleep(5000); // zum Testen hochgesetzt
+			Thread.sleep(7500); // zum Testen hochgesetzt
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -75,7 +74,7 @@ public class AmpelRed extends Frame {
 
 	class DrawingPanelRed extends Panel { // Ampel
 
-		// Textausgabe Filter
+		// Textausgabe Filter - enthaltener Inhaltsstoff
 		private final String text;
 
 		public DrawingPanelRed(final String text) {
@@ -122,8 +121,11 @@ public class AmpelRed extends Frame {
 			Font text = new Font("Arial", Font.BOLD, 20);
 			g.setFont(text);
 			g.setColor(Color.WHITE);
-			g.drawString("Folgende Inhaltsstoffe sind enthalten:", 245, 205);
-			g.drawString(this.text, 245, 235);
+			g.drawString("Das Produkt enthält die", 245, 205);
+			g.drawString("unerwünschten Inhaltsstoffe:", 245, 235);
+			// Textausgabe der enthaltenen Inhaltsstoffe
+			g.setColor(Color.RED);
+			g.drawString(this.text, 245, 275);
 
 		}
 	}

@@ -36,6 +36,7 @@ public class AmpelYellow extends Frame {
 	 * @throws InterruptedException
 	 *             e
 	 */
+	
 	public AmpelYellow() throws InterruptedException { // Rahmen
 
 		int windowWidth = 670;
@@ -60,7 +61,7 @@ public class AmpelYellow extends Frame {
 		setSize(windowWidth, windowHeight);
 		setVisible(true);
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(7500);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
