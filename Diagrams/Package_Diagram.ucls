@@ -3,45 +3,45 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <package id="1" language="java" name="pruefen" project="liv" file="/liv/src/pruefen" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="298" y="443"/>    
+    <position height="-1" width="-1" x="444" y="548"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <package id="2" language="java" name="userinterface" project="liv" file="/liv/src/userinterface" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="294" y="221"/>    
+    <position height="-1" width="-1" x="449" y="55"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <package id="3" language="java" name="datenbanken" project="liv" file="/liv/src/datenbanken" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="289" y="138"/>    
+    <position height="-1" width="-1" x="253" y="134"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <package id="4" language="java" name="liv" project="liv" file="/liv/src/liv" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="85" y="178"/>    
+    <position height="-1" width="-1" x="116" y="248"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <package id="5" language="java" name="eingaben" project="liv" file="/liv/src/eingaben" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="295" y="368"/>    
+    <position height="-1" width="-1" x="445" y="477"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <package id="6" language="java" name="livdatenbank" project="liv" file="/liv/src/livdatenbank" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="454" y="292"/>    
+    <position height="-1" width="-1" x="531" y="277"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <package id="7" language="java" name="filter" project="liv" file="/liv/src/filter" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="532" y="176"/>    
+    <position height="-1" width="-1" x="253" y="257"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <package id="8" language="java" name="properties" project="liv" file="/liv/src/properties" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="532" y="93"/>    
+    <position height="-1" width="-1" x="339" y="368"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <package id="9" language="java" name="ampel" project="liv" file="/liv/src/ampel" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="290" y="58"/>    
+    <position height="-1" width="-1" x="206" y="367"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <dependency id="10">    
@@ -49,45 +49,48 @@
     <end type="TARGET" refId="7"/>  
   </dependency>  
   <dependency id="11">    
-    <bendpoint x="533" y="373"/>    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="5"/>  
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="1"/>  
   </dependency>  
   <dependency id="12">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="8"/>  
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="5"/>  
   </dependency>  
   <dependency id="13">    
-    <bendpoint x="85" y="376"/>    
+    <bendpoint x="117" y="485"/>    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="5"/>  
   </dependency>  
   <dependency id="14">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="5"/>  
-  </dependency>  
-  <dependency id="15">    
-    <end type="SOURCE" refId="3"/>    
+    <end type="SOURCE" refId="8"/>    
     <end type="TARGET" refId="7"/>  
   </dependency>  
+  <dependency id="15">    
+    <bendpoint x="120" y="60"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
   <dependency id="16">    
+    <bendpoint x="527" y="483"/>    
     <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="5"/>  
   </dependency>  
   <dependency id="17">    
+    <bendpoint x="374" y="264"/>    
+    <bendpoint x="408" y="301"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="18">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="19">    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="3"/>  
   </dependency>  
-  <dependency id="18">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="2"/>  
-  </dependency>  
-  <dependency id="19">    
-    <bendpoint x="85" y="62"/>    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="9"/>  
-  </dependency>  
   <dependency id="20">    
+    <bendpoint x="532" y="58"/>    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="6"/>  
   </dependency>  
@@ -96,16 +99,8 @@
     <end type="TARGET" refId="9"/>  
   </dependency>  
   <dependency id="22">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <dependency id="23">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="7"/>  
-  </dependency>  
-  <dependency id="24">    
     <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="9"/>  
+    <end type="TARGET" refId="7"/>  
   </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
