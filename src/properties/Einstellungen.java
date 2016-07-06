@@ -70,7 +70,7 @@ public class Einstellungen {
 		try (FileInputStream inStream = new FileInputStream(dateipfad)) {
 			properties.load(inStream);
 		} catch (IOException e) {
-			System.err.println("Fehler beim Laden der Datei: " + EINSTELLUNGEN);
+			//System.err.println("Fehler beim Laden der Datei: " + EINSTELLUNGEN);
 		}
 		this.properties = properties;
 	}
