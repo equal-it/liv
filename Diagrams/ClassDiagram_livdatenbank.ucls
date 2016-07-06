@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="livdatenbank.LivDbneuesProduktHinzufuegen" project="liv" 
     file="/liv/src/livdatenbank/LivDbneuesProduktHinzufuegen.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="232" y="367"/>    
+    <position height="-1" width="-1" x="147" y="365"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="livdatenbank.LivDbBenutzerAnlegen" project="liv" 
     file="/liv/src/livdatenbank/LivDbBenutzerAnlegen.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="450" y="367"/>    
+    <position height="-1" width="-1" x="520" y="365"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <dependency id="4">    
     <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="2"/>  
+    <end type="TARGET" refId="1"/>  
   </dependency>  
   <dependency id="5">    
     <end type="SOURCE" refId="2"/>    
@@ -38,7 +38,7 @@
   </dependency>  
   <dependency id="6">    
     <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="1"/>  
+    <end type="TARGET" refId="2"/>  
   </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
