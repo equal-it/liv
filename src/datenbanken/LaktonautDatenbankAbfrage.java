@@ -18,8 +18,8 @@ import java.net.URL;
  */
 import java.io.InputStreamReader;
 
+import filter.Ampelindikator;
 import filter.Inhaltsstoff;
-import ampel.Ampelindikator;
 
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer

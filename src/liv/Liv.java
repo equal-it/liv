@@ -8,13 +8,13 @@ import java.util.List;
 import java.util.Set;
 
 import userinterface.HauptmenueEintraege;
-import ampel.Ampelindikator;
 import datenbanken.GlutenDatenbankMock;
 import datenbanken.LaktonautDatenbankAbfrage;
 import datenbanken.Lebensmitteldatenbank;
 import datenbanken.LivDatenbankAnfrage;
 import eingaben.EingabeEAN;
 import eingaben.Konsoleneingabe;
+import filter.Ampelindikator;
 import filter.Inhaltsstoff;
 
 /**
