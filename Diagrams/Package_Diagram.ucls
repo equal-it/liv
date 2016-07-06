@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <package id="1" language="java" name="pruefen" project="liv" file="/liv/src/pruefen" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="444" y="548"/>    
+    <position height="-1" width="-1" x="444" y="549"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <package id="2" language="java" name="userinterface" project="liv" file="/liv/src/userinterface" binary="false" 
@@ -17,12 +17,12 @@
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <package id="4" language="java" name="liv" project="liv" file="/liv/src/liv" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="116" y="248"/>    
+    <position height="-1" width="-1" x="115" y="255"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <package id="5" language="java" name="eingaben" project="liv" file="/liv/src/eingaben" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="445" y="477"/>    
+    <position height="-1" width="-1" x="445" y="478"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <package id="6" language="java" name="livdatenbank" project="liv" file="/liv/src/livdatenbank" binary="false" 
@@ -71,7 +71,7 @@
     <end type="TARGET" refId="2"/>  
   </dependency>  
   <dependency id="16">    
-    <bendpoint x="527" y="483"/>    
+    <bendpoint x="530" y="482"/>    
     <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="5"/>  
   </dependency>  
