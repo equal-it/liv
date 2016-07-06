@@ -122,9 +122,8 @@ public class AmpelRed extends Frame {
 			Font text = new Font("Arial", Font.BOLD, 20);
 			g.setFont(text);
 			g.setColor(Color.WHITE);
-			g.drawString("Das Produkt enthält mindestens", 245, 205);
-			g.drawString("einen der unerwünschten Inhaltsstoffe", 245, 235);
-			g.drawString("(" + this.text + ").", 245, 265);
+			g.drawString("Folgende Inhaltsstoffe sind enthalten:", 245, 205);
+			g.drawString(this.text, 245, 235);
 
 		}
 	}
