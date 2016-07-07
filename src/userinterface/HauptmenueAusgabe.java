@@ -38,6 +38,7 @@ public class HauptmenueAusgabe {
 		System.out.println("1 - Externe Datenbanken durchsuchen"
 				+ "\n2 - Produkt zur LIV-Datenbank hinzuefuegen"
 				+ "\n3 - Abbrechen und zurueck zum Hauptmenue");
+		System.out.println("\n--------------------------------------------\n");
 
 	}
 
