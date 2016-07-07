@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class-diagram version="1.1.10" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
-  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+<class-diagram version="1.1.10" icons="true" automaticImage="JPEG" always-add-relationships="false" 
+  generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true" 
+  router="FAN">  
   <class id="1" language="java" name="ampel.AmpelGreen" project="liv" file="/liv/src/ampel/AmpelGreen.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="540" y="271"/>    
@@ -82,62 +83,62 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <dependency id="10">    
-    <bendpoint x="638" y="272"/>    
-    <bendpoint x="638" y="591"/>    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <dependency id="11">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <nesting id="12">    
-    <bendpoint x="346" y="348"/>    
-    <bendpoint x="346" y="367"/>    
-    <bendpoint x="346" y="380"/>    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="8"/>  
-  </nesting>  
-  <dependency id="13">    
-    <bendpoint x="256" y="271"/>    
-    <bendpoint x="254" y="591"/>    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <nesting id="14">    
-    <bendpoint x="111" y="348"/>    
-    <bendpoint x="111" y="380"/>    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="9"/>  
-  </nesting>  
-  <dependency id="15">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="2"/>  
-  </dependency>  
-  <nesting id="16">    
+  <nesting id="10">    
     <bendpoint x="540" y="345"/>    
     <bendpoint x="540" y="380"/>    
     <bendpoint x="541" y="380"/>    
     <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="3"/>  
   </nesting>  
-  <dependency id="17">    
-    <bendpoint x="445" y="272"/>    
-    <bendpoint x="446" y="535"/>    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <dependency id="18">    
+  <dependency id="11">    
     <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="4"/>  
+    <end type="TARGET" refId="1"/>  
   </dependency>  
-  <dependency id="19">    
+  <dependency id="12">    
     <bendpoint x="196" y="100"/>    
     <bendpoint x="190" y="99"/>    
     <bendpoint x="190" y="100"/>    
     <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="13">    
+    <bendpoint x="656" y="272"/>    
+    <bendpoint x="659" y="590"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="14">    
+    <bendpoint x="256" y="271"/>    
+    <bendpoint x="254" y="591"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <nesting id="15">    
+    <bendpoint x="111" y="348"/>    
+    <bendpoint x="111" y="380"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="9"/>  
+  </nesting>  
+  <dependency id="16">    
+    <bendpoint x="445" y="272"/>    
+    <bendpoint x="446" y="535"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <nesting id="17">    
+    <bendpoint x="346" y="348"/>    
+    <bendpoint x="346" y="367"/>    
+    <bendpoint x="346" y="380"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="8"/>  
+  </nesting>  
+  <dependency id="18">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="19">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="2"/>  
   </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    

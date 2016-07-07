@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class-diagram version="1.1.10" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
-  associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+<class-diagram version="1.1.10" icons="true" automaticImage="JPEG" always-add-relationships="false" 
+  generalizations="true" realizations="true" associations="true" dependencies="true" nesting-relationships="true" 
+  router="FAN">  
   <enumeration id="1" language="java" name="filter.Inhaltsstoff" project="liv" file="/liv/src/filter/Inhaltsstoff.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="158" y="153"/>    
@@ -38,14 +39,14 @@
     </display>  
   </class>  
   <dependency id="5">    
-    <bendpoint x="514" y="337"/>    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="2"/>  
-  </dependency>  
-  <dependency id="6">    
     <bendpoint x="158" y="338"/>    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="6">    
+    <bendpoint x="514" y="337"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="2"/>  
   </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    

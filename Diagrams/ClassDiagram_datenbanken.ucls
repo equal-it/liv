@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class-diagram version="1.1.10" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
-  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+<class-diagram version="1.1.10" icons="true" automaticImage="JPEG" always-add-relationships="false" 
+  generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true" 
+  router="FAN">  
   <class id="1" language="java" name="datenbanken.LivDatenbankAnfrage" project="liv" 
     file="/liv/src/datenbanken/LivDatenbankAnfrage.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="230" y="302"/>    
@@ -47,25 +48,25 @@
     </display>  
   </class>  
   <realization id="6">    
-    <end type="SOURCE" refId="1"/>    
+    <bendpoint x="895" y="535"/>    
+    <bendpoint x="895" y="89"/>    
+    <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="2"/>  
   </realization>  
   <realization id="7">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="2"/>  
+  </realization>  
+  <realization id="8">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="2"/>  
+  </realization>  
+  <realization id="9">    
     <bendpoint x="53" y="537"/>    
     <bendpoint x="22" y="537"/>    
     <bendpoint x="22" y="317"/>    
     <bendpoint x="22" y="90"/>    
     <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="2"/>  
-  </realization>  
-  <realization id="8">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="2"/>  
-  </realization>  
-  <realization id="9">    
-    <bendpoint x="895" y="535"/>    
-    <bendpoint x="895" y="89"/>    
-    <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="2"/>  
   </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
