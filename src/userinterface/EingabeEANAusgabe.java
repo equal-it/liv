@@ -19,13 +19,13 @@ public class EingabeEANAusgabe {
 		System.out.println("Bitte Produkt-EAN eingeben:\n");
 		System.out.println(
 				"Test EAN\n" 
-				+ "Ritter Sport  (in LIV DB): 4000417025005 \n"
-				+ "Nutella       (in LIV DB): 4008400401829 \n" 
-				+ "Softcakes     (in LIV DB): 4001518722466 \n"
-				+ "unb. Produkt  Lak = unb. : 4008400401928 \n"
-				+ "Giotto        Lak = yes  : 4008400121925 \n"
-				+ "Gemüsebrühe   Lak = no   : 4006040271505 \n" 
-				+ "User LIV-DB Testprodukt  : 5449000096241");
+				+ "Ritter Sport  (in LIV DB) : 4000417025005 \n"
+				+ "Nutella       (in LIV DB) : 4008400401829 \n" 
+				+ "Softcakes     (in LIV DB) : 4001518722466 \n"
+				+ "unb. Produkt  Lakt. = unb.: 4008400401928 \n"
+				+ "Giotto        Lakt. = yes : 4008400121925 \n"
+				+ "Gemüsebrühe   Lakt. = no  : 4006040271505 \n" 
+				+ "User LIV-DB Testprodukt   : 5449000096241");
 		/*
 		 * System.out.println(
 		 * "Test EAN (Ritter Sport Marzipan 100 g) Laktose = no / Gluten = no / Nuss = no: 4000417025005 (in LIV DB)\n"
