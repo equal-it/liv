@@ -9,7 +9,7 @@ import livdatenbank.LivDbBenutzerAnlegen;
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * class livDbInteraktionsmenue
+ * class livDbInteraktionsmenue fuer class livdb
  * 
  * @author team equal-IT 
  * @mail: team@equal-it.de

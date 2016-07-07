@@ -6,7 +6,7 @@ import filter.Inhaltsstoff;
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * class HttpAbfrageMock1 Mock Up fuer die Datenbankabfrage 
+ * class GlutenDatenbankMock Mock Up fuer die Datenbankabfrage 
  * Filter "Gluten"
  * 
  * @author team equal-IT 

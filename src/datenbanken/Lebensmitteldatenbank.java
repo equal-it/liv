@@ -6,7 +6,7 @@ import filter.Inhaltsstoff;
 /**
  * Project: Liv - Lebensmittelinhaltsstoffverifizierer
  * 
- * class Lebensmitteldatenbank
+ * class interface Lebensmitteldatenbank
  * 
  * @author team equal-IT
  * @mail: team@equal-it.de

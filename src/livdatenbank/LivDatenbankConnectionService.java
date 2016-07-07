@@ -7,9 +7,10 @@ import java.sql.SQLException;
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * class LivDatenbank
+ * class LivDatenbankConnectionService stellt verschiedene methoden für die
+ * unterschiedlichen Verbindungsmöglichkeiten zur Datenbank zur Verfügung
  * 
- * @author team equal-IT 
+ * @author team equal-IT
  * @mail: team@equal-it.de
  * @version 1.0 2016/07/08
  */
@@ -43,17 +44,17 @@ public class LivDatenbankConnectionService {
 		return connection;
 
 	}
-	
+
 	public static Connection openLivDbConnectionForUser(String user, String password) {
 		Connection connection = null;
 		try {
 			connection = DriverManager.getConnection(dbUrl, user, password);
-			//return connection;
+			// return connection;
 		} catch (Exception e) {
 			System.out.println("LIV-Datenbank Connection Problem");
 		}
 		return connection;
 
 	}
-	
+
 }

@@ -24,7 +24,8 @@ import filter.Inhaltsstoff;
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * class LaktonautDatenbankAbfrage
+ * class LaktonautDatenbankAbfrage fuer die Datenbankabfrage 
+ * Filter "Laktose"
  * 
  * @author team equal-IT
  * @mail team@equal-it.de

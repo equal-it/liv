@@ -3,6 +3,8 @@ package filter;
 /**
  * Project: Liv - Lebensmittelinhaltsstoffverifizierer
  * 
+ * class Inhaltsstoff enum
+ * 
  * @author team equal-IT 
  * @mail: team@equal-it.de
  * @version 1.0 2016/07/08

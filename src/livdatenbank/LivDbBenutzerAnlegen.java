@@ -10,7 +10,7 @@ import java.sql.Statement;
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * class livDbBenutzerAnlegen
+ * class livDbBenutzerAnlegen legt Benutzer in der liv mariaDB an
  * 
  * @author team equal-IT 
  * @mail: team@equal-it.de

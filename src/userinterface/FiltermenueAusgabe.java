@@ -4,7 +4,7 @@ package userinterface;
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * class Liv FiltermenueAusgabe
+ * class Liv FiltermenueAusgabe fuer class Filter
  * 
  * @author team equal-IT 
  * @mail: team@equal-it.de

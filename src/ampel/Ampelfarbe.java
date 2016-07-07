@@ -3,7 +3,7 @@ package ampel;
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * Ampel
+ * Ampel enum der anzeige Farben
  * 
  * @author	team equal-IT
  * @mail	team@equal-it.de

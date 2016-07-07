@@ -37,8 +37,7 @@ public class Ampel {
 		case GELB:
 			new ampel.AmpelYellow();
 			break;
-		} // switch (isProductOK){
+		} // switch
 
-	} // public static void AmpelFarbe (String isProductOk){
-
-} // public class Ampel {
+	} // AmpelFarbe 
+} // Ampel

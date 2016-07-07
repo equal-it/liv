@@ -8,7 +8,7 @@ import ampel.Ampelfarbe;
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * class VergleichFilter Klasse vergleicht gesetzten Filter mit zurueckgegebenen
+ * class VergleichFilter vergleicht gesetzten Filter mit zurueckgegebenen
  * Werten aus der DB
  * 
  * @author team equal-IT 

@@ -9,7 +9,7 @@ import eingaben.Konsoleneingabe;
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * class livDbneuesProduktHinzufuegen
+ * class livDbneuesProduktHinzufuegen legt neue Produkte in der liv mariaDB an
  * 
  * @author team equal-IT 
  * @mail: team@equal-it.de

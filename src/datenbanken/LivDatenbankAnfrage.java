@@ -8,7 +8,8 @@ import filter.Ampelindikator;
 import filter.Inhaltsstoff;
 
 /**
- * Project: LIV - Lebensmittelinhaltsstoffverifizierer
+ * Project: LIV - Lebensmittelinhaltsstoffverifizierer fuer die Datenbankabfrage 
+ * alle Filter
  * 
  * class LivDatenbankAnfrage
  * 

@@ -3,7 +3,7 @@ package userinterface;
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * class FiltermenueEintrage
+ * class FiltermenueEintrage enum
  * 
  * @author team equal-IT
  * @mail: team@equal-it.de

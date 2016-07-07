@@ -3,7 +3,7 @@ package filter;
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * Ampelindikator
+ * Ampelindikator enum 
  * 
  * @author	team equal-IT
  * @mail	team@equal-it.de

@@ -20,7 +20,7 @@ import filter.Inhaltsstoff;
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * class Liv Konsolenausgabe
+ * class Liv enhält main methode
  * 
  * @author team equal-IT
  * @mail: team@equal-it.de

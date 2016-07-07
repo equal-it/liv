@@ -5,7 +5,7 @@ import userinterface.HauptmenueEintraege;
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * class HauptmenueEintraege
+ * class HauptmenueEintraege enum
  * 
  * @author team equal-IT 
  * @mail: team@equal-it.de

@@ -13,7 +13,7 @@ import filter.Inhaltsstoff;
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * class Liv Einstellungen
+ * class Liv Einstellungen stellt alle Methoden zur properties Datei zur Verfügung
  * 
  * @author team equal-IT 
  * @mail: team@equal-it.de
@@ -84,7 +84,7 @@ public class Einstellungen {
 		}
 	}
 
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		// Test
 		Einstellungen einstellungen = new Einstellungen();
 		einstellungen.dateipfad = "test.properties"; // nur fuer Test umstellen
@@ -110,5 +110,5 @@ public class Einstellungen {
 		// aufraeumen
 		einstellungen.properties.clear();
 		einstellungen.schreibePropertiesDatei();
-	}
+	}*/
 }

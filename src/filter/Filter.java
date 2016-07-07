@@ -11,7 +11,7 @@ import eingaben.Konsoleneingabe;
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
  * class Filter zeigt die moeglichen einzustellenden Filter und laesst diese
- * setzen oder entfernen
+ * setzen, entfernen oder anzeigen
  * 
  * @author team equal-IT 
  * @mail team@equal-it.de

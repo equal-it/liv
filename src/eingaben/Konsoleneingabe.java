@@ -8,7 +8,8 @@ import java.util.Collection;
 /**
  * Project: Liv - Lebensmittelinhaltsstoffverifizierer
  * 
- * class Konsoleneingabe wirft Exception bei fehlerhafter Eingabe
+ * class Konsoleneingabe stellt Methoden zum sicherem einlesen von Eingaben zur
+ * verfügung
  * 
  * @author team equal-IT
  * @mail: team@equal-it.de
@@ -40,8 +41,7 @@ public class Konsoleneingabe {
 				if (gueltigeWerte.contains(eingabe)) {
 					return eingabe;
 				} else {
-					System.out.println(
-							"\nUngueltige Eingabe. Bitte erneut eingeben.");
+					System.out.println("\nUngueltige Eingabe. Bitte erneut eingeben.");
 				}
 			}
 		} catch (IOException e) {
@@ -76,8 +76,7 @@ public class Konsoleneingabe {
 					} else {
 						System.out.print("\nUngueltige Eingabe. Bitte erneut eingeben.\n"
 								+ "EAN MUSS GENAU 13 Stellen haben!\n"
-								+ "Beispiel einer gueltigen Test-EAN: 5449000096241\n\n"
-								+ "Produkt-EAN eingeben: ");
+								+ "Beispiel einer gueltigen Test-EAN: 5449000096241\n\n" + "Produkt-EAN eingeben: ");
 					}
 				} catch (Exception e) {
 					System.out.println("\nProbleme mit der EAN-Gueltigkeitspruefung!");

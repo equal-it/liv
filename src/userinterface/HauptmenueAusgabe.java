@@ -8,7 +8,7 @@ import static userinterface.HauptmenueEintraege.IMPRESSUM;
 /**
  * Project: LIV - Lebensmittelinhaltsstoffverifizierer
  * 
- * class HauptmenueAusgabe
+ * class HauptmenueAusgabe fuer class liv
  * 
  * @author team equal-IT
  * @mail: team@equal-it.de
