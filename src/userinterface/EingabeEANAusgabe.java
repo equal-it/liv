@@ -5,7 +5,7 @@ package userinterface;
  * 
  * class EingabeEANAusgabe Test EANs und Fehlerausgabe
  * 
- * @author team equal-IT 
+ * @author team equal-IT
  * @mail: team@equal-it.de
  * @version 1.0 2016/07/08
  */
@@ -18,15 +18,30 @@ public class EingabeEANAusgabe {
 		System.out.println("--------------------------------------------");
 		System.out.println("Bitte Produkt-EAN eingeben:\n");
 		System.out.println(
-						  "Test EAN (Ritter Sport Marzipan 100 g) Laktose = no / Gluten = no / Nuss = no: 4000417025005 (in LIV DB)\n"
-						+ "Test EAN (Ferrero Nutella 1000 g) Laktose = yes / Gluten = no / Nuss = yes: 4008400401829  (in LIV DB)\n"
-						+ "Test EAN (Griesson Softcakes) Laktose = no / Gluten = no / Nuss = no: 4001518722466 (in LIV DB)\n"
-						+ "Test EAN (Alnatura Dinkel Doppel Keks 330g) Laktose = yes / Gluten = no / Nuss = no: 4104420053922 (in LIV DB)\n"
-						+ "Test EAN (unbekanntes Produkt) Laktose = unbekannt: 4008400401928 \n"
-						+ "Test EAN (Ferrero Giotto) Laktose = yes: 4008400121925 \n"
-						+ "Test EAN (Rapunzel Gemüsebrühe) Laktose = no: 4006040271505 \n"
-						+ "Test EAN (Ritter Sport Dunkle Vollnuss) Laktose = yes: 4000417224002 \n"
-						+ "Test EAN von 'Produkt hinzufuegen': 5449000096241");
+				"Test EAN\n" 
+				+ "Ritter Sport  (in LIV DB): 4000417025005 \n"
+				+ "Nutella       (in LIV DB): 4008400401829 \n" 
+				+ "Softcakes     (in LIV DB): 4001518722466 \n"
+				+ "unb. Produkt  Lak = unb. : 4008400401928 \n"
+				+ "Giotto        Lak = yes  : 4008400121925 \n"
+				+ "Gemüsebrühe   Lak = no   : 4006040271505 \n" 
+				+ "User LIV-DB Testprodukt  : 5449000096241");
+		/*
+		 * System.out.println(
+		 * "Test EAN (Ritter Sport Marzipan 100 g) Laktose = no / Gluten = no / Nuss = no: 4000417025005 (in LIV DB)\n"
+		 * +
+		 * "Test EAN (Ferrero Nutella 1000 g) Laktose = yes / Gluten = no / Nuss = yes: 4008400401829  (in LIV DB)\n"
+		 * +
+		 * "Test EAN (Griesson Softcakes) Laktose = no / Gluten = no / Nuss = no: 4001518722466 (in LIV DB)\n"
+		 * +
+		 * "Test EAN (Alnatura Dinkel Doppel Keks 330g) Laktose = yes / Gluten = no / Nuss = no: 4104420053922 (in LIV DB)\n"
+		 * +
+		 * "Test EAN (unbekanntes Produkt) Laktose = unbekannt: 4008400401928 \n"
+		 * + "Test EAN (Ferrero Giotto) Laktose = yes: 4008400121925 \n" +
+		 * "Test EAN (Rapunzel Gemüsebrühe) Laktose = no: 4006040271505 \n" +
+		 * "Test EAN (Ritter Sport Dunkle Vollnuss) Laktose = yes: 4000417224002 \n"
+		 * + "Test EAN von 'Produkt hinzufuegen': 5449000096241");
+		 */
 		System.out.println("\n--------------------------------------------");
 	}
 
