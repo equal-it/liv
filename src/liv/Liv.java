@@ -197,12 +197,13 @@ public class Liv {
 									aktuellerFilterAlsText(aktuellerFilter));
 							userinterface.HauptmenueAusgabe
 									.eingabeMenueInLivDBEintragen();
+							
 							String eingabeMenueInLivDBEintragen = Konsoleneingabe
 									.leseKonsoleFuer(Arrays
 											.asList(new String[] { "1", "2" }));
 							if (eingabeMenueInLivDBEintragen.equals("1")) {
-								livdatenbank.LivDbneuesProduktHinzufuegen
-										.neuesProduktHinzufuegen();
+								userinterface.livDbInteraktionsmenue.livDbMenue();
+								
 							}
 						}
 					} else {
